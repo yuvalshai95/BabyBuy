@@ -1,1 +1,1 @@
-# BabyBuy - Adi & Yuval Final Project !!
+# BabyBuy - Adi & Yuval Final Project
