@@ -3,10 +3,10 @@
 class Database
 {
     // Creating database variables
-    private $host = "localhost";
-    private $db_name = "db";
-    private $username = "root";
-    private $password = "";
+    private $host       = "localhost";
+    private $db_name    = "db";
+    private $username   = "root";
+    private $password   = "";
     public $conn;
 
     public function Open_DB_Connection()
@@ -39,10 +39,10 @@ class Database
 class Database
 {
 // Creating database variables
-    private $host = "localhost"; 
-    private $db_name = "babybuydb";
-    private $username = "root";
-    private $password = "";
+    private $host        = "localhost"; 
+    private $db_name     = "babybuydb";
+    private $username    = "root";
+    private $password    = "";
     public $conn;
 
     public function Open_DB_Connection()
