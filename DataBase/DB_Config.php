@@ -1,36 +1,37 @@
 
 <!-- Method2 MySQLi Procedural Query-->
+
+<?php require_once 'utils.php';?>
+
 <?php
 class Database
 {
 // Creating database variables
-    private $host        = "localhost"; 
-    private $db_name     = "babybuydb";
-    private $username    = "root";
-    private $password    = "";
+    public $host        = host; 
+    public $db_name     = db_name;
+    public $username    = username;
+    public $password    = password;
     public $conn;
 
-    public function Open_DB_Connection()
-	{
+    public function Open_DB_Connection(){
 
-	    $this->conn = null;
+        $this->conn = null;
         try //Trying to connect the server using variables
 		    {
-          $this->conn = mysqli_connect($host,$username,$password,$db_name);
-    		
-		    catch(Exception $e) //Could not connect to the server
-		    {
-            echo "Connection error message: " . $e->getMessage(); //print error msg
-        }
+                $this->conn =new mysqli($this->host, $this->username, $this->password, $this->db_name);
 
+             } catch(Exception $e){ //Could not connect to the server
+                echo "Connection error message: " . $e->getMessage(); //print error msg
+             }
+             
         return $this->conn; //opening the connection with the server
     }
-}
 
-public function Close_DB_Connection(){
-   $this->$conn->close(); //close the conneection with the server
+    public function Close_DB_Connection(){
+        $this->conn->close(); //close the conneection with the server
+     }
+     
 }
-
 ?>
 
 

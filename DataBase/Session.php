@@ -1,6 +1,7 @@
 <?php
 
 class Session{
+
     public static function init(){
         session_start();
 
@@ -12,15 +13,15 @@ class Session{
 
     public static function getSessionKey($key){
         if(isset($_SESSION[$key])){
-            return $_SESSION[$key]
+            return $_SESSION[$key];
         }
         else{
             return false;
-    }
+        }
     }
 
     public static function destroySession(){
-        session_decode();
+        session_destroy();
         header("Location:login.php");
     }
 }

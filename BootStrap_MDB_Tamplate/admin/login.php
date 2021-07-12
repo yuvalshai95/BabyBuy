@@ -3,8 +3,8 @@
 <?php 
 $admin = new Admin(); 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$adminEmail = $_POST['Email']
-	$adminPass = $_POST['UserPassword']
+	$adminEmail = $_POST['Email'];
+	$adminPass = $_POST['UserPassword'];
 
 	$loginCheck = $admin->checkLoginInfo($adminEmail,$adminPass);
 }
