@@ -23,11 +23,12 @@ class Admin{
 
         if( empty($adminEmail) || empty($adminPass) ){
             $login_msg = "Email or Password cant be empty";
-            return $login_msg;
-            
+            return $login_msg;   
         }else{
-
-            $query = "";
+            $query = "SELECT * 
+                      FROM user 
+                      WHERE Role='admin' AND Email='$adminEmail_escape' AND UserPassword='$adminPass_escape'";
+            $result =           
         }
      }
      
