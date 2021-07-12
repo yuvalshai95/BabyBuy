@@ -49,7 +49,7 @@ class Database
              header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
              exit();
          }else{
-             die("Error: (".$this->conn->error.")".$this->conn->error);
+             return false;
          }
      }
      
@@ -57,9 +57,9 @@ class Database
      public function update($query){
          $update_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
          if($update_row){
-            header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
+            return $update_row;
          }else{
-            die("Error: (".$this->conn->error.")".$this->conn->error);
+            return false;
          }
      }
 
@@ -67,9 +67,9 @@ class Database
      public function delete($query){
         $delete_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
         if($delete_row){
-           header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
+          return $delete_row;
         }else{
-           die("Error: (".$this->conn->error.")".$this->conn->error);
+           return false;
         }
     }
 }
