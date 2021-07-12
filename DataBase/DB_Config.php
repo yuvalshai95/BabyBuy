@@ -30,6 +30,25 @@ class Database
     public function Close_DB_Connection(){
         $this->conn->close(); //close the conneection with the server
      }
+
+     public function select($query){
+         $result = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+         if($result->num_rows > 0){
+             return $result;
+         }else{
+             return false;
+         }
+     }
+
+     public function insert($query){
+         $insert_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+         if($insert_row){
+             header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
+             exit();
+         }else{
+             die("Error: (".$this->conn->error.")".$this->conn->error);
+         }
+     }
      
 }
 ?>
