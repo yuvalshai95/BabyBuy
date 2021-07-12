@@ -28,7 +28,7 @@ class Admin{
             $query = "SELECT * 
                       FROM user 
                       WHERE Role='admin' AND Email='$adminEmail_escape' AND UserPassword='$adminPass_escape'";
-            $result =           
+            $result =  $this->db->select($query);         
         }
      }
      
