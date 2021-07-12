@@ -6,13 +6,14 @@
 <?php
 class Database
 {
-// Creating database variables
-    public $host        = host; 
-    public $db_name     = db_name;
-    public $username    = username;
-    public $password    = password;
+// Creating database variables using utils define globals 
+    private $host        = host; 
+    private $db_name     = db_name;
+    private $username    = username;
+    private $password    = password;
     public $conn;
 
+    // Open db connection
     public function Open_DB_Connection(){
 
         $this->conn = null;
@@ -27,6 +28,7 @@ class Database
         return $this->conn; //opening the connection with the server
     }
 
+    // Close db connection
     public function Close_DB_Connection(){
         $this->conn->close(); //close the conneection with the server
      }
@@ -40,6 +42,7 @@ class Database
          }
      }
 
+     // Insert data to database
      public function insert($query){
          $insert_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
          if($insert_row){
@@ -50,6 +53,25 @@ class Database
          }
      }
      
+     // Update data from database
+     public function update($query){
+         $update_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+         if($update_row){
+            header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
+         }else{
+            die("Error: (".$this->conn->error.")".$this->conn->error);
+         }
+     }
+
+     // Delete data from database
+     public function delete($query){
+        $delete_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+        if($delete_row){
+           header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
+        }else{
+           die("Error: (".$this->conn->error.")".$this->conn->error);
+        }
+    }
 }
 ?>
 
