@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 11, 2021 at 10:06 AM
+-- Generation Time: Jul 13, 2021 at 09:49 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `babybuydb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE IF NOT EXISTS `admins` (
+  `AdminID` int(11) NOT NULL AUTO_INCREMENT,
+  `AdminFirstName` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AdminLastName` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AdminAddress` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `AdminCity` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `AdminPhone` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AdminEmail` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AdminPassword` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`AdminID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`AdminID`, `AdminFirstName`, `AdminLastName`, `AdminAddress`, `AdminCity`, `AdminPhone`, `AdminEmail`, `AdminPassword`) VALUES
+(1, 'Yuval', 'Shai', 'Hamarganyot 13', 'Ramat Yishai', '0528954775', 'yuvalshai95@gmail.com', '123456'),
+(2, 'Yuval', 'Shai', 'Hamarganyot 13', 'Ramat Yishai', '0528954775', 'yuvalshai95@gmail.com', '123456');
 
 -- --------------------------------------------------------
 
@@ -48,8 +75,8 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `UserID` int(11) NOT NULL,
   `CategoryID` int(11) NOT NULL,
   PRIMARY KEY (`NotificationID`),
-  KEY `Notification1` (`UserID`),
-  KEY `Notification2` (`CategoryID`)
+  KEY `Notification2` (`CategoryID`),
+  KEY `Notification1` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -93,22 +120,22 @@ CREATE TABLE IF NOT EXISTS `sub_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `UserID` int(11) NOT NULL AUTO_INCREMENT,
-  `Role` varchar(30) NOT NULL,
-  `FirstName` varchar(30) NOT NULL,
-  `LastName` varchar(30) NOT NULL,
-  `City` varchar(25) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `UserPassword` varchar(30) NOT NULL,
-  `PhoneNumber` varchar(30) DEFAULT NULL,
-  `Interest` varchar(30) DEFAULT NULL,
+  `FirstName` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `LastName` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `City` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `UserEmail` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `UserPassword` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PhoneNumber` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Interest` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Address` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -132,14 +159,14 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
 -- Constraints for table `notification`
 --
 ALTER TABLE `notification`
-  ADD CONSTRAINT `Notification1` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`),
+  ADD CONSTRAINT `Notification1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`),
   ADD CONSTRAINT `Notification2` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`);
 
 --
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `Product` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`);
+  ADD CONSTRAINT `Product` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 
 --
 -- Constraints for table `sub_category`
@@ -152,7 +179,7 @@ ALTER TABLE `sub_category`
 --
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `Wishlist1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`),
-  ADD CONSTRAINT `Wishlist2` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`);
+  ADD CONSTRAINT `Wishlist2` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
