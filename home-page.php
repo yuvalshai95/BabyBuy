@@ -60,6 +60,40 @@
   <!-- top nav bar -->
   <?php include_once 'includes/navTop.php'; ?>
 
+    <br><br><br>
+
+  <div class="container">
+
+<!--Categories Navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark mdb-color lighten-3 mt-3 mb-5">
+
+  <!-- Navbar brand -->
+  <span class="navbar-brand">Categories:</span>
+
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">  </ul>
+   <!-- Links -->
+
+  <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search Text" aria-label="Search">
+            </div>
+          </form>
+  </div>
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
   <!--Carousel Wrapper-->
   <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
 
