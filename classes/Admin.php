@@ -37,13 +37,17 @@ class Admin{
 
              // If there is a match with the db
             if ($result != false) {
+
+                //data variables we want to save in our session 
+                //from the admin table in the db
+                //value is taken from the database
                 $value = $result->fetch_assoc();
                 Session::set("adminLoginFromAdminClass", true);
                 Session::set("AdminID",$value['AdminID']);
                 Session::set("AdminEmail",$value['AdminEmail']);
                 Session::set("AdminFirstName",$value['AdminFirstName']);
-                header("Location: ../admin/index.php");
-            }  else{ // No match from the db
+                header("Location: http://localhost/babybuy/admin/dashboard.php");
+            }else{ // No match from the db
                 
                 $login_msg = "username or password not matching";
                 return $login_msg;

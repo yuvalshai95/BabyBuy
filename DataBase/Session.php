@@ -21,16 +21,29 @@ class Session{
 
     public static function destroySession(){
         session_destroy();
-        header("Location:home-page.php");
+        header("Location:http://localhost/babybuy/admin/dashboard.php");
     }
 
     public static function checkLogin(){
         self::init();
         if (self::get("adminLoginFromAdminClass") == true ) {
-            header("Location: ../admin/dashbord.php");
+            header("Location:http://localhost/babybuy/admin/dashboard.php");
         }
-
     }
+
+    public static function checkSession(){
+        self::init();
+        if(self::get("adminLoginFromAdminClass") == false){
+        self::destroySession();
+        header("Location:http://localhost/babybuy/admin/login.php");
+        }
+    }
+
+
+
+
+
+
 }
 
 ?>
