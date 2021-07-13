@@ -31,6 +31,7 @@ class Admin{
 
         }else{ // Both fields info are sent to the db to find a match
 
+            // Syntax: SELECT * FROM `table_name` WHERE `condition`
             $query = "SELECT * FROM admins WHERE AdminEmail='$adminEmail' AND AdminPassword='$adminPass'";
 
              $result = $this->db->select($query); // Send query to db using select method from DataBase class

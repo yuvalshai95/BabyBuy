@@ -45,7 +45,7 @@ class Database{
 
      // Insert data to database
      public function insert($query){
-         $insert_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+         $insert_row = $this->link->query($query) or die ($this->link->error.__LINE__);
          if($insert_row){
              return $insert_row;
              exit();
@@ -56,7 +56,7 @@ class Database{
      
      // Update data from database
      public function update($query){
-         $update_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+         $update_row = $this->link->query($query) or die ($this->link->error.__LINE__);
          if($update_row){
             return $update_row;
          }else{
@@ -66,7 +66,7 @@ class Database{
 
      // Delete data from database
      public function delete($query){
-        $delete_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+        $delete_row = $this->link->query($query) or die ($this->link->error.__LINE__);
         if($delete_row){
           return $delete_row;
         }else{

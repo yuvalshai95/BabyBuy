@@ -53,6 +53,13 @@ a:hover {
 }
 
 
+.success{font-size:18px; color: green;}
+.error{font-size:18px; color: red;}
+
+
+
+
+
 /* headings
 ----------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {line-height:1.2em; margin-bottom:.3em;}
