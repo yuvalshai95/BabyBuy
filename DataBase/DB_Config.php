@@ -1,52 +1,52 @@
+<?php include_once 'utils.php'; ?>
 
 <!-- Method2 MySQLi Procedural Query-->
 
-<?php require_once 'utils.php';?>
-
 <?php
-class Database
-{
+class Database{
+
 // Creating database variables using utils define globals 
-    private $host        = host; 
-    private $db_name     = db_name;
-    private $username    = username;
-    private $password    = password;
-    public $conn;
+    public $host        = DB_HOST; 
+    public $user    = DB_USER;
+    public $pass    = DB_PASS;
+    public $dbname     = DB_NAME;
 
-    // Open db connection
-    public function Open_DB_Connection(){
+    public $link;
+    public $error;
 
-        $this->conn = null;
-        try //Trying to connect the server using variables
-		    {
-                $this->conn =new mysqli($this->host, $this->username, $this->password, $this->db_name);
 
-             } catch(Exception $e){ //Could not connect to the server
-                echo "Connection error message: " . $e->getMessage(); //print error msg
-             }
-             
-        return $this->conn; //opening the connection with the server
+    // when new instance of database is made open the connection
+    public function __construct(){
+        $this->connectDB();  
     }
 
-    // Close db connection
-    public function Close_DB_Connection(){
-        $this->conn->close(); //close the conneection with the server
-     }
+    // Open db connection method
+    private function connectDB(){
 
+        $this->link = new mysqli($this->host,$this->user, $this->pass, $this->dbname);
+
+        if(!$this->link) {
+            $this->error ="connection to database failed: ".$this->link->connect_error;
+              return false;
+           }
+        }
+
+     // Select or Read data from database   
      public function select($query){
-         $result = $this->conn->query($query) or die ($this->conn->error.__LINE__);
-         if($result->num_rows > 0){
-             return $result;
-         }else{
-             return false;
+        $result = $this->link->query($query) or die ($this->link->error.__LINE__);
+
+        if($result->num_rows > 0){
+            return $result;
+            } else {
+                return false;
+            }   
          }
-     }
 
      // Insert data to database
      public function insert($query){
          $insert_row = $this->conn->query($query) or die ($this->conn->error.__LINE__);
          if($insert_row){
-             header("Location: ../BootStrap_MDB_Tamplate/home-page?msg=".urlencode('Data inserted Successfully'));
+             return $insert_row;
              exit();
          }else{
              return false;

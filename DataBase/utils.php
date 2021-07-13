@@ -1,6 +1,6 @@
 <?php
-define("host","localhost");
-define("username","root");
-define("password","");
-define("db_name","babybuydb");
+define("DB_HOST","localhost");
+define("DB_USER","root");
+define("DB_PASS","");
+define("DB_NAME","babybuydb");
 ?>
