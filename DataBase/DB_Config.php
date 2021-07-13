@@ -1,15 +1,16 @@
-<?php include_once 'utils.php'; ?>
 
-<!-- Method2 MySQLi Procedural Query-->
+<!-- define var -->
+<?php include_once 'utils.php'; ?> 
 
+<!-- Method2 MySQLi OOP Query-->
 <?php
 class Database{
 
 // Creating database variables using utils define globals 
-    public $host        = DB_HOST; 
+    public $host    = DB_HOST; 
     public $user    = DB_USER;
     public $pass    = DB_PASS;
-    public $dbname     = DB_NAME;
+    public $dbname  = DB_NAME;
 
     public $link;
     public $error;
