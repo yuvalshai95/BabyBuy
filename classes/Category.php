@@ -42,7 +42,12 @@ class Category{
        }
   }
 
-
+  // Get all categories names from db
+  public function getAllCategories(){
+      $query = "SELECT * FROM category ORDER BY CategoryID DESC";
+      $result = $this->db->select($query);
+      return $result;
+  }
 
 
 
