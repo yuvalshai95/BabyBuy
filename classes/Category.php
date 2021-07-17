@@ -33,7 +33,7 @@ class Category{
 
            // Checking if the insert was good
            if ($catinsert) {
-               $msg = "<span class='success'>Category Inserted Successfully.</span> ";
+               $msg = "<span class='success'>Category ".'"'.$catName.'"'." Inserted Successfully.</span> ";
                return $msg;
            }else {
                $msg = "<span class='error'>Category Not Inserted .</span> ";
