@@ -27,6 +27,7 @@
 						$i = 0; // Var for replacing id
 
 						// While loop to go through every category name
+					    // Making result var an assoc array
 						while ($result = $getCat->fetch_assoc()) { 
 							$i++;
 					?> <!-- Ending the php tag to write html code -->
