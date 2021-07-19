@@ -1,0 +1,71 @@
+<?php include 'inc/header.php';?>
+<?php include 'inc/sidebar.php';?>
+<?php require_once '../classes/Category.php'; ?>
+
+<?php 
+// Getting the categoryID from catlist page after clicking edit btn
+if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
+    // Reload catlist.php page script.. can't edit with null ID
+    echo "<script>window.location = 'catlist.php'; </script>";
+}else{
+    $id = $_GET['categoryid'];
+}
+
+?>
+
+
+
+<?php
+    $cat = new Category(); // Creating new instance that connect to db with CRUD operation
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $CategoryName = $_POST['CategoryName']; // Input from the form to send to the db
+
+        $insertCat = $cat->catInsert($CategoryName); // Getting the msg from the method
+    }
+?>
+
+        <div class="grid_10">
+            <div class="box round first grid">
+                <h2>Update Category</h2>
+               <div class="block copyblock">
+                
+               <!-- Succsess or Error msg -->
+               <?php   
+                    if (isset($insertCat)) {
+                        echo $insertCat;
+                    }
+                ?>
+
+
+                <?php
+                $getCategory = $cat->getCategoryByID($id); // Getting a category by ID
+                if ($getCategory) {
+                    // While loop to go through every category name
+					// Making result var an assoc array
+                    while ($result = $getCategory->fetch_assoc()){ 
+
+                ?> <!-- Ending the php tag to write html code -->
+
+
+                 <form action=" " method="post">
+                    <table class="form">					
+                        <tr>
+                            <td>
+                                <!-- Showing category name on the value attribute from the db-->
+                                <input type="text" name="CategoryName" value="<?php echo $result['CategoryName']; ?>" class="medium" />
+                            </td>
+                        </tr>
+						<tr> 
+                            <td>
+                                <input type="submit" name="submit" Value="Update" />
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+                    <?php } } ?> <!-- closing the While loop and if stmt with php tags -->
+
+                </div>
+            </div>
+        </div>
+<?php include 'inc/footer.php';?>

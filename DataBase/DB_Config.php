@@ -24,7 +24,8 @@ class Database{
     // Open db connection method
     private function connectDB(){
 
-        $this->link = new mysqli($this->host,$this->user, $this->pass, $this->dbname,"3308");
+        // add "3308" port at the end if errors are showing
+        $this->link = new mysqli($this->host,$this->user, $this->pass, $this->dbname);
 
         if(!$this->link) {
             $this->error ="connection to database failed: ".$this->link->connect_error;

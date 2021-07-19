@@ -50,6 +50,17 @@ class Category{
   }
 
 
+  // Get a category by id from db
+  public function getCategoryByID($id){
+      $query = "SELECT * FROM category WHERE CategoryID = '$id'";
+      $result = $this->db->select($query);
+      return $result;
+  }
+
+
+
+
+
 
 
 
