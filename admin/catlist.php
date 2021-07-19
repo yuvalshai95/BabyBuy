@@ -83,14 +83,16 @@
 				}
 			</script> -->
 
+
+		<!-- plug-in for the jQuery Javascript library. to show X entries && Smart Search option && showing total entries -->
 		<script type="text/javascript">
 			$(document).ready(function () {
 				setupLeftMenu();
-
 				$('.datatable').dataTable();
 				setSidebarHeight();
 			});
 		</script>
+		<!----------------------------------------------------------------------------------->
 
 <?php include 'inc/footer.php';?>
 
