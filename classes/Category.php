@@ -75,7 +75,7 @@ class Category{
 
   }else{
       // Syntax UPDATE table_name SET field1 = new-value1
-      $query = "UPDATE category SET CategoryName = '$CategoryName' WHERE CategoryID = '$id' ";
+      $query = "UPDATE category SET CategoryName = '$CategoryName' WHERE CategoryID = '$id'";
 
       // Using the DataBase class update method
       // Running the query
@@ -87,13 +87,28 @@ class Category{
         return $msg;
 
       }else{
-        $msg = "<span class = 'error'> Category was not updated error occurred! </span>";
+        $msg = "<span class = 'error'> Category was not updated an error occurred! </span>";
         return $msg;
       }
   }
 }
 
 
+ // Delete Category By ID
+  public function deleteCategoryById($id, $name){
+
+    // Syntax DELETE FROM table_name WHERE condition1 = value1
+    $query = "DELETE FROM category WHERE CategoryID = '$id'";
+    $deletedData = $this->db->delete($query);
+    if ($deletedData) {
+        $msg = "<span class='success'>Category ".'"'.$name.'"'." Deleted Successfully.</span> ";
+        return $msg;
+    }else{
+        $msg = "<span class = 'error'> Category was not deleted an error occurred! </span>";
+        return $msg;
+    }
+
+}
 
 
 

@@ -3,12 +3,12 @@
 <?php require_once '../classes/Category.php'; ?>
 
 <?php 
-// Getting the categoryID from catlist page after clicking edit btn
+// Getting the categoryID from catlist page after clicking edit btn using the GET Method
 if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
 
     // Reload catlist.php page script.. can't edit with null ID
     echo "<script>window.location = 'catlist.php'; </script>";
-    
+
 }else{
     $id = $_GET['categoryid'];
 }
