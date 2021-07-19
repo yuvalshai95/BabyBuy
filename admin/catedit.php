@@ -41,10 +41,11 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                 <?php
                 $getCategory = $cat->getCategoryByID($id); // Getting a category by ID
                 if ($getCategory) {
-                    // While loop to go through every category name
-					// Making result var an assoc array
-                    while ($result = $getCategory->fetch_assoc()){ 
-
+                    
+                    // Making result var an assoc array 
+                    // (should be an array of 2 -> categoryId && categoryName)
+                    $result = $getCategory->fetch_assoc();
+                   
                 ?> <!-- Ending the php tag to write html code -->
 
 
@@ -52,7 +53,7 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                     <table class="form">					
                         <tr>
                             <td>
-                                <!-- Showing category name on the value attribute from the db-->
+                                <!-- Showing category name on the value attribute from the db using result var-->
                                 <input type="text" name="CategoryName" value="<?php echo $result['CategoryName']; ?>" class="medium" />
                             </td>
                         </tr>
@@ -63,7 +64,7 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                         </tr>
                     </table>
                     </form>
-                    <?php } } ?> <!-- closing the While loop and if stmt with php tags -->
+                    <?php }  ?> <!-- closing the if statment with php tag -->
 
                 </div>
             </div>
