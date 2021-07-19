@@ -5,8 +5,10 @@
 <?php 
 // Getting the categoryID from catlist page after clicking edit btn
 if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
+
     // Reload catlist.php page script.. can't edit with null ID
     echo "<script>window.location = 'catlist.php'; </script>";
+    
 }else{
     $id = $_GET['categoryid'];
 }
@@ -21,7 +23,7 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $CategoryName = $_POST['CategoryName']; // Input from the form to send to the db
 
-        $insertCat = $cat->catInsert($CategoryName); // Getting the msg from the method
+        $updateCategory = $cat->categoryUpdateName($CategoryName, $id); // Getting the msg from the method
     }
 ?>
 
@@ -32,8 +34,8 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                 
                <!-- Succsess or Error msg -->
                <?php   
-                    if (isset($insertCat)) {
-                        echo $insertCat;
+                    if (isset($updateCategory)) {
+                        echo $updateCategory;
                     }
                 ?>
 
