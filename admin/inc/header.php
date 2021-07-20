@@ -68,7 +68,7 @@
 
                             ?>
 
-                            <!-- Making Hello Dynamic -->
+                            <!-- Making Hello Dynamic @@@ -->
                             <li>Hello   <?php echo Session::get('AdminFirstName') ?>  </li>
                             <li><a href="?action=logout">Logout</a></li>
 
