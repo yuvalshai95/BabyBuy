@@ -1,20 +1,6 @@
 <!--Footer Start ----------------------------------------------------------------------------------------------------------------------->
 <footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
-  
-<!--Call to action-->
-<div class="pt-4">
-  <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-    role="button">Download MDB
-    <i class="fas fa-download ml-2"></i>
-  </a>
-  <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-    free tutorial
-    <i class="fas fa-graduation-cap ml-2"></i>
-  </a>
-</div>
-<!--/.Call to action-->
-
 <hr class="my-4">
 
 <!-- Social icons -->
@@ -55,8 +41,7 @@
 
 <!--Copyright-->
 <div class="footer-copyright py-3">
-  © 2019 Copyright:
-  <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+  © 2021 Yuval & Adi
 </div>
 <!--/.Copyright-->
 

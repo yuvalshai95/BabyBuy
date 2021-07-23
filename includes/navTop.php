@@ -67,22 +67,27 @@
           <li class="nav-item">
             <a href="#" class="nav-link waves-effect" target="_blank">
               <i class="fab fa-facebook-f"></i>
-              <span>FaceBook</span>
+              <span>Facebook</span>
             </a>
           </li>
 
-          <!-- Right Nav Bar Twitter-->
+          <!-- Right Nav Bar Login-->
           <li class="nav-item">
             <a href="#" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-twitter"></i>
-              <span>Twitter</span>
+
+              <span>Login</span>
             </a>
           </li>
 
-          <!-- Right Nav Bar GitHub-->
+          <hr style="display:flex; color:#000; background:#000; height:20px; width:2px; border:0px; align-items: center;">
+
+          <!-- background:#000; border:0; color:#000; display:block; height:30px; width:2px;  -->
+
+
+          <!-- Right Nav Bar Register-->
           <li class="nav-item">
             <a href="#" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-github mr-2"></i>MDB GitHub
+            <span>Register</span>
             </a>
           </li>
 
