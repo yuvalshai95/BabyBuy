@@ -8,7 +8,7 @@
 
 
     <!-- style Home Page -->
-    <link href="stylehomep.css" rel="stylesheet">
+    <link href="styleA/homePageStyle.css" rel="stylesheet">
 
 
 </head>
@@ -16,7 +16,7 @@
 <body>
     
     <!-- top nav bar -->
-    <?php include_once 'navAdi.php';?>
+    <?php include_once 'includes/navTop.php'; ?>
 
     <br> <br> <br>
 

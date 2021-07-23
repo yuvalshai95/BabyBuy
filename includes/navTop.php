@@ -1,100 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style navBar -->
+    <link href="styleA/navStyle.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="col-md-3 logo">
+            <img class="logo" src="img/not_real_logo.png" alt="logo">
+        </div>
+        <div class="col-md-6 navbar">
+            <nav>
+                <ul class="nav__links">
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="#">Categories</a></li>
+                    <li> <a href="#">Sell</a></li>
+                    <li> <a href="#">About Us</a></li>
+                </ul>
+            </nav>
 
-  <!-- Navbar Start--------Navbar----------------------Navbar--------------------------Navbar-----------------Navbar--------------------------->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-    <div class="container">
+        </div>
 
-      <!-- Brand Nav Bar -->
-      <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-        <strong class="blue-text">BabyBuy Nav</strong>
-      </a>
-
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-<!------------------------------------------------------------------------------------------------------------------------------------------>
-
-        <!-- Left Nav Bar Texts -->
-        <ul class="navbar-nav mr-auto">
-
-        <!--Left Nav Bar HomeText-->
-          <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-
-          <!--Left Nav Bar text1-->
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="#" target="_blank">Text1</a>
-          </li>
-
-          <!--Left Nav Bar text2-->
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="#"
-              target="_blank">Text2</a>
-          </li>
-
-           <!--Left Nav Bar text3-->
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="#" target="_blank">Text3</a>
-          </li>
-        </ul>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------>
-
-        <!-- Right Nav Bar Texts-->
-        <ul class="navbar-nav nav-flex-icons">
-
-        <!-- Right Nav Bar WishlistText and Icon-->
-          <li class="nav-item">
-          <!-- Border around the text-->
-            <a class="nav-link border border-light rounded waves-effect">
-            <!-- Number of items in Wishlist-->
-              <span class="badge red z-depth-1 mr-1"> 5 </span>
-            <!-- Heart Icon-->
-              <i class="fas fa-heart pe-2"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Wishlist </span>
-            </a>
-          </li>
-
-          <!-- Right Nav Bar FaceBookIcon-->
-          <li class="nav-item">
-            <a href="#" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-facebook-f"></i>
-              <span>Facebook</span>
-            </a>
-          </li>
-
-          <!-- Right Nav Bar Login-->
-          <li class="nav-item">
-            <a href="#" class="nav-link waves-effect" target="_blank">
-
-              <span>Login</span>
-            </a>
-          </li>
-
-          <hr style="display:flex; color:#000; background:#000; height:20px; width:2px; border:0px; align-items: center;">
-
-          <!-- background:#000; border:0; color:#000; display:block; height:30px; width:2px;  -->
+        <div class="col-md-3 nav__buttons">
+            <ul>
+                <li class="nav-item">
+                    <a href="#" class="wishlistBTN">
+                        <button type="button" class="btn btn-outline-light">
+                            <span style="font-size: 130%; color: #edf0f1;">
+                            &hearts;</span> Wishlist 
+                        </button>
+                    </a>
+                </li>
+                <li> <a class="cta" href="#"><button>Login</button></a> </li>
+                <li> <a class="cta" href="#"><button>Register</button></a> </li>
+            </ul>
+        </div>
+    </header>
 
 
-          <!-- Right Nav Bar Register-->
-          <li class="nav-item">
-            <a href="#" class="nav-link waves-effect" target="_blank">
-            <span>Register</span>
-            </a>
-          </li>
 
-        </ul>
+</body>
+</html>
 
-      </div>
 
-    </div>
-  </nav>
-  <!-- Navbar End------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
