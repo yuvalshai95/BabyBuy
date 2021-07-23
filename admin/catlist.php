@@ -10,7 +10,7 @@
 <?php 
     $cat = new Category(); // Creating new instance that connect to db with CRUD operation
 
-	// We have a Delete button so we have to check using the GET Method if it was clicked
+	// We have a *Delete button so we have to check using the GET Method if it was clicked
 	if ((isset($_GET['categoryId']) && (isset($_GET['categoryName'])))) {
 		$idToDelete = $_GET['categoryId'];
 		$catName = $_GET['categoryName'];
@@ -59,6 +59,7 @@
 
 							<td><a href="catedit.php?categoryid=<?php echo $result['CategoryID']; ?>"> Edit </a> || 
 								<a onclick="return confirm('Are You Sure You Want To Delete This Category?')" href="?categoryId=<?php echo $result['CategoryID']; ?>&categoryName=<?php echo $result['CategoryName']; ?>" > Delete </a> </td>
+								<!-- Get method to delete if the btn was click is at the top of the page -->
 						</tr>
 
 						<?php } } ?> <!-- closing the While loop and if stmt with php tags -->
