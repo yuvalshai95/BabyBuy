@@ -1,49 +1,34 @@
-<!--Footer Start ----------------------------------------------------------------------------------------------------------------------->
-<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footer</title>
+    
+    <!-- style footer -->
+    <link href="styleA/footerStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<hr class="my-4">
+</head>
+<body>
+    
+<footer>
+    <div class="footer-content">
+        <h3>BabyBuy</h3>
+        <p>Follow us on Facebook and Instagram</p>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
 
-<!-- Social icons -->
-<div class="pb-4">
-  <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-    <i class="fab fa-facebook-f mr-3"></i>
-  </a>
-
-  <a href="https://twitter.com/MDBootstrap" target="_blank">
-    <i class="fab fa-twitter mr-3"></i>
-  </a>
-
-  <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-    <i class="fab fa-youtube mr-3"></i>
-  </a>
-
-  <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-    <i class="fab fa-google-plus-g mr-3"></i>
-  </a>
-
-  <a href="https://dribbble.com/mdbootstrap" target="_blank">
-    <i class="fab fa-dribbble mr-3"></i>
-  </a>
-
-  <a href="https://pinterest.com/mdbootstrap" target="_blank">
-    <i class="fab fa-pinterest mr-3"></i>
-  </a>
-
-  <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-    <i class="fab fa-github mr-3"></i>
-  </a>
-
-  <a href="http://codepen.io/mdbootstrap/" target="_blank">
-    <i class="fab fa-codepen mr-3"></i>
-  </a>
-</div>
-<!-- Social icons -->
-
-<!--Copyright-->
-<div class="footer-copyright py-3">
-  © 2021 Yuval & Adi
-</div>
-<!--/.Copyright-->
+    <div class="footer-bottom">
+        <p>copyright &copy;2021 Yuval and Adi</p>
+    </div>
 
 </footer>
-<!--/.Footer END ---------------------------------------------------------------------------------------------------------------------------->
+
+
+</body>
+</html>

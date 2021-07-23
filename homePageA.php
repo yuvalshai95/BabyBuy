@@ -58,15 +58,12 @@
 
 
 
-esrdhtfghnbvvxffgh
-fgchvnbvcxvbn
-dxgfcgnb xml
+
+
     
 
-
     <!-- footer-->
-    <!-- ? -->
-
+    <?php include_once 'includes/footer.php'; ?>
 
 </body>
 </html>
