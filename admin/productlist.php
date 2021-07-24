@@ -5,15 +5,29 @@
         <h2>Post List</h2>
         <div class="block">  
             <table class="data display datatable" id="example">
+
+			<!-- Table Titles -->
 			<thead>
+			
 				<tr>
-					<th>Post Title</th>
+					<th>Product Serial No.</th>
+					<th>Product User ID</th>
+					<th>Product Name</th>
 					<th>Description</th>
+					<th>Pick Up</th>
+					<th>Age Group</th>
+					<th>Price</th>
+					<th>Remarks</th>
+					<th>Product Status</th>
+					<th>Product Condition</th>
 					<th>Category</th>
 					<th>Image</th>
 					<th>Action</th>
 				</tr>
+				
 			</thead>
+			<!--/ Table Titles -->
+
 			<tbody>
 				<tr class="odd gradeX">
 					<td>Trident</td>
