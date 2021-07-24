@@ -10,6 +10,8 @@
     <!-- style Home Page -->
     <link href="styleA/homePageStyle.css" rel="stylesheet">
 
+    <!-- style slideshow -->
+    <link href="styleA/slideshowStyle.css" rel="stylesheet">
 
 </head>
 
@@ -20,6 +22,8 @@
 
     <br> <br> <br>
 
+    <!-- search line --> 
+
     <div class="box">
         <form>
             <input type="text" name="" placeholder="Type...">
@@ -27,33 +31,88 @@
         </form>
     </div>
 
-<br> <br> <br>
+    <br> <br> <br>
     <!--  .............................................................................................................  -->
 
     <!-- Slideshow container -->
-    <div class="slideshow-container">
-
-        <img name="slide" width="80%" height="400" style="text-align: center;">
-
-        <!-- Next and previous buttons -->
-     
+    <div>
+        <?php //include_once 'SlideshowContainer.php'; ?> 
     </div>
-    <br>
 
-    <!-- The dots/circles 
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+   
+    <!-- image slider start -->
+    <div class="slider">
+            <div class="slides">
+                <!-- radio buttons start -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <!-- radio buttons end -->
+
+                <!-- slider images start -->
+                <div class="slide first">
+                    <img src="img/img1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/img2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="img/img3.jpg" alt="">
+                </div>
+                <!-- slider images end -->
+
+                <!-- automatic navigation start -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+                <!-- automatic navigation end -->
+        </div>
+
+        <!-- manual navigation start -->
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+        <!-- manual navigation end -->
+
     </div>
-    -->
+    <!-- image slider end -->
 
 
-
-
-
+        <script type="text/javascript">
+            var counter = 1;
+            setInterval(function(){
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 3) {
+                    counter = 1;
+                }
+            }, 5000)
+        </script>
 
     <br> <br> <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,32 +129,4 @@
 
 
 
-<script>
-    var i = 0;
-    var images = [];
-    var time = 4000;
-
-    // Image List:
-    images[0]= 'img/img1.jpg';
-    images[1]= 'img/img2.jpg';
-    images[2]= 'img/img3.jpg';
-
-    // Change Image:
-    function changeImg(){
-        document.slide.src = images[i];
-
-        if(i < images.length - 1){
-            i++;
-        } else{
-            i = 0;
-        }
-
-        setTimeout("changeImg()", time);
-
-    }
-
-    window.onload = changeImg;
-
-
-</script>
 
