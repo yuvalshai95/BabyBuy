@@ -31,15 +31,9 @@
         </form>
     </div>
 
-    <br> <br> <br>
+    <br> <br>
     <!--  .............................................................................................................  -->
-
-    <!-- Slideshow container -->
-    <div>
-        <?php //include_once 'SlideshowContainer.php'; ?> 
-    </div>
-
-   
+ 
     <!-- image slider start -->
     <div class="slider">
             <div class="slides">
@@ -82,22 +76,20 @@
     <!-- image slider end -->
 
 
-        <script type="text/javascript">
-            var counter = 1;
-            setInterval(function(){
-                document.getElementById('radio' + counter).checked = true;
-                counter++;
-                if (counter > 3) {
-                    counter = 1;
-                }
-            }, 5000)
-        </script>
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 3) {
+                counter = 1;
+            }
+        }, 5000)
+    </script>
 
-    <br> <br> <br>
+<!--  .............................................................................................................  -->
 
-
-
-
+<br> <br> <br>
 
 
 
