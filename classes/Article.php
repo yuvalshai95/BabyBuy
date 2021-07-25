@@ -10,7 +10,7 @@ class Article{
       $this->db = new Database();
   } 
 
-
+// TO-DO : Muiltiple images
 public function articleInsert($data, $file){
 
 $ArticleHeader    = mysqli_real_escape_string($this->db->link, $data['ArticleHeader'] );
