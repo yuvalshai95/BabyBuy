@@ -12,6 +12,7 @@
 				<tr>
 					<th>Product Serial No.</th>
 					<th>Product User ID</th>
+					<th>Category</th>
 					<th>Product Name</th>
 					<th>Description</th>
 					<th>Pick Up</th>
@@ -20,7 +21,6 @@
 					<th>Remarks</th>
 					<th>Product Status</th>
 					<th>Product Condition</th>
-					<th>Category</th>
 					<th>Image</th>
 					<th>Action</th>
 				</tr>
