@@ -11,7 +11,12 @@ class Product{
   }
 
   public function getAllProducts(){
-    $query  = "SELECT * FROM product ORDER BY ProductID DESC";
+    $query  = "SELECT product.*, category.CategoryName, users.FirstName
+               FROM product
+               INNER JOIN category ON product.ProductID = category.CategoryID
+               INNER JOIN users ON product.UserID = users.UserID
+               ORDER BY product.ProductID DESC";
+
     $result = $this->db->select($query);
     return $result; 
   }

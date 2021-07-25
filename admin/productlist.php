@@ -11,7 +11,7 @@ $format  = new Foramt();
 
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Post List</h2>
+        <h2>Product List</h2>
         <div class="block">  
             <table class="data display datatable" id="example">
 
@@ -20,8 +20,8 @@ $format  = new Foramt();
 			
 				<tr>
 					<th>Serial No.</th>
-					<th>User ID</th>
-					<th>Category</th>
+					<th>User-ID </th>
+					<th>Category-ID</th>
 					<th>Name</th>
 					<th>Description</th>
 					<th>Pick Up</th>
@@ -49,8 +49,8 @@ $format  = new Foramt();
 
 				<tr class="odd gradeX">
 					<td> <?= $i; ?> </td>
-					<td> <?= $result['UserID']; ?> </td>
-					<td><?= $result['ProductCategory']; ?></td>
+					<td> <?= $result['FirstName'].'-'.$result['UserID']; ?> </td>
+					<td><?= $result['CategoryName'].'-'.$result['ProductCategory'];; ?></td>
 					<td><?= $result['ProductName']; ?></td>
 					<td><?= $format->textShorten($result['Description'], 30); ?></td>
 					<td><?= $result['PickupOptions']; ?></td>

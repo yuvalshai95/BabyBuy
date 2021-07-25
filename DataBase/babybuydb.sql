@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 25, 2021 at 02:02 PM
+-- Generation Time: Jul 25, 2021 at 07:36 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -47,6 +47,37 @@ CREATE TABLE IF NOT EXISTS `admins` (
 INSERT INTO `admins` (`AdminID`, `AdminFirstName`, `AdminLastName`, `AdminAddress`, `AdminCity`, `AdminPhone`, `AdminEmail`, `AdminPassword`) VALUES
 (1, 'Yuval', 'Shai', 'Hamarganyot 13', 'Ramat Yishai', '0528954775', 'yuvalshai95@gmail.com', '123456'),
 (2, 'Yuval', 'Shai', 'Hamarganyot 13', 'Ramat Yishai', '0528954775', 'yuvalshai95@gmail.com', '123456');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles`
+--
+
+DROP TABLE IF EXISTS `articles`;
+CREATE TABLE IF NOT EXISTS `articles` (
+  `ArticleID` int(11) NOT NULL AUTO_INCREMENT,
+  `ArticleHeader` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ArticleCategory` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ArticleBody` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ArticleTimeStamp` timestamp NOT NULL,
+  PRIMARY KEY (`ArticleID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles_images`
+--
+
+DROP TABLE IF EXISTS `articles_images`;
+CREATE TABLE IF NOT EXISTS `articles_images` (
+  `ImageID` int(11) NOT NULL AUTO_INCREMENT,
+  `ArticleID` int(11) NOT NULL,
+  `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ImageID`),
+  KEY `Article1` (`ArticleID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -111,7 +142,15 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`ProductID`),
   KEY `Product` (`UserID`),
   KEY `Product2` (`ProductCategory`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`ProductID`, `UserID`, `ProductCategory`, `ProductName`, `Description`, `PickupOptions`, `Age`, `Price`, `Remarks`, `Status`, `ProductCondition`, `Picture`) VALUES
+(1, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', ''),
+(2, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', '');
 
 -- --------------------------------------------------------
 
@@ -146,6 +185,29 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Interest` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Address` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`UserID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `City`, `UserEmail`, `UserPassword`, `PhoneNumber`, `Interest`, `Address`) VALUES
+(1, 'Yuval', 'Shai', 'Ramat Yishai', 'yuval1234@gmail.com', 'yuval123456', '0528954775', NULL, NULL),
+(2, 'Yuval', 'Shai', 'Ramat Yishai', 'yuval1234@gmail.com', 'yuval123456', '0528954775', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_images`
+--
+
+DROP TABLE IF EXISTS `users_images`;
+CREATE TABLE IF NOT EXISTS `users_images` (
+  `ImageID` int(11) NOT NULL AUTO_INCREMENT,
+  `UserID` int(11) NOT NULL,
+  `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ImageID`),
+  KEY `UserImages` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -167,6 +229,12 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
 --
 
 --
+-- Constraints for table `articles_images`
+--
+ALTER TABLE `articles_images`
+  ADD CONSTRAINT `Article1` FOREIGN KEY (`ArticleID`) REFERENCES `articles` (`ArticleID`);
+
+--
 -- Constraints for table `notification`
 --
 ALTER TABLE `notification`
@@ -185,6 +253,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `sub_category`
   ADD CONSTRAINT `SubCategory1` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`);
+
+--
+-- Constraints for table `users_images`
+--
+ALTER TABLE `users_images`
+  ADD CONSTRAINT `UserImages` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 
 --
 -- Constraints for table `wishlist`
