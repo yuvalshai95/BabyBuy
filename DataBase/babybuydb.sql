@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 13, 2021 at 09:49 AM
+-- Generation Time: Jul 25, 2021 at 02:02 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `AdminEmail` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `AdminPassword` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`AdminID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admins`
@@ -59,7 +59,16 @@ CREATE TABLE IF NOT EXISTS `category` (
   `CategoryID` int(11) NOT NULL AUTO_INCREMENT,
   `CategoryName` varchar(25) NOT NULL,
   PRIMARY KEY (`CategoryID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`CategoryID`, `CategoryName`) VALUES
+(1, 'Toys'),
+(5, 'Bags'),
+(6, 'Dress');
 
 -- --------------------------------------------------------
 
@@ -88,18 +97,20 @@ CREATE TABLE IF NOT EXISTS `notification` (
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `ProductID` int(11) NOT NULL AUTO_INCREMENT,
+  `UserID` int(11) NOT NULL,
+  `ProductCategory` int(11) NOT NULL,
   `ProductName` varchar(255) NOT NULL,
   `Description` varchar(255) NOT NULL,
   `PickupOptions` varchar(20) NOT NULL,
   `Age` int(11) NOT NULL,
   `Price` float NOT NULL,
-  `Picture` varchar(255) NOT NULL,
   `Remarks` varchar(255) DEFAULT NULL,
   `Status` varchar(20) NOT NULL,
   `ProductCondition` varchar(255) NOT NULL,
-  `UserID` int(11) NOT NULL,
+  `Picture` varchar(255) NOT NULL,
   PRIMARY KEY (`ProductID`),
-  KEY `Product` (`UserID`)
+  KEY `Product` (`UserID`),
+  KEY `Product2` (`ProductCategory`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -166,7 +177,8 @@ ALTER TABLE `notification`
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `Product` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
+  ADD CONSTRAINT `Product` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`),
+  ADD CONSTRAINT `Product2` FOREIGN KEY (`ProductCategory`) REFERENCES `category` (`CategoryID`);
 
 --
 -- Constraints for table `sub_category`
