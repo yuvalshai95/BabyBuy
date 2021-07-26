@@ -30,6 +30,12 @@
                         <li><a href="productlist.php">Product List</a> </li>
                     </ul>
                 </li>
+                <li><a class="menuitem">Article Option</a>
+                    <ul class="submenu">
+                        <li><a href=articleadd.php>Add Article</a> </li>
+                        <li><a href="">Article List</a> </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
