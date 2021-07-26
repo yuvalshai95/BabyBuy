@@ -8,7 +8,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 
-        $insertArticle = $article->articleInsert($_POST, $_FILES['file']); // Getting the msg from the method
+        $insertArticle = $article->articleInsert($_POST, $_FILES); // Getting the msg from the method
     }
 ?>
 
@@ -73,7 +73,21 @@
                         <label>Upload Images</label>
                     </td>
                     <td>
-                        <input type="file" name="file"/>
+                        <input type="file" name="image[]" multiple/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <div class="images-display">
+
+
+                                        <img src = "img/photo.jpg" width="100px;" height="100px;">
+                                        <img src = "img/photo.jpg" width="100px;" height="100px;">
+                                        <img src = "img/photo.jpg" width="100px;" height="100px;">
+                        </div>
+                    
                     </td>
                 </tr>
 	
@@ -85,6 +99,7 @@
                     </td>
                 </tr>
                 <!-- Submit BTN END-->
+                
             </table>
             </form>
         </div>
