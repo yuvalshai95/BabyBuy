@@ -12,6 +12,7 @@
 </head>
 <body>
     
+<div class="recentCardsContainer">
     <div class="container">
         <div class="card">
             <div class="imgBx">
@@ -121,12 +122,9 @@
             </div>
         </div>
 
-
-
-
     </div>
 
-
+</div>
 
 
 
