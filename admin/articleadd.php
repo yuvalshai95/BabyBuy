@@ -73,7 +73,7 @@
                         <label>Upload Images</label>
                     </td>
                     <td>
-                        <input type="file" name="file" multiple/>
+                        <input type="file" name="file"/>
                     </td>
                 </tr>
 	
