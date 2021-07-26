@@ -1,0 +1,28 @@
+#images{
+    width: 90%;
+    
+    margin: auto;
+    padding-right: 100px;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+figure{
+    width: 100px;
+    display:inline-block;
+    margin-block-start: 0;
+    margin-inline-start: 1px;
+    margin-inline-end: 1px;
+}
+img{
+    width: 100px;
+
+}
+figcaption{
+    text-align: center;
+    font-size: 0.7vmin;
+    margin-top: 0.5vmin;
+}
+#profileimage{
+    width: 25px;
+}

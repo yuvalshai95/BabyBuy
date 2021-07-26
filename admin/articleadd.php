@@ -41,7 +41,7 @@
                         <label>Category</label>
                     </td>
                     <td>
-                        <select id="select" name="ArticleCategory">
+                        <select id="select" name="ArticleCategory" aria-placeholder="TEXT">
                             <option>Select Category</option>
 
                             <?php
@@ -73,19 +73,18 @@
                         <label>Upload Images</label>
                     </td>
                     <td>
-                        <input type="file" name="image[]" multiple/>
+                        <input type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
                     </td>
                 </tr>
 
                 <tr>
                     <td></td>
                     <td>
-                        <div class="images-display">
+                        <div class="images-display" id="images">
 
-
-                                        <img src = "img/photo.jpg" width="100px;" height="100px;">
-                                        <img src = "img/photo.jpg" width="100px;" height="100px;">
-                                        <img src = "img/photo.jpg" width="100px;" height="100px;">
+                                        <img src = "img/photo.jpg">
+                                        <img src = "img/photo.jpg">
+                                        <img src = "img/photo.jpg">
                         </div>
                     
                     </td>
@@ -116,6 +115,12 @@
     });
 </script>
 <!-- Load TinyMCE -->
+
+<!-- Image Preview -->
+<script src="js/imagePrev.js"></script>
+
+<!-- Image Preview -->
+
 <?php include 'inc/footer.php';?>
 
 
