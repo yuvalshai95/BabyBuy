@@ -92,8 +92,8 @@
 <br> <br> <br>
 
 
-
-
+    <!-- Product Cards -->
+    <?php include_once 'productCards.php'; ?>
 
 
 

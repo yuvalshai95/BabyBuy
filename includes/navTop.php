@@ -32,7 +32,7 @@
                     <a href="#" class="wishlistBTN">
                         <button type="button" class="btn btn-outline-light">
                             <span style="font-size: 130%; color: #edf0f1;">
-                            &hearts;</span> Wishlist 
+                            <i class="fas fa-heart" id="heart" style="color: #edf0f1; font-size: 16px;"></i></span> Wishlist 
                         </button>
                     </a>
                 </li>
