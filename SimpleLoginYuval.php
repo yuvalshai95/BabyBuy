@@ -23,13 +23,16 @@
 
     <div class="container">
         <div class="row content">
+
+             <!-- image Col -->
              <div class="col-md-6 mb-3">
                  <img src="img/HelloLogin.jpg" alt="image" class="img-fluid" id="image">
-
              </div>
-             <div class="col-md-6">
 
-                    <h3 class="signin-text mb-3">Sign in</h3>
+            <!-- Content Col -->
+             <div class="col-md-6 ">
+
+                    <h3 class="signin-text mb-3">Sign In</h3>
 
                     <form action="" method="post">
 
@@ -43,10 +46,6 @@
                             <input type="password" name="password" id="" class="form-control">
                         </div>
 
-                        <div class="form-group form-check" >
-                            <input type="checkbox" name="checkbox" class="form-check-input"></input>
-                            <label for="checkbox" class="form-check-label">Remember Me</label>      
-                        </div>
 
                         <button class="btn btn-class">Login</button>
 
