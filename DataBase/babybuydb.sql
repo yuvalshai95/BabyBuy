@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 25, 2021 at 07:36 PM
+-- Generation Time: Jul 28, 2021 at 04:43 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -61,8 +61,9 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `ArticleCategory` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ArticleBody` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `ArticleTimeStamp` timestamp NOT NULL,
+  `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ArticleID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -73,11 +74,11 @@ CREATE TABLE IF NOT EXISTS `articles` (
 DROP TABLE IF EXISTS `articles_images`;
 CREATE TABLE IF NOT EXISTS `articles_images` (
   `ImageID` int(11) NOT NULL AUTO_INCREMENT,
-  `ArticleID` int(11) NOT NULL,
+  `ImageName` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ImageID`),
-  KEY `Article1` (`ArticleID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ImageID`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `CategoryID` int(11) NOT NULL AUTO_INCREMENT,
   `CategoryName` varchar(25) NOT NULL,
   PRIMARY KEY (`CategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -204,10 +205,10 @@ INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `City`, `UserEmail`, `Us
 DROP TABLE IF EXISTS `users_images`;
 CREATE TABLE IF NOT EXISTS `users_images` (
   `ImageID` int(11) NOT NULL AUTO_INCREMENT,
-  `UserID` int(11) NOT NULL,
+  `ImageName` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ImageID`),
-  KEY `UserImages` (`UserID`)
+  `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ImageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -229,12 +230,6 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
 --
 
 --
--- Constraints for table `articles_images`
---
-ALTER TABLE `articles_images`
-  ADD CONSTRAINT `Article1` FOREIGN KEY (`ArticleID`) REFERENCES `articles` (`ArticleID`);
-
---
 -- Constraints for table `notification`
 --
 ALTER TABLE `notification`
@@ -253,12 +248,6 @@ ALTER TABLE `product`
 --
 ALTER TABLE `sub_category`
   ADD CONSTRAINT `SubCategory1` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`);
-
---
--- Constraints for table `users_images`
---
-ALTER TABLE `users_images`
-  ADD CONSTRAINT `UserImages` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 
 --
 -- Constraints for table `wishlist`
