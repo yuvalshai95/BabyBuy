@@ -81,7 +81,6 @@
                     <td></td>
                     <td>
                         <div class="images-display" id="images">
-
                                         <img src = "img/photo.jpg">
                                         <img src = "img/photo.jpg">
                                         <img src = "img/photo.jpg">
