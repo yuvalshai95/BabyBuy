@@ -102,7 +102,7 @@ else{
     $sqlIns .= "INSERT INTO articles_images(ImageName,ImagePath,ImageRefrence) 
                       VALUES $sqlValues";
     
-    $sqlIns = rtrim($sqlIns, ",");
+    $sqlIns = rtrim($sqlIns, ","); 
 
     $result = mysqli_multi_query($this->db->link, $sqlIns);
 
