@@ -72,25 +72,29 @@ $fileActualType = strtolower(end($fileType));
     $errorType .= "<span class = 'error'> File must be an Image...! </span>";
     return $errorType;
   }
+
+  else if ($ArticleHeader == "" || $ArticleCategory == "Select Category" || $ArticleBody == "" ) {
+    $message .= "<span class = 'error'> You cant have an empty field! </span>";
+    return $message;
+}
+
   else if( empty($message) ){ //No error all good
       
        $sqlValues .= "('".$fileNameUnique."', '".$filePath.$fileNameUnique."', '".$img_ref."'),";
        $store = move_uploaded_file($fileTmpName,$filePath.$fileNameUnique);
   }
+
 } // foreach closing loop
 
-if ($ArticleHeader == "" || $ArticleCategory == "Select Category" || $ArticleBody == "" ) {
-      $message .= "<span class = 'error'> You cant have an empty field! </span>";
-      return $message;
-}
-elseif ( !empty($errorType) || !empty($errorSize) || !empty($errorImage) ){
+
+if ( !empty($errorType) || !empty($errorSize) || !empty($errorImage) ){
 
   $message .= $errorType.= $errorSize.= $errorImage;
-  return $message;
-
-  
+  return $message; 
 }
+
 else{
+  
     $timestamp = date("Y-m-d H:i:s");
     $sqlIns = "INSERT INTO articles(ArticleHeader,ArticleCategory,ArticleBody,ArticleTimeStamp,ImageRefrence) 
                 VALUES ('$ArticleHeader', '$ArticleCategory', '$ArticleBody', ' $timestamp', '".$img_ref."');";
