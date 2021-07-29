@@ -73,6 +73,7 @@
                         <label>Upload Images</label>
                     </td>
                     <td>
+                        <!-- making image[] array to hold multiple images and JS to display preview -->
                         <input type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
                     </td>
                 </tr>
@@ -84,6 +85,7 @@
                                         <img src = "img/photo.jpg">
                                         <img src = "img/photo.jpg">
                                         <img src = "img/photo.jpg">
+                                        
                         </div>
                     
                     </td>
@@ -117,7 +119,6 @@
 
 <!-- Image Preview -->
 <script src="js/imagePrev.js"></script>
-
 <!-- Image Preview -->
 
 <?php include 'inc/footer.php';?>

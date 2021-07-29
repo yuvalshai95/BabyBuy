@@ -13,7 +13,7 @@
     <!-- bootstrap END -->
 
     <!-- CSS -->
-    <link href="css/LoginPage.css" rel="stylesheet">
+    <link href="css/LoginPage" rel="stylesheet">
     <!-- CSS -->
 
 
@@ -46,8 +46,15 @@
                             <input type="password" name="password" id="" class="form-control">
                         </div>
 
+                        <div class="form-group">
+
+                            <button class="btn btn-class">Login</button>
+                            <label for="" >Forgot Password?</label>
+                             
+                        </div>
+
                         
-                        <button class="btn btn-class">Login</button>
+                       
                         
                     </form>
              </div>
