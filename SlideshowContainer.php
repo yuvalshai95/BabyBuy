@@ -24,13 +24,13 @@
 
             <!-- slider images start -->
             <div class="slide first">
-                <img src="img/img1.jpg" alt="">
+                <img src="img/img5.jpg" alt="">
             </div>
             <div class="slide">
-                <img src="img/img2.jpg" alt="">
+                <img src="img/img4.jpg" alt="">
             </div>
             <div class="slide">
-                <img src="img/img3.jpg" alt="">
+                <img src="img/img6.jpg" alt="">
             </div>
             <!-- slider images end -->
 

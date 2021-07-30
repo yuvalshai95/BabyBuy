@@ -45,13 +45,13 @@
 
                 <!-- slider images start -->
                 <div class="slide first">
-                    <img src="img/img1.jpg" alt="">
+                    <img src="img/img10.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="img/img2.jpg" alt="">
+                    <img src="img/img9.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="img/img3.jpg" alt="">
+                    <img src="img/img5.jpg" alt="">
                 </div>
                 <!-- slider images end -->
 
@@ -94,7 +94,7 @@
 
     <!-- Product Cards - category -->
     <div class="title"><h2>FAVORITE CATEGORY</h2></div>
-    <?php include 'productCards.php'; ?>
+    <?php include 'favoriteCards.php'; ?>
 
 
     <!-- Product Cards - recent added -->
@@ -102,7 +102,9 @@
     <?php include 'productCards.php'; ?>
 
 
-
+    <!-- Articles Cards -->
+    <div class="title"><h2>ARTICLES</h2></div>
+    <?php include 'articlesCards.php'; ?>
 
 
 

@@ -16,7 +16,7 @@
     <div class="container">
         <div class="card">
             <div class="imgBx">
-                <img src="img/toy3.png" alt="">
+                <img src="img/dress.png" alt="">
                 <ul class="action">
                     <li>
                         <i class="fas fa-heart"></i>
@@ -30,10 +30,10 @@
             </div>
             <div class="content">
                 <div class="productName">
-                    <h3>Noisemaker</h3>
+                    <h3>Dress</h3>
                 </div>
                 <div class="price_status">
-                    <h2>$5.15</h2>
+                    <h2>$10.25</h2>
                     <div class="status">
                         <h4>New</h4>
                     </div>
@@ -43,7 +43,7 @@
 
         <div class="card">
             <div class="imgBx">
-                <img src="img/blanket.png" alt="">
+                <img src="img/carriage.png" alt="">
                 <ul class="action">
                     <li>
                         <i class="fas fa-heart"></i>
@@ -57,10 +57,10 @@
             </div>
             <div class="content">
                 <div class="productName">
-                    <h3>blanket</h3>
+                    <h3>Baby carriage</h3>
                 </div>
                 <div class="price_status">
-                    <h2>$5.00</h2>
+                    <h2>$110.55</h2>
                     <div class="status">
                         <h4>Used</h4>
                     </div>
@@ -70,7 +70,7 @@
 
         <div class="card">
             <div class="imgBx">
-                <img src="img/cradle.png" alt="">
+                <img src="img/toy.png" alt="">
                 <ul class="action">
                     <li>
                         <i class="fas fa-heart"></i>
@@ -84,10 +84,10 @@
             </div>
             <div class="content">
                 <div class="productName">
-                    <h3>Cradle</h3>
+                    <h3>Toy</h3>
                 </div>
                 <div class="price_status">
-                    <h2>$60.80</h2>
+                    <h2>$3.30</h2>
                     <div class="status">
                         <h4>Used</h4>
                     </div>
@@ -97,7 +97,7 @@
 
         <div class="card">
             <div class="imgBx">
-                <img src="img/pacifier.png" alt="">
+                <img src="img/toy2.png" alt="">
                 <ul class="action">
                     <li>
                         <i class="fas fa-heart"></i>
@@ -111,10 +111,10 @@
             </div>
             <div class="content">
                 <div class="productName">
-                    <h3>Pacifier</h3>
+                    <h3>Toy</h3>
                 </div>
                 <div class="price_status">
-                    <h2>$1.20</h2>
+                    <h2>$2.60</h2>
                     <div class="status">
                         <h4>New</h4>
                     </div>
@@ -125,13 +125,6 @@
     </div>
 
 </div>
-
-
-
-
-
-
-
 
 
 
