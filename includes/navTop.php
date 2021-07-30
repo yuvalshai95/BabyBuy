@@ -20,6 +20,7 @@
                     <li> <a href="#">Home</a></li>
                     <li> <a href="#">Categories</a></li>
                     <li> <a href="#">Sell</a></li>
+                    <li> <a href="#">Articles</a></li>
                     <li> <a href="#">About Us</a></li>
                 </ul>
             </nav>

@@ -92,8 +92,14 @@
 <br> <br> <br>
 
 
-    <!-- Product Cards -->
-    <?php include_once 'productCards.php'; ?>
+    <!-- Product Cards - category -->
+    <div class="title"><h2>FAVORITE CATEGORY</h2></div>
+    <?php include 'productCards.php'; ?>
+
+
+    <!-- Product Cards - recent added -->
+    <div class="title"><h2>RECENT ADDED</h2></div>
+    <?php include 'productCards.php'; ?>
 
 
 
