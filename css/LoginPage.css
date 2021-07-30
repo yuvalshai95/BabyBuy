@@ -13,7 +13,6 @@ body{
 #image{
     border-radius: 100%;
     opacity: 0.8;
-    height: 100% ;
     padding: 0.5rem 3rem;
 }
 
@@ -52,11 +51,30 @@ body{
 
 .btn-class{
     border-color: orange;
-    color: black;
+    color: orange;
     background-color: white;
 }
 
 .btn-class:hover{
     background-color: orange;
     color:white;
+    border-color: orange;
 }
+
+.forgotPass {
+    float: right;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+.tooltip-inner {
+    background-color: orange !important;
+    color: white;
+  }
+
+  
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+    border-bottom-color: orange !important;
+}
+  
+
