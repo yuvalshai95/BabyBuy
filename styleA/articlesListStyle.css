@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* "Montserrat", sans-serif */
+
+body {
+    background: rgb(245, 240, 176);
+}
+
+h1, h2 {
+    color: #333 !important;
+    margin: 5px;
+    margin-left: 0px;
+    text-decoration: none;
+    font-weight: 1000;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 1000;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.content {
+    width: 75%;
+    margin: 30px auto 30px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.content .main-content {
+    width: 70%;
+    float: left;
+}
+
+.content .main-content .recent-post-title {
+    margin: 20px;
+}
+
+.content .main-content .post {
+    width: 95%;
+    height: 270px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background: #fff;
+    position: relative;
+}
+
+.content .main-content .post .read-more {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid rgb(248, 185, 48);
+    background: transparent;
+    border-radius: 0px;
+    color: rgb(248, 185, 48);
+}
+
+.content .main-content .post .read-more:hover {
+    background: rgb(248, 185, 48);
+    color: #edf0f1;
+    transition: .25s;
+}
+
+.content .main-content .post .post-image {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.content .main-content .post .post-preview {
+    width: 56%;
+    padding: 10px;
+    float: right;
+}
+
+.readMoreBTN {
+    padding: .5rem 1rem;
+    background: rgb(248, 185, 48);
+    color: #edf0f1;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.readMoreBTN:hover {
+    background: rgba(226, 136, 0);
+}
+
+h2 a:hover {
+    color: rgba(226, 136, 0) !important;
+}
+
+.content .sidebar {
+    width: 29.5%;
+    float: left;
+    border: 1px dashed rgb(233, 170, 54);
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
