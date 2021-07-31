@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
     <link href="styleA/css/all.css" rel="stylesheet">
+    <link href="styleA/css/all.min.css" rel="stylesheet">
 
         <!-- style Product Page -->
         <link href="styleA/productPage.css" rel="stylesheet">
@@ -76,22 +77,15 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+    <!-- footer-->
+    <?php include_once 'productsSlider.php'; ?>
 
 
 
     <!-- footer-->
     <?php include_once 'includes/footer.php'; ?>
+
+
 
 <script>
     var ProductImgg = document.getElementById("ProductImg");
@@ -113,6 +107,7 @@
     }
 
 </script>
+
 
 
 

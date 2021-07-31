@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    background: rgb(245, 240, 176);
+    overflow: hidden; 
+    font-family: "Montserrat", sans-serif; 
+    margin-bottom: 60px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.slider{
+    margin: 10px; 
+    width: 250px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif; 
+}
+
+.image{
+    position: relative;
+}
+
+.image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.product-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    bottom: 0;
+    width: 250px;
+    position: absolute;
+}
+
+.product-name{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name a{
+    color: #333;
+    margin: 8px 0px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+span{
+    color: #333;
+}
+
+.price{
+    color: rgba(226, 136, 0, 0.808);
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(226, 136, 0, 0.508);
+}
+
+.Pbtn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 12px;
+   height: 40px;
+   width: 120px;
+   background-color: rgb(248, 185, 48);
+   color: #edf0f1;
+   font-size: 18px;
+   font-weight: bolder;
+}
+
+.Pbtn:hover{
+    background-color: rgba(226, 136, 0);
+    transition: all ease 1s;
+}
+
+.Button{
+    visibility: hidden;
+}
+
+.slider:hover .image .Button{
+    visibility: visible;
+    animation: animation 1s;
+}
+
+@keyframes animation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.container{
+    display: flex;
+    justify-content: left;
+    height: 360px;
+    width: 4000px;
+    margin: 10px auto;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.arrow{
+    position: absolute;
+    top: 1500px;
+    right: 0px;
+    color: #333;
+    background-color: rgba(226, 136, 0, 0.808);
+    font-size: 100px;
+    cursor: pointer;
+}
+
