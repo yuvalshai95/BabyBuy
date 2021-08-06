@@ -50,7 +50,7 @@ class Admin{
                 header("Location: http://localhost/babybuy/admin/dashboard.php");
             }else{ // No match from the db
                 
-                $login_msg = "username or password not matching";
+                $login_msg = "Username or Password  are not matching...!";
                 return $login_msg;
             }     
         }
