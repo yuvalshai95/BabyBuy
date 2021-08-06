@@ -91,14 +91,14 @@ $format  = new Foramt();
 								if($dateDiff >= 14){
 
 									// Display the result in red
-									$msg = "<span class = 'error'> ".$dateDiff." Days </span>";
+									$msg = "<span class = 'error'> ".$dateDiff."  </span>";
 									echo $msg;
 									
 								}
 								else{
 
 									// Display the result in green
-									$msg = "<span class = 'success'> ".$dateDiff." Days </span>";
+									$msg = "<span class = 'success'> ".$dateDiff." </span>";
 									echo $msg;
 								}
 

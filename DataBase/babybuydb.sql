@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 28, 2021 at 04:43 PM
+-- Generation Time: Aug 06, 2021 at 01:40 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -63,7 +63,19 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `ArticleTimeStamp` timestamp NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ArticleID`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `articles` (`ArticleID`, `ArticleHeader`, `ArticleCategory`, `ArticleBody`, `ArticleTimeStamp`, `ImageRefrence`) VALUES
+(34, 'TEST', ' 1 ', '<p>TEST</p>', '2021-07-29 15:17:55', '932698548'),
+(35, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:20:48', '1984400983'),
+(36, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:28:07', '1426813822'),
+(37, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:15', '1636908455'),
+(38, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:34', '1300088998'),
+(39, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:51', '1642459274');
 
 -- --------------------------------------------------------
 
@@ -78,7 +90,21 @@ CREATE TABLE IF NOT EXISTS `articles_images` (
   `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ImageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `articles_images`
+--
+
+INSERT INTO `articles_images` (`ImageID`, `ImageName`, `ImagePath`, `ImageRefrence`) VALUES
+(41, '6102f0d33327a9.45365369.png', 'C:/wamp64/www/BabyBuy/admin/Web/6102f0d33327a9.45365369.png', '932698548'),
+(42, '6102f0d3334f31.99951486.jpg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f0d3334f31.99951486.jpg', '932698548'),
+(43, '6102f0d3336419.18121127.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f0d3336419.18121127.jpeg', '932698548'),
+(44, '6102f180c3b7d9.05751776.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f180c3b7d9.05751776.jpeg', '1984400983'),
+(45, '6102f337baba78.71356909.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f337baba78.71356909.jpeg', '1426813822'),
+(46, '6102f51f885166.00004651.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f51f885166.00004651.jpeg', '1636908455'),
+(47, '6102f532be1be3.97683709.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f532be1be3.97683709.jpeg', '1300088998'),
+(48, '6102f5437044f1.37383289.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f5437044f1.37383289.jpeg', '1642459274');
 
 -- --------------------------------------------------------
 
@@ -140,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Status` varchar(20) NOT NULL,
   `ProductCondition` varchar(255) NOT NULL,
   `Picture` varchar(255) NOT NULL,
+  `ProductTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`ProductID`),
   KEY `Product` (`UserID`),
   KEY `Product2` (`ProductCategory`)
@@ -149,9 +176,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`ProductID`, `UserID`, `ProductCategory`, `ProductName`, `Description`, `PickupOptions`, `Age`, `Price`, `Remarks`, `Status`, `ProductCondition`, `Picture`) VALUES
-(1, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', ''),
-(2, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', '');
+INSERT INTO `product` (`ProductID`, `UserID`, `ProductCategory`, `ProductName`, `Description`, `PickupOptions`, `Age`, `Price`, `Remarks`, `Status`, `ProductCondition`, `Picture`, `ProductTime`) VALUES
+(1, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', '', '2021-08-06 12:41:59'),
+(2, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', '', '2021-08-06 12:41:59');
 
 -- --------------------------------------------------------
 
