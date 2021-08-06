@@ -50,19 +50,19 @@ $format  = new Foramt();
 			?>
 
 				<tr class="odd gradeX">
-					<td style="text-align: center; vertical-align: middle;"> <?= $i; ?> </td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['FirstName'].'-'.$result['UserID']; ?> </td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['CategoryName'].'-'.$result['ProductCategory'];; ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['ProductName']; ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $format->textShorten($result['Description'], 30); ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['PickupOptions']; ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['Age']; ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['Price']; ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['Remarks']; ?></td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['Status']; ?> </td>
-					<td style="text-align: center; vertical-align: middle;"><?= $result['ProductCondition']; ?></td>
+					<td class="tableCenter"> <?= $i; ?> </td>
+					<td class="tableCenter"><?= $result['FirstName'].'-'.$result['UserID']; ?> </td>
+					<td class="tableCenter"><?= $result['CategoryName'].'-'.$result['ProductCategory'];; ?></td>
+					<td class="tableCenter"><?= $result['ProductName']; ?></td>
+					<td class="tableCenter"><?= $format->textShorten($result['Description'], 30); ?></td>
+					<td class="tableCenter"><?= $result['PickupOptions']; ?></td>
+					<td class="tableCenter"><?= $result['Age']; ?></td>
+					<td class="tableCenter"><?= $result['Price']; ?></td>
+					<td class="tableCenter"><?= $result['Remarks']; ?></td>
+					<td class="tableCenter"><?= $result['Status']; ?> </td>
+					<td class="tableCenter"><?= $result['ProductCondition']; ?></td>
 					<td class="center"> <img src="<?= $result['Picture']; ?>" height="40px;" width="60px;"></td>
-					<td style="text-align: center; vertical-align: middle;"> 
+					<td class="tableCenter"> 
 						<!-- Show how many days since the product was uploaded-->
 						<?php 
 
@@ -106,7 +106,7 @@ $format  = new Foramt();
 				</td>
 
 					<!-- TODO: make links work -->
-					<td style="text-align: center; vertical-align: middle;"> <a href="">Edit</a> || <a href="">Delete</a> || <a href="">Status</a> </td>
+					<td class="tableCenter"> <a href="">Edit</a> || <a href="">Delete</a> || <a href="">Status</a> </td>
 				</tr>
 
 				<?php 	} } ?> <!-- Closing the if and while loop -->
