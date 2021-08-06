@@ -12,6 +12,9 @@
 </head>
 <body>
     
+    <!-- top nav bar -->
+    <?php include_once 'includes/navTop.php'; ?>
+
 <div class="content clearfix">
     <div class="main-content">
         <h1 class="recent-post-title">Recent Articles</h1>
@@ -19,7 +22,7 @@
         <div class="post">
             <img src="img/article1.png" alt="" class="post-image">
             <div class="post-preview">
-                <h2><a href="#">Title Text Text Text</a></h2>
+                <h2><a href="#" class="par ttl">Title Text Text Text</a></h2>
                 <i class="far calendar">Jul 31, 2021</i>
                 <p class="preview-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit 
@@ -33,7 +36,7 @@
         <div class="post">
             <img src="img/article1.png" alt="" class="post-image">
             <div class="post-preview">
-                <h2><a href="#">Title Text Text Text</a></h2>
+                <h2><a href="#" class="par ttl">Title Text Text Text</a></h2>
                 <i class="far calendar">Jul 31, 2021</i>
                 <p class="preview-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit 
@@ -47,7 +50,7 @@
         <div class="post">
             <img src="img/article1.png" alt="" class="post-image">
             <div class="post-preview">
-                <h2><a href="#">Title Text Text Text</a></h2>
+                <h2><a href="#" class="par ttl">Title Text Text Text</a></h2>
                 <i class="far calendar">Jul 31, 2021</i>
                 <p class="preview-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit 
@@ -61,7 +64,7 @@
         <div class="post">
             <img src="img/article1.png" alt="" class="post-image">
             <div class="post-preview">
-                <h2><a href="#">Title Text Text Text</a></h2>
+                <h2><a href="#" class="par ttl">Title Text Text Text</a></h2>
                 <i class="far calendar">Jul 31, 2021</i>
                 <p class="preview-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit 
@@ -75,7 +78,7 @@
         <div class="post">
             <img src="img/article1.png" alt="" class="post-image">
             <div class="post-preview">
-                <h2><a href="#">Title Text Text Text</a></h2>
+                <h2><a href="#" class="par ttl">Title Text Text Text</a></h2>
                 <i class="far calendar">Jul 31, 2021</i>
                 <p class="preview-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit 
@@ -88,14 +91,41 @@
 
     </div>
 
-    <div class="sidebar"></div>
+    <div class="sidebar">
+
+        <div class="section search">
+            <h2 class="section-title">
+                Search
+            </h2>
+            <form action="index.html" method="post">
+                <input type="text" name="search-term" class="text-input" placeholder="Search...">
+            </form>
+        </div>
+
+
+        <div class="section topics">
+            <h2 class="section-title">Topics</h2>
+            <ul>
+                <li><a href="#" class="par">Pregnancy</a></li>
+                <li><a href="#" class="par">Toys</a></li>
+                <li><a href="#" class="par">Food</a></li>
+                <li><a href="#" class="par">Clothing</a></li>
+                <li><a href="#" class="par">Carriages</a></li>
+                <li><a href="#" class="par">Education</a></li>
+                <li><a href="#" class="par">Babies</a></li>
+                <li><a href="#" class="par">Leisure</a></li>
+            </ul>
+        </div>
+
+
+    </div>
 
 </div>
 
 
 
-
-
+    <!-- footer-->
+    <?php include_once 'includes/footer.php'; ?>
 
 
 

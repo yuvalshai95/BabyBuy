@@ -77,7 +77,7 @@
 </div>
 
 
-    <!-- footer-->
+    <!-- Products Slider-->
     <?php include_once 'productsSlider.php'; ?>
 
 

@@ -14,11 +14,17 @@ h1, h2 {
     font-weight: 1000;
 }
 
-a {
+.par{
     color: #333;
     text-decoration: none;
-    font-weight: 1000;
+    font-weight: 100;
 }
+
+.par.ttl {
+    font-weight: 1000;
+    font-size: 24px;
+}
+
 .clearfix::after {
     content: '';
     display: block;
@@ -96,12 +102,56 @@ h2 a:hover {
 .content .sidebar {
     width: 29.5%;
     float: left;
-    border: 1px dashed rgb(233, 170, 54);
     height: 500px;
 }
 
+.content .sidebar .section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
+.content .sidebar .section .section-title {
+    margin: 10px 0 10px 0px;
+    
+}
 
+.content .sidebar .section.search {
+    margin-top: 80px;
+}
+
+.text-input {
+    padding: .7rem 1 rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    color: #333;
+    line-height: 1.5rem;
+    font-size: 1.2em;
+    font-family: 'Lora', serif;
+}
+
+.content .sidebar .section.topics ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.content .sidebar .section.topics ul li a {
+    display: block;
+    padding: 15px 0px 15px 0px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s;
+}
+
+.content .sidebar .section.topics ul li a:hover {
+    padding-left: 10px;
+    transition: all 0.3s;
+}
 
 
 
