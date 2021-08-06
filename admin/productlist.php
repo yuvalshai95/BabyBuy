@@ -79,7 +79,7 @@ $format  = new Foramt();
 								}
 								
 								// Start date (from db)
-								$date1 = $result['ProductTime'];;
+								$date1 = $result['ProductTime'];
 								
 								// End date (current date)
 								$date2 = date('Y-m-d H:i:s');
