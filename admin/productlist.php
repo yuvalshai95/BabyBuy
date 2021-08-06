@@ -31,6 +31,7 @@ $format  = new Foramt();
 					<th>Status</th>
 					<th>Condition</th>
 					<th>Image</th>
+					<th>Days</th>
 					<th>Action</th>
 				</tr>
 				
@@ -41,6 +42,7 @@ $format  = new Foramt();
 
 			<?php
 				$getProduct = $product->getAllProducts();
+
 				if ($getProduct) {
 					$i = 0;
 					while($result = $getProduct->fetch_assoc()){
@@ -60,10 +62,54 @@ $format  = new Foramt();
 					<td><?= $result['Status']; ?> </td>
 					<td><?= $result['ProductCondition']; ?></td>
 					<td class="center"> <img src="<?= $result['Picture']; ?>" height="40px;" width="60px;"></td>
+					<td> 
+						<!-- Show how many days since the product was uploaded-->
+						<?php 
+
+								// Function to find the difference 
+								// between two dates.
+								function dateDiffInDays($date1, $date2) 
+								{
+									// Calculating the difference in timestamps
+									$diff = strtotime($date2) - strtotime($date1);
+									
+									// 1 day = 24 hours
+									// 24 * 60 * 60 = 86400 seconds
+									return abs(round($diff / 86400));
+								}
+								
+								// Start date (from db)
+								$date1 = $result['ProductTime'];;
+								
+								// End date (current date)
+								$date2 = date('Y-m-d H:i:s');
+								
+								// Function call to find date difference
+								$dateDiff = dateDiffInDays($date1, $date2);
+
+								// Check how many days passed
+								if($dateDiff >= 14){
+
+									// Display the result in red
+									$msg = "<span class = 'error'> ".$dateDiff." Days </span>";
+									echo $msg;
+									
+								}
+								else{
+
+									// Display the result in green
+									$msg = "<span class = 'success'> ".$dateDiff." Days </span>";
+									echo $msg;
+								}
+
+						?> 
+				</td>
+
 					<td><a href="">Edit</a> || <a href="">Delete</a></td>
 				</tr>
 
 				<?php 	} } ?> <!-- Closing the if and while loop -->
+
 
 			</tbody>
 		</table>
