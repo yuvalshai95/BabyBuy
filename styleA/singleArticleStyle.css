@@ -14,6 +14,11 @@ h1, h2 {
     font-weight: 1000;
 }
 
+h4 {
+    color: #333 !important;
+    margin-top: 10px;
+}
+
 .par{
     color: #333;
     text-decoration: none;
@@ -42,8 +47,33 @@ h1, h2 {
     float: left;
 }
 
+.content .main-content.single {
+    background: #fff;
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.content .main-content.single .post-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .content .main-content .recent-post-title {
     margin: 20px;
+}
+
+.content .main-content.single .post-content p {
+    margin-bottom: 15px;
+}
+
+.content .main-content.single .post-content .article-img {
+    width: 80%;
+    /* text-align: center;
+    max-width: 100%;
+    padding: 50px 0; */
+    margin-left: 65px;
+    
 }
 
 .content .main-content .post {
@@ -53,6 +83,19 @@ h1, h2 {
     border-radius: 5px;
     background: #fff;
     position: relative;
+}
+
+.content .popular .post {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.content .popular .post img {
+    height: 60px;
+    width: 75px;
+    float: left;
+    margin-right: 10px;
 }
 
 .content .main-content .post .read-more {
@@ -103,6 +146,10 @@ h2 a:hover {
     width: 29.5%;
     float: left;
     height: 500px;
+}
+
+.content .sidebar.single {
+    padding: 0px 10px;
 }
 
 .content .sidebar .section {
