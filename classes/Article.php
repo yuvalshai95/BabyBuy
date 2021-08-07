@@ -18,7 +18,7 @@ $ArticleCategory  = mysqli_real_escape_string($this->db->link, $data['ArticleCat
 $ArticleBody      = mysqli_real_escape_string($this->db->link, $data['ArticleBody'] );
 
 // file path - where we store the image
-$filePath = 'C:/wamp64/www/BabyBuy/admin/Web/';
+$filePath = "Web/";
 
 // Image valid extentions
 $allowedExtentions = array ('jpg', 'jpeg', 'png', 'gif');

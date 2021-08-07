@@ -61,7 +61,7 @@ $format  = new Foramt();
 					<td class="tableCenter"><?= $result['Remarks']; ?> </td>
 					<td class="tableCenter"><?= $result['Status']; ?> </td>
 					<td class="tableCenter"><?= $result['ProductCondition']; ?></td>
-					<td class="center"> <img src="<?= $result['Picture']; ?>" height="40px;" width="60px;"></td>
+					<td class="center"> <img src="<?= $result['Image']; ?>" height="40px;" width="60px;"></td>
 					<td class="tableCenter"> 
 
 						<!-- Show how many days since the product was uploaded-->
