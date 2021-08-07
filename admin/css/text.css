@@ -98,9 +98,7 @@ fieldset
 }
 
 .tableCenter{
-	height: 80px;
-	width: 160px;
+	
 	text-align: center;
 	vertical-align: middle;
-	color: orange;
 }
