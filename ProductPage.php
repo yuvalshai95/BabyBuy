@@ -60,12 +60,26 @@
             </div>
         </div>
 
-        <div class="row seller">
-        <h3>Seller Details</h3>
-        <p class="sellerDetails">Adi Hemo</p>
-        <p class="sellerDetails">Zalman Shazar, Qiriat Yam</p>
-        <p class="sellerDetails">052-6682665</p>
-        <p class="sellerDetails">adi4hemo@gmail.com</p>
+        <div class="row-seller">
+            <div class="col-2 seller">
+                <div class="details">
+                    <h3>Seller Details</h3>
+                    <p class="sellerDetails">Adi Hemo</p>
+                    <p class="sellerDetails">Zalman Shazar, Qiriat Yam</p>
+                    <p class="sellerDetails">052-6682665</p>
+                    <p class="sellerDetails">adi4hemo@gmail.com</p>
+                </div>
+                <div class="whatsappIcon">
+                    
+                   <label class="contact" for="" id="nav-toggle-bottom" data-toggle="tooltip" 
+                            title="Ask me about this product" data-placement="bottom">
+                        <a href="https://wa.me/972526682665" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+                   </label> 
+                </div>
+
+            </div>
+
+
         </div>
 
         <div class="row map">
@@ -109,6 +123,11 @@
 </script>
 
 
+<script>
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+    </script>
 
 
 </body>
