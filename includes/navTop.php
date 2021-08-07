@@ -1,3 +1,4 @@
+<?php require_once 'DataBase/Session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +21,9 @@
     
     <!-- top nav bar -->
     <?php include_once 'includes/navTop.php'; ?>
+    
+    <?php require_once 'classes/SliderForHomePage.php'; ?>
+    <?php $slider = new SliderForHomePage(); ?>
 
     <br> <br> <br>
 
@@ -44,16 +49,29 @@
                 <!-- radio buttons end -->
 
                 <!-- slider images start -->
+                <?php
+				$getSlider = $slider->getAllSliders();
+
+				if ($getSlider) {
+					while($result = $getSlider->fetch_assoc()){	
+
+                      
+			?>
                 <div class="slide first">
-                    <img src="img/img10.jpg" alt="">
+                    <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">
                 </div>
+               
                 <div class="slide">
-                    <img src="img/img9.jpg" alt="">
+                    <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">
                 </div>
+
                 <div class="slide">
-                    <img src="img/img5.jpg" alt="">
+                    <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">
                 </div>
+ 
                 <!-- slider images end -->
+                <?php 	} } ?> <!-- Closing the if and while loop -->
+
 
                 <!-- automatic navigation start -->
                 <div class="navigation-auto">
