@@ -49,7 +49,7 @@
                 <a href="" class="btn"><i class="fas fa-heart"></i> Add to Wishlist</a>
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
-                <p>Lorem Ipsum is simply dummy text of the 
+                <p class="prodDetails">Lorem Ipsum is simply dummy text of the 
                     printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy 
                     text ever since the 1500s, when an unknown printer 
@@ -62,10 +62,10 @@
 
         <div class="row seller">
         <h3>Seller Details</h3>
-        <p>Adi Hemo</p>
-        <p>Zalman Shazar, Qiriat Yam</p>
-        <p>052-6682665</p>
-        <p>adi4hemo@gmail.com</p>
+        <p class="sellerDetails">Adi Hemo</p>
+        <p class="sellerDetails">Zalman Shazar, Qiriat Yam</p>
+        <p class="sellerDetails">052-6682665</p>
+        <p class="sellerDetails">adi4hemo@gmail.com</p>
         </div>
 
         <div class="row map">
