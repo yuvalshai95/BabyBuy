@@ -42,8 +42,6 @@ body {
     
 }
 
-
-
 .small-img-row {
     display: flex;
     justify-content: space-around;
@@ -122,8 +120,29 @@ a {
 }
 
 .seller {
-    display: block;
+    display: flex;
     margin-bottom: 30px;
+}
+
+.whatsappIcon {
+    text-align: right;
+    width: 200px;
+    margin-top: 60px;
+}
+
+.whatsappIcon .whatsapp {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.tooltip-inner {
+    background-color: orange !important;
+    color: white;
+  }
+
+  
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+    border-bottom-color: orange !important;
 }
 
 .map {
@@ -133,6 +152,7 @@ a {
     height: 300px;
     border-style: solid;
     border-color: #333;
+    cursor: pointer;
 }
 
 /*  Details style - end  */
