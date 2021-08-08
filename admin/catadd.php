@@ -34,7 +34,7 @@
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Save" />
+                                <input type="submit" name="submit" Value="Save" class="btn btn-green"/>
                             </td>
                         </tr>
                     </table>
