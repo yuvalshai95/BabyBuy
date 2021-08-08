@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 06, 2021 at 01:40 PM
+-- Generation Time: Aug 08, 2021 at 09:38 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `ArticleTimeStamp` timestamp NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ArticleID`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `articles`
@@ -75,7 +75,11 @@ INSERT INTO `articles` (`ArticleID`, `ArticleHeader`, `ArticleCategory`, `Articl
 (36, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:28:07', '1426813822'),
 (37, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:15', '1636908455'),
 (38, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:34', '1300088998'),
-(39, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:51', '1642459274');
+(39, 'YUVAL', ' 1 ', '<h1><span style=\"text-decoration: underline;\"><span style=\"font-size: 10px;\">asdasdasd</span>S</span></h1>\r\n<h1><span style=\"text-decoration: underline;\">ADASDASDASD</span></h1>\r\n<p><span style=\"text-decoration: underline;\"><br /></span></p>\r\n<p><span style=\"font-family: \'comic sans ms\', sans-serif; font-size: large;\"><strong><span style=\"text-decoration: underline;\">dfsdfsdf</span></strong></span></p>\r\n<div id=\"gtx-trans\" style=\"position: absolute; left: 4px; top: 76.7812px;\">&nbsp;</div>', '2021-07-29 15:36:51', '1642459274'),
+(40, 'test', ' 5 ', '<p>test</p>', '2021-08-07 16:16:52', '1824810603'),
+(41, 'bvnvbn', ' 6 ', '<p>vbnvbn</p>', '2021-08-07 16:20:53', '1497973016'),
+(42, 'bnbvnvbn', ' 6 ', '<p>vbnvbn</p>', '2021-08-07 16:34:43', '1460656297'),
+(43, 'bnbvnvbn', ' 6 ', '<p>vbnvbn</p>', '2021-08-07 16:35:36', '264318368');
 
 -- --------------------------------------------------------
 
@@ -90,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `articles_images` (
   `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ImageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `articles_images`
@@ -104,7 +108,12 @@ INSERT INTO `articles_images` (`ImageID`, `ImageName`, `ImagePath`, `ImageRefren
 (45, '6102f337baba78.71356909.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f337baba78.71356909.jpeg', '1426813822'),
 (46, '6102f51f885166.00004651.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f51f885166.00004651.jpeg', '1636908455'),
 (47, '6102f532be1be3.97683709.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f532be1be3.97683709.jpeg', '1300088998'),
-(48, '6102f5437044f1.37383289.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f5437044f1.37383289.jpeg', '1642459274');
+(48, '6102f5437044f1.37383289.jpeg', 'C:/wamp64/www/BabyBuy/admin/Web/6102f5437044f1.37383289.jpeg', '1642459274'),
+(49, '610edc24599188.95595726.jpg', 'C:/wamp64/www/BabyBuy/admin/Web/610edc24599188.95595726.jpg', '1824810603'),
+(50, '610edc2459b6e4.39945612.jpg', 'C:/wamp64/www/BabyBuy/admin/Web/610edc2459b6e4.39945612.jpg', '1824810603'),
+(51, '610edd15e96f52.10021147.jpg', 'C:/wamp64/www/BabyBuy/admin/Web/610edd15e96f52.10021147.jpg', '1497973016'),
+(52, '610ee053900634.78873871.jpeg', 'Web/610ee053900634.78873871.jpeg', '1460656297'),
+(53, '610ee088754540.80840461.jpeg', 'Web/610ee088754540.80840461.jpeg', '264318368');
 
 -- --------------------------------------------------------
 
@@ -165,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Remarks` varchar(255) DEFAULT NULL,
   `Status` varchar(20) NOT NULL,
   `ProductCondition` varchar(255) NOT NULL,
-  `Picture` varchar(255) NOT NULL,
+  `Image` varchar(255) NOT NULL,
   `ProductTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`ProductID`),
   KEY `Product` (`UserID`),
@@ -176,9 +185,31 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`ProductID`, `UserID`, `ProductCategory`, `ProductName`, `Description`, `PickupOptions`, `Age`, `Price`, `Remarks`, `Status`, `ProductCondition`, `Picture`, `ProductTime`) VALUES
-(1, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', '', '2021-08-06 12:41:59'),
-(2, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', '', '2021-08-06 12:41:59');
+INSERT INTO `product` (`ProductID`, `UserID`, `ProductCategory`, `ProductName`, `Description`, `PickupOptions`, `Age`, `Price`, `Remarks`, `Status`, `ProductCondition`, `Image`, `ProductTime`) VALUES
+(1, 1, 1, 'Guitar', 'A toy guitar for childrens text text text text text text text text text text text text text text text', 'Local', 5, 50, NULL, 'For Sale', 'New', 'Web/610ee0105765e9.06520417.jpg', '2021-08-06 12:41:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider`
+--
+
+DROP TABLE IF EXISTS `slider`;
+CREATE TABLE IF NOT EXISTS `slider` (
+  `SliderID` int(11) NOT NULL AUTO_INCREMENT,
+  `SliderTitle` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `SliderImage` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`SliderID`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`SliderID`, `SliderTitle`, `SliderImage`) VALUES
+(14, '1', 'Web/610ef92c83d935.51022708.jpg'),
+(15, '2', 'Web/610ef9329c1647.89111303.jpg'),
+(16, '3', 'Web/610ef93743e1a2.80586179.jpg');
 
 -- --------------------------------------------------------
 
