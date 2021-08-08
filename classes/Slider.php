@@ -13,8 +13,8 @@ class Slider{
 
   public function getAllSliders(){
     $query  = "SELECT *
-               FROM slider";
-               //ORDER BY slider.SliderID DESC
+               FROM slider
+               ORDER BY slider.SliderID ASC";
 
     $result = $this->db->select($query);
     return $result; 
