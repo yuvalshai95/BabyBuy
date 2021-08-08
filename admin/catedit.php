@@ -51,7 +51,7 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                 ?> <!-- Ending the php tag to write html code -->
 
 
-                 <form action=" " method="post">
+                 <form action=" " method="post" >
                     <table class="form">					
                         <tr>
                             <td>
@@ -59,11 +59,17 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                                 <input type="text" name="CategoryName" value="<?php echo $result['CategoryName']; ?>" class="medium" />
                             </td>
                         </tr>
+
+                        <!-- TODO: Add "Cancel" BTN to return to slider list -->    
+                        <!-- Update BTN -->
 						<tr> 
                             <td>
                                 <input type="submit" name="submit" Value="Update" />
                             </td>
                         </tr>
+                        <!-- Update BTN -->
+
+
                     </table>
                     </form>
                     <?php }  ?> <!-- closing the if statment with php tag -->

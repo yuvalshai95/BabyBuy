@@ -99,6 +99,97 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
 
   }
 
+ // Delete Slider By ID
+ public function deleteSliderById($id, $name){
+
+  // Syntax DELETE FROM table_name WHERE condition1 = value1
+  $query = "DELETE FROM slider WHERE SliderID = '$id'";
+  $deletedData = $this->db->delete($query);
+  if ($deletedData) {
+      $msg = "<span class='success'>Category ".'"'.$name.'"'." Deleted Successfully.</span> ";
+      return $msg;
+  }else{
+      $msg = "<span class = 'error'> Category was not deleted an error occurred! </span>";
+      return $msg;
+  }
+
+}
+
+
+
+ //TODO: לעשות אפשרות שאפשר לערוך רק את השם של הסליידר מבלי לעלות תמונה חדשה
+ // כרגע שעושים עריכה של סליידר חייבים לערוך את השם ואת התמונה
+ // Update slider name using id
+ public function sliderUpdateNameAndImage($SliderName, $id, $file){
+
+  // Remove the special characters from the
+  // string using mysqli_real_escape_string
+  // to send the sql query with no errors
+  $SliderName = mysqli_real_escape_string($this->db->link, $SliderName);
+  $id = mysqli_real_escape_string($this->db->link, $id);
+
+  $fileName = $file['image']['name'];
+  $fileTmpName = $file['image']['tmp_name'];
+
+  $fileExtention = explode('.', $fileName); 
+
+  $fileActualExtention = strtolower(end($fileExtention));
+
+  $allowedExtentions = array ('jpg', 'jpeg', 'png', 'gif');
+
+
+
+  //error msg if empty field
+  if (empty($SliderName)) {
+      $msg = "<span class = 'error'> Slider Name Field cant be empty! </span>";
+      return $msg;
+
+}else{
+
+  if (in_array($fileActualExtention, $allowedExtentions)){
+    $fileNameUnique = uniqid('', true).".".$fileActualExtention;
+  $filePath = "Web/".$fileNameUnique;
+
+    // Syntax UPDATE table_name SET field1 = new-value1
+    $query = "UPDATE slider SET SliderTitle = '$SliderName', SliderImage = ' $filePath'  WHERE SliderID = '$id'";
+
+    // Using the DataBase class update method
+    // Running the query
+    $update_row = $this->db->update($query); 
+
+    // Checking if the insert was good
+    if ($update_row) {
+      
+      // Moving the file from temp location to new location
+      move_uploaded_file($fileTmpName, $filePath);
+
+      $msg = "<span class='success'>Slider ".'"'.$SliderName.'"'." Updated Successfully.</span> ";
+      return $msg;
+
+    }else{
+      $msg = "<span class = 'error'> Slider was not updated an error occurred! </span>";
+      return $msg;
+    }
+  }else{
+    $msg = "<span class = 'error'> This File Type Is Not Allowed! </span>";
+    return $msg;
+  }
+
+  
+  }
+}
+
+
+  // Get a slider by id from db
+  public function getSliderByID($id){
+    $query = "SELECT * FROM slider WHERE SliderID = '$id'";
+    $result = $this->db->select($query);
+    return $result;
+}
+
+
+
+
 
 
 
