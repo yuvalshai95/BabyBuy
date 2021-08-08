@@ -72,7 +72,7 @@ $format  = new Foramt();
 					
 					<!-- TODO: make Reminder work -->
 					<td class="tableCenter"> 
-						<a href="">Edit</a> || 
+						<a href="articleedit.php?articleId=<?php echo $result['ArticleID']; ?> ">Edit</a> || 
 						<a onclick="return confirm('Are You Sure You Want To Delete This Article?')" href="?articleId=<?php echo $result['ArticleID']; ?>&articleName=<?php echo $result['ArticleHeader']; ?>"> Delete</a>
 					</td>
                     

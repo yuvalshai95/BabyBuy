@@ -152,6 +152,55 @@ public function getAllArticles(){
 }
 
 
+  // Get a article by id from db
+  public function getArticleByID($id){
+    $query = "SELECT * FROM articles WHERE ArticleID = '$id'";
+    $result = $this->db->select($query);
+    return $result;
+}
+
+
+
+
+ // Update category name using id
+ public function articleUpdate($articleName, $articleBody ,$id){
+
+  // Remove the special characters from the
+  // string using mysqli_real_escape_string
+  // to send the sql query with no errors
+  $articleName = mysqli_real_escape_string($this->db->link, $articleName);
+  $articleBody = mysqli_real_escape_string($this->db->link, $articleBody);
+  $id = mysqli_real_escape_string($this->db->link, $id);
+
+  //error msg if empty field
+  if (empty($articleName) || empty($articleBody) ) {
+      $msg = "<span class = 'error'> Article Fields cant be empty! </span>";
+      return $msg;
+
+}else{
+    // Syntax UPDATE table_name SET field1 = new-value1
+    $query = "UPDATE articles SET ArticleHeader = '$articleName', ArticleBody = '$articleBody' WHERE ArticleID = '$id'";
+
+    // Using the DataBase class update method
+    // Running the query
+    $update_row = $this->db->update($query); 
+
+    // Checking if the insert was good
+    if ($update_row) {
+      $msg = "<span class='success'>Article ".'"'.$articleName.'"'." Updated Successfully.</span> ";
+      return $msg;
+
+    }else{
+      $msg = "<span class = 'error'> Article was not updated an error occurred! </span>";
+      return $msg;
+    }
+}
+}
+
+
+
+
+
 
 
 
