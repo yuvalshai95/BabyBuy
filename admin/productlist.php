@@ -8,10 +8,25 @@ $product = new Product();
 $format  = new Foramt();
 ?>
 
+<?php 
+	// We have a *Delete button so we have to check using the GET Method if it was clicked
+	if ((isset($_GET['productId']) && (isset($_GET['productName'])))) {
+		$idToDelete = $_GET['productId'];
+		$productName = $_GET['productName'];
+		$deleteProduct = $product->deleteProductById($idToDelete,$productName);
+	}
+?>
 
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Product List</h2>
+
+		<?php 
+			if(isset($deleteProduct)){
+				echo $deleteProduct;
+			}
+		?>
+
         <div class="block">  
             <table class="data display datatable" id="example">
 
@@ -39,8 +54,22 @@ $format  = new Foramt();
 			<!--/ Table Titles -->
 
 			<tbody>
+			
 
 			<?php
+				// Function to find the difference 
+				// between two dates.
+				function dateDiffInDays($date1, $date2) 
+				{
+					// Calculating the difference in timestamps
+					$diff = strtotime($date2) - strtotime($date1);
+									
+					// 1 day = 24 hours
+					// 24 * 60 * 60 = 86400 seconds
+					return abs(round($diff / 86400));
+				}
+
+				// Run Query
 				$getProduct = $product->getAllProducts();
 
 				if ($getProduct) {
@@ -50,6 +79,7 @@ $format  = new Foramt();
 			?>
 
 				<tr class="odd gradeX">
+				
 					<td class="tableCenter"> <?= $i; ?> </td>
 					<td class="tableCenter"><?= $result['FirstName'].'-'.$result['UserID']; ?> </td>
 					<td class="tableCenter"><?= $result['CategoryName'].'-'.$result['ProductCategory'];; ?> </td>
@@ -66,19 +96,6 @@ $format  = new Foramt();
 
 						<!-- Show how many days since the product was uploaded-->
 						<?php 
-
-								// Function to find the difference 
-								// between two dates.
-								function dateDiffInDays($date1, $date2) 
-								{
-									// Calculating the difference in timestamps
-									$diff = strtotime($date2) - strtotime($date1);
-									
-									// 1 day = 24 hours
-									// 24 * 60 * 60 = 86400 seconds
-									return abs(round($diff / 86400));
-								}
-								
 								// Start date (from db)
 								$date1 = $result['ProductTime'];
 								
@@ -107,7 +124,11 @@ $format  = new Foramt();
 				</td>
 
 					<!-- TODO: make links work -->
-					<td class="tableCenter"> <a href="">Edit</a> || <a href="">Delete</a> || <a href="">Status</a> </td>
+					<td class="tableCenter"> 
+						<a href="">Edit</a> || 
+						<a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a> || 
+						<a href="">Status</a> 
+					</td>
 				</tr>
 
 				<?php 	} } ?> <!-- Closing the if and while loop -->

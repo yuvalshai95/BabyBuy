@@ -106,7 +106,7 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
   $query = "DELETE FROM slider WHERE SliderID = '$id'";
   $deletedData = $this->db->delete($query);
   if ($deletedData) {
-      $msg = "<span class='success'>Category ".'"'.$name.'"'." Deleted Successfully.</span> ";
+      $msg = "<span class='success'>Slider ".'"'.$name.'"'." Deleted Successfully.</span> ";
       return $msg;
   }else{
       $msg = "<span class = 'error'> Category was not deleted an error occurred! </span>";

@@ -13,7 +13,7 @@ class Product{
   public function getAllProducts(){
     $query  = "SELECT product.*, category.CategoryName, users.FirstName
                FROM product
-               INNER JOIN category ON product.ProductID = category.CategoryID
+               INNER JOIN category ON product.ProductCategory  = category.CategoryID
                INNER JOIN users ON product.UserID = users.UserID
                ORDER BY product.ProductID DESC";
 
@@ -24,7 +24,21 @@ class Product{
 
 
 
+ // Delete Product By ID
+ public function deleteProductById($id, $name){
 
+  // Syntax DELETE FROM table_name WHERE condition1 = value1
+  $query = "DELETE FROM product WHERE ProductID = '$id'";
+  $deletedData = $this->db->delete($query);
+  if ($deletedData) {
+      $msg = "<span class='success'>Product ".'"'.$name.'"'." Deleted Successfully.</span> ";
+      return $msg;
+  }else{
+      $msg = "<span class = 'error'> Product was not deleted an error occurred! </span>";
+      return $msg;
+  }
+
+}
 
 
 
