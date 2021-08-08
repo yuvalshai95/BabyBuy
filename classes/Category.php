@@ -101,7 +101,7 @@ class Category{
     $query = "DELETE FROM category WHERE CategoryID = '$id'";
     $deletedData = $this->db->delete($query);
     if ($deletedData) {
-        $msg = "<span class='success'>Category ".'"'.$name.'"'." Deleted Successfully.</span> ";
+        $msg = "<span class='success'>Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
         return $msg;
     }else{
         $msg = "<span class = 'error'> Category was not deleted an error occurred! </span>";

@@ -31,7 +31,7 @@ class Product{
   $query = "DELETE FROM product WHERE ProductID = '$id'";
   $deletedData = $this->db->delete($query);
   if ($deletedData) {
-      $msg = "<span class='success'>Product ".'"'.$name.'"'." Deleted Successfully.</span> ";
+      $msg = "<span class='success'>Product ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
       return $msg;
   }else{
       $msg = "<span class = 'error'> Product was not deleted an error occurred! </span>";
