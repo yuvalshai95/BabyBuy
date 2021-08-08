@@ -55,7 +55,7 @@
 				if ($getSlider) {
 					while($result = $getSlider->fetch_assoc()){	
 
-                      
+                      print_r($result);
 			?>
                 <div class="slide first">
                     <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">

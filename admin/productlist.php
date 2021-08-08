@@ -123,11 +123,10 @@ $format  = new Foramt();
 						?> 
 				</td>
 
-					<!-- TODO: make links work -->
+					<!-- TODO: make Reminder work -->
 					<td class="tableCenter"> 
-						<a href="">Edit</a> || 
-						<a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a> || 
-						<a href="">Status</a> 
+						<a href="">Reminder</a> || 
+						<a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a>
 					</td>
 				</tr>
 
