@@ -54,6 +54,10 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                  <form action=" " method="post" >
                     <table class="form">					
                         <tr>
+                            <td style="width: 100px;">
+                                <label for="">New Name: </label>
+                            </td>
+
                             <td>
                                 <!-- Showing category name on the value attribute from the db using result var-->
                                 <input type="text" name="CategoryName" value="<?php echo $result['CategoryName']; ?>" class="medium" />
@@ -64,7 +68,7 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                         <!-- Update BTN -->
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Update" />
+                                <input type="submit" name="submit" Value="Update" class="btn btn-green"/>
                             </td>
                         </tr>
                         <!-- Update BTN -->
