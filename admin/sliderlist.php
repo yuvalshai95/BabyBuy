@@ -20,6 +20,15 @@
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Slider List</h2>
+
+		<?php
+			if(isset($deleteSlider)){
+				echo $deleteSlider;
+			}
+
+		?>
+
+
         <div class="block">  
             <table class="data display datatable" id="example">
 			<thead>
