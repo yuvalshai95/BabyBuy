@@ -53,17 +53,21 @@ if (!isset($_GET['sliderId'])  ||  $_GET['sliderId'] == NULL ) {
 
 
                  <form action=" " method="POST" enctype="multipart/form-data">
-                    <table class="form">					
+                    <table class="form" >					
                         <tr>
+                            <td> 
+                                <label for="">Enter New Slider Name: </label> 
+                            </td>
+
                             <td>
-                                <div>Enter New Slider Name: </div>
                                 <input type="text" name="SliderName" value="<?php echo $result['SliderTitle']; ?>" class="medium" />
                             </td>
 
                             <tr>
-                                <tr>
-                                    <td>Enter New Image: </td>
-                                </tr>
+                            
+                                <td>
+                                    <label for="">Enter New Slider Image: </label> 
+                                </td>
 
                                 <td> 
                                     <input type="file" name="image" onchange="displayImage(this)" id="image" /> 
@@ -71,6 +75,7 @@ if (!isset($_GET['sliderId'])  ||  $_GET['sliderId'] == NULL ) {
 
                                 <!-- Image Preview -->
                                 <tr>
+                                    <td></td>
                                     <td> 
                                         <div class="images-display" id="images">
                                             <img src = "img/photo.jpg">           
@@ -82,23 +87,20 @@ if (!isset($_GET['sliderId'])  ||  $_GET['sliderId'] == NULL ) {
                             </tr>
                         </tr>
 
-
-                        <!-- UPDATE BTN -->
 						<tr> 
+                            <!-- CANCEL BTN -->
+                            <td style="width: 200px">
+                                <a href="sliderlist.php" class="btn btn-red">CANCEL</a>
+                            </td>
+                            <!-- CANCEL BTN -->
+
+                            <!-- UPDATE BTN -->
                             <td>
                                 <input type="submit" name="submit" Value="UPDATE" class="btn btn-green"/>
                             </td>
+                            <!-- UPDATE BTN -->
+                            
                         </tr>
-                        <!-- UPDATE BTN -->
-
-                        <!-- CANCEL BTN -->
-                        <tr> 
-                            <td>
-                                <a href="sliderlist.php" class="btn btn-red"> CANCEL</a>
-                            </td>
-                        </tr>
-                        <!-- CANCEL BTN -->
-
 
                     </table>
                     </form>
