@@ -42,7 +42,6 @@ $format  = new Foramt();
 					<th>Pick Up</th>
 					<th>Age Group</th>
 					<th>Price</th>
-					<th>Remarks</th>
 					<th>Status</th>
 					<th>Condition</th>
 					<th>Image</th>
@@ -88,7 +87,6 @@ $format  = new Foramt();
 					<td class="tableCenter"><?= $result['PickupOptions']; ?> </td>
 					<td class="tableCenter"><?= $result['Age']; ?> </td>
 					<td class="tableCenter"><?= $result['Price']; ?> </td>
-					<td class="tableCenter"><?= $result['Remarks']; ?> </td>
 					<td class="tableCenter"><?= $result['Status']; ?> </td>
 					<td class="tableCenter"><?= $result['ProductCondition']; ?></td>
 					<td class="center"> <img src="<?= $result['Image']; ?>" height="40px;" width="60px;"></td>

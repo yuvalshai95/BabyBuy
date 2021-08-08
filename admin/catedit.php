@@ -67,6 +67,12 @@ if (!isset($_GET['categoryid'])  ||  $_GET['categoryid'] == NULL ) {
                         <!-- TODO: Add "Cancel" BTN to return to slider list -->    
                         <!-- Update BTN -->
 						<tr> 
+                             <!-- CANCEL BTN -->
+                             <td style="width: 100px;">
+                                <a href="catlist.php" class="btn btn-red">CANCEL</a>
+                            </td>
+                            <!-- CANCEL BTN -->
+
                             <td>
                                 <input type="submit" name="submit" Value="Update" class="btn btn-green"/>
                             </td>

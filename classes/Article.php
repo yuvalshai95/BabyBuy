@@ -121,6 +121,36 @@ else{
 
 
 
+public function getAllArticles(){
+  $query  = "SELECT articles.*, articles_images.ImagePath
+             FROM articles
+             INNER JOIN articles_images ON articles.ImageRefrence  = articles_images.ImageRefrence
+             GROUP BY articles_images.ImageRefrence
+             ORDER BY ArticleTimeStamp DESC";
+
+  $result = $this->db->select($query);
+  return $result; 
+}
+
+
+
+
+ // Delete Article By ID
+ public function deleteArticleById($id, $name){
+
+  // Syntax DELETE FROM table_name WHERE condition1 = value1
+  $query = "DELETE FROM articles WHERE ArticleID = '$id'";
+  $deletedData = $this->db->delete($query);
+  if ($deletedData) {
+      $msg = "<span class='success'>Article ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
+      return $msg;
+  }else{
+      $msg = "<span class = 'error'> Article was not deleted an error occurred! </span>";
+      return $msg;
+  }
+
+}
+
 
 
 
