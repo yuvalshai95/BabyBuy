@@ -1,6 +1,7 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php require_once '../classes/Article.php'; ?>
+<?php require_once '../classes/Category.php'; ?>
 
 <?php 
 // Getting the ArticleID from ArticleList page after clicking edit btn using the GET Method
@@ -23,8 +24,9 @@ if (!isset($_GET['articleId'])  ||  $_GET['articleId'] == NULL ) {
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $articleName = $_POST['ArticleName']; // Input from the form to send to the db
         $articleBody = $_POST['ArticleBody'];
+        $articleCategory = $_POST['Category'];
 
-        $updateArticle = $article->articleUpdate($articleName, $articleBody ,$id); // Getting the msg from the method
+        $updateArticle = $article->articleUpdate($articleName, $articleBody,  $articleCategory, $id); // Getting the msg from the method
     }
 ?>
 
@@ -55,12 +57,11 @@ if (!isset($_GET['articleId'])  ||  $_GET['articleId'] == NULL ) {
                  <form action=" " method="post" >
                     <table class="form">					
                         <tr>
-                            <td style="width: 100px;">
+                             <tr><td><td> <label for="">New Article Name: </label></td></td></tr>
+                             
+                            <td></td>
                                 
-                            </td>
-
                             <td>
-                                <label for="">New Article Name: </label>
                                 <input type="text" name="ArticleName" value="<?php echo $result['ArticleHeader']; ?>" class="medium" />
                             </td>
 
@@ -76,7 +77,32 @@ if (!isset($_GET['articleId'])  ||  $_GET['articleId'] == NULL ) {
                                 </td>
                             </tr>
 
+                             
+
 						<tr> 
+                            <tr>
+                                <tr><td><td><label for="">Select New Category: </label></td></td></tr>
+                                <td>
+                                    <td>
+                                
+                                <select id="select" name="Category" aria-placeholder="TEXT">
+                                <option>Select Category</option>
+
+                                <?php
+                                    $cat = new Category();
+                                    $getCategories = $cat->getAllCategories();
+                                    if ($getCategories) {
+                                        while ($result = $getCategories->fetch_assoc()) {
+                                            
+                                ?>
+                                    <option value=" <?= $result['CategoryID'];?> "> <?= $result['CategoryName'];?> </option>
+                                <?php   } } ?>  
+                                
+                                </select>
+                            </td>
+                                </td>
+                            </tr>
+
                             <tr> 
                                  <td></td>  
 
