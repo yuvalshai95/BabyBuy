@@ -22,8 +22,8 @@
                 <div class="block"> 
 					
 				<?php
-				if (isset($deleteCategory)) {
-					echo $deleteCategory;
+				if (isset($deleteSubCategory)) {
+					echo $deleteSubCategory;
 				}
 
 				?>
