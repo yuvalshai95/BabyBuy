@@ -1,7 +1,9 @@
-﻿<script
+﻿<!--
+<script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> 
+  -->
 
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
@@ -58,7 +60,9 @@
 							<td><?php echo $result['CategoryName']; ?></td> <!-- category name from db -->
 
 							<td><a href="catedit.php?categoryid=<?php echo $result['CategoryID']; ?>"> Edit </a> || 
-								<a onclick="return confirm('Are You Sure You Want To Delete This Category?')" href="?categoryId=<?php echo $result['CategoryID']; ?>&categoryName=<?php echo $result['CategoryName']; ?>" > Delete </a> </td>
+								<a onclick="return confirm('Are You Sure You Want To Delete This Category?')" href="?categoryId=<?php echo $result['CategoryID']; ?>&categoryName=<?php echo $result['CategoryName']; ?>" > Delete </a> ||
+								<a href="subcategorybyid.php?categoryid=<?php echo $result['CategoryID']; ?>">Sub-Categories</a>
+							</td>
 								<!-- Get method to delete if the btn was click is at the top of the page -->
 						</tr>
 

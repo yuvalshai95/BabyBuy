@@ -81,7 +81,7 @@ $format  = new Foramt();
 				
 					<td class="tableCenter"> <?= $i; ?> </td>
 					<td class="tableCenter"><?= $result['FirstName'].'-'.$result['UserID']; ?> </td>
-					<td class="tableCenter"><?= $result['CategoryName'].'-'.$result['ProductCategory'];; ?> </td>
+					<td class="tableCenter"><?= $result['CategoryName'].'-'.$result['ProductCategory']; ?> </td>
 					<td class="tableCenter"><?= $result['ProductName']; ?> </td>
 					<td class="tableCenter"><?= $format->textShorten($result['Description'], 30); ?> </td>
 					<td class="tableCenter"><?= $result['PickupOptions']; ?> </td>

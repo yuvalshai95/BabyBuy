@@ -23,7 +23,7 @@
                         <li><a href="catadd.php">Add Category</a> </li>
                         <li><a href="catlist.php">Category List</a> </li>
                         <li><a href="subcategoryadd.php">Add Sub-Category</a> </li>
-                        <li><a href="">Sub-Category List</a> </li>
+                        <li><a href="subcategorylist.php">Sub-Category List</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Product Option</a>
