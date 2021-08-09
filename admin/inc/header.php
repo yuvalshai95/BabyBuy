@@ -48,11 +48,11 @@
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft logo">
-                    <img src="img/livelogo.png" alt="Logo" />
+                    <img src="img/logonotext.jpg" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>easy Learning Project</h1>
-					<p>www.easylearningbd.com</p>
+					<h1>BabyBuy Project</h1>
+					<p>Yuval Shai & Adi Hemo</p>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">
@@ -85,12 +85,14 @@
         <div class="clear">
         </div>
         <div class="grid_12">
-            <ul class="nav main">
+            <ul class="nav main"> <!-- TODO: Make Admin Profile link work -->
                 <li class="ic-dashboard"><a href="dashboard.php"><span>Dashboard</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>User Profile</span></a></li>
+                <li class="ic-form-style"><a href=""><span>Admin Profile</span></a></li>
 		
+                <!--
 				<li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
                 <li class="ic-charts"><a href=""><span>Visit Website</span></a></li>
+                -->
             </ul>
         </div>
         <div class="clear">
