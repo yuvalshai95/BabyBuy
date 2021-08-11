@@ -12,6 +12,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <!-- bootstrap START -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- bootstrap END -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Admin</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
@@ -87,7 +90,7 @@
         <div class="grid_12">
             <ul class="nav main"> <!-- TODO: Make Admin Profile link work -->
                 <li class="ic-dashboard"><a href="dashboard.php"><span>Dashboard</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>Admin Profile</span></a></li>
+                <li class="ic-form-style"><a href="adminprofile.php"><span>Admin Profile</span></a></li>
 		
                 <!--
 				<li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>

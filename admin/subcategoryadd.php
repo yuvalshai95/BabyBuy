@@ -67,3 +67,19 @@
                     </td>
                 </tr>
                 <!-- Submit BTN END-->
+
+                </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        setupLeftMenu();
+        $('.datatable').dataTable();
+		setSidebarHeight();
+    });
+</script>
+
+<?php include 'inc/footer.php';?>
