@@ -47,7 +47,7 @@ class Admin{
                 Session::set("AdminID",$value['AdminID']);
                 Session::set("AdminEmail",$value['AdminEmail']);
                 Session::set("AdminFirstName",$value['AdminFirstName']);
-                header("Location: http://localhost/babybuy/admin/dashboard.php");
+                header("Location: dashboard.php");
             }else{ // No match from the db
                 
                 $login_msg = "Username or Password  are not matching...!";

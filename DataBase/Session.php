@@ -21,13 +21,13 @@ class Session{
 
     public static function destroySession(){
         session_destroy();
-        header("Location:http://localhost/babybuy/admin/dashboard.php");
+        header("Location: dashboard.php");
     }
 
     public static function checkLogin(){
         self::init();
         if (self::get("adminLoginFromAdminClass") == true ) {
-            header("Location:http://localhost/babybuy/admin/dashboard.php");
+            header("Location: dashboard.php");
         }
     }
 
@@ -35,7 +35,7 @@ class Session{
         self::init();
         if(self::get("adminLoginFromAdminClass") == false){
         self::destroySession();
-        header("Location:http://localhost/babybuy/admin/login.php");
+        header("Location: login.php");
         }
     }
 
