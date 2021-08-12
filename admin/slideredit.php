@@ -78,7 +78,7 @@ if (!isset($_GET['sliderId'])  ||  $_GET['sliderId'] == NULL ) {
                                     <td></td>
                                     <td> 
                                         <div class="images-display" id="images">
-                                            <img src = "img/photo.jpg">           
+                                            <img src = "<?php echo $result['SliderImage']; ?>">           
                                         </div>
                                     </td>
                                 </tr> 

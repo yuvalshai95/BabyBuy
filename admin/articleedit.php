@@ -73,7 +73,9 @@ if (!isset($_GET['articleId'])  ||  $_GET['articleId'] == NULL ) {
 
                                 <td>
                                     <label for="">New Article Text: </label>
-                                    <textarea class="tinymce" name="ArticleBody" setContent="sdsd"></textarea>
+                                    <textarea class="tinymce" name="ArticleBody" setContent="sdsd">
+                                        <?php echo $result['ArticleBody']; ?>
+                                    </textarea>
                                 </td>
                             </tr>
 
