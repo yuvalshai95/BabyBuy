@@ -1,43 +1,58 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 
+<?php
+    require_once '../DataBase/DB_Config.php'; 
+    class Admin{
+
+        private $db;
+    
+        // Constructor
+        public	function __construct(){
+           $this->db = new Database(); // when creating new db intsnace its opening a connection 
+        }
+
+
+
+
+
+
+
+    }
+?>
+
 <div class="grid_10">  
 
     <div class="box round first grid"> 
         <div class="block"> 
+        <h2>Admin Profile</h2>
 
             <form action="">
 
             <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Edit</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                            <td><?= $_SESSION['AdminFirstName']; ?> <?= $_SESSION['AdminLastName']; ?></td>
+                            <td><?= $_SESSION['AdminAddress']; ?> <?= $_SESSION['AdminCity']; ?></td>
+                            <td><?= $_SESSION['AdminPhone']; ?></td>
+                            <td><?= $_SESSION['AdminEmail']; ?></td>
+                            <td>
+                                <a href="adminedit.php?adminId=<?php echo $_SESSION['AdminID']; ?>" style="  width: 115px;height: 32px;line-height: 29px;font-size: 12px;background-color: #007bff; border-color: #007bff;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;"> Update</a>
+                            </td>
                         </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        </tr>
+                     
                     </tbody>
                     </table>
-                    <input type="submit" name="submit" Value="Save" class="btn btn-green"/>
+
 
             </form>
 
@@ -45,7 +60,6 @@
     </div>
 
 </div>
-
 
 <script type="text/javascript">
     $(document).ready(function () {

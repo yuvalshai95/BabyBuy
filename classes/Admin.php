@@ -47,6 +47,11 @@ class Admin{
                 Session::set("AdminID",$value['AdminID']);
                 Session::set("AdminEmail",$value['AdminEmail']);
                 Session::set("AdminFirstName",$value['AdminFirstName']);
+                Session::set("AdminLastName",$value['AdminLastName']);
+                Session::set("AdminAddress",$value['AdminAddress']);
+                Session::set("AdminCity",$value['AdminCity']);
+                Session::set("AdminPhone",$value['AdminPhone']);
+                
                 header("Location: dashboard.php");
             }else{ // No match from the db
                 

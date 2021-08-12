@@ -57,24 +57,24 @@ $fileActualType = strtolower(end($fileType));
   }
   else{ //image was not selected
     $fileNameUnique = "";
-    $errorImage .= "<span class = 'error'> Image Required...! </span>";
+    $errorImage .= "<span  class='alert alert-danger' role='alert'> Image Required...! </span>";
     return $errorImage;
   }
 
   // checking the file size is not above 5MB
   if ($fileSize > 5024000) {
-    $errorSize .= "<span class = 'error'> File is too big! size must be under 5 Mb...! </span>";
+    $errorSize .= "<span class='alert alert-danger' role='alert'> File is too big! size must be under 5 Mb...! </span>";
     return $errorSize;
   }
   //file was selected but not an image
   // fileName not empty(file was selected) && file Extention not in allowd arr (no image was selected)
   else if( !empty($fileName) && !in_array($fileActualType,$allowedExtentions) ){ 
-    $errorType .= "<span class = 'error'> File must be an Image...! </span>";
+    $errorType .= "<span  class='alert alert-danger' role='alert'> File must be an Image...! </span>";
     return $errorType;
   }
 
   else if ($ArticleHeader == "" || $ArticleCategory == "Select Category" || $ArticleBody == "" ) {
-    $message .= "<span class = 'error'> You cant have an empty field! </span>";
+    $message .= "<span  class='alert alert-danger' role='alert'> You cant have an empty field! </span>";
     return $message;
 }
 
@@ -107,12 +107,12 @@ else{
     $result = mysqli_multi_query($this->db->link, $sqlIns);
 
     if ($result) { // checking both queries were inserted
-        $message .= "<span class='success'>Article ".'"'.$ArticleHeader.'"'." Inserted Successfully.</span> ";
+        $message .= "<span class='alert alert-success' role='alert'>Article ".'"'.$ArticleHeader.'"'." Inserted Successfully.</span> ";
         return $message;
 
     }
     else{ // some query failed
-      $message .= "<span class = 'error'>Article Not Inserted! </span>";
+      $message .= "<span  class='alert alert-danger' role='alert'>Article Not Inserted! </span>";
       return $message;
     }
 }
@@ -142,10 +142,10 @@ public function getAllArticles(){
   $query = "DELETE FROM articles WHERE ArticleID = '$id'";
   $deletedData = $this->db->delete($query);
   if ($deletedData) {
-      $msg = "<span class='success'>Article ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
+      $msg = "<span class='alert alert-success' role='alert'>Article ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
       return $msg;
   }else{
-      $msg = "<span class = 'error'> Article was not deleted an error occurred! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> Article was not deleted an error occurred! </span>";
       return $msg;
   }
 
@@ -175,7 +175,7 @@ public function getAllArticles(){
 
   //error msg if empty field
   if (empty($articleName) || empty($articleBody) || $ArticleCategory =="Select Category" ) {
-      $msg = "<span class = 'error'> Article Fields cant be empty! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> Article Fields cant be empty! </span>";
       return $msg;
 
 }else{
@@ -188,11 +188,11 @@ public function getAllArticles(){
 
     // Checking if the insert was good
     if ($update_row) {
-      $msg = "<span class='success'>Article ".'"'.$articleName.'"'." Updated Successfully.</span> ";
+      $msg = "<span class='alert alert-success' role='alert'>Article ".'"'.$articleName.'"'." Updated Successfully.</span> ";
       return $msg;
 
     }else{
-      $msg = "<span class = 'error'> Article was not updated an error occurred! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> Article was not updated an error occurred! </span>";
       return $msg;
     }
 }

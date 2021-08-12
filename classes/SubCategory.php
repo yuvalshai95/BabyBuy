@@ -21,7 +21,7 @@ class SubCategory{
 
     //error msg if empty field
     if (empty($subName) ||  $subCategory == "Select Category") {
-        $msg = "<span class = 'error'> Cant have an empty field...! </span>";
+        $msg = "<span cl class='alert alert-danger' role='alert'> Cant have an empty field...! </span>";
         return $msg;
        }else {
 
@@ -34,10 +34,10 @@ class SubCategory{
 
            // Checking if the insert was good
            if ($subinsert) {
-               $msg = "<span class='success'>Category ".'"'.$data['subCategoryName'].'"'." Inserted Successfully.</span> ";
+               $msg = "<span class='alert alert-success' role='alert'>Category ".'"'.$data['subCategoryName'].'"'." Inserted Successfully.</span> ";
                return $msg;
            }else {
-               $msg = "<span class='error'>Sub-Category Not Inserted .</span> ";
+               $msg = "<span  class='alert alert-danger' role='alert'>Sub-Category Not Inserted .</span> ";
                return $msg;
            }
        }
@@ -62,10 +62,10 @@ class SubCategory{
     $query = "DELETE FROM sub_category WHERE SubCategoryID = '$id'";
     $deletedData = $this->db->delete($query);
     if ($deletedData) {
-        $msg = "<span class='success'>Sub-Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
+        $msg = "<span class='alert alert-success' role='alert'>Sub-Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
         return $msg;
     }else{
-        $msg = "<span class = 'error'> Sub-Category was not deleted an error occurred! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Sub-Category was not deleted an error occurred! </span>";
         return $msg;
     }
 
@@ -94,7 +94,7 @@ class SubCategory{
 
     //error msg if empty field
     if (empty($subCategoryName) || $mainCategory =="Select Category") {
-        $msg = "<span class = 'error'> Cant have an empty field...! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Cant have an empty field...! </span>";
         return $msg;
 
   }else{
@@ -107,11 +107,11 @@ class SubCategory{
 
       // Checking if the insert was good
       if ($update_row) {
-        $msg = "<span class='success'>Sub-Category ".'"'.$subCategoryName.'"'." Updated Successfully.</span> ";
+        $msg = "<span class='alert alert-success' role='alert'>Sub-Category ".'"'.$subCategoryName.'"'." Updated Successfully.</span> ";
         return $msg;
 
       }else{
-        $msg = "<span class = 'error'> Sub-Category was not updated an error occurred! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Sub-Category was not updated an error occurred! </span>";
         return $msg;
       }
   }

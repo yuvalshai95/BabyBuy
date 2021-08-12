@@ -21,7 +21,7 @@ class Category{
 
     //error msg if empty field
     if (empty($catName)) {
-        $msg = "<span class = 'error'> Category Field cant be empty! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Category Field cant be empty! </span>";
         return $msg;
        }else {
 
@@ -34,10 +34,10 @@ class Category{
 
            // Checking if the insert was good
            if ($catinsert) {
-               $msg = "<span class='success'>Category ".'"'.$catName.'"'." Inserted Successfully.</span> ";
+               $msg = "<span class='alert alert-success' role='alert'>Category ".'"'.$catName.'"'." Inserted Successfully.</span> ";
                return $msg;
            }else {
-               $msg = "<span class='error'>Category Not Inserted .</span> ";
+               $msg = "<span  class='alert alert-danger' role='alert'>Category Not Inserted .</span> ";
                return $msg;
            }
        }
@@ -70,7 +70,7 @@ class Category{
 
     //error msg if empty field
     if (empty($CategoryName)) {
-        $msg = "<span class = 'error'> Category Field cant be empty! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Category Field cant be empty! </span>";
         return $msg;
 
   }else{
@@ -83,11 +83,11 @@ class Category{
 
       // Checking if the insert was good
       if ($update_row) {
-        $msg = "<span class='success'>Category ".'"'.$CategoryName.'"'." Updated Successfully.</span> ";
+        $msg = "<span class='alert alert-success' role='alert'>Category ".'"'.$CategoryName.'"'." Updated Successfully.</span> ";
         return $msg;
 
       }else{
-        $msg = "<span class = 'error'> Category was not updated an error occurred! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Category was not updated an error occurred! </span>";
         return $msg;
       }
   }
@@ -101,10 +101,10 @@ class Category{
     $query = "DELETE FROM category WHERE CategoryID = '$id'";
     $deletedData = $this->db->delete($query);
     if ($deletedData) {
-        $msg = "<span class='success'>Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
+        $msg = "<span class='alert alert-success' role='alert'>Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
         return $msg;
     }else{
-        $msg = "<span class = 'error'> Category was not deleted an error occurred! </span>";
+        $msg = "<span  class='alert alert-danger' role='alert'> Category was not deleted an error occurred! </span>";
         return $msg;
     }
 

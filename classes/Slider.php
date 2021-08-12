@@ -54,7 +54,7 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
 
       // checking if one or more field is empty
      if ($SliderTitle == "") {
-      $msg = "<span class = 'error'> You cant have an empty field! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> You cant have an empty field! </span>";
       return $msg;
 
      }else{ // all fields are valid- upload image to db
@@ -73,27 +73,27 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
 
           // checking both queries was inserted
           if ($inserted_row1) {
-            $msg = "<span class='success'>Slider ".'"'.$SliderTitle.'"'." Inserted Successfully.</span> ";
+            $msg = "<span class='alert alert-success' role='alert'>Slider ".'"'.$SliderTitle.'"'." Inserted Successfully.</span> ";
             return $msg;
 
           }else{ // some query failed
-            $msg = "<span class = 'error'>Slider Not Inserted! </span>";
+            $msg = "<span  class='alert alert-danger' role='alert'>Slider Not Inserted! </span>";
             return $msg;
           }
      }
 
     }else{ // File size is too big
-      $msg = "<span class = 'error'> File is too big! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> File is too big! </span>";
       return $msg;
     }
 
   }else{ // Error uploading file
-    $msg = "<span class = 'error'> There was an error uploading your file! </span>";
+    $msg = "<span  class='alert alert-danger' role='alert'> There was an error uploading your file! </span>";
   return $msg;
   }
 
 }else{ // File type is not valid
-  $msg = "<span class = 'error'> This File Type Is Not Allowed! </span>";
+  $msg = "<span  class='alert alert-danger' role='alert'> This File Type Is Not Allowed! </span>";
   return $msg;
 }
 
@@ -106,10 +106,10 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
   $query = "DELETE FROM slider WHERE SliderID = '$id'";
   $deletedData = $this->db->delete($query);
   if ($deletedData) {
-      $msg = "<span class='success'>Slider ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
+      $msg = "<span class='alert alert-success' role='alert'>Slider ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
       return $msg;
   }else{
-      $msg = "<span class = 'error'> Category was not deleted an error occurred! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> Category was not deleted an error occurred! </span>";
       return $msg;
   }
 
@@ -141,7 +141,7 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
 
   //error msg if empty field
   if (empty($SliderName)) {
-      $msg = "<span class = 'error'> Slider Name Field cant be empty! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> Slider Name Field cant be empty! </span>";
       return $msg;
 
 }else{
@@ -163,15 +163,15 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
       // Moving the file from temp location to new location
       move_uploaded_file($fileTmpName, $filePath);
 
-      $msg = "<span class='success'>Slider ".'"'.$SliderName.'"'." Updated Successfully.</span> ";
+      $msg = "<span class='alert alert-success' role='alert'>Slider ".'"'.$SliderName.'"'." Updated Successfully.</span> ";
       return $msg;
 
     }else{
-      $msg = "<span class = 'error'> Slider was not updated an error occurred! </span>";
+      $msg = "<span  class='alert alert-danger' role='alert'> Slider was not updated an error occurred! </span>";
       return $msg;
     }
   }else{
-    $msg = "<span class = 'error'> This File Type Is Not Allowed! </span>";
+    $msg = "<span  class='alert alert-danger' role='alert'> This File Type Is Not Allowed! </span>";
     return $msg;
   }
 
