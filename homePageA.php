@@ -39,71 +39,25 @@
     <br> <br>
     <!--  .............................................................................................................  -->
  
-    <!-- image slider start -->
-    <div class="slider">
-            <div class="slides">
-                <!-- radio buttons start -->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <!-- radio buttons end -->
-
-                <!-- slider images start -->
-                <?php
-				$getSlider = $slider->getAllSliders();
-
-				if ($getSlider) {
-					while($result = $getSlider->fetch_assoc()){	
-
-                      print_r($result);
-			?>
-                <div class="slide first">
-                    <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">
-                </div>
-               
-                <div class="slide">
-                    <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">
-                </div>
-
-                <div class="slide">
-                    <img src="admin/<?php echo $result['SliderImage']; ?>" alt="">
-                </div>
  
-                <!-- slider images end -->
-                <?php 	} } ?> <!-- Closing the if and while loop -->
+<!--Flex Slider START -->
+<div class="flexslider" style="position:relative;width:100%; height: 500px;">
+  <ul class="slides" style="position:relative;width:100%; height: 500px;">
+    <?php
+          $getslider = $slider->getAllSliders();
+          if($getslider)
+          {
+            while($result = $getslider->fetch_assoc())
+            {
 
-
-                <!-- automatic navigation start -->
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                </div>
-                <!-- automatic navigation end -->
-        </div>
-
-        <!-- manual navigation start -->
-        <div class="navigation-manual">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-        </div>
-        <!-- manual navigation end -->
-
-    </div>
-    <!-- image slider end -->
-
-
-    <script type="text/javascript">
-        var counter = 1;
-        setInterval(function(){
-            document.getElementById('radio' + counter).checked = true;
-            counter++;
-            if (counter > 3) {
-                counter = 1;
-            }
-        }, 5000)
-    </script>
+    ?>
+    <li>
+      <img src="admin/<?php echo $result['SliderImage']; ?>" />
+    </li>
+    <?php }}?>
+  </ul>
+</div>
+<!--Flex Slider END -->
 
 <!--  .............................................................................................................  -->
 
@@ -134,10 +88,16 @@
 
 
 
+<!--Flex Slider Script -->
+<script type="text/javascript">
 
-
-
-    
+    $(document).ready(function() {
+        $('.flexslider').flexslider({
+            animation: "slide"
+      });
+    });
+</script>
+<!--Flex Slider Script -->
 
     <!-- footer-->
     <?php include_once 'includes/footer.php'; ?>
