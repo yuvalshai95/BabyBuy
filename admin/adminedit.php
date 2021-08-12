@@ -56,7 +56,7 @@ class Admin2{
             AdminAddress = '$address',
             AdminCity = '$city',
             AdminPhone = '$phone',
-            AdminPhone = '$email' WHERE AdminID = '$id'";;
+            AdminEmail = '$email' WHERE AdminID = '$id'";;
 
             $update_row = $this->db->update($query); 
 
