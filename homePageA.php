@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +39,8 @@
  
  
 <!--Flex Slider START -->
-<div class="flexslider" style="position:relative;width:100%; height: 500px;">
-  <ul class="slides" style="position:relative;width:100%; height: 500px;">
+<div class="flexslider" style="position:relative;width:75%; height: 500px; margin:auto;">
+  <ul class="slides" style="position:relative;width:75%; height: 500px; margin:auto;">
     <?php
           $getslider = $slider->getAllSliders();
           if($getslider)

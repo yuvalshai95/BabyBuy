@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!-- Flex Slider CSS -->
     <link href="styleA/flexslider.css" rel="stylesheet">
     <!-- jQuery Flex Slider-->
