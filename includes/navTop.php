@@ -50,13 +50,13 @@
                     </a>
                 </li>
                 <li> <a class="cta" href="#"><button onclick="openLoginForm()">Login</button></a> </li>
-                <li> <a class="cta" href="#"><button>Register</button></a> </li>
+                <li> <a class="cta" href="#"><button onclick="openRegisterForm()">Register</button></a> </li>
             </ul>
         </div>
     </header>
 
 
-
+<!-- Login - Start -->
 
     <div class="popup-overlay"></div>
     <div class="login-popup">
@@ -88,6 +88,83 @@
    
         </div>
     </div>
+<!-- Login - End -->
+
+
+<!-- Register - Start -->
+
+    <div class="register-popup">
+        <div class="register-popup-close" onclick="closeRegisterForm()">&times;</div>
+        <div class="regForm">
+            <div style="display:flex;">
+                <div class="regAvatar">
+                    <img src="img/not_real_logo.png" alt="image" class="img-fluid" id="image">
+                </div>
+
+                <div class="regHeader">
+                    <h2 class="register-text">Register</h2>
+                </div>
+            </div>
+
+            <div style="display:flex; width: 100%; justify-content: center;">
+                <div style="display:block;">
+
+                    <div class="regElement">
+                        <label for="first-name">First Name: </label>
+                        <input type="firstName" name="firstName" class="form-control" id="firstName">
+                    </div>
+
+                    <div class="regElement">
+                        <label for="last-name">Last Name: </label>
+                        <input type="lastName" name="lastName" class="form-control" id="lastName">
+                    </div>
+
+                    <div class="regElement">
+                        <label for="city">City: </label>
+                        <input type="city" name="city" class="form-control" id="city">
+                    </div>
+
+                    <div class="regElement">
+                        <label for="adress">Adress: </label>
+                        <input type="adress" name="adress" class="form-control" id="adress">
+                    </div>
+                </div>
+            
+                <div style="display:block;">
+
+                    <div class="regElement">
+                        <label for="phone-number">Phone Number: </label>
+                        <input type="phone-number" name="phone-number" class="form-control" id="phone-number">
+                    </div>
+
+                    <div class="regElement">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" class="form-control" id="email">
+                    </div>
+            
+                    <div class="regElement">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password">
+                    </div>
+
+                    <div class="regElement">
+                        <label for="interest">Interest</label>
+                        <input type="interest" name="interest" class="form-control" id="interest">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="regElement btn">
+                <button class="btn btn-class">Register</button>       
+            </div>
+   
+        </div>
+    </div>
+<!-- Register - End -->
+
+
+
 
 
     <script>
@@ -103,13 +180,15 @@
             document.body.classList.remove("showLoginForm");
         }
 
-
-
+        function openRegisterForm() {
+            document.body.classList.add("showRegisterForm");
+        }
+        
+        function closeRegisterForm() {
+            document.body.classList.remove("showRegisterForm");
+        }
 
     </script>
-
-
-
 
 </body>
 </html>
