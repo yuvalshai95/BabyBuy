@@ -1,4 +1,7 @@
-<?php require_once '../DataBase/DB_Config.php' ?>
+<?php 
+  $filepath = realpath(dirname(__FILE__));
+  require_once ($filepath.'/../DataBase/DB_Config.php');
+?>
 
 <?php   
 class Product{
@@ -40,6 +43,14 @@ class Product{
 
 }
 
+public function getRecentProducts(){
+  $query = "SELECT *
+            FROM product
+            ORDER BY ProductTime DESC 
+            LIMIT 4";
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 

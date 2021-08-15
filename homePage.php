@@ -26,8 +26,7 @@
     <!-- top nav bar -->
     <?php include_once 'includes/navTop.php'; ?>
     
-    <?php require_once 'classes/SliderForHomePage.php'; ?>
-    <?php $slider = new SliderForHomePage(); ?>
+    <?php $slider = new Slider(); ?>
 
     <br> <br> <br>
 

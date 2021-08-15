@@ -1,5 +1,5 @@
 <?php
-    $pd = new ProductForHomePage();
+    $pd = new Product();
     $foramt = new Foramt();
 ?>
 <!DOCTYPE html>

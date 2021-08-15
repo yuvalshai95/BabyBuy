@@ -1,7 +1,8 @@
 <?php 
-    require_once '../DataBase/Session.php'; 
+    $filepath = realpath(dirname(__FILE__));
+    require_once ($filepath.'/../DataBase/Session.php'); 
     Session::checkLogin();
-    require_once '../DataBase/DB_Config.php'; 
+    require_once ($filepath.'/../DataBase/DB_Config.php'); 
  ?>
 
 <?php

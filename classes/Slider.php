@@ -1,4 +1,7 @@
-<?php require_once '../DataBase/DB_Config.php' ?>
+<?php 
+  $filepath = realpath(dirname(__FILE__));
+  require_once ($filepath.'/../DataBase/DB_Config.php'); 
+?>
 
 <?php  
  

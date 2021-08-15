@@ -1,6 +1,10 @@
-<?php include 'DataBase/Session.php'; ?> 
-<?php include 'DataBase/DB_Config.php'; ?> 
-<?php include_once 'classes/ProductForHomePage.php';?> 
+<?php require_once 'DataBase/Session.php'; ?> 
+<?php include_once 'DataBase/DB_Config.php'; ?> 
+<?php include_once 'classes/Slider.php'; ?>
+<?php include_once 'classes/Product.php';?> 
+<?php include_once 'classes/Article.php';?> 
+<?php include_once 'classes/Category.php';?>
+<?php include_once 'classes/SubCategory.php';?> 
 <?php include_once 'admin/helpers/Format.php';?> 
 
 <!DOCTYPE html>
@@ -28,7 +32,7 @@
     
     <header>
         <div class="col-md-2 logo">
-            <img class="logo" src="img/not_real_logo.png" alt="logo">
+            <img class="logo" src="img/babybuy big with text.png" alt="logo" style="width: 230px; height: 75px;">
         </div>
         <div class="col-md-7 navbar">
             <nav>
