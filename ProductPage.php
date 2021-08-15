@@ -1,3 +1,17 @@
+<?php
+    if ( isset($_GET['pdId']) && isset($_GET['userId']) ) {
+        $pd_id = $_GET['pdId'];
+        $user_id = $_GET['userId'];
+
+    } else {
+        // Reload homepage.php page script.. can't get productinfo with null ID
+        echo "<script>window.location = 'homepage.php'; </script>";
+    }
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,25 +52,40 @@
                 </div>
             </div>
 
+            <?php
+                $pd = new Product();
+                $getpd = $pd->getProductByIdAndUser($pd_id,$user_id);
+                if ($getpd) {
+                    $result = $getpd->fetch_assoc();
+
+                }
+
+            ?>
+
+
             <div class="col-2">
-                <p>Product Category</p>
-                <h1>Product Name</h1>
-                <h4>Price: 20.3$ | Shipping price: 3$</h4>
-                <h5>Age: 0-3</h5>
-                <h5>Pickup Option: Xxx</h5>
-                <h5>Condition: Xxx</h5>
-                <h5>Status: Xxx</h5>
+                <p><?= $result['CategoryName']; ?></p>
+                <h1><?= $result['ProductName']; ?></h1>
+                <h4>Price: $<?= $result['Price']; ?> | Shipping price: $3</h4>
+                <h5>Age: 
+                    <?php
+                        if ($result['Age']>0 && $result['Age']<4) {
+                            echo '0-3';
+                        }
+                        else if($result['Age']>3 && $result['Age']<8){
+                            echo '4-7';
+                        }else{
+                            echo '8+';
+                        }
+                    ?>
+                </h5>
+                <h5>Pickup Option: <?= $result['PickupOptions']; ?></h5>
+                <h5>Condition: <?= $result['ProductCondition']; ?></h5>
+                <h5>Status: <?= $result['Status']; ?></h5>
                 <a href="" class="btn"><i class="fas fa-heart"></i> Add to Wishlist</a>
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
-                <p class="prodDetails">Lorem Ipsum is simply dummy text of the 
-                    printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy 
-                    text ever since the 1500s, when an unknown printer 
-                    took a galley of type and scrambled it to make a type 
-                    specimen book. It has survived not only five 
-                    centuries, but also the leap into electronic typesetting, 
-                    remaining essentially unchanged.</p>
+                <p class="prodDetails"> <?= $result['Description']; ?></p>
             </div>
         </div>
 
@@ -64,13 +93,14 @@
             <div class="col-2 seller">
                 <div class="details">
                     <h3>Seller Details</h3>
-                    <p class="sellerDetails">Adi Hemo</p>
-                    <p class="sellerDetails">Zalman Shazar, Qiriat Yam</p>
-                    <p class="sellerDetails">052-6682665</p>
-                    <p class="sellerDetails">adi4hemo@gmail.com</p>
+                    <p class="sellerDetails"><?= $result['FirstName']; ?> <?= $result['LastName']; ?></p>
+                    <p class="sellerDetails"><?= $result['Address']; ?>,<?= $result['City']; ?></p>
+                    <p class="sellerDetails"><?= $result['PhoneNumber']; ?></p>
+                    <p class="sellerDetails"><?= $result['UserEmail']; ?></p>
                 </div>
                 <div class="whatsappIcon">
                     
+                <!--TODO Make whatsapp phone number work -->
                    <label class="contact" for="" id="nav-toggle-bottom" data-toggle="tooltip" 
                             title="Ask me about this product" data-placement="bottom">
                         <a href="https://wa.me/972526682665" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>

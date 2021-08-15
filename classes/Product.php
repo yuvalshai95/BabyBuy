@@ -53,7 +53,15 @@ public function getRecentProducts(){
 }
 
 
-
+public function getProductByIdAndUser($pid, $uid){
+  $query = "SELECT product.*, users.*, category.*
+            FROM product
+            INNER JOIN users on product.UserID = users.UserID
+            INNER JOIN category on product.ProductCategory = category.CategoryID
+            WHERE product.ProductID='$pid' AND users.UserID='$uid'"  ;
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 
