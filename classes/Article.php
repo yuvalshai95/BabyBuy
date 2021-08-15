@@ -202,7 +202,16 @@ public function getAllArticles(){
 }
 
 
-
+public function getRecentArticles(){
+  $query = "SELECT articles.*, articles_images.ImagePath
+            FROM articles 
+            INNER JOIN articles_images ON articles.ImageRefrence = articles_images.ImageRefrence
+            GROUP BY articles_images.ImageRefrence
+            ORDER BY articles.ArticleTimeStamp DESC
+            LIMIT 4";
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 

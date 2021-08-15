@@ -24,7 +24,6 @@
             if($getpd){
                 while($result = $getpd->fetch_assoc()){
 
-           
         ?>
         <!-- TODO: Add <a> tag to be able to click on the product and go to product page  -->
          <!-- TODO: Add <a> tag to be able to click on the Wishlist and go to product page  -->

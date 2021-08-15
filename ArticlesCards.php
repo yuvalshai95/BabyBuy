@@ -1,3 +1,8 @@
+<?php
+    $article = new Article();
+    $foramt = new Foramt();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,85 +12,41 @@
     <title>Articles Cards</title>
 
     <!-- style Articles Cards -->
-    <link href="styleA/articlesCards.css" rel="stylesheet">
+    <link href="styleA/articlesCards2.css" rel="stylesheet">
 
     
 </head>
 <body>
+    
     <div class="articleCardsContainer">
         <div class="ArticleContainer">
+
+        <!-- TODO: Change <a> tag to correct page -->
+        <?php
+            $getarticle = $article->getRecentArticles();
+            if($getarticle){
+                while ($result = $getarticle->fetch_assoc()) {
+        ?>
             <div class="card-item">
                 <div class="ArticleCard">
-                    <img class="card-img" src="img/article1.png" alt="">
+                  <a href="ProductPage.php?articleId=<?php echo $result['ArticleID']; ?>">  <img class="card-img" src="admin/<?php echo $result['ImagePath']; ?>" alt=""> </a>
                     <div class="card-content">
-                        <h2 class="card-header">Title</h2>
-                        <p class="card-text">
-                            textt extt ex tte xttext textte xtte xt tex tt e xt texttex ttex ttex ttexttext
-                        </p>
+                    <a href="ProductPage.php?articleId=<?php echo $result['ArticleID']; ?>">  <h2 class="card-header"><?= $result['ArticleHeader']; ?></h2> </a>
+                    <p class="card-text">
+                           <?php echo $foramt->textShorten($result['ArticleBody'],180) ?>
+                    </p> 
                         
                     </div>
                     <div class="card-btnn">
-                        <button class="card-btn">Read More <span>&rarr;</span></button>
+                    <a href="ProductPage.php?articleId=<?php echo $result['ArticleID']; ?>">    <button class="card-btn">Read More <span>&rarr;</span></button> </a>
                     </div>
-                    
                 </div>
             </div>
 
-            <div class="card-item">
-                <div class="card">
-                    <img class="card-img" src="img/article2.png" alt="">
-                    <div class="card-content">
-                        <h2 class="card-header">Title</h2>
-                        <p class="card-text">
-                        textt extt ex tte xttext textte xtte xt tex tt e xt texttex ttex ttex ttexttext
-                        </p>
-                        
-                    </div>
-                    <div class="card-btnn">
-                        <button class="card-btn">Read More <span>&rarr;</span></button>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="card-item">
-                <div class="card">
-                    <img class="card-img" src="img/article3.png" alt="">
-                    <div class="card-content">
-                        <h2 class="card-header">Title</h2>
-                        <p class="card-text">
-                            textt extt ex tte xttext textte xtte 
-                        </p>
-                        
-                    </div>
-                    <div class="card-btnn">
-                        <button class="card-btn">Read More <span>&rarr;</span></button>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="card-item">
-                <div class="card">
-                    <img class="card-img" src="img/article4.png" alt="">
-                    <div class="card-content">
-                        <h2 class="card-header">Title</h2>
-                        <p class="card-text">
-                            textt extt ex tte xttext textte xtte 
-                        </p>
-                        
-                    </div>
-                    <div class="card-btnn">
-                        <button class="card-btn">Read More <span>&rarr;</span></button>
-                    </div>
-                    
-                </div>
-            </div>
+            <?php } } ?> 
 
         </div>
     </div>
-
-
 
 
 </body>
