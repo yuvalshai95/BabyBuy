@@ -1,6 +1,11 @@
 
 <!-- define var -->
-<?php include_once 'utils.php'; ?> 
+<?php 
+    $filepath = realpath(dirname(__FILE__));
+    include_once ($filepath.'/utils.php'); 
+?>
+
+
 
 <!-- Method2 MySQLi OOP Query-->
 <?php
