@@ -7,7 +7,7 @@
     <title>BabyBuy</title>
 
     <!-- Flex Slider CSS -->
-    <link href="styleA/flexslider.css" rel="stylesheet">
+    <link href="styleA/flexslider2.css" rel="stylesheet">
     <!-- jQuery Flex Slider-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JS Flex Slider-->
@@ -15,10 +15,9 @@
 
 
     <!-- style Home Page -->
-    <link href="styleA/homePageStyle.css" rel="stylesheet">
+    <link href="styleA/homePageStyle2.css" rel="stylesheet">
 
-    <!-- style slideshow -->
-    <link href="styleA/slideshowStyle.css" rel="stylesheet">
+
 
 </head>
 
@@ -46,8 +45,8 @@
  
  
 <!--Flex Slider START -->
-<div class="flexslider" style="position:relative;width:75%; height: 500px; margin:auto;">
-  <ul class="slides" style="position:relative;width:75%; height: 500px; margin:auto;">
+<div class="flexslider" style="position:relative;width:75%; height: 500px; margin:auto; ">
+  <ul class="slides" style="position:relative;width:75%; height: 500px; margin:auto;  height: fit-content;" >
     <?php
           $getslider = $slider->getAllSliders();
           if($getslider)
