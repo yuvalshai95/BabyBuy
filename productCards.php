@@ -1,3 +1,7 @@
+<?php
+    $pd = new ProductForHomePage();
+    $foramt = new Foramt();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,113 +18,46 @@
     
 <div class="productCardsContainer">
     <div class="container">
+
+        <?php
+            $getpd = $pd->getRecentProducts();
+            if($getpd){
+                while($result = $getpd->fetch_assoc()){
+
+           
+        ?>
+        <!-- TODO: Add <a> tag to be able to click on the product and go to product page  -->
+         <!-- TODO: Add <a> tag to be able to click on the Wishlist and go to product page  -->
         <div class="card">
             <div class="imgBx">
-                <img src="img/toy3.png" alt="">
+               <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>"> 
+               <img src="admin/<?php echo $result['Image']; ?>" alt=""> </a>
                 <ul class="action">
                     <li>
-                        <i class="fas fa-heart"></i>
+                       <a href="#"> <i class="fas fa-heart"></i> </a>
                         <span>Add to Wishlist</span>
                     </li>
                     <li>
-                        <i class="far fa-eye"></i>
+                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>">  <i class="far fa-eye"></i> </a>
                         <span>View Details</span>
                     </li>
                 </ul>
             </div>
             <div class="content">
                 <div class="productName">
-                    <h3>Noisemaker</h3>
+                    <h3><?=$result['ProductName'];?></h3>
                 </div>
                 <div class="price_status">
-                    <h2>$5.15</h2>
+                    <h2>$<?= $result['Price']; ?></h2>
                     <div class="status">
-                        <h4>New</h4>
+                        <h4><?= $result['ProductCondition']; ?></h4>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="imgBx">
-                <img src="img/blanket.png" alt="">
-                <ul class="action">
-                    <li>
-                        <i class="fas fa-heart"></i>
-                        <span>Add to Wishlist</span>
-                    </li>
-                    <li>
-                        <i class="far fa-eye"></i>
-                        <span>View Details</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="content">
-                <div class="productName">
-                    <h3>blanket</h3>
-                </div>
-                <div class="price_status">
-                    <h2>$5.00</h2>
-                    <div class="status">
-                        <h4>Used</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBx">
-                <img src="img/cradle.png" alt="">
-                <ul class="action">
-                    <li>
-                        <i class="fas fa-heart"></i>
-                        <span>Add to Wishlist</span>
-                    </li>
-                    <li>
-                        <i class="far fa-eye"></i>
-                        <span>View Details</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="content">
-                <div class="productName">
-                    <h3>Cradle</h3>
-                </div>
-                <div class="price_status">
-                    <h2>$60.80</h2>
-                    <div class="status">
-                        <h4>Used</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imgBx">
-                <img src="img/pacifier.png" alt="">
-                <ul class="action">
-                    <li>
-                        <i class="fas fa-heart"></i>
-                        <span>Add to Wishlist</span>
-                    </li>
-                    <li>
-                        <i class="far fa-eye"></i>
-                        <span>View Details</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="content">
-                <div class="productName">
-                    <h3>Pacifier</h3>
-                </div>
-                <div class="price_status">
-                    <h2>$1.20</h2>
-                    <div class="status">
-                        <h4>New</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php }} ?>
+       
 
     </div>
 

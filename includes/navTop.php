@@ -1,4 +1,8 @@
-<?php //require_once 'DataBase/Session.php'; ?> 
+<?php include 'DataBase/Session.php'; ?> 
+<?php include 'DataBase/DB_Config.php'; ?> 
+<?php include_once 'classes/ProductForHomePage.php';?> 
+<?php include_once 'admin/helpers/Format.php';?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
