@@ -4,7 +4,8 @@
 <?php include_once 'classes/Product.php';?> 
 <?php include_once 'classes/Article.php';?> 
 <?php include_once 'classes/Category.php';?>
-<?php include_once 'classes/SubCategory.php';?> 
+<?php include_once 'classes/SubCategory.php';?>
+<?php include_once 'classes/User.php';?>  
 <?php include_once 'admin/helpers/Format.php';?> 
 
 <!DOCTYPE html>

@@ -23,7 +23,7 @@
     <link href="styleA/css/all.min.css" rel="stylesheet">
 
         <!-- style Product Page -->
-        <link href="styleA/productPage.css" rel="stylesheet">
+        <link href="styleA/productPage2.css" rel="stylesheet">
 
 </head>
 <body>
@@ -94,7 +94,7 @@
                 <div class="details">
                     <h3>Seller Details</h3>
                     <p class="sellerDetails"><?= $result['FirstName']; ?> <?= $result['LastName']; ?></p>
-                    <p class="sellerDetails"><?= $result['Address']; ?>,<?= $result['City']; ?></p>
+                    <p class="sellerDetails"><?= $result['Address']; ?>, <?= $result['City']; ?></p>
                     <p class="sellerDetails"><?= $result['PhoneNumber']; ?></p>
                     <p class="sellerDetails"><?= $result['UserEmail']; ?></p>
                 </div>
@@ -113,8 +113,39 @@
         </div>
 
         <div class="row map">
-            <h1>***MAP***</h1>
-        </div>
+
+            <?php
+                // create new user instance
+                $user = New User();
+
+                // get user from database
+                $getUser = $user->getUserById($user_id);
+
+                // if user in data base get his address
+                if($getUser){
+                    $result = $getUser->fetch_assoc();
+
+                    // get user city and repalce all white spaces with "+" sign
+                    $city = $result['City'];
+                    $city = str_replace(" ","+",$city);
+
+                    // get user address and repalce all white spaces with "+" sign
+                    $address = $result['Address'];
+                    $address = str_replace(" ","+",$address);
+
+                    // combine user city and address
+                    $full_address = $city ."+".$address;
+
+
+            ?>  
+                        <div class="resp-container">
+                            <iframe  src="https://maps.google.com/maps?q=<?php echo $full_address ?>&output=embed" ></iframe>
+                        </div>
+                        
+                    
+            <?php }?>
+
+
 
 
     </div>
