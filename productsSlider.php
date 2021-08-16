@@ -39,7 +39,7 @@
             </div>
             <div class="product-details">
                 <div class="product-name">
-                    <a href="#"><?= $result['ProductName']; ?></a>
+                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>"><?= $result['ProductName']; ?></a>
                     <span><?= $result['ProductCondition']; ?></span>
                 </div>
                 <a href="#" class="price">$<?= $result['Price']; ?></a>
