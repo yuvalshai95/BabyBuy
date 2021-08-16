@@ -32,12 +32,12 @@
     
     <header>
         <div class="col-md-2 logo">
-            <img class="logo" src="img/babybuy big with text.png" alt="logo" style="width: 230px; height: 75px;">
+           <a href="homePage.php"> <img class="logo" src="img/babybuy big with text.png" alt="logo" style="width: 230px; height: 75px;"> </a>
         </div>
         <div class="col-md-7 navbar">
             <nav>
                 <ul class="nav__links">
-                    <li> <a href="#">Home</a></li>
+                    <li> <a href="homePage.php">Home</a></li>
                     <li> <a href="#">Categories</a></li>
                     <li> <a href="#">Sell</a></li>
                     <li> <a href="ArticlesList.php">Articles</a></li>

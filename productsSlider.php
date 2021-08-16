@@ -34,7 +34,7 @@
             <div class="image">
                 <img src="admin/<?php echo $result['Image']; ?>" style=" width: 250px; height: 200px;">
                 <div class="Button">
-                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>" class="Pbtn">Buy Now</a>
+                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>" class="Pbtn">Buy Now</a>
                 </div>
             </div>
             <div class="product-details">

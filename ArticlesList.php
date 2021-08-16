@@ -90,7 +90,7 @@
 
                 // Display the links to the pages
                 for($page = 1;$page<=$number_of_pages;$page++){
-                    echo '<a href="ArticlesList.php?page='.$page.'" style="color:black;">' . $page . '</a> ';
+                    echo '<a  class="current" href="ArticlesList.php?page='.$page.'" >' . $page . '</a> ';
                 }
 
                 // Display Next page

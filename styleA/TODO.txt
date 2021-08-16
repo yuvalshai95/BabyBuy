@@ -1,0 +1,12 @@
+1) to product table remove image col and add image refrence
+when user upload product (user_products_image table) update image ref in both tables
+
+2) in article list highlight current page
+
+3) fix slider image size
+
+4) in home page change Condition tag color by Condition
+
+5) in product page -> shipping price???
+
+6) 
