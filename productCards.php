@@ -24,12 +24,13 @@
             if($getpd){
                 while($result = $getpd->fetch_assoc()){
 
+
         ?>
         <!-- TODO: Add <a> tag to be able to click on the product and go to product page  -->
          <!-- TODO: Add <a> tag to be able to click on the Wishlist and go to product page  -->
         <div class="card">
             <div class="imgBx">
-               <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>"> 
+               <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>"> 
                <img src="admin/<?php echo $result['Image']; ?>" alt=""> </a>
                 <ul class="action">
                     <li>
@@ -37,7 +38,7 @@
                         <span>Add to Wishlist</span>
                     </li>
                     <li>
-                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>">  <i class="far fa-eye"></i> </a>
+                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>">  <i class="far fa-eye"></i> </a>
                         <span>View Details</span>
                     </li>
                 </ul>

@@ -1,3 +1,12 @@
+<?php
+    if (isset($_GET['productCategory'])) {
+       $category_id = $_GET['productCategory'];
+
+    }
+
+    $pd = new Product();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,141 +20,35 @@
 <body>
 <div class="body">
     <div class="container">
+        <?php
+
+            $getSimilarProducts = $pd->getSimilarProducts($category_id);
+            if ($getSimilarProducts) {
+                while ($result = $getSimilarProducts->fetch_assoc()) {
+                    
+
+
+        ?>
+
         <div class="slider">
             <div class="image">
-                <img src="img/toy.png">
-    
+                <img src="admin/<?php echo $result['Image']; ?>" style=" width: 250px; height: 200px;">
                 <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
+                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>" class="Pbtn">Buy Now</a>
                 </div>
             </div>
-    
             <div class="product-details">
                 <div class="product-name">
-                    <a href="#">Round Neck Yellow T-shirt</a>
-                    <span>New Arrival</span>
+                    <a href="#"><?= $result['ProductName']; ?></a>
+                    <span><?= $result['ProductCondition']; ?></span>
                 </div>
-                <a href="#" class="price">$500</a>
+                <a href="#" class="price">$<?= $result['Price']; ?></a>
             </div>
         </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/toy2.png">
+    <?php }} ?>
     
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">Running Shoes</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$300</a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/toy3.png">
-    
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">BLACK-CK Analog Watch</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$350</a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/blanket.png">
-    
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">Dark Blue Track Pants</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$580</a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/car.png">
-    
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">Smart Lace-Ups Shoes</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$250</a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/carriage.png">
-    
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">CK312 Analog Watch</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$400</a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/cradle.png">
-    
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">Analog-Digital Watch</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$1000</a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="image">
-                <img src="img/dress.png">
-    
-                <div class="Button">
-                    <a href="#" class="Pbtn">Buy Now</a>
-                </div>
-            </div>
-    
-            <div class="product-details">
-                <div class="product-name">
-                    <a href="#">Men Light Blue Jeans</a>
-                    <span>New Arrival</span>
-                </div>
-                <a href="#" class="price">$520</a>
-            </div>
+
+     
         </div>
         </div>
             <i class="fas fa-chevron-right arrow"></i>

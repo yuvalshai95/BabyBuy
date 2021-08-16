@@ -64,7 +64,11 @@ public function getProductByIdAndUser($pid, $uid){
 }
 
 
-
+public function getSimilarProducts($category_id){
+  $query = "SELECT * FROM product WHERE product.ProductCategory = '$category_id' LIMIT 8";
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 
