@@ -1,23 +1,20 @@
 .pagination {
-    width: fit-content; 
-    margin: auto;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid white;
-    background-color: white;
-    margin: 0 4px;
-  }
-  
+	width: fit-content;
+	margin: auto;
+}
 
-  .pagination a:hover:not(.active) {
-      background-color: orange;
-      color: white !important;
-    }
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid white;
+	background-color: white;
+	margin: 0 4px;
+}
 
-  
+.pagination a:hover:not(.active) {
+	background-color: orange;
+	color: white !important;
+}

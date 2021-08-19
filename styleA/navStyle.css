@@ -1,306 +1,300 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-} 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
-li, a, button {
-    font-family: "Montserrat", sans-serif;
-    font-size: 17px;
-    color: #edf0f1;
-    text-decoration: none;
-    font-weight: bold;
+li,
+a,
+button {
+	font-family: "Montserrat", sans-serif;
+	font-size: 17px;
+	color: #edf0f1;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 /* Login Popup start */
 
 .login-popup {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: -150%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.15);
-    width: 400px;
-    height: 520px;
-    background: #f5f5f5;
-    z-index: 2;
-    opacity: 0;
-    box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
-    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+	font-family: "Montserrat", sans-serif;
+	position: absolute;
+	top: -150%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.15);
+	width: 400px;
+	height: 520px;
+	background: #f5f5f5;
+	z-index: 2;
+	opacity: 0;
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+	transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 
 body.showLoginForm .popup-overlay {
-    display: block;
+	display: block;
 }
 
 body.showLoginForm .login-popup {
-    top: 50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+	top: 50%;
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
 }
 
 .popup-overlay {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.5);
+	display: none;
 }
 
 .login-popup .login-popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    color: #555;
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	color: #555;
+	font-size: 25px;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
 }
 
 .login-popup .form .avatar {
-    margin: 30px 0px 20px;
-    text-align: center;
+	margin: 30px 0px 20px;
+	text-align: center;
 }
 
 .login-popup .form .avatar img {
-    width: 80px;
-    border-radius: 50%;
+	width: 80px;
+	border-radius: 50%;
 }
 
 .login-popup .form .header {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    color: #222;
-    margin: 20px 0px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	color: #222;
+	margin: 20px 0px;
 }
 
 .login-popup .form .element {
-    padding: 8px 20px;
+	padding: 8px 20px;
 }
 
 .login-popup .form .element label {
-    display: block;
-    font-size: 14px;
-    color: #222;
-    margin-bottom: 5px;
+	display: block;
+	font-size: 14px;
+	color: #222;
+	margin-bottom: 5px;
 }
 
 .login-popup .form .element input {
-    width: 100%;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    outline: none;
-    border: 1px solid #aaa;
-    background: #eee;
-    border-radius: 5px;
+	width: 100%;
+	padding: 8px 10px;
+	box-sizing: border-box;
+	outline: none;
+	border: 1px solid #aaa;
+	background: #eee;
+	border-radius: 5px;
 }
 
 .login-popup .form .element button {
-    margin-top: 30px;
-    padding: 10px 0px;
-    text-transform: uppercase;
-    width: 50%;
+	margin-top: 30px;
+	padding: 10px 0px;
+	text-transform: uppercase;
+	width: 50%;
 }
 
 .btn {
-    text-align: center;
+	text-align: center;
 }
 
-
 /* Login Popup end */
-
 
 /* Register Popup start */
 
 .register-popup {
-    font-family: "Montserrat", sans-serif;
-    position: absolute;
-    top: -150%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.15);
-    width: 800px;
-    height: 570px;
-    background: #f5f5f5;
-    z-index: 2;
-    opacity: 0;
-    box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
-    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+	font-family: "Montserrat", sans-serif;
+	position: absolute;
+	top: -150%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.15);
+	width: 800px;
+	height: 570px;
+	background: #f5f5f5;
+	z-index: 2;
+	opacity: 0;
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+	transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 
 body.showRegisterForm .popup-overlay {
-    display: block;
+	display: block;
 }
 
 body.showRegisterForm .register-popup {
-    top: 50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+	top: 50%;
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
 }
 
 .register-popup .register-popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    color: #555;
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	color: #555;
+	font-size: 25px;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
 }
 
 .register-popup .regForm .regAvatar {
-    margin: 30px 0px 20px;
-    text-align: center;
+	margin: 30px 0px 20px;
+	text-align: center;
 }
 
 .register-popup .regForm .regAvatar img {
-    width: 70px;
-    border-radius: 50%;
-    margin-left: 15px;
+	width: 70px;
+	border-radius: 50%;
+	margin-left: 15px;
 }
 
 .register-popup .regForm .regHeader {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    color: #222;
-    margin: 20px 0px;
-    width: 80%;
-    align-self: center;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	color: #222;
+	margin: 20px 0px;
+	width: 80%;
+	align-self: center;
 }
 
 .register-popup .regForm .regElement {
-    padding: 8px 20px;
+	padding: 8px 20px;
 }
 
 .register-popup .regForm .regElement label {
-    display: block;
-    font-size: 14px;
-    color: #222;
-    margin-bottom: 4px;
+	display: block;
+	font-size: 14px;
+	color: #222;
+	margin-bottom: 4px;
 }
 
 .register-popup .regForm .regElement input {
-    width: 100%;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    outline: none;
-    border: 1px solid #aaa;
-    background: #eee;
-    border-radius: 5px;
+	width: 100%;
+	padding: 8px 10px;
+	box-sizing: border-box;
+	outline: none;
+	border: 1px solid #aaa;
+	background: #eee;
+	border-radius: 5px;
 }
 
 .register-popup .regForm .regElement button {
-    margin-top: 30px;
-    padding: 10px 0px;
-    text-transform: uppercase;
-    width: 50%;
+	margin-top: 30px;
+	padding: 10px 0px;
+	text-transform: uppercase;
+	width: 50%;
 }
 
 /* Register Popup end */
 
-
 header {
-    display: flex;
-    align-items: center;
-    padding: 20px 20px;
-    background-color: rgb(248, 185, 48);
+	display: flex;
+	align-items: center;
+	padding: 20px 20px;
+	background-color: rgb(248, 185, 48);
 }
 
 .logo {
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
 }
 
 .navbar {
-    margin-top: auto;
-    margin-left: 50px;
+	margin-top: auto;
+	margin-left: 50px;
 }
 
 .nav__links {
-    list-style: none;
-    margin-left: 0px;
+	list-style: none;
+	margin-left: 0px;
 }
 
 .nav__buttons {
-    list-style: none; 
-    margin-left: auto;
-    margin-top: auto;
+	list-style: none;
+	margin-left: auto;
+	margin-top: auto;
 }
 
 .nav__buttons li {
-    display: inline-block;
-    padding: 0px 5px;
+	display: inline-block;
+	padding: 0px 5px;
 }
 
 .nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
-    
+	display: inline-block;
+	padding: 0px 20px;
 }
 
 .nav__links li a {
-    transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
 }
-
 
 .nav__links li a:hover {
-    color: #aa8213;
+	color: #aa8213;
 }
 
-button{
-    padding: 9px 25px;
-    background-color: rgb(233, 170, 54);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+button {
+	padding: 9px 25px;
+	background-color: rgb(233, 170, 54);
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
 }
 
 .btn.btn-outline-light {
-    padding: 6px 25px;
-    background-color: rgb(233, 170, 54);
-    border: none;
-    border-color: #edf0f1;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-
+	padding: 6px 25px;
+	background-color: rgb(233, 170, 54);
+	border: none;
+	border-color: #edf0f1;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
 }
 
 button:hover {
-    background-color: rgba(226, 136, 0, 0.808);
+	background-color: rgba(226, 136, 0, 0.808);
 }
 
-
-.btn.btn-outline-light:hover{
-    background-color: rgba(226, 136, 0, 0.808);
+.btn.btn-outline-light:hover {
+	background-color: rgba(226, 136, 0, 0.808);
 }
 
 .forgotPass {
-    cursor: pointer;
-    margin-top: 15px;
+	cursor: pointer;
+	margin-top: 15px;
 }
 
 .tooltip-inner {
-    background-color: orange !important;
-    color: white;
-  }
+	background-color: orange !important;
+	color: white;
+}
 
-  
-.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-    border-bottom-color: orange !important;
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+	border-bottom-color: orange !important;
 }

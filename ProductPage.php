@@ -23,7 +23,7 @@
     <link href="styleA/css/all.min.css" rel="stylesheet">
 
         <!-- style Product Page -->
-        <link href="styleA/productPage2.css" rel="stylesheet">
+        <link href="styleA/productPage.css" rel="stylesheet">
 
 </head>
 <body>

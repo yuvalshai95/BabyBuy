@@ -12,7 +12,7 @@
     <title>Articles Cards</title>
 
     <!-- style Articles Cards -->
-    <link href="styleA/articlesCards2.css" rel="stylesheet">
+    <link href="styleA/articlesCards.css" rel="stylesheet">
 
     
 </head>
