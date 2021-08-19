@@ -45,6 +45,7 @@
             // Determine the sql LIMIT starting number for the resutls on the displaying page
             $this_page_first_result = ($page-1)*$result_per_page;
 
+             //TODO: recmove this query from this page and insert in to Article class
              // Retrieve selected results from database and display them on page
              $query  = "SELECT articles.*, articles_images.ImagePath
              FROM articles
