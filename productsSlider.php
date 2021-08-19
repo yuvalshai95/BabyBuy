@@ -21,12 +21,15 @@
 <div class="body">
     <div class="container">
         <?php
-
+            
             $getSimilarProducts = $pd->getSimilarProducts($category_id);
             if ($getSimilarProducts) {
                 while ($result = $getSimilarProducts->fetch_assoc()) {
-                    
 
+                    // checking the same product wont show in the product slider
+                    if ($result['ProductID'] === $_GET['pdId']) {
+                        continue;
+                    }else{
 
         ?>
 
@@ -45,7 +48,7 @@
                 <a href="#" class="price">$<?= $result['Price']; ?></a>
             </div>
         </div>
-    <?php }} ?>
+    <?php } } }?>
     
 
      
