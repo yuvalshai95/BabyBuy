@@ -1,11 +1,4 @@
-<?php
-    if (isset($_GET['productCategory'])) {
-       $category_id = $_GET['productCategory'];
-
-    }
-
-    $pd = new Product();
-?>
+<?php  $pd = new Product(); ?>
 
 <!DOCTYPE html>
 <html lang="en">

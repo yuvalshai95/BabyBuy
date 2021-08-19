@@ -36,7 +36,7 @@
             $number_of_pages = ceil($number_of_results/$result_per_page);
 
             // Determine which page number visitor is currently on
-            if (!isset($_GET['page'])) {
+            if (!isset($_GET['page']) || $_GET['page']==NULL) {
                  $page = 1;
             }else{
                 $page = $_GET['page'];
@@ -71,6 +71,7 @@
         </div>
         <?php } ?>
 
+        <!-- Page Pagination  -->
         <div class="pagination">
             <?php
 

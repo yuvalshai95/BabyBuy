@@ -1,12 +1,18 @@
 <?php
-    if ( isset($_GET['pdId']) && isset($_GET['userId']) ) {
+    if ( !isset($_GET['pdId']) || !isset($_GET['userId']) || !isset($_GET['productCategory']) 
+          || $_GET['pdId']==NULL ||  $_GET['userId']==NULL ||  $_GET['productCategory']==NULL) {
+
+        // Reload homepage.php page script.. can't get productinfo with null ID
+        echo "<script>window.location = '404.php'; </script>";
+    } else{
+
+        // got all the var's needed from the URL to show product page
         $pd_id = $_GET['pdId'];
         $user_id = $_GET['userId'];
-
-    } else {
-        // Reload homepage.php page script.. can't get productinfo with null ID
-        echo "<script>window.location = 'homepage.php'; </script>";
+        $category_id = $_GET['productCategory'];
     }
+
+
     
 ?>
 
