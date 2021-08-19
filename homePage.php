@@ -44,8 +44,8 @@
  
  
 <!--Flex Slider START -->
-<div class="flexslider" style="position:relative;width:75%; height: 500px; margin:auto; ">
-  <ul class="slides" style="position:relative;width:75%; height: 500px; margin:auto;  height: fit-content;" >
+<div class="flexslider">
+  <ul class="slides">
     <?php
           $getslider = $slider->getAllSliders();
           if($getslider)
