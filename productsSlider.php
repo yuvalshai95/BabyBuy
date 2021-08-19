@@ -35,7 +35,7 @@
 
         <div class="slider">
             <div class="image">
-                <img src="admin/<?php echo $result['Image']; ?>" style=" width: 250px; height: 200px;">
+                <img src="admin/<?php echo $result['Image']; ?>" >
                 <div class="Button">
                     <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>" class="Pbtn">Buy Now</a>
                 </div>
