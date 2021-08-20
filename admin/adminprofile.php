@@ -11,13 +11,6 @@
         public	function __construct(){
            $this->db = new Database(); // when creating new db intsnace its opening a connection 
         }
-
-
-
-
-
-
-
     }
 ?>
 
