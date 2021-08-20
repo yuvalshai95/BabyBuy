@@ -741,6 +741,7 @@ img.right
 	width: 40%;
 	float: left;
 	margin-bottom: 1em;
+	margin-top: 2em;
 }
 
 .dataTables_filter {
