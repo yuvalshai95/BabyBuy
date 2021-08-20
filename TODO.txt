@@ -12,3 +12,5 @@ when user upload product (user_products_image table) update image ref in both ta
 6) in 404 page make footer stay at the bottom of the page
 
 7) in article list page on page 3 when we have 1 article the footer is hiding the search option - no padding?
+
+8) when adding category/sub-category/slider/article/product -> make sure a file with that name doesn't already exists in database

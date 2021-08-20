@@ -29,7 +29,7 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="CategoryName" placeholder="Enter Category Name..." class="medium" />
+                                <input type="text" name="CategoryName" placeholder="Enter Category Name..." class="medium" style="margin-top: 1rem;"/>
                             </td>
                         </tr>
 						<tr> 
