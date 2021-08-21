@@ -116,3 +116,21 @@ html {
     }
 }
 */
+
+.seeMore {
+    width: 68rem;
+    padding-left: 60rem;
+}
+
+.seeMoreHref {
+	color: #333;
+}
+
+a.seeMoreHref:hover {
+    border-bottom: solid 2px #333;
+}
+
+.fa-angle-double-right {
+	font-size: 20px;
+	vertical-align: middle;
+}
