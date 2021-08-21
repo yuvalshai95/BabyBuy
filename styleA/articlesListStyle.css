@@ -36,6 +36,7 @@ h2 {
 	width: 75%;
 	margin: 30px auto 30px;
 	font-family: "Montserrat", sans-serif;
+	box-shadow: 0 0.2rem 0.9rem 0rem #949494;
 }
 
 .content .main-content {
@@ -54,6 +55,7 @@ h2 {
 	border-radius: 5px;
 	background: #fff;
 	position: relative;
+	box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem #949494;
 }
 
 .content .main-content .post .read-more {
@@ -104,6 +106,7 @@ h2 a:hover {
 	width: 29.5%;
 	float: left;
 	height: 500px;
+	
 }
 
 .content .sidebar .section {
@@ -111,6 +114,7 @@ h2 a:hover {
 	padding: 20px;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	box-shadow: 0rem 0rem 0.4rem 0.01rem #949494;
 }
 
 .content .sidebar .section .section-title {

@@ -123,7 +123,6 @@
                 <li><a href="#" class="par">Toys</a></li>
                 <li><a href="#" class="par">Food</a></li>
                 <li><a href="#" class="par">Clothing</a></li>
-                <li><a href="#" class="par">Carriages</a></li>
                 <li><a href="#" class="par">Education</a></li>
                 <li><a href="#" class="par">Babies</a></li>
                 <li><a href="#" class="par">Leisure</a></li>
