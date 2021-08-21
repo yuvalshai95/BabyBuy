@@ -18,8 +18,8 @@
         <h3>BabyBuy</h3>
         <p>Follow us on Facebook and Instagram</p>
         <ul class="socials">
-            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook-square" style="color: #edf0f1;"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" style="color: #edf0f1;"></i></a></li>
         </ul>
     </div>
 
