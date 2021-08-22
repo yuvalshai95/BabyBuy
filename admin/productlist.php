@@ -8,6 +8,103 @@ $product = new Product();
 $format  = new Foramt();
 ?>
 
+<!-- PopUp Alert Script -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<?php
+	// We have a *Reminder button so we have to check using the GET Method if it was clicked
+	if(isset($_GET['userId']) && isset($_GET['userProduct'])){
+		$userDetails = $product->getUserProduct($_GET['userProduct'],$_GET['userId'])->fetch_assoc();
+		$userEmail = $userDetails['UserEmail'];
+
+		// Changing product "Days" counter from productlist page table to 0  
+		$product->updateProductDate($_GET['userId'],$_GET['userProduct']);
+
+		// pop up alert for success 
+		echo '
+		<script>
+			swal({
+			  title: "A Reminder Was Sent  To '.$userEmail.' !",
+			  text: "",
+			  icon: "success",
+			  button: "Close",
+			});
+		</script>';
+
+	}else{
+		$userEmail = "BabyBuyService@gmail.com";
+	}
+?>
+
+
+<?php 
+	//PHPMailer Code
+    // Include required phpmailer files
+    require_once '../PHPMailer/PHPMailer.php';
+    require_once '../PHPMailer/SMTP.php';
+    require_once '../PHPMailer/Exception.php';
+
+    // Define name spaces
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    // Create instance of phpmailer
+    $mail = new PHPMailer();
+
+    // Set mailer to use smtp
+    $mail->isSMTP();
+
+    // Define smtp host
+    $mail->Host = "smtp.gmail.com";
+
+    // Enable smtp authentication
+    $mail->SMTPAuth = true;
+
+    // Set type of encryption (ssl/tls)
+    $mail-> SMTPSecure = "tls";
+
+    // set port to connect smtp
+    $mail->Port = 587;
+
+	// Removing php strict ssl behaviour
+	$mail->SMTPOptions = array(
+	'ssl' => array(
+	'verify_peer' => false,
+	'verify_peer_name' => false,
+	'allow_self_signed' => true ) );
+
+    // Set gmail username
+    $mail->Username = "babybuyservice@gmail.com";
+
+    // Set gmail password
+    $mail->Password = "yuval123456";
+
+    // Set email subject
+    $mail->Subject = "no-reply: BabyBuy Product Reminder";
+
+	//Enable HTML
+	$mail->isHTML(true);
+
+    // Set sender email
+    $mail->setFrom("babybuyservice@gmail.com");
+
+    // Email body
+    $mail->Body = "<h1>This is HTML h1</h1>
+	</br>
+	<p>This is plain text email body</p>";
+
+	// Add recipient 
+	$mail->addAddress($userEmail);
+
+	// Finally send email
+	$mail->Send();
+
+	// Closing smtp connection
+	$mail->smtpClose();
+
+?>
+
 <?php 
 	// We have a *Delete button so we have to check using the GET Method if it was clicked
 	if ((isset($_GET['productId']) && (isset($_GET['productName'])))) {
@@ -70,11 +167,12 @@ $format  = new Foramt();
 
 				// Run Query
 				$getProduct = $product->getAllProducts();
-
+				
 				if ($getProduct) {
 					$i = 0;
 					while($result = $getProduct->fetch_assoc()){
 					$i++;	
+					$getuser = $product->getUserProduct($result['ProductID'],$result['UserID'])->fetch_assoc();	
 			?>
 
 				<tr class="odd gradeX">
@@ -123,20 +221,21 @@ $format  = new Foramt();
 
 					<!-- TODO: make Reminder work -->
 					<td class="tableCenter"> 
-						<a href="">Reminder</a> || 
+						<a href="?userId=<?= $getuser['UserID']?>&userProduct=<?= $result['ProductID']?>" >Reminder</a> || 
 						<a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a>
 					</td>
 				</tr>
 
-				<?php 	} } ?> <!-- Closing the if and while loop -->
+				<?php } } ?> 
 
-
+				
 			</tbody>
 		</table>
 
        </div>
     </div>
 </div>
+
 
 <script type="text/javascript">
     $(document).ready(function () {

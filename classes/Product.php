@@ -70,6 +70,26 @@ public function getSimilarProducts($category_id){
   return $result;
 }
 
+public function getUserProduct($pdId , $userId){
+  $query = "SELECT users.* 
+            FROM product 
+            INNER JOIN users ON product.UserID = users.UserID 
+            WHERE product.ProductID = '$pdId' AND product.UserID = '$userId'";
+  $result = $this->db->select($query);
+  return $result;
+}
+
+
+public function updateProductDate($userId , $pdId){
+  $todayDate =  date('Y-m-d H:i:s');
+  $query = "UPDATE product
+  SET ProductTime = '$todayDate'
+  WHERE UserID = '$userId' AND ProductID = '$pdId'";
+  $this->db->update($query);
+}
+
+
+
 
 
 
