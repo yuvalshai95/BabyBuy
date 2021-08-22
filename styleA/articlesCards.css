@@ -41,7 +41,7 @@ html {
 
 .card-item:hover {
 	transform: translateY(-0.5%);
-	box-shadow: 0 2rem 2rem #949494;
+	box-shadow: 0 1rem 1rem #949494;
 }
 
 .card-img {
@@ -116,3 +116,21 @@ html {
     }
 }
 */
+
+.seeMore {
+    width: 68rem;
+    padding-left: 60rem;
+}
+
+.seeMoreHref {
+	color: #333;
+}
+
+a.seeMoreHref:hover {
+    border-bottom: solid 2px #333;
+}
+
+.fa-angle-double-right {
+	font-size: 20px;
+	vertical-align: middle;
+}
