@@ -32,7 +32,8 @@ $format  = new Foramt();
 		</script>';
 
 	}else{
-		$userEmail = "BabyBuyService@gmail.com";
+		// User email was not received by GET method
+		$userEmail = "";
 	}
 ?>
 
@@ -81,7 +82,7 @@ $format  = new Foramt();
     $mail->Password = "yuval123456";
 
     // Set email subject
-    $mail->Subject = "no-reply: BabyBuy Product Reminder";
+    $mail->Subject = "no-reply: BabyBuyService Product Reminder";
 
 	//Enable HTML
 	$mail->isHTML(true);
@@ -119,6 +120,7 @@ $format  = new Foramt();
         <h2>Product List</h2>
 
 		<?php 
+			// Printing the deleted product success message 
 			if(isset($deleteProduct)){
 				echo $deleteProduct;
 			}
@@ -153,15 +155,14 @@ $format  = new Foramt();
 			
 
 			<?php
-				// Function to find the difference 
-				// between two dates.
+				// Function to find the difference between two dates.
 				function dateDiffInDays($date1, $date2) 
 				{
 					// Calculating the difference in timestamps
 					$diff = strtotime($date2) - strtotime($date1);
 									
 					// 1 day = 24 hours
-					// 24 * 60 * 60 = 86400 seconds
+					// 1 day = 24hr* 60min * 60sec = 86400 seconds
 					return abs(round($diff / 86400));
 				}
 
@@ -219,7 +220,6 @@ $format  = new Foramt();
 						?> 
 				</td>
 
-					<!-- TODO: make Reminder work -->
 					<td class="tableCenter"> 
 						<a href="?userId=<?= $getuser['UserID']?>&userProduct=<?= $result['ProductID']?>" >Reminder</a> || 
 						<a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a>
