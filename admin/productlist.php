@@ -31,6 +31,8 @@ $format  = new Foramt();
 			});
 		</script>';
 
+		
+
 	}else{
 		// User email was not received by GET method
 		$userEmail = "";
@@ -91,9 +93,7 @@ $format  = new Foramt();
     $mail->setFrom("babybuyservice@gmail.com");
 
     // Email body
-    $mail->Body = "<h1>This is HTML h1</h1>
-	</br>
-	<p>This is plain text email body</p>";
+    $mail->Body = file_get_contents('../PHPMailer/EmailContent/body.html');
 
 	// Add recipient 
 	$mail->addAddress($userEmail);
