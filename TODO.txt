@@ -18,3 +18,7 @@ when user upload product (user_products_image table) update image ref in both ta
 9) in articleList page make query to database from class object
 
 10) change all delete/edit btn on admin panel from GET to POST
+
+11) make email html designed template
+
+12) on productlist page in the email body make all dynamic and fix on first load empty vars for error fix
