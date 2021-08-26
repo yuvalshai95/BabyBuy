@@ -12,15 +12,13 @@ $format  = new Foramt();
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <?php
-	// We have a *Reminder button so we have to check using the GET Method if it was clicked
-	if(isset($_GET['userId']) && isset($_GET['userProduct'])){
-		$userDetails = $product->getUserProduct($_GET['userProduct'],$_GET['userId'])->fetch_assoc();
+	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reminder'])){
+		$userDetails = $product->getUserProduct($_POST['userProduct'],$_POST['userId'])->fetch_assoc();
 		$userEmail = $userDetails['UserEmail'];
-
+		
 		// Changing product "Days" counter from productlist page table to 0  
-		$product->updateProductDate($_GET['userId'],$_GET['userProduct']);
+		$product->updateProductDate($_POST['userId'],$_POST['userProduct']);
 
-		// pop up alert for success 
 		echo '
 		<script>
 			swal({
@@ -30,11 +28,8 @@ $format  = new Foramt();
 			  button: "Close",
 			});
 		</script>';
-
-		
-
 	}else{
-		// User email was not received by GET method
+		// User email was not received by POST method
 		$userEmail = "";
 	}
 ?>
@@ -106,25 +101,30 @@ $format  = new Foramt();
 
 ?>
 
-<?php 
-	// We have a *Delete button so we have to check using the GET Method if it was clicked
-	if ((isset($_GET['productId']) && (isset($_GET['productName'])))) {
-		$idToDelete = $_GET['productId'];
-		$productName = $_GET['productName'];
+<?php
+	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
+		$idToDelete = $_POST['productId'];
+		$productName = $_POST['productName'];
 		$deleteProduct = $product->deleteProductById($idToDelete,$productName);
 	}
 ?>
+
+
 
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Product List</h2>
 
+		<!-- delete message when product is deleted -->
+		<div style="margin-top: 2em;">	
 		<?php 
 			// Printing the deleted product success message 
 			if(isset($deleteProduct)){
 				echo $deleteProduct;
 			}
 		?>
+		</div>
+		
 
         <div class="block">  
             <table class="data display datatable" id="example">
@@ -145,7 +145,8 @@ $format  = new Foramt();
 					<th>Condition</th>
 					<th>Image</th>
 					<th>Days</th>
-					<th>Action</th>
+					<th>Reminder</th>
+					<th>Delete</th>
 				</tr>
 				
 			</thead>
@@ -221,8 +222,21 @@ $format  = new Foramt();
 				</td>
 
 					<td class="tableCenter"> 
-						<a href="?userId=<?= $getuser['UserID']?>&userProduct=<?= $result['ProductID']?>" >Reminder</a> || 
-						<a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a>
+					<!-- Reminder BTN POST method-->
+					<form action="" method="POST">
+						<input type="hidden" name="userId" value="<?= $getuser['UserID']?>">
+						<input type="hidden" name="userProduct" value="<?= $result['ProductID']?>">
+						<input type="submit" name="reminder" Value="Reminder" class="btn btn-green"/>
+					</form>
+
+					</td>
+					<td class="tableCenter">
+						 <!-- <a onclick="return confirm('Are You Sure You Want To Delete This Product?')" href="?productId=<?php echo $result['ProductID']; ?>&productName=<?php echo $result['ProductName']; ?>"> Delete</a> -->
+						 <form action="" method="POST">
+							<input type="hidden" name="productId" value="<?php echo $result['ProductID']; ?>">
+							<input type="hidden" name="productName" value="<?php echo $result['ProductName']; ?>">
+							<input onclick="return confirm('Are You Sure You Want To Delete This Product?')" type="submit" name="delete" Value="Delete" class="btn btn-red"/>
+						 </form>
 					</td>
 				</tr>
 
