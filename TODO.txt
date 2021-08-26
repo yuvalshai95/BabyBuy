@@ -16,3 +16,5 @@ when user upload product (user_products_image table) update image ref in both ta
 8) when adding category/sub-category/slider/article/product -> make sure a file with that name doesn't already exists in
 
 9) in articleList page make query to database from class object
+
+10) change all delete/edit btn on admin panel from GET to POST
