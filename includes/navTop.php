@@ -1,4 +1,6 @@
-<?php require_once 'DataBase/Session.php'; ?> 
+<?php require_once 'DataBase/Session.php'; 
+    Session::init();
+?>
 <?php include_once 'DataBase/DB_Config.php'; ?> 
 <?php include_once 'classes/Slider.php'; ?>
 <?php include_once 'classes/Product.php';?> 
@@ -7,6 +9,27 @@
 <?php include_once 'classes/SubCategory.php';?>
 <?php include_once 'classes/User.php';?>  
 <?php include_once 'admin/helpers/Format.php';?> 
+
+<?php
+    $user = new User();
+    if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['loginBtn']) ){
+        $userEmail = $_POST['email'];
+        $userPass = $_POST['password'];
+        $loginCheck = $user->checkLoginInfo($userEmail,$userPass);
+        
+    }
+?>
+
+
+<?php
+    if (isset($_GET['action']) &&  $_GET['action']=="logout") {
+        session_destroy();
+        header("Location: homepage.php");
+    }
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +81,15 @@
                         </button>
                     </a>
                 </li>
-                <li> <a class="cta" href="#"><button onclick="openLoginForm()">Login</button></a> </li>
+                <?php
+                    if (Session::get("userId")) {
+                    
+                         echo  '<li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>';
+                         
+                    }else{
+                       echo '<li> <a class="cta" href="#"><button onclick="openLoginForm()">Login</button></a> </li>';
+                    }
+                ?>
                 <li> <a class="cta" href="#"><button onclick="openRegisterForm()">Register</button></a> </li>
             </ul>
         </div>
@@ -79,21 +110,31 @@
                 <h3 class="signin-text">Sign In</h3>
             </div>
 
-            <div class="element">
-                <label for="email">Email: </label>
-                <input type="email" name="email" class="form-control" id="email">
-            </div>
-    
-            <div class="element">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="" class="form-control" id="password">
-            </div>
+            <span style="color:red; font-size: 18px;"> 
+			<?php
+				if (isset($loginCheck)) {
+					echo $loginCheck;
+				}
+			?>
+			</span>
+            
+            <form action="" method="POST">
+                <div class="element">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter Your Email">
+                </div>
+        
+                <div class="element">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="" class="form-control" id="password" placeholder="Password">
+                </div>
 
-            <div class="element btn">
-                <button class="btn btn-class">Login</button>
-                <label class="forgotPass" for="" id="nav-toggle-button" data-toggle="tooltip" 
-                    title="Relax and try to remember your password" data-placement="bottom">Forgot Password?</label>        
-            </div>
+                <div class="element btn">
+                    <input class="btn btn-class" type="submit" value="Login" name="loginBtn" />
+                    <label class="forgotPass" for="" id="nav-toggle-button" data-toggle="tooltip" 
+                        title="Relax and try to remember your password" data-placement="bottom">Forgot Password?</label>        
+                </div>
+            </form>
    
         </div>
     </div>
