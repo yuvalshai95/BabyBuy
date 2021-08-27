@@ -1,15 +1,19 @@
 <?php require_once 'DataBase/Session.php'; 
     Session::init();
 ?>
-<?php include_once 'DataBase/DB_Config.php'; ?> 
-<?php include_once 'classes/Slider.php'; ?>
-<?php include_once 'classes/Product.php';?> 
-<?php include_once 'classes/Article.php';?> 
-<?php include_once 'classes/Category.php';?>
-<?php include_once 'classes/SubCategory.php';?>
-<?php include_once 'classes/User.php';?>  
-<?php include_once 'admin/helpers/Format.php';?> 
+<!--Include all classes-->
+<?php 
+    include_once 'DataBase/DB_Config.php'; 
+    include_once 'classes/Slider.php'; 
+    include_once 'classes/Product.php'; 
+    include_once 'classes/Article.php'; 
+    include_once 'classes/Category.php';
+    include_once 'classes/SubCategory.php';
+    include_once 'classes/User.php';  
+    include_once 'admin/helpers/Format.php'; 
+ ?> 
 
+<!--Check user login details after login click-->
 <?php
     $user = new User();
     if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['loginBtn']) ){
@@ -20,15 +24,13 @@
     }
 ?>
 
-
+<!--Logout user after clicked logout btn-->
 <?php
     if (isset($_GET['action']) &&  $_GET['action']=="logout") {
         session_destroy();
         header("Location: homepage.php");
     }
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -81,15 +83,18 @@
                         </button>
                     </a>
                 </li>
+
                 <?php
+                    // check if user is logged in
                     if (Session::get("userId")) {
                     
                          echo  '<li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>';
                          
-                    }else{
+                    }else{ //user is logged out
                        echo '<li> <a class="cta" href="#"><button onclick="openLoginForm()">Login</button></a> </li>';
                     }
                 ?>
+                
                 <li> <a class="cta" href="#"><button onclick="openRegisterForm()">Register</button></a> </li>
             </ul>
         </div>
