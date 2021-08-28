@@ -76,12 +76,18 @@
         <div class="col-md-3 nav__buttons">
             <ul>
                 <li class="nav-item">
-                    <a href="#" class="wishlistBTN">
-                        <button type="button" class="btn btn-outline-light">
-                            <span style="font-size: 130%; color: #edf0f1;">
-                            <i class="fas fa-heart" id="heart" style="color: #edf0f1; font-size: 16px;"></i></span> Wishlist 
-                        </button>
-                    </a>
+                <!--If user is logged in show wishlist btn-->
+                <?php 
+                 if(Session::get("userId")) {
+                    echo '
+                        <a href="#" class="wishlistBTN">
+                            <button type="button" class="btn btn-outline-light">
+                                <span style="font-size: 130%; color: #edf0f1;">
+                                <i class="fas fa-heart" id="heart" style="color: #edf0f1; font-size: 16px;"></i></span> Wishlist 
+                            </button>
+                        </a>';
+                } ?>
+                
                 </li>
 
                 <?php
