@@ -13,17 +13,6 @@
     include_once 'admin/helpers/Format.php'; 
  ?> 
 
-<!--Check user login details after login click-->
-<?php
-    $user = new User();
-    if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['loginBtn']) ){
-        $userEmail = $_POST['email'];
-        $userPass = $_POST['password'];
-        $loginCheck = $user->checkLoginInfo($userEmail,$userPass);
-        
-    }
-?>
-
 <!--Logout user after clicked logout btn-->
 <?php
     if (isset($_GET['action']) &&  $_GET['action']=="logout") {
@@ -97,7 +86,7 @@
                          echo  '<li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>';
                          
                     }else{ //user is logged out
-                       echo '<li> <a class="cta" href="#"><button onclick="openLoginForm()">Login</button></a> </li>';
+                       echo '<li> <a class="cta" href="login.php"><button>Login</button></a> </li>';
                     }
                 ?>
                 

@@ -20,8 +20,13 @@
     echo "S:".$s;
 
 
-    $string = "Hamarganyot 13";
-    $string = str_replace(' ','',$string);
-    echo preg_match("/^[a-zA-Z0-9]{2,}$/",$string);
+    $email = "yuvalshai@gmail.com";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "NO";
+    }else{
+        echo "OK";
+    }
+  
+    
 
 ?>

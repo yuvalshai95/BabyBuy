@@ -1,6 +1,8 @@
 <?php 
     $filepath = realpath(dirname(__FILE__));
     require_once ($filepath.'/../DataBase/DB_Config.php');
+    require_once ($filepath.'/../DataBase/Session.php');
+
  ?>
 
  <?php
@@ -11,6 +13,7 @@ class User{
         $this->db = new Database();
     } 
     
+    /*
     public function getUserById($id)
     {
         $query = "SELECT * FROM users WHERE UserID = '$id'";
@@ -22,12 +25,6 @@ class User{
         $email =  mysqli_real_escape_string($this->db->link, $email );
         $pass =  mysqli_real_escape_string($this->db->link, $pass );
 
-        // If a field is empty show error msg
-        if (empty($email)||empty($pass)) {
-            $login_msg = "Email or Password cant be empty";
-            return $login_msg; 
-
-        }else{ // Both fields info are sent to the db to find a match
             $query = "SELECT * 
                       FROM users 
                       WHERE UserEmail='$email' AND UserPassword='$pass'";
@@ -46,14 +43,10 @@ class User{
                 Session::set('userInterest',$row['Interest']);
                 Session::set('userAddress',$row['Address']);
 
-                header("Location: homepage.php");
-            }else{
-                $login_msg = "Username or Password  are not matching...!";
-                return $login_msg;
-            }
-        }
+                header("Location: ../homepage.php");
+            }    
     }
-
+*/
 
     public function userInsert($data){
         $firstName  =  mysqli_real_escape_string($this->db->link, $data['firstName']);
