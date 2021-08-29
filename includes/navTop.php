@@ -101,7 +101,7 @@
                     }
                 ?>
                 
-                <li> <a class="cta" href="#"><button onclick="openRegisterForm()">Register</button></a> </li>
+                <li> <a class="cta" href="register.php"><button>Register</button></a> </li>
             </ul>
         </div>
     </header>
@@ -241,7 +241,7 @@
             document.body.classList.remove("showLoginForm");
         }
 
-        function openRegisterForm() {
+       function openRegisterForm() {
             document.body.classList.add("showRegisterForm");
         }
         

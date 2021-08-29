@@ -55,7 +55,34 @@ class User{
     }
 
 
+    public function userInsert($data){
+        $firstName  =  mysqli_real_escape_string($this->db->link, $data['firstName']);
+        $lastName   =  mysqli_real_escape_string($this->db->link, $data['lastName']);
+        $city       =  mysqli_real_escape_string($this->db->link, $data['city']);
+        $userEmail  =  mysqli_real_escape_string($this->db->link, $data['email']);
+        $userPass   =  mysqli_real_escape_string($this->db->link, $data['password']);
+        $userPhone  =  mysqli_real_escape_string($this->db->link, $data['phone']);
+        $address    =  mysqli_real_escape_string($this->db->link, $data['address']);
 
+        $interest = $data['categories'];
+        $interestToInsert = "";
+        foreach ($interest as $category) {
+            $interestToInsert .= $category.",";
+        }
+
+        $interestToInsert = rtrim($interestToInsert,",");
+        $interestToInsert = str_replace(',',' ',$interestToInsert);
+       
+
+        $query = "INSERT INTO users (FirstName,LastName,City,UserEmail,UserPassword,PhoneNumber,Interest,Address)
+                   VALUES ('$firstName','$lastName','$city',' $userEmail','$userPass','$userPhone','$interestToInsert','$address')";
+        
+        $this->db->insert($query);
+
+        // Send user back to register page with msg
+        header("location: ../register.php?error=none");
+        exit(); // Stop the script from running
+    }
 
 
 
