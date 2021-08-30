@@ -64,33 +64,36 @@
 
         <div class="col-md-3 nav__buttons">
             <ul>
-                <li class="nav-item">
-                <!--If user is logged in show wishlist btn-->
-                <?php 
-                 if(Session::get("userId")) {
-                    echo '
+
+                <?php
+
+                    // check if user is logged in
+                    if (Session::get("userId")) {    ?>
+
+                        <!-- Wishlist button -->
                         <a href="#" class="wishlistBTN">
                             <button type="button" class="btn btn-outline-light">
                                 <span style="font-size: 130%; color: #edf0f1;">
                                 <i class="fas fa-heart" id="heart" style="color: #edf0f1; font-size: 16px;"></i></span> Wishlist 
                             </button>
-                        </a>';
-                } ?>
-                
-                </li>
+                        </a>
 
-                <?php
-                    // check if user is logged in
-                    if (Session::get("userId")) {
+                        <!-- Profile button -->
+                        <li> <a class="cta" href="#"><button>Profile</button></a> </li>
                     
-                         echo  '<li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>';
+                        <!-- Logout button -->
+                         <li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>
+                   
                          
-                    }else{ //user is logged out
-                       echo '<li> <a class="cta" href="login.php"><button>Login</button></a> </li>';
+                   <?php }  else{ //user is logged out ?>
 
-                       echo '<li> <a class="cta" href="register.php"><button>Register</button></a> </li>';
-                    }
-                ?> 
+                        <!-- Login button -->
+                       <li> <a class="cta" href="login.php"><button>Login</button></a> </li>
+
+                       <!-- Register button -->
+                       <li> <a class="cta" href="register.php"><button>Register</button></a> </li>
+                   <?php  } ?>
+                 
             </ul>
         </div>
     </header>
