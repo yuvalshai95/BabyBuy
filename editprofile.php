@@ -1,5 +1,6 @@
 <?php require_once 'includes/navTop.php'; ?>
 
+<!-- Temporary style -->
 <style>
     table{
         width: 550px;
@@ -35,8 +36,10 @@
 			background-image: url('https://i.imgur.com/GnyDvKN.png');
 		}
 </style>
+<!-- Temporary style -->
 
-<?php
+
+<?php // Get user by user id from session
     $user = new User();
     $userId = Session::get("userId");
     $getUser = $user->getUserById($userId);
@@ -47,6 +50,7 @@
 ?>
 
 <?php
+    // Error handling
     if (isset($_GET["error"])) {
 
         if ($_GET["error"] == "empty") {
@@ -74,65 +78,62 @@
 ?>
 
 
+<!-- check all form inputs using update.inc -->
 <form action="includes/update.inc.php" method="POST">
-<table>
-
-   <tr>
-    <td colspan="2"> <h2>Update Profile Details</h2> </td>
-   </tr>
-       
+    <table>
 
     <tr>
-        <td width= "20%" >First Name</td>
-
-        <td > <input type="text" name="firstName" value="<?= $row['FirstName']?>"</td>
+        <td colspan="2"> <h2>Update Profile Details</h2> </td>
     </tr>
+        
 
-    <tr>
-        <td>Last Name</td>
+        <tr>
+            <td width= "20%" >First Name</td>
 
-        <td><input type="text" name="lastName" value="<?= $row['LastName']?>"</td>
-    </tr>
+            <td > <input type="text" name="firstName" value="<?= $row['FirstName']?>"</td>
+        </tr>
 
-    <tr>
-        <td>E-mail</td>
+        <tr>
+            <td>Last Name</td>
 
-        <td><input type="text" name="email" value="<?= $row['UserEmail']?>"</td>
-    </tr>
+            <td><input type="text" name="lastName" value="<?= $row['LastName']?>"</td>
+        </tr>
 
-    <tr>
-        <td>Mobile Number:</td>
+        <tr>
+            <td>E-mail</td>
 
-        <td><input type="text" name="phone" value="<?= $row['PhoneNumber']?>"</td>
-    </tr>
+            <td><input type="text" name="email" value="<?= $row['UserEmail']?>"</td>
+        </tr>
 
-    <tr>
-        <td>City:</td>
+        <tr>
+            <td>Mobile Number:</td>
 
-        <td><input type="text" name="city" value="<?= $row['City']?>"</td>
-    </tr>
+            <td><input type="text" name="phone" value="<?= $row['PhoneNumber']?>"</td>
+        </tr>
 
-    <tr>
-        <td>Address:</td>
+        <tr>
+            <td>City:</td>
 
-        <td><input type="text" name="address" value="<?= $row['Address']?>"></td>
-    </tr>
+            <td><input type="text" name="city" value="<?= $row['City']?>"</td>
+        </tr>
 
-    <tr>
-       
-        <td width = "30%"><input type="submit" name="submit" value="Save Changes"></td>
-    </tr>
+        <tr>
+            <td>Address:</td>
+
+            <td><input type="text" name="address" value="<?= $row['Address']?>"></td>
+        </tr>
+
+        <tr>
+        
+            <td width = "30%"><input type="submit" name="submit" value="Save Changes"></td>
+        </tr>
 
 
-    <input type="hidden" name=userId value="<?php echo $userId ?>">
+        <input type="hidden" name=userId value="<?php echo $userId ?>">
 
-</table>
+    </table>
 
 </form>
-
-
-
-
 
 
 <?php require_once 'includes/footer.php'; ?>
