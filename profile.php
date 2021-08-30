@@ -106,8 +106,8 @@
     </tr>
 
     <tr>
-        <td width = "30%"><a  style="color:orange;"href="editpassword.php">Update Password</a></td>
-        <td width = "30%"><a  style="color:orange;"href="editprofile.php">Update Details</a></td>
+        <td width = "30%"><button><a href="editpassword.php">Update Password</a></button></td>
+        <td width = "30%"><button><a href="editprofile.php">Update Details</a></button></td>
     </tr>
 
 </table>

@@ -129,7 +129,7 @@
         </tr>
 
         <tr>
-        
+            <td><button><a href="profile.php"><< Go Back</a></button></td>
             <td width = "30%"><input type="submit" name="submit" value="Save Changes"></td>
         </tr>
 
