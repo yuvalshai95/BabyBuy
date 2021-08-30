@@ -30,3 +30,5 @@ when user upload product (user_products_image table) update image ref in both ta
 15) add contact form?
 
 16) check all pages chrome tabs title
+
+17) on admin panel add menu icons for better appearance
