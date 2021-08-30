@@ -63,7 +63,10 @@ class User{
             $interestToInsert .= $category.",";
         }
 
+        // Removing "," from the string on the right 
         $interestToInsert = rtrim($interestToInsert,",");
+        
+        // Replace all "," with white spaces
         $interestToInsert = str_replace(',',' ',$interestToInsert);
        
 

@@ -110,7 +110,7 @@ if(isset($_POST['submit'])){
         exit(); // Stop the script from running
     }
 
-    // user made no mistake creating the user
+    // user made no mistake, creating the user
     $user->userInsert($_POST);
 
 

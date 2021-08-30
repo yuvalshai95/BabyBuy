@@ -87,10 +87,10 @@
                          
                     }else{ //user is logged out
                        echo '<li> <a class="cta" href="login.php"><button>Login</button></a> </li>';
+
+                       echo '<li> <a class="cta" href="register.php"><button>Register</button></a> </li>';
                     }
-                ?>
-                
-                <li> <a class="cta" href="register.php"><button>Register</button></a> </li>
+                ?> 
             </ul>
         </div>
     </header>
@@ -98,6 +98,7 @@
 
 <!-- Login - Start -->
 
+    <!--
     <div class="popup-overlay"></div>
     <div class="login-popup">
         <div class="login-popup-close" onclick="closeLoginForm()">&times;</div>
@@ -110,14 +111,6 @@
                 <h3 class="signin-text">Sign In</h3>
             </div>
 
-            <span style="color:red; font-size: 18px;"> 
-			<?php
-				if (isset($loginCheck)) {
-					echo $loginCheck;
-				}
-			?>
-			</span>
-            
             <form action="" method="POST">
                 <div class="element">
                     <label for="email">Email: </label>
@@ -137,12 +130,13 @@
             </form>
    
         </div>
-    </div>
+    </div> -->
 <!-- Login - End -->
 
 
 <!-- Register - Start -->
 
+<!--
     <div class="register-popup">
         <div class="register-popup-close" onclick="closeRegisterForm()">&times;</div>
         <div class="regForm">
@@ -210,7 +204,7 @@
             </div>
    
         </div>
-    </div>
+    </div> -->
 <!-- Register - End -->
 
 

@@ -5,6 +5,7 @@
     $allCategories = $category->getAllCategories();
 ?>
 
+<!-- temporary style -->
 <style>
     input{
         margin:auto;
@@ -15,6 +16,11 @@
         text-align: center;
         display: block;
 
+    }
+    h1{
+        text-align: center;
+        margin-bottom: 1em;
+        
     }
 .info, .success, .warning, .error, .validation {
 			border: 1px solid;
@@ -38,8 +44,10 @@
 </style>
 
 <div class="container">
+    
 
 <?php 
+    // Error handling
     if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
             echo "<div class='validation'>Fill in all fields !</div>";
@@ -80,30 +88,31 @@
     }
 
 ?>
-
+    <h1>Register</h1>
+    
     <form action="includes/register.inc.php" method="POST">
-        <label for="firstName" >*First Name</label>
+        <label for="firstName" >First Name*</label>
         <input type="text" name="firstName">
 
-        <label for="lastName">*Last Name</label>
+        <label for="lastName">Last Name*</label>
         <input type="text" name="lastName">
 
-        <label for="city">*City</label>
+        <label for="city">City*</label>
         <input type="text" name="city">
 
-        <label for="address">*Address</label>
+        <label for="address">Address*</label>
         <input type="text" name="address">
 
-        <label for="email">*E-Mail</label>
+        <label for="email">E-Mail*</label>
         <input class="email" type="text" name="email">
 
-        <label for="password">*Password</label>
+        <label for="password">Password*</label>
         <input type="password" name="password">
 
-        <label for="validatePassword">*Confirm Password</label>
+        <label for="validatePassword">Confirm Password*</label>
         <input type="password" name="validatePassword">
 
-        <label for="phone">*Phone Number</label>
+        <label for="phone">Phone Number*</label>
         <input type="text" name="phone">
 
         <label for="interest">Interest</label>

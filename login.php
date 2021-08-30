@@ -32,6 +32,7 @@
 <div class="container">
 
     <?php
+        // Error handling
         if(isset($_GET["error"])){
             if ($_GET["error"] == "emptyinput") {
                 echo "<div class='validation'>Fill in all fields !</div>";
@@ -52,6 +53,7 @@
     ?>
 
     <h1>Login</h1>
+    
     <form action="includes/login.inc.php" method="POST">
         <input type="text" placeholder="Email" name="email">
         <input type="password" placeholder="Password" name="password">
