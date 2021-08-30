@@ -118,19 +118,36 @@ class User{
             header("location: ../profile?update=error");
             exit();
         }
-        
+    }
         
 
+    public function updateUserPassword($id, $newPwd){
+
+        $query = "UPDATE users SET UserPassword  = '$newPwd' WHERE UserID  = '$id'";
+
+        $update_row = $this->db->update($query); 
+        
+        if( $update_row !== false){
+            header("location: ../profile?update=success");
+            exit();
+        }else{
+            header("location: ../profile?update=error");
+            exit();
+        }
     }
 
 
+    public function isPasswordDatabase($pwd){
 
+        $query = "SELECT users.UserPassword
+        FROM users
+        WHERE users.UserPassword = '$pwd'";
 
+       $result = $this->db->select($query);
 
+       return $result;
 
-
-
-
+    }
 
 
 

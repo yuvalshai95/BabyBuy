@@ -1,3 +1,7 @@
+<head>
+    <title>Profile</title>
+</head>
+
 <?php require_once 'includes/navTop.php'; ?>
 
 <style>
@@ -52,8 +56,13 @@
 
 
 <?php
-    if (isset($_GET['update']) ) {
+    if ( isset($_GET['update']) && $_GET['update'] == "success") {
         echo "<div class='success'>User Profile Details Updated Successfully !</div>";
+    }
+
+    else if( isset($_GET['update']) && $_GET['update'] == "error" ){
+
+        echo "<div class='validation'>Error occurred update failed</div>";
     }
 ?>
 

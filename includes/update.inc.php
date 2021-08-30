@@ -84,4 +84,5 @@ if (isset($_POST['submit'])) {
 
 }else{
     header("location: ../editprofile.php");
+    exit();
 }

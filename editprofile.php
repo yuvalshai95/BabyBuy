@@ -1,3 +1,8 @@
+<head>
+    <title>Update Profile</title>
+</head>
+
+
 <?php require_once 'includes/navTop.php'; ?>
 
 <!-- Temporary style -->
