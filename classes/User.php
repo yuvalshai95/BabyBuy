@@ -80,6 +80,50 @@ class User{
         exit(); // Stop the script from running
     }
 
+    public function getUserById($Id){
+        $query = "SELECT * 
+                  FROM users
+                   WHERE users.UserID = '$Id'";
+        
+        $result = $this->db->select($query);
+
+        return $result;
+    }
+
+
+    public function updateUserDetails($id, $firstName, $lastName, $email, $phone, $city, $address){
+        $id         =  mysqli_real_escape_string($this->db->link, $id );
+        $firstName  =  mysqli_real_escape_string($this->db->link, $firstName );
+        $lastName   =  mysqli_real_escape_string($this->db->link, $lastName );
+        $city       =  mysqli_real_escape_string($this->db->link, $city);
+        $userEmail  =  mysqli_real_escape_string($this->db->link, $email);
+        $userPhone  =  mysqli_real_escape_string($this->db->link, $phone);
+        $address    =  mysqli_real_escape_string($this->db->link,  $address );
+
+        // Syntax UPDATE table_name SET field1 = new-value1
+        $query = "UPDATE users SET FirstName = '$firstName',
+                                    LastName = '$lastName',
+                                    City = '$city',
+                                    UserEmail='$userEmail',
+                                    PhoneNumber='$userPhone',
+                                    Address='$address'
+                  WHERE UserID  = '$id'";
+
+        $update_row = $this->db->update($query);
+
+        if( $update_row !== false){
+            header("location: ../profile?update=success");
+            exit();
+        }else{
+            header("location: ../profile?update=error");
+            exit();
+        }
+        
+        
+
+    }
+
+
 
 
 

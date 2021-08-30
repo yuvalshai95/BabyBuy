@@ -68,7 +68,7 @@
                 <?php
 
                     // check if user is logged in
-                    if (Session::get("userId")) {    ?>
+                    if (Session::get("userId")){    ?>
 
                         <!-- Wishlist button -->
                         <a href="#" class="wishlistBTN">
@@ -79,20 +79,21 @@
                         </a>
 
                         <!-- Profile button -->
-                        <li> <a class="cta" href="#"><button>Profile</button></a> </li>
+                        <li> <a class="cta" href="profile.php"><button>Profile</button></a> </li>
                     
                         <!-- Logout button -->
                          <li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>
                    
-                         
-                   <?php }  else{ //user is logged out ?>
+
+                    <!-- user is logged out -->
+                   <?php }else{  ?>
 
                         <!-- Login button -->
                        <li> <a class="cta" href="login.php"><button>Login</button></a> </li>
 
                        <!-- Register button -->
                        <li> <a class="cta" href="register.php"><button>Register</button></a> </li>
-                   <?php  } ?>
+                   <?php } ?>
                  
             </ul>
         </div>
