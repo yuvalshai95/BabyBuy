@@ -32,3 +32,5 @@ when user upload product (user_products_image table) update image ref in both ta
 16) check all pages chrome tabs title
 
 17) on admin panel add menu icons for better appearance
+
+18) on product page change method from GET to POST or refer user to 404 page if he changes the url
