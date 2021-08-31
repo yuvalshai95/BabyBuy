@@ -79,7 +79,7 @@
                         </a>
 
                         <!-- Profile button -->
-                        <li> <a class="cta" href="profile.php"><button>Profile</button></a> </li>
+                        <li> <a class="cta" href="profile.php"><button>My Account</button></a> </li>
                     
                         <!-- Logout button -->
                          <li> <a class="cta" href="?action=logout"><button>Logout</button></a> </li>

@@ -36,3 +36,7 @@ when user upload product (user_products_image table) update image ref in both ta
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
 19) make sure user cant add to wishlist his own products
+
+20) make sure you cant add the same product to wishlist twice
+
+21) user profile -> add see my products ? (to be able to change/delete items)

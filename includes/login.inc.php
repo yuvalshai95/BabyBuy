@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
     if (isNotEmailExists($db->link,$userEmail) !== false) {
 
         // Send user back to register page with error msg
-        header("location: ../login.php?error=emailnotexists");
+        header("location: ../login.php?error=emailnotexists&num_row=".isNotEmailExists($db->link,$userEmail));
 
         exit(); // Stop the script from running
     }

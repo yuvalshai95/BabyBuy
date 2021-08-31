@@ -83,14 +83,33 @@ public function getUserProduct($pdId , $userId){
 public function updateProductDate($userId , $pdId){
   $todayDate =  date('Y-m-d H:i:s');
   $query = "UPDATE product
-  SET ProductTime = '$todayDate'
-  WHERE UserID = '$userId' AND ProductID = '$pdId'";
+            SET ProductTime = '$todayDate'
+            WHERE UserID = '$userId' AND ProductID = '$pdId'";
   $this->db->update($query);
 }
 
 
+public function getAllWishlist($currentuserId){
+  $query = "SELECT *
+            FROM wishlist
+            WHERE wishlist.UserWishlistId = '$currentuserId'";
 
+  $result = $this->db->select($query);
 
+  return $result;
+
+}
+
+public function InsertToWishlist($wishPd, $wishOwnerid , $currentUserId){
+  
+  $query = "INSERT INTO wishlist(ProductID,UserID,UserWishlistId) VALUES (?,?,?)";
+  $stmt = $stmt = mysqli_stmt_init($this->db->link);
+  mysqli_stmt_prepare($stmt,$query);
+  mysqli_stmt_bind_param($stmt,"iii", $wishPd,$wishOwnerid,$currentUserId);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_get_result($stmt);
+
+}
 
 
 

@@ -1,4 +1,6 @@
 <?php 
+require_once '../DataBase/DB_Config.php';
+
 
 function emptyInputRegister($firstName,  $lastName,  $city, $address, $email,  $password,  $validatePassword, $phone){
     // Checking if there is an empty field input
@@ -112,6 +114,7 @@ function emailExists($link, $email){
 }
 
 function isNotEmailExists($link, $email){
+    $db = new Database();
     $query = "SELECT *
               FROM users 
               WHERE users.UserEmail  = ?";
@@ -138,7 +141,7 @@ function isNotEmailExists($link, $email){
    }
    return $isNotExists;
    mysqli_stmt_close($stmt);
-    
+
 }
 
 

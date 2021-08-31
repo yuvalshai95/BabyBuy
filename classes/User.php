@@ -71,7 +71,7 @@ class User{
        
 
         $query = "INSERT INTO users (FirstName,LastName,City,UserEmail,UserPassword,PhoneNumber,Interest,Address)
-                   VALUES ('$firstName','$lastName','$city',' $userEmail','$userPass','$userPhone','$interestToInsert','$address')";
+                   VALUES ('$firstName','$lastName','$city','$userEmail','$userPass','$userPhone','$interestToInsert','$address')";
         
         $this->db->insert($query);
 
@@ -147,6 +147,22 @@ class User{
 
        return $result;
 
+    }
+
+
+    public function wishlistIsEmpty($id){
+
+        $query = "SELECT *
+                  FROM wishlist
+                  WHERE wishlist.UserWishlistId = '$id'";
+
+        $result = $this->db->select($query);
+        if($result == false){
+            return $result;
+        }else{
+            $wishlistNotEmpty = true;
+            return  $wishlistNotEmpty;
+        }
     }
 
 
