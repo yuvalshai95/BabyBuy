@@ -6,17 +6,16 @@
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-<!-- BOOTSTRAP DON'T TOUCH -->
+<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->  
 
 <?php
     $currentUser = Session::get("userId");
     $pd = new Product();
     $user = new User();
 ?>
-
-
 
 <style>
     table tr td{
@@ -37,15 +36,14 @@
 <!-- Add to wish list product user clicked on -->
 <?php
     if (isset($_POST['currentUserId'])) {
-        $wishPd          = $_POST['pdId'];
-       $wishOwnerid     = $_POST['ownerId'];
+        $wishPd     = $_POST['pdId'];
+       $wishOwnerid = $_POST['ownerId'];
        $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
     }
 ?>
 
-
-
-
+<!-- wishlist table -->
+<h1>My Wishlist</h1>
 <table>
 
     <th>Product Name</th>
@@ -78,6 +76,7 @@
        
     </tr>
     <?php }} ?>
+</table>
 
     <!-- jQuery Script to delete item from wishlist table -->
     <script>
@@ -100,15 +99,22 @@
 <div id="dataModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
+
+            <!-- Header -->
             <div class="modal-header">
                 <button type="button" name="close" data-dismiss="modal">X</button>
                 <h4 class="modal-title">User Details</h4>
             </div>
+
+            <!-- Body, get body content from ajax function call -->
             <div class="modal-body" id="user_detail">
             </div>
+
+            <!-- Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
+
         </div>
     </div>
 </div>
@@ -142,109 +148,6 @@
 
 
 
-
-
-    <?php /*
-    $currentUser = Session::get("userId");
-    if(isset($_POST['currentUserId'])){
-       $wishPd          = $_POST['pdId'];
-       $wishOwnerid     = $_POST['ownerId'];
-       $currentUserId   = $_POST['currentUserId'];
-
-    // TODO: Delete after use
-     // echo 'wishPd: '.$wishPd."<br>";
-     // echo 'wishOwnerid: '.$wishOwnerid."<br>";
-    // echo 'currentUserId: '.$currentUserId."<br>";
-
-       $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUserId);
-
-       $allWishlist = $pd->getAllWishlist($currentUser);
-
-       if($allWishlist !== false){
-           while($row = $allWishlist -> fetch_assoc()){
-
-            $product    = $pd->getProductByIdAndUser($row['ProductID'],$row['UserID'])->fetch_assoc();
-            $owner      = $user->getUserById($row['UserID'])->fetch_assoc();
-
-    
-?>
-
-    <tr>
-        <td>
-            <img src="admin/<?php echo $product['Image']?>" alt="" height="70px;" width="70px;">
-            <?php echo $product['ProductName'] ?>
-        </td>
-        <td><?php echo $product['Price'] ?></td>
-        <td><?php echo $product['Status'] ?></td>
-        <td><button>Details</button></td>
-        <td><button><a href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">See Product</a></button></td>
-        <form action="" method="POST">
-            <input type="hidden" name="wishId" value="<?php echo $row["ID"]?>">
-        <td><button><a href="wishlist.php">Remove</a></button></td>
-        </form>
-        
-    </tr>
-    <?php }} */?>
-
-</table>
-
-<?php /* } else if($pd->getAllWishlist($currentUser) !== false){ ?>
-
-    <?php 
-
-       while($row = $pd->getAllWishlist($currentUser) -> fetch_assoc()){ 
-        $wishPd = $row['ProductID'];
-       // $owner = $row['UserID'];
-        $product = $pd->getProductByIdAndUser($row['ProductID'],$row['UserID'])->fetch_assoc(); ?>
-
-        <tr>
-            <td>
-                <img src="admin/<?php echo $product['Image']?>" alt="" height="70px;" width="70px;">
-                <?php echo $product['ProductName'] ?>
-            </td>
-            <td><?php echo $product['Price'] ?></td>
-            <td><?php echo $product['Status'] ?></td>
-            <td><button>Details</button></td>
-            <td><button><a href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">See Product</a></button></td>
-            <form action="" method="POST">
-                <input type="hidden" name="wishId" value="<?php echo $row["ID"]?>">
-                <td>
-                    <button><a href="wishlist.php">Remove</a></button>
-                </td>
-            </form>
-
-        </tr>
-    <?php }
-}  */?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-    <h1>My wishlist</h1>
-
-<table>
-    <th>Product Name</th>
-    <th>Unit Price</th>
-    <th>Status</th>
-    <th>Seller Details</th>
-    <th>Product Page</th>
-    <th>Remove</th>
-
-
-</table>
-<h2>Your wishlist is empty</h2> -->
 
 
 
