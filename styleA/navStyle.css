@@ -13,7 +13,6 @@ button {
 	font-size: 17px !important;
 	color: #edf0f1 !important;
 	text-decoration: none !important;
-	font-weight: bold !important;
 }
 
 /* Login Popup start */
@@ -223,6 +222,10 @@ header {
 	height: 100px;
 }
 
+ul {
+	margin: auto !important;
+}
+
 .navbar {
 	margin-top: auto !important;
 	margin-left: 50px !important;
@@ -255,6 +258,7 @@ header {
 
 .nav__links li a:hover {
 	color: #aa8213 !important;
+	font-weight: bold !important;
 }
 
 button {
