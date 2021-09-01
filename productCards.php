@@ -53,7 +53,7 @@
 
                     <li>
 
-                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>">  <i class="far fa-eye"></i> </a>
+                    <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?php echo $result['ProductCategory']; ?>">  <i class="far fa-eye"></i> </a>
                         <span>View Details</span>
                     </li>
                 </ul>

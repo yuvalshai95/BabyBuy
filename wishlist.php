@@ -67,7 +67,7 @@
         <td><?php echo $product['Price'] ?></td>
         <td><?php echo $product['Status'] ?></td>
         <td><button>Details</button></td>
-        <td><button><a href="ProductPage.php?pdId=<?php echo $product['ProductID']?>&userId=<?php echo $wishOwnerid ?>&productCategory=<?php echo "1" ?>">Visit</a></button></td>
+        <td><button><a href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">Visit</a></button></td>
         <td><button>Remove</button></td>
     </tr>
     <?php }}?>
