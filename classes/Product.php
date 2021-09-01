@@ -103,13 +103,27 @@ public function getAllWishlist($currentuserId){
 public function InsertToWishlist($wishPd, $wishOwnerid , $currentUserId){
   
   $query = "INSERT INTO wishlist(ProductID,UserID,UserWishlistId) VALUES (?,?,?)";
-  $stmt = $stmt = mysqli_stmt_init($this->db->link);
+  $stmt = mysqli_stmt_init($this->db->link);
   mysqli_stmt_prepare($stmt,$query);
   mysqli_stmt_bind_param($stmt,"iii", $wishPd,$wishOwnerid,$currentUserId);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_get_result($stmt);
 
 }
+
+public function deleteFromWishlist($id){
+  $query = "DELETE FROM wishlist
+            WHERE wishlist.ID = ?";
+  $stmt = mysqli_stmt_init($this->db->link);
+  mysqli_stmt_prepare($stmt,$query);
+  mysqli_stmt_bind_param($stmt,"i", $id);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_get_result($stmt);
+
+}
+
+
+
 
 
 
