@@ -42,8 +42,8 @@
        $wishOwnerid = $_POST['ownerId'];
 
        // Add product to wish list if user and owner are different
-       if($currentUser != $currentUser){
-        $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
+       if($currentUser != $wishOwnerid){
+            $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
        }
        
     }
@@ -82,7 +82,10 @@
         </td>
        
     </tr>
-    <?php }} ?>
+    <?php }}else{
+        echo '<div align="center"><h3>Empty :(</h3></div>';
+    } ?>
+    
 </table>
 
     <!-- jQuery Script to delete item from wishlist table -->
