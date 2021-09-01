@@ -6,6 +6,10 @@
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+<!-- BOOTSTRAP DON'T TOUCH -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
+
 <?php
     $currentUser = Session::get("userId");
     $pd = new Product();
@@ -66,8 +70,8 @@
         </td>
         <td><?php echo $product['Price'] ?></td>
         <td><?php echo $product['Status'] ?></td>
-        <td><button>Details</button></td>
-        <td><button><a href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">See Product</a></button></td>
+        <td><button type="button" class="btn btn-info btn-xs view_data" name="view" class="view_data" id="<?php echo $row['UserID']; ?>">Details</button></td>
+        <td><button><a href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">Go to page</a></button></td>
         <td>
             <button type="button" onclick="delete_data('<?php echo $row['ID']?>')">Delete</button>
         </td>
@@ -75,7 +79,7 @@
     </tr>
     <?php }} ?>
 
-
+    <!-- jQuery Script to delete item from wishlist table -->
     <script>
     function delete_data(id){
         jQuery.ajax({
@@ -87,11 +91,58 @@
                 jQuery("#tr_"+id).hide(600);
             }
         });
-        
-
     }
-
 </script>
+ <!-- jQuery Script to delete item from wishlist table -->
+
+
+<!-- User Details after button click bootstrap modal -->
+<div id="dataModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" name="close" data-dismiss="modal">X</button>
+                <h4 class="modal-title">User Details</h4>
+            </div>
+            <div class="modal-body" id="user_detail">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- User Details after button click bootstrap modal -->
+
+
+<!-- Script to show user details modal on click -->
+<script>
+    $(document).ready(function(){
+        $('.view_data').click(function(){
+            var user_id = $(this).attr("id"); // id from details button 
+
+            $.ajax({
+                url:"includes/userdata.inc.php",
+                method:"post",
+                data:{user_id:user_id},
+                success: function(data){ 
+                    // data we get back from the sever we want to show it in class=modal-body, id=user_detail
+                    $('#user_detail').html(data);
+
+                    //div id=datamodal selector -> on success show modal
+                    $('#dataModal').modal("show");
+                }
+            });
+
+
+        });
+    });
+</script>
+<!-- Script to show user details modal on click -->
+
+
+
+
 
     <?php /*
     $currentUser = Session::get("userId");

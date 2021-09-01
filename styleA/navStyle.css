@@ -9,11 +9,11 @@ body {
 li,
 a,
 button {
-	font-family: "Montserrat", sans-serif;
-	font-size: 17px;
-	color: #edf0f1;
-	text-decoration: none;
-	font-weight: bold;
+	font-family: "Montserrat", sans-serif !important;
+	font-size: 17px !important;
+	color: #edf0f1 !important;
+	text-decoration: none !important;
+	font-weight: bold !important;
 }
 
 /* Login Popup start */
@@ -211,10 +211,10 @@ body.showRegisterForm .register-popup {
 /* Register Popup end */
 
 header {
-	display: flex;
-	align-items: center;
+	display: flex !important;
+	align-items: center !important;
 	padding: 20px 20px;
-	background-color: rgb(248, 185, 48);
+	background-color: rgb(248, 185, 48) !important;
 }
 
 .logo {
@@ -224,8 +224,8 @@ header {
 }
 
 .navbar {
-	margin-top: auto;
-	margin-left: 50px;
+	margin-top: auto !important;
+	margin-left: 50px !important;
 }
 
 .nav__links {
@@ -234,54 +234,54 @@ header {
 }
 
 .nav__buttons {
-	list-style: none;
-	margin-left: auto;
-	margin-top: auto;
+	list-style: none !important;
+	margin-left: auto !important;
+	margin-top: auto !important;
 }
 
 .nav__buttons li {
-	display: inline-block;
-	padding: 0px 5px;
+	display: inline-block !important;
+	padding: 0px 5px !important;
 }
 
 .nav__links li {
-	display: inline-block;
-	padding: 0px 20px;
+	display: inline-block !important;
+	padding: 0px 20px !important;
 }
 
 .nav__links li a {
-	transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s !important;
 }
 
 .nav__links li a:hover {
-	color: #aa8213;
+	color: #aa8213 !important;
 }
 
 button {
-	padding: 9px 25px;
-	background-color: rgb(233, 170, 54);
-	border: none;
-	border-radius: 50px;
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
+	padding: 9px 25px !important;
+	background-color: rgb(233, 170, 54) !important;
+	border: none !important;
+	border-radius: 50px !important;
+	cursor: pointer !important;
+	transition: all 0.3s ease 0s !important;
 }
 
 .btn.btn-outline-light {
-	padding: 6px 25px;
-	background-color: rgb(233, 170, 54);
-	border: none;
-	border-color: #edf0f1;
-	border-radius: 10px;
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
+	padding: 6px 25px !important;
+	background-color: rgb(233, 170, 54) !important;
+	border: none !important;
+	border-color: #edf0f1 !important;
+	border-radius: 10px !important;
+	cursor: pointer !important;
+	transition: all 0.3s ease 0s !important;
 }
 
 button:hover {
-	background-color: rgba(226, 136, 0, 0.808);
+	background-color: rgba(226, 136, 0, 0.808) !important;
 }
 
 .btn.btn-outline-light:hover {
-	background-color: rgba(226, 136, 0, 0.808);
+	background-color: rgba(226, 136, 0, 0.808) !important;
 }
 
 .forgotPass {

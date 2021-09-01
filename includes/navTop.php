@@ -46,10 +46,10 @@
 <body>
     
     <header>
-        <div class="col-md-2 logo">
+        <div class="logo">
            <a href="homePage.php"> <img class="logo" src="img/babybuy big with text.png" alt="logo" style="width: 230px; height: 75px;"> </a>
         </div>
-        <div class="col-md-7 navbar">
+        <div class="navbar">
             <nav>
                 <ul class="nav__links">
                     <li> <a href="homePage.php">Home</a></li>
@@ -62,7 +62,7 @@
 
         </div>
 
-        <div class="col-md-3 nav__buttons">
+        <div class="nav__buttons">
             <ul>
 
                 <?php
