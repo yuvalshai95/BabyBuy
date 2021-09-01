@@ -5,7 +5,7 @@ when user upload product (user_products_image table) update image ref in both ta
 
 3) fix slider image size
 
-4) in home page change Condition tag color by Condition
+4) in home page change product card Condition tag color by Condition(example: Used->pink, New->blue....)
 
 5) in product page -> shipping price???
 
