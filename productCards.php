@@ -33,17 +33,24 @@
                <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>"> 
                <img src="admin/<?php echo $result['Image']; ?>" alt=""> </a>
                 <ul class="action">
+
+                <!-- Checking to see if user is logged in -->
+                <?php 
+                        // User is logged in -> show wishlist button
+                        if(Session::get("userId") !== false){ ?>
                     <li>
 
-                    <form action="wishlist.php" method="POST">
-                    <input type="hidden" name="currentUserId" value="<?php echo Session::get("userId")?>">
-                    <input type="hidden" name="pdId" value="<?php echo $result['ProductID']; ?>">
-                    <input type="hidden" name="ownerId" value=<?php echo $result['UserID']; ?>">
-                        <button><a href="wishlist.php"> <i class="fas fa-heart"></i> </a></button>
-                        <span>Add to Wishlist</span>
-                    </form>
-
+                        <form action="wishlist.php" method="POST">
+                            <input type="hidden" name="currentUserId" value="<?php echo Session::get("userId")?>">
+                            <input type="hidden" name="pdId" value="<?php echo $result['ProductID']; ?>">
+                            <input type="hidden" name="ownerId" value=<?php echo $result['UserID']; ?>">
+                            <button><a href="wishlist.php"> <i class="fas fa-heart"></i> </a></button>
+                            <span>Add to Wishlist</span>
+                        
+                        </form>
                     </li>
+                    <?php } ?>
+
                     <li>
 
                     <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>">  <i class="far fa-eye"></i> </a>
