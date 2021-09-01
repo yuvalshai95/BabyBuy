@@ -9,6 +9,7 @@ $output = '';
 
 $output .= '<div class="table-responsive">
                 <table class="table table-bordered">';
+                
 
 while ($row = $getUser->fetch_assoc()) {
 
@@ -23,9 +24,20 @@ while ($row = $getUser->fetch_assoc()) {
      // combine user city and address
      $full_address = $city ."+".$address;
 
+     /*
+    $output .= '
+    
+        <div class="col-md-9">
+        <br />
+            <p><label>Name :&nbsp;</label>'.$row['FirstName'].' '.$row['LastName'].'</p>
+            <p><label>Address :&nbsp;</label>'.$row['Address'].'</p>
+            <p><label>City :&nbsp;</label>'.$row["City"].'</p>
+            <p><label>Mobile Phone :&nbsp;</label>'.$row["PhoneNumber"].'</p>
+        </div>
+        </div><br /> '; 
+        */
 
-
-
+     
     $output .='
         <tr>
             <td width="30%"><label for=""></label>Name</td>
@@ -45,18 +57,16 @@ while ($row = $getUser->fetch_assoc()) {
         <tr>
             <td width="30%"><label for=""></label>Mobile Phone</td>
             <td width = "70%">'.$row['PhoneNumber'].'</td>
-        </tr>
-
-
-
-    ';
+        </tr>   ';
 }
-$output .='     </table>
+
+    $output .='  </table>
                     <div align="center" class="resp-container" style="display:block;">
                         <iframe  src="https://maps.google.com/maps?q='.$full_address.'&output=embed" ></iframe>
                     </div> 
             </div>'; 
 
-echo $output;
+                        
+    echo $output;
 ?>
 
