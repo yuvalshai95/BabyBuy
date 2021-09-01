@@ -1,8 +1,6 @@
 <?php
-require_once '../DataBase/DB_Config.php';
 require_once '../classes/User.php';
 
-$db = new Database();
 $user = new User();
 $id = $_POST['user_id'];
 $getUser = $user->getUserById($id);
@@ -15,22 +13,22 @@ while ($row = $getUser->fetch_assoc()) {
     $output .='
         <tr>
             <td width="30%"><label for=""></label>Name</td>
-            <td width = 70%>'.$row['FirstName'].' '.$row['LastName'].'</td>
+            <td width = "70%">'.$row['FirstName'].' '.$row['LastName'].'</td>
         </tr>
 
         <tr>
             <td width="30%"><label for=""></label>Address</td>
-            <td width = 70%>'.$row['Address'].'</td>
+            <td width = "70%">'.$row['Address'].'</td>
         </tr>
 
         <tr>
             <td width="30%"><label for=""></label>City</td>
-            <td width = 70%>'.$row['City'].'</td>
+            <td width = "70%">'.$row['City'].'</td>
         </tr>
 
         <tr>
             <td width="30%"><label for=""></label>Mobile Phone</td>
-            <td width = 70%>'.$row['PhoneNumber'].'</td>
+            <td width = "70%">'.$row['PhoneNumber'].'</td>
         </tr>
     ';
 }

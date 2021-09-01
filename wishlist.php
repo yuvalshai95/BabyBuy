@@ -3,8 +3,10 @@
       require_once 'classes/User.php';
 ?>
 
-<!-- jQuery CDN -->
+<!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
+
 
 <!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -38,7 +40,12 @@
     if (isset($_POST['currentUserId'])) {
         $wishPd     = $_POST['pdId'];
        $wishOwnerid = $_POST['ownerId'];
-       $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
+
+       // Add product to wish list if user and owner are different
+       if($currentUser != $currentUser){
+        $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
+       }
+       
     }
 ?>
 
@@ -84,7 +91,7 @@
         jQuery.ajax({
             url: 'includes/wishlist.inc.php',
             type:'post',
-            data: 'id='+id,
+            data: {id:id},
             success: function(result){
                 // on success hide row
                 jQuery("#tr_"+id).hide(600);
@@ -139,8 +146,6 @@
                     $('#dataModal').modal("show");
                 }
             });
-
-
         });
     });
 </script>
