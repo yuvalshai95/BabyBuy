@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>navTop</title>
+
 
 
     <!-- style navBar -->
@@ -48,7 +48,7 @@
                 <ul class="primary-nav">
                     <li> <a href="homePage.php">Home</a></li>
                     <li> <a href="#">Categories</a></li>
-                    <li> <a href="#">Sell</a></li>
+                    <li> <a href="search.php">Shop</a></li>
                     <li> <a href="ArticlesList.php">Articles</a></li>
                     <li> <a href="#">About Us</a></li>
                 </ul>
