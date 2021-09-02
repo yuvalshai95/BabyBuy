@@ -1,3 +1,11 @@
+<?php
+  $filepath = realpath(dirname(__FILE__));
+  require_once ($filepath.'/../classes/User.php');
+
+  $user = new User();
+  $getSocial = $user->getSocial()->fetch_assoc();
+?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +24,16 @@
 <footer>
     <div class="footer-content">
         <h3>BabyBuy</h3>
-        <p>Follow us on Facebook and Instagram</p>
+        <p>FOLLOW US ON OUR SOCIAL NETWORKS </p>
         <ul class="socials">
-            <li><a href="#"><i class="fa fa-facebook-square" style="color: #edf0f1;"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram" style="color: #edf0f1;"></i></a></li>
+            <li><a href="<?= $getSocial['facebook']?>"><i class="fa fa-facebook-square" style="color: #edf0f1;"></i></a></li>
+            <li><a href="<?= $getSocial['instagram']?>"><i class="fa fa-instagram" style="color: #edf0f1;"></i></a></li>
+            <li><a href="<?= $getSocial['linkedin']?>"><i class="fa fa-linkedin" style="color: #edf0f1;"></i></a></li>
         </ul>
     </div>
 
     <div class="footer-bottom">
-        <p>copyright &copy;2021 Yuval and Adi</p>
+        <p><?= $getSocial['copyright']?></p>
     </div>
 
 </footer>

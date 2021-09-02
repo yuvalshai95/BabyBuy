@@ -1,14 +1,43 @@
 ﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+<?php include_once '../classes/User.php'; ?>
+
+<?php
+    $user = new User();
+    $getSocial = $user->getSocial()->fetch_assoc();
+?>
+
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Update Copyright Text</h2>
         <div class="block copyblock"> 
-         <form>
+
+        
+    <?php
+        // Error handling
+        if(isset($_GET['error'])){
+
+            // empty field
+            if ($_GET['error']=='empty') {
+                echo "<span  class='alert alert-danger' role='alert' style='padding: .3rem 1rem;'>Cant have empty fields !</span>";
+            }
+            else if ($_GET['error']=='stmtfailed') {
+                echo "<span  class='alert alert-danger' role='alert' style='padding: .3rem 1rem;'>Error occurred, try again!</span>";
+            }
+        }
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] == 'success') {
+                echo "<span  class='alert alert-success' role='alert' style='padding: .3rem 1rem;'>Update successfully!</span>";
+            }
+        }
+?>        
+
+
+         <form action="inc/copyright.inc.php" method="POST">
             <table class="form">					
                 <tr>
                     <td>
-                        <input type="text" placeholder="Enter Copyright Text..." name="copyright" class="large" />
+                        <input type="text" placeholder="<?= $getSocial['copyright']?>" name="copyright" class="large" value="<?= $getSocial['copyright']?>" />
                     </td>
                 </tr>
 				

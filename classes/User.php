@@ -165,6 +165,44 @@ class User{
         }
     }
 
+  
+    public function getSocial(){
+        $query = "SELECT * FROM site_options";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
+    public function updateSocial($fb, $ig, $ln){
+        $query = "UPDATE site_options SET facebook = ?, instagram = ?, linkedin = ? WHERE id = 1 ";
+        $stmt = mysqli_stmt_init($this->db->link);
+
+        if (!mysqli_stmt_prepare($stmt,$query)) {
+
+            // Send user back to register page with error msg
+            header("location: ../social.php?error=stmtfailed");
+        
+            exit(); // Stop the script from running
+        }
+
+        mysqli_stmt_bind_param($stmt,"sss", $fb,$ig,$ln);
+        mysqli_stmt_execute($stmt);
+    }
+
+        public function updateCopyright($cp){
+            $query = "UPDATE site_options SET copyright = ? WHERE id = 1 ";
+            $stmt = mysqli_stmt_init($this->db->link);
+    
+            if (!mysqli_stmt_prepare($stmt,$query)) {
+    
+                // Send user back to register page with error msg
+                header("location: ../social.php?error=stmtfailed");
+            
+                exit(); // Stop the script from running
+            }
+    
+            mysqli_stmt_bind_param($stmt,"s", $cp);
+            mysqli_stmt_execute($stmt);
+        }
 
 
     }
