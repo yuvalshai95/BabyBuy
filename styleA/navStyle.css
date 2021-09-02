@@ -66,8 +66,9 @@ body {
 }
 
 .Navbar nav li.cta a {
-	color: black;
-	border: 3px solid black;
+	color: white;
+	border: 4px solid rgb(235, 175, 80);
+	background: rgb(235, 175, 80);
 	border-radius: 5em;
 	margin-top: -.2em;
 	font-weight: 500;
@@ -76,8 +77,8 @@ body {
 
 .Navbar nav li.cta a:hover {
 	font-weight: bold;
-	background: white;
-	color: black;
+	border: 4px solid rgb(246, 175, 60);
+	background: rgb(246, 175, 60);
 }
 /* Login Popup start */
 
