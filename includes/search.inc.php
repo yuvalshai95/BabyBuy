@@ -3,10 +3,12 @@
     require_once '../classes/Product.php';
     require_once '../admin/helpers/Format.php';
 
-$db = new Database();
-$pd = new Product();
-$fm = new Foramt();
+    $db = new Database();
+    $pd = new Product();
+    $fm = new Foramt();
+?>
 
+<?php
 if (isset($_POST['action'])) {
 
     $query = "SELECT * FROM product WHERE ProductCategory != ''";
@@ -44,33 +46,52 @@ if (isset($_POST['action'])) {
     }
 
     $result = $db->select($query);
-    $output = '';
 
     if ($result !== false) {
-        while ($row = $result->fetch_assoc()) {
-            $output .= '
-            <div class="col-md-3 mb-2">
-                <div class="card-deck">
-                    <div class="card">
-                   
-                    <img style="width: 100%; height: 250px;" src="admin/'. $row['Image'].'" class="card-img-top">
-                    <div class="card-img-overlay" style="pointer-events: none">
-                        <h5 style="margin-top: 230px;" class="text-light bg-info text-center rounded p-1">'. $row['ProductName'].'</h5>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="margin-top: 25px;">Price: $'. $row['Price'].'</h3>
-                        <p>'.$fm->textShorten($row['Description'],100).'</p>
-                        <a href="ProductPage.php?pdId='.$row['ProductID'].'&userId='.$row['UserID'].'&productCategory='.$row['ProductCategory'].'" class="btn btn-primary btn-block">Product Page</a>
-                    </div>
-                </div>
-            </div>
-        </div>';
-        }
-    }else{
-        $output .= '<h3>No Products Found!</h3>';
-    }
-    echo $output;
-}
 
+    
+    while ($row = $result->fetch_assoc()) {
+    ?>
+           
+           <div class="col-md-3 mb-2">
+                        <div class="card-deck">
+                            <div class="card">
+                                <!-- product image, don't touch style: pointer-everts or code will break -->
+                                <img style="width: 100%; height: 250px;" src="admin/<?= $row['Image'];?>" class="card-img-top">
+                                <div class="card-img-overlay" style="pointer-events: none">
+                                    <h5 style="margin-top: 235px;" class="text-light bg-info text-center rounded p-1"><?= $row['ProductName'];?></h5>
+                                </div>
 
-?>
+                                <!-- Card content -->
+                                <div class="card-body">
+                                    <h3 class="card-title" style="margin-top: 25px;">Price: $<?= $row['Price'];?></h3>
+                                    <h6>Condition: <span class="badge badge-<?php 
+                                    if (strtolower($row['ProductCondition']) == "new"){ 
+                                        echo 'primary';
+                                    }
+                                    else if(strtolower($row['ProductCondition']) == "used"){
+                                        echo 'warning';
+                                    }
+                                    else if(strtolower($row['ProductCondition']) == "barely used"){
+                                        echo 'info';
+                                    }
+                                    else if(strtolower($row['ProductCondition']) == "open box"){
+                                        echo 'success';
+                                    }
+                                    else if(strtolower($row['ProductCondition']) == "gently used"){
+                                        echo 'dark';
+                                    }  
+                                    ?>">
+
+                                    <?= strtoupper($row['ProductCondition']);?></span></h6>
+
+                                    <p><?= $fm->textShorten($row['Description'],100) ?></p>
+                                    <a href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" class="btn btn-primary btn-block">Product Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <?php }}else{
+            echo '<div style="margin:auto;"><h3>No Products Found :(</h3></div>';
+        } ?>     
+<?php } ?>
