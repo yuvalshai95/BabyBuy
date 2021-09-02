@@ -36,22 +36,22 @@ $getUser = $user->getUserById($id);
         </div><br />  -->
         
         <tr>
-            <td width="30%"><label for=""></label>Name</td>
+            <td width="30%" style="font-weight: bold;"><label for=""></label>Name</td>
             <td width = "70%"><?= $row['FirstName']?>  <?= $row['LastName']?></td>
         </tr>
 
         <tr>
-            <td width="30%"><label for=""></label>Address</td>
+            <td width="30%" style="font-weight: bold;" ><label for=""></label>Address</td>
             <td width = "70%"><?= $row['Address']?></td>
         </tr>
 
         <tr>
-            <td width="30%"><label for=""></label>City</td>
+            <td width="30%" style="font-weight: bold;"><label for=""></label>City</td>
             <td width = "70%"><?= $row['City']?></td>
         </tr>
 
         <tr>
-            <td width="30%"><label for=""></label>Mobile Phone</td>
+            <td width="30%" style="font-weight: bold;"><label for=""></label>Mobile Phone</td>
             <td width = "70%"><?= $row['PhoneNumber']?></td>
         </tr>   
 
