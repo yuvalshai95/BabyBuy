@@ -4,17 +4,81 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Montserrat' !important;
 }
 
-li,
-a,
-button {
-	font-family: "Montserrat", sans-serif !important;
-	font-size: 17px !important;
-	color: #edf0f1 !important;
-	text-decoration: none !important;
+.Navbar {
+	/* Removing the il underline  */
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	font-size: 1.2em;
+	background-color: rgb(248, 185, 48);
 }
 
+.Navbar .logo {
+	/* Removing the il underline  */
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	font-size: 1.2em;
+	margin: auto;
+}
+
+.Navbar .logo span {
+	color: white;
+}
+
+.Navbar .con {
+	display: grid;
+	grid-template-columns: 180px auto;
+}
+
+.Navbar nav {
+	display: flex;
+	justify-content: space-between;
+	background: none;
+	position: unset;
+	height: auto;
+	width: 100%;
+	padding: 0;
+}
+
+.Navbar nav ul {
+	list-style-type: none;
+	display: flex;
+	padding: 1.5em;
+}
+
+.Navbar nav li a {
+	text-decoration: none;
+	font-size: 1em;
+	padding: .1em 1em;
+	color: white;
+}
+
+.Navbar nav ul.primary-nav a {
+	font-weight: 500;
+}
+
+.Navbar nav ul.primary-nav a:hover {
+	font-weight: bold;
+}
+
+.Navbar nav li.cta a {
+	color: black;
+	border: 3px solid black;
+	border-radius: 5em;
+	margin-top: -.2em;
+	font-weight: 500;
+	margin: .2em;
+}
+
+.Navbar nav li.cta a:hover {
+	font-weight: bold;
+	background: white;
+	color: black;
+}
 /* Login Popup start */
 
 .login-popup {
@@ -208,97 +272,3 @@ body.showRegisterForm .register-popup {
 }
 
 /* Register Popup end */
-
-header {
-	display: flex !important;
-	align-items: center !important;
-	padding: 20px 20px;
-	background-color: rgb(248, 185, 48) !important;
-}
-
-.logo {
-	cursor: pointer;
-	width: 100px;
-	height: 100px;
-}
-
-ul {
-	margin: auto !important;
-}
-
-.navbar {
-	margin-top: auto !important;
-	margin-left: 50px !important;
-}
-
-.nav__links {
-	list-style: none;
-	margin-left: 0px;
-}
-
-.nav__buttons {
-	list-style: none !important;
-	margin-left: auto !important;
-	margin-top: auto !important;
-}
-
-.nav__buttons li {
-	display: inline-block !important;
-	padding: 0px 5px !important;
-}
-
-.nav__links li {
-	display: inline-block !important;
-	padding: 0px 20px !important;
-}
-
-.nav__links li a {
-	transition: all 0.3s ease 0s !important;
-}
-
-.nav__links li a:hover {
-	color: #aa8213 !important;
-	font-weight: bold !important;
-}
-
-button {
-	padding: 9px 25px !important;
-	background-color: rgb(233, 170, 54) !important;
-	border: none !important;
-	border-radius: 50px !important;
-	cursor: pointer !important;
-	transition: all 0.3s ease 0s !important;
-}
-
-.btn.btn-outline-light {
-	padding: 6px 25px !important;
-	background-color: rgb(233, 170, 54) !important;
-	border: none !important;
-	border-color: #edf0f1 !important;
-	border-radius: 10px !important;
-	cursor: pointer !important;
-	transition: all 0.3s ease 0s !important;
-}
-
-button:hover {
-	background-color: rgba(226, 136, 0, 0.808) !important;
-}
-
-.btn.btn-outline-light:hover {
-	background-color: rgba(226, 136, 0, 0.808) !important;
-}
-
-.forgotPass {
-	cursor: pointer;
-	margin-top: 15px;
-}
-
-.tooltip-inner {
-	background-color: orange !important;
-	color: white;
-}
-
-.bs-tooltip-bottom .arrow::before,
-.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-	border-bottom-color: orange !important;
-}

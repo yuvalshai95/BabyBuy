@@ -5,7 +5,7 @@
   $user = new User();
   $getSocial = $user->getSocial()->fetch_assoc();
 ?>
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

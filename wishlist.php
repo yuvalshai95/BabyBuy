@@ -155,8 +155,4 @@
 <!-- Script to show user details modal on click -->
 
 
-
-
-
-
 <?php require_once 'includes/footer.php';  ?>
