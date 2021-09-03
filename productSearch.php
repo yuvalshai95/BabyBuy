@@ -15,11 +15,23 @@ $fm = new Foramt();
     <!-- Latest compiled JavaScript DON'T TOUCH OR CODE WILL BREAK-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Search</title>
+    <link rel="stylesheet" href="styleA/homePageStyle.css">
 
 </head>
 
 
 <body>
+
+<!-- search box -->
+<div class="box">
+    <form action="productSearch.php" method="GET" style="margin-top: 2em;">
+        <input type="text" name="search" placeholder="Search For Products ">
+        <input type="submit" name="" value="Search">
+    </form>
+</div>
+
+
+
 <?php 
     if (!isset($_GET['search']) || $_GET['search'] == NULL) {
         header("location: 404.php");
@@ -34,7 +46,7 @@ $fm = new Foramt();
 
 <div class="col-lg-12">
     <h4 class="text-center" style="font-weight: bold; margin-top:10px;" id="textChange">Products found with "<?= $key?>"</h4>
-    <h6 class="text-center" style="font-weight: bold; margin-top:10px; color:gray;"> > Search </h6>
+    <h6 class="text-center" style="font-weight: bold; margin-top:10px; color:gray;"><a style="color:gray;" href="homepage.php"> Home</a> > Search </h6>
     <hr style="width: 55%;margin: .5em auto;">
     <div style="justify-content: center;" class="row" id="data">
 
