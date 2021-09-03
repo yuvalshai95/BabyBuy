@@ -45,6 +45,7 @@
             <a  class="logo" href="homepage.php">Baby<span>Buy</span></a>
 
             <nav>
+
                 <ul class="primary-nav">
                     <li> <a href="homePage.php">Home</a></li>
                     <li> <a href="#">Categories</a></li>

@@ -47,7 +47,9 @@ body {
 .Navbar nav ul {
 	list-style-type: none;
 	display: flex;
-	padding: 1.5em;
+	padding: 1.5em 5em .8em 3em;
+	margin-bottom: 0 !important;
+	margin-top: 1em !important;
 }
 
 .Navbar nav li a {
