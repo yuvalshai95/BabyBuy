@@ -9,12 +9,18 @@ $pd = new Product();
 $fm = new Foramt();
 ?>
 
-<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+    <!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<!-- Latest compiled JavaScript DON'T TOUCH OR CODE WILL BREAK-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript DON'T TOUCH OR CODE WILL BREAK-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Search</title>
+    
+</head>
+
+
 
 
 <?php 
@@ -31,6 +37,7 @@ $fm = new Foramt();
 
 <div class="col-lg-12">
     <h4 class="text-center" style="font-weight: bold; margin-top:10px;" id="textChange">Products found with "<?= $key?>"</h4>
+    <h6 class="text-center" style="font-weight: bold; margin-top:10px; color:gray;"><a style="color: gray;" href="homePage.php">Home</a> > Search </h6>
     <hr style="width: 55%;margin: .5em auto;">
     <div style="justify-content: center;" class="row" id="data">
 
