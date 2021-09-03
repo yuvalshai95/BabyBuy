@@ -62,38 +62,49 @@ if (isset($_POST['action'])) {
            
            <div class="col-md-3 mb-2">
                         <div class="card-deck">
+                        <!-- add style="border: none;" to card dive to remove border -->
                             <div class="card">
                                 <!-- product image, don't touch style: pointer-everts or code will break -->
                                 <img style="width: 100%; height: 250px;" src="admin/<?= $row['Image'];?>" class="card-img-top">
                                 <div class="card-img-overlay" style="pointer-events: none">
-                                    <h5 style="margin-top: 235px;" class="text-light bg-info text-center rounded p-1"><?= $row['ProductName'];?></h5>
+                                    <h6  style="margin-top: 235px; color:#585858; font-weight:bold;text-align:center;"><?= $row['ProductName'];?></h6>
                                 </div>
 
                                 <!-- Card content -->
-                                <div class="card-body">
-                                    <h3 class="card-title" style="margin-top: 25px;">Price: $<?= $row['Price'];?></h3>
-                                    <h6>Condition: <span class="badge badge-<?php 
-                                    if (strtolower($row['ProductCondition']) == "new"){ 
-                                        echo 'primary';
-                                    }
-                                    else if(strtolower($row['ProductCondition']) == "used"){
-                                        echo 'warning';
-                                    }
-                                    else if(strtolower($row['ProductCondition']) == "barely used"){
-                                        echo 'info';
-                                    }
-                                    else if(strtolower($row['ProductCondition']) == "open box"){
-                                        echo 'success';
-                                    }
-                                    else if(strtolower($row['ProductCondition']) == "gently used"){
-                                        echo 'dark';
-                                    }  
-                                    ?>">
+                                <div  style="padding:.5em .6em .2em .6em;" class="card-body">
+                                   
+                                    <!-- Description -->
+                                    <p style="margin-top:20px; margin-bottom:0;"><?= $fm->textShorten($row['Description'],65) ?></p>
 
-                                    <?= strtoupper($row['ProductCondition']);?></span></h6>
+                                    <!-- div wrap price and badge -->
+                                    <div class="wrap" style="display: flex; justify-content:space-between; padding:.2em .3em 0 .3em; margin-top:10px;">
 
-                                    <p><?= $fm->textShorten($row['Description'],100) ?></p>
-                                    <a href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" class="btn btn-primary btn-block">Product Page</a>
+                                        <!-- Price -->
+                                        <h5 class="card-title" style="color:#FF6659; font-weight:bold;">$<?= $row['Price'];?></h5>
+
+                                        <!-- badge -->
+                                        <span style="block-size: fit-content;" class="badge badge-<?php 
+                                        if (strtolower($row['ProductCondition']) == "new"){ 
+                                            echo 'primary';
+                                        }
+                                        else if(strtolower($row['ProductCondition']) == "used"){
+                                            echo 'warning';
+                                        }
+                                        else if(strtolower($row['ProductCondition']) == "barely used"){
+                                            echo 'info';
+                                        }
+                                        else if(strtolower($row['ProductCondition']) == "open box"){
+                                            echo 'success';
+                                        }
+                                        else if(strtolower($row['ProductCondition']) == "gently used"){
+                                            echo 'dark';
+                                        }  
+                                        ?>">
+                                        <?= strtoupper($row['ProductCondition']);?></span>
+                                    </div>
+                                   
+                                    <!-- product page button -->
+                                  <a style="margin-bottom: 5px;" href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" class="btn btn-primary btn-block">Product Page</a>
                                 </div>
                             </div>
                         </div>
