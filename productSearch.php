@@ -1,10 +1,8 @@
 <?php 
 require_once 'includes/navTop.php';
-require_once 'classes/Category.php';
 require_once 'classes/Product.php'; 
 require_once 'admin/helpers/Format.php'; 
 
-$category = new Category();
 $pd = new Product();
 $fm = new Foramt();
 ?>
@@ -17,12 +15,11 @@ $fm = new Foramt();
     <!-- Latest compiled JavaScript DON'T TOUCH OR CODE WILL BREAK-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Search</title>
-    
+
 </head>
 
 
-
-
+<body>
 <?php 
     if (!isset($_GET['search']) || $_GET['search'] == NULL) {
         header("location: 404.php");
@@ -97,7 +94,7 @@ $fm = new Foramt();
         </div>
         <?php }} ?>
     </div>
-
+</body>
 
 
 
