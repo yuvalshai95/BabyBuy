@@ -35,8 +35,8 @@
     <!-- search line --> 
 
     <div class="box">
-        <form>
-            <input type="text" name="search_box" placeholder="Search For Products ">
+        <form action="productSearch.php" method="GET">
+            <input type="text" name="search" placeholder="Search For Products ">
             <input type="submit" name="" value="Search">
         </form>
     </div>

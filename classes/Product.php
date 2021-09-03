@@ -122,7 +122,14 @@ public function deleteFromWishlist($id){
 
 }
 
-
+public function getProductBySearch($key){
+  $query = "SELECT *
+            FROM product
+            WHERE product.ProductName LIKE '%$key%' 
+            OR product.Description LIKE '%$key%' ";
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 
