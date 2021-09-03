@@ -1,3 +1,4 @@
+<?php require_once 'includes/navTop.php'; ?>
 
 <?php
     require_once 'classes/Category.php';
@@ -26,7 +27,10 @@
 
 <body>      
 <div class="signup-form">
-<?php 
+
+
+    <form action="includes/register.inc.php" method="POST">
+    <?php 
     // Error handling
     if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
@@ -68,10 +72,9 @@
     }
 
 ?>
-
-    <form action="includes/register.inc.php" method="POST">
         <h2>Register</h2>
         <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        
         <div class="form-group">
             <div class="row">
                 <div class="col-xs-6"><input type="text" class="form-control" name="firstName" placeholder="First Name*"></div>
@@ -127,31 +130,4 @@
 </html>
 
 
-
-
-<!-- temporary style -->
-<style>
-.info, .success, .warning, .error, .validation {
-			border: 1px solid;
-			margin: 10px 0px;
-			padding: 15px 10px 15px 50px;
-			background-repeat: no-repeat;
-			background-position: 10px center;
-		}
-
-        .success {
-			color: #4F8A10;
-			background-color: #DFF2BF;
-			background-image: url('https://i.imgur.com/Q9BGTuy.png');
-		}
-
-        .validation{
-			color: #D63301;
-			background-color: #FFCCBA;
-			background-image: url('https://i.imgur.com/GnyDvKN.png');
-		}
-</style>
-
-
  
-
