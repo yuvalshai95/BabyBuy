@@ -36,7 +36,7 @@
 
     <div class="box">
         <form>
-            <input type="text" name="" placeholder="Type Here To Search For Products...">
+            <input type="text" name="search_box" placeholder="Search For Products ">
             <input type="submit" name="" value="Search">
         </form>
     </div>
