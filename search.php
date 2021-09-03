@@ -17,18 +17,24 @@ $fm = new Foramt();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
 
-<!-- Latest compiled and minified CSS -->
+
 <!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 <!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->  
 
-<!-- jQuery library -->
+<!-- jQuery library DON'T TOUCH OR CODE WILL BREAK-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
+<!-- ionSlider DON'T TOUCH OR CODE WILL BREAK-->
+<link rel="stylesheet" href="styleA/ion.rangeSlider.min.css">
+
+
+<!-- Latest compiled JavaScript DON'T TOUCH OR CODE WILL BREAK-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<!-- ionSlider JS DON'T TOUCH OR CODE WILL BREAK-->
+<script src="js/ion.rangeSlider.min.js"></script>
 
 </head>
 <body>
@@ -60,6 +66,16 @@ $fm = new Foramt();
                     <?php }}?>
                 </ul>
 
+                <!-- Price Filter Range -->
+                <div class="list-group">
+                    <h6 style="color:#0ac8e6; font-weight:bold; margin-top: 1em;">Price</h6>
+                    <input type="hidden" id="hidden_minimum_price" value="5">
+                    <input type="hidden" id="hidden_maximum_price" value="1000">
+                    <div class="wrap" style="width: 70%;">
+                        <div id="price_range"></div>
+                    </div>   
+                </div>
+                
                 <!-- Condition Filter -->
                 <h6 style="color:#0ac8e6; font-weight:bold; margin-top: 1em;">Select Condition</h6>
                 <ul class="list-group">
@@ -189,26 +205,34 @@ $fm = new Foramt();
         </div>
     </div>
 
+<!-- Filter jquery ajax script -->
 <script>
     $(document).ready(function(){
-            // When check box is clicked
-            $(".product_check").click(function(){
 
-                // Show spinner
-                $("#spinner").show();
+        filter_data();
 
-                var action = 'data';
-                var category = get_filter_text('category');
-                var condition = get_filter_text('condition');
-                var age = get_filter_text('age');
+        function filter_data(){
 
-                $.ajax({
+            // Show spinner
+            $("#spinner").show();
+
+            var action = 'data';
+            var category = get_filter_text('category');
+            var condition = get_filter_text('condition');
+            var age = get_filter_text('age');
+            var minimum_price = $('#hidden_minimum_price').val();
+            var maximum_price = $('#hidden_maximum_price').val();
+
+            $.ajax({
                     url: 'includes/search.inc.php',
                     method: 'POST',
                     data:{ action:action,
                            category:category,
                            condition:condition,
-                           age:age },
+                           age:age,
+                           minimum_price:minimum_price,
+                           maximum_price:maximum_price },
+
                     success:function(data){
                         $("#data").html(data);
                         $("#spinner").hide();
@@ -217,7 +241,7 @@ $fm = new Foramt();
                     }
                 });
 
-            });
+        }
 
             function get_filter_text(text_id){
             var filterData = [];
@@ -226,6 +250,39 @@ $fm = new Foramt();
             });
             return filterData;
         }
+
+        // When check box is clicked get data
+        $('.product_check').click(function(){
+            filter_data();
+        });
+
+        // When price range is changes get data
+        $('#price_range').ionRangeSlider({
+            type: "double",
+            min: 0,
+            max: 1000,
+            from: 5,
+            to: 300,
+            grid: true,
+            onFinish:function(data) // When user mouse stop moving show products with that price range
+            {
+                
+                // Saving it's instance to var
+                var slider = $('#price_range').data("ionRangeSlider");
+
+                // Get values (min,max)
+                var from = slider.result.from;
+                var to = slider.result.to;
+
+                // save slider price under hidden input field
+                $('#hidden_minimum_price').val(from);
+                $('#hidden_maximum_price').val(to);
+                
+                // send data to function and filter
+                filter_data();
+            }
+        });
+
     });
 </script>
 

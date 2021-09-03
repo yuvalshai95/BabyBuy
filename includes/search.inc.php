@@ -12,6 +12,11 @@
 if (isset($_POST['action'])) {
 
     $query = "SELECT * FROM product WHERE ProductCategory != ''";
+
+    // Check price filter
+    if (isset($_POST['minimum_price'],$_POST['maximum_price']) && !empty($_POST['minimum_price']) && !empty($_POST['maximum_price'])) {
+        $query .= "AND Price BETWEEN '".$_POST['minimum_price']."' AND '".$_POST['maximum_price']."'";
+    }
     
     // 1) Check all category checked boxes
     if(isset($_POST['category'])){
