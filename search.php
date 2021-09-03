@@ -236,7 +236,7 @@ $fm = new Foramt();
                     success:function(data){
                         $("#data").html(data);
                         $("#spinner").hide();
-                        $("#textChange").text("Filtered Products");
+                        $("#textChange").text("All Products");
 
                     }
                 });

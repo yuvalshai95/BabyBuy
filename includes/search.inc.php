@@ -50,6 +50,8 @@ if (isset($_POST['action'])) {
 
     }
 
+    $query .= "ORDER BY ProductName ASC ";
+
     $result = $db->select($query);
 
     if ($result !== false) {
