@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	background-image: url(''), linear-gradient(100deg, #18b99b, #b1f056);
+}
+
+.form-control {
+	height: 40px;
+	box-shadow: none;
+	color: #969fa4;
+}
+
+.form-control:focus {
+	border-color: #5cb85c;
+}
+
+.form-control,
+.btn {
+	border-radius: 3px;
+}
+
+.signup-form {
+	width: 580px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.row {
+	justify-content: space-evenly;
+	margin-bottom: 20px;
+}
+
+/* "Register" style  */
+.signup-form h2 {
+	color: #636363;
+	margin: 0 0 15px;
+	position: relative;
+	text-align: center;
+}
+
+/* lines before and after the "Register"  */
+.signup-form h2:before,
+.signup-form h2:after {
+	content: "";
+	height: 2px;
+	width: 35%;
+	background: #d4d4d4;
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+}
+
+.signup-form h2:before {
+	left: 0;
+}
+
+.signup-form h2:after {
+	right: 0;
+}
+
+.signup-form .hint-text {
+	color: #999;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #f2f3f7;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px 10px 5px 10px;
+}
+
+.signup-form .form-group {
+	margin-bottom: 20px;
+}
+
+.signup-form input[type="checkbox"] {
+	margin-top: 3px;
+}
+
+.checkboxes {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.checkboxes input {
+	margin: 0px 0px 0px 0px;
+}
+
+.checkboxes label {
+	margin: 0px 20px 0px 0px;
+}
+
+.create_account {
+	font-size: 20px;
+	width: 100%;
+	border-radius: 5px;
+	background-color: rgb(127, 197, 61);
+	color: white;
+	padding: .2em;
+	margin-top: .5em;
+	margin-bottom: 0;
+}

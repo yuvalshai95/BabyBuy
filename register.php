@@ -1,51 +1,31 @@
-<?php include_once 'includes/navTop.php'; ?>
 
 <?php
+    require_once 'classes/Category.php';
     $category = new Category();
     $allCategories = $category->getAllCategories();
 ?>
 
-<!-- temporary style -->
-<style>
-    input{
-        margin:auto;
-        display: block;
-        margin-top: .5em;
-    }
-    label{
-        text-align: center;
-        display: block;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
 
-    }
-    h1{
-        text-align: center;
-        margin-bottom: 1em;
-        
-    }
-.info, .success, .warning, .error, .validation {
-			border: 1px solid;
-			margin: 10px 0px;
-			padding: 15px 10px 15px 50px;
-			background-repeat: no-repeat;
-			background-position: 10px center;
-		}
+<!-- jQuery library DON'T TOUCH OR CODE WILL BREAK-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        .success {
-			color: #4F8A10;
-			background-color: #DFF2BF;
-			background-image: url('https://i.imgur.com/Q9BGTuy.png');
-		}
+<link rel="stylesheet" href="styleA/register.css">
 
-        .validation{
-			color: #D63301;
-			background-color: #FFCCBA;
-			background-image: url('https://i.imgur.com/GnyDvKN.png');
-		}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
 
-<div class="container">
-    
-
+<body>      
+<div class="signup-form">
 <?php 
     // Error handling
     if (isset($_GET["error"])) {
@@ -88,61 +68,90 @@
     }
 
 ?>
-    <h1>Register</h1>
-    
+
     <form action="includes/register.inc.php" method="POST">
-        <label for="firstName" >First Name*</label>
-        <input type="text" name="firstName">
+        <h2>Register</h2>
+        <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-6"><input type="text" class="form-control" name="firstName" placeholder="First Name*"></div>
+                <div class="col-xs-6"><input type="text" class="form-control" name="lastName" placeholder="Last Name*"></div>
+            </div>
+        </div>
 
-        <label for="lastName">Last Name*</label>
-        <input type="text" name="lastName">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-6"><input type="text" class="form-control" name="city" placeholder="City*"></div>
+                <div class="col-xs-6"><input type="text" class="form-control" name="address" placeholder="Address*"></div>
+        </div>
 
-        <label for="city">City*</label>
-        <input type="text" name="city">
+        <div class="form-group">
+            <input class="form-control" type="text" name="email" placeholder="Email*">
+        </div>
 
-        <label for="address">Address*</label>
-        <input type="text" name="address">
+        <div class="form-group">
+            <input class="form-control" type="text" name="phone" placeholder="Mobile Phone*">
+        </div>
 
-        <label for="email">E-Mail*</label>
-        <input type="text" name="email">
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password*">
+        </div>
 
-        <label for="password">Password*</label>
-        <input type="password" name="password">
+        <div class="form-group">
+            <input class="form-control" type="password" name="validatePassword" placeholder="Confirm Password*">
+        </div>
 
-        <label for="validatePassword">Confirm Password*</label>
-        <input type="password" name="validatePassword">
-
-        <label for="phone">Phone Number*</label>
-        <input type="text" name="phone">
-
-        <label for="interest">Interest</label>
+        <h2>Interest</h2>
+        <div class="checkboxes">
 
         <!-- Get all categories from database in checkbox format-->
         <?php
             if($allCategories){
                 while ($row = $allCategories->fetch_assoc()) {      
         ?>
-            <input type="checkbox" name="categories[]" value="<?= $row['CategoryName'];?>"></input>
-            <label for=""><?= $row['CategoryName'];?> </label>
 
+            <input type="checkbox" name="categories[]" value="<?= $row['CategoryName'];?>"></input> <label class="checkbox-inline"><?= $row['CategoryName'];?></label>
         <?php } } ?>
+        </div>
+        
+        <div class="form-group">
+            <input class="create_account" type="submit" name="submit" value="Create Account">
+        </div>
+       
 
-
-        <input type="submit" name="submit" value="Create Account">
     </form>
-
-
+    <div class="text-center">Already have an account? <a href="login.php">Sign in</a> </div>
 </div>
+    
+</body>
+</html>
 
 
 
 
+<!-- temporary style -->
+<style>
+.info, .success, .warning, .error, .validation {
+			border: 1px solid;
+			margin: 10px 0px;
+			padding: 15px 10px 15px 50px;
+			background-repeat: no-repeat;
+			background-position: 10px center;
+		}
+
+        .success {
+			color: #4F8A10;
+			background-color: #DFF2BF;
+			background-image: url('https://i.imgur.com/Q9BGTuy.png');
+		}
+
+        .validation{
+			color: #D63301;
+			background-color: #FFCCBA;
+			background-image: url('https://i.imgur.com/GnyDvKN.png');
+		}
+</style>
 
 
+ 
 
-
-
-
-<?php
-    include_once 'includes/footer.php';
-?>
