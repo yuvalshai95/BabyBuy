@@ -40,3 +40,7 @@ when user upload product (user_products_image table) update image ref in both ta
 20) make sure you cant add the same product to wishlist twice
 
 21) user profile -> add see my products ? (to be able to change/delete items)
+
+22) on product page make add to wishlist button work
+
+23) on product page remove wishlist button if user is logged off
