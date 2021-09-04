@@ -72,7 +72,7 @@
     }
 
 ?>
-        <h2>Register</h2>
+        <h2>Sign up</h2>
         <p class="hint-text">Create your account. It's free and only takes a minute.</p>
         
         <div class="form-group">
@@ -104,7 +104,7 @@
             <input class="form-control" type="password" name="validatePassword" placeholder="Confirm Password*">
         </div>
 
-        <h2>Interest</h2>
+        <h2>Interested</h2>
         <div class="checkboxes">
 
         <!-- Get all categories from database in checkbox format-->

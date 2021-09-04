@@ -3,9 +3,9 @@
 body {
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
-	/*background-image: url(''), linear-gradient(100deg, #faca46, #ebcee4);*/
 	background-image: url('../img/wooden.jpg');
-	background-size: 1900px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .form-control {

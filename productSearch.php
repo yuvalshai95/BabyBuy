@@ -45,7 +45,7 @@ $fm = new Foramt();
 
 
 <div class="col-lg-12">
-    <h4 class="text-center" style="font-weight: bold; margin-top:10px;" id="textChange">Products found with "<?= $key?>"</h4>
+    <h4 class="text-center" style="font-weight: bold; margin-top:10px;" id="textChange">Search result for "<?= $key?>"</h4>
     <h6 class="text-center" style="font-weight: bold; margin-top:10px; color:gray;"><a style="color:gray;" href="homepage.php"> Home</a> > Search </h6>
     <hr style="width: 55%;margin: .5em auto;">
     <div style="justify-content: center;" class="row" id="data">

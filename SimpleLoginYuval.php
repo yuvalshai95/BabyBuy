@@ -1,3 +1,5 @@
+<?php require_once 'includes/navTop.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
