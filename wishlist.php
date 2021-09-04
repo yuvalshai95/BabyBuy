@@ -3,37 +3,16 @@
       require_once 'classes/User.php';
 ?>
 
-<!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
-
-
-<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->  
-
 <?php
+    if (Session::get("userId") == false) {
+        header("location: 404.php");
+        exit();
+    }
     $currentUser = Session::get("userId");
     $pd = new Product();
     $user = new User();
 ?>
 
-<style>
-    table tr td{
-        color: gray;
-    }
-
-    table th{
-        color: black;
-    }
-    table{
-    margin: auto;
-    }
-    h1,h2{
-        text-align: center;
-    }
-</style>
 
 <!-- Add to wish list product user clicked on -->
 <?php
@@ -49,7 +28,25 @@
     }
 ?>
 
-<!-- wishlist table -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
+
+
+<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+<!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
+    <title>Wishlist</title>
+</head>
+<body>
+    <!-- wishlist table -->
 <h1>My Wishlist</h1>
 <table>
 
@@ -87,6 +84,31 @@
     } ?>
     
 </table>
+</body>
+</html>
+
+
+
+
+<style>
+    table tr td{
+        color: gray;
+    }
+
+    table th{
+        color: black;
+    }
+    table{
+    margin: auto;
+    }
+    h1,h2{
+        text-align: center;
+    }
+</style>
+
+
+
+
 
     <!-- jQuery Script to delete item from wishlist table -->
     <script>

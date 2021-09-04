@@ -27,6 +27,7 @@ body {
 	width: 580px;
 	padding: 30px 0;
 	margin-left: 25em;
+	margin-top: 2em;
 }
 
 .row {
@@ -36,7 +37,7 @@ body {
 
 /* "Register" style  */
 .signup-form h2 {
-	color: #636363;
+	color: #f8b930;
 	margin: 0 0 15px;
 	position: relative;
 	text-align: center;
