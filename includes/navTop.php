@@ -52,6 +52,11 @@
                     <li> <a href="search.php">Shop</a></li>
                     <li> <a href="ArticlesList.php">Articles</a></li>
                     <li> <a href="#">About Us</a></li>
+                    <?php
+                     // check if user is logged in
+                     if (Session::get("userId")){    ?>
+                        <li> <a href="addproduct.php">Sell</a></li>
+                     <?php } ?>
                 </ul>
 
                 <ul class="secondary-nav">
@@ -69,11 +74,13 @@
                     <li class="cta"> <a href="?action=logout">Logout</a> </li>
 
                     <?php }else{  ?>
+                     <!-- Login button -->
+                    <li class="cta"> <a href="login.php">Log In</a> </li>
+
                     <!-- Register button -->
                     <li class="cta"> <a href="register.php">Sign Up</a> </li>
                     
-                    <!-- Login button -->
-                    <li class="cta"> <a href="login.php">Log In</a> </li>
+
 
 
                     <?php } ?>
