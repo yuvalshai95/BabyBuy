@@ -18,18 +18,43 @@
 
             <div class="input-box">
                 <span class="details">Name:</span>
-                <input type="text" name="pdName">
+                <input style="width: 127%;" type="text" name="pdName">
 
                 <div style="margin-top: 2.8em;" class="input-box">
                     <span style="margin-top:1em;" class="details">Description:</span>
                     <textarea name="pdDescription" cols="48.5" rows="10"></textarea>
                 </div>
+                
+
+                <div class="image-details">
+                <div class="title">Add Images (up to 4)</div>
+                <div class="wrap">
+                    <span class="image-title">Browse:</span>
+                    <!-- making image[] array to hold multiple images and JS to display preview -->
+                    <input type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
+                    <h6 style="color:gray;margin-top:0.5em;">Supported Files: jpg, jpeg, png, gif</h6>
+                </div>
+            
+                <div class="images-display" id="images">
+                    <img  src = "admin/img/photo2.jpg">
+                    <img  src = "admin/img/photo2.jpg">
+                    <img  src = "admin/img/photo2.jpg">
+                    <img  src = "admin/img/photo2.jpg">
+                </div>
+            </div>
+
+
 
             </div>
 
 
-            <div class="input-box">
+            <div style=" margin-left: 12em;" class="input-box">
                 <span class="details">Category:</span>
+                <select name="pdCategory">
+                    <option value="#">cat 1</option>
+                </select>
+
+                <span class="details">Sub-Category:</span>
                 <select name="pdCategory">
                     <option value="#">cat 1</option>
                 </select>
@@ -48,38 +73,15 @@
                 <select name="pdAge">
                     <option value="#">Brand New</option>
                 </select>
-            </div>
 
-
-            <div class="input-box">
                 <span class="details">Price:</span>
                 <input type="text" name="pdPrice">
             </div>
 
 
-
-  
-            
-            <div class="image-details">
-            <div class="title">Add Images (up to 4)</div>
-            <div class="wrap">
-                <span class="image-title">Browse:</span>
-                 <!-- making image[] array to hold multiple images and JS to display preview -->
-                 <input type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
-                 <h6 style="color:gray;margin-top:0.5em;">Supported Files: jpg, jpeg, png, gif</h6>
-            </div>
-            
-                <div class="images-display" id="images">
-                    <img  src = "admin/img/photo2.jpg">
-                    <img  src = "admin/img/photo2.jpg">
-                    <img  src = "admin/img/photo2.jpg">
-                    <img  src = "admin/img/photo2.jpg">
-                </div>
-            </div>
-
             <input type="hidden" name="pdStatus" value="For Sale">
 
-            <div class="button">
+            <div style="margin-top:1em;" class="button">
                 <input type="submit" name="submit" value="Upload">
             </div>
         </div>
