@@ -70,10 +70,10 @@
             </div>
             
                 <div class="images-display" id="images">
-                    <img  src = "admin/img/photo.jpg">
-                    <img  src = "admin/img/photo.jpg">
-                    <img  src = "admin/img/photo.jpg">
-                    <img  src = "admin/img/photo.jpg">
+                    <img  src = "admin/img/photo2.jpg">
+                    <img  src = "admin/img/photo2.jpg">
+                    <img  src = "admin/img/photo2.jpg">
+                    <img  src = "admin/img/photo2.jpg">
                 </div>
             </div>
 
