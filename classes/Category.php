@@ -114,7 +114,19 @@ class Category{
 }
 
 
+ // Get all sub categories names from db
+ public function getAllSubCategories(){
+    $query = "SELECT * FROM sub_category ORDER BY CategoryID DESC";
+    $result = $this->db->select($query);
+    return $result;
+}
 
+ // Get all sub categories names from db
+ public function getSubCategoryById($main_cat_id){
+    $query = "SELECT * FROM sub_category WHERE sub_category.CategoryID = '$main_cat_id' ORDER BY CategoryID DESC";
+    $result = $this->db->select($query);
+    return $result;
+}
 
 
 
