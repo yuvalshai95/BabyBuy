@@ -63,9 +63,10 @@
             <div class="image-details">
             <div class="title">Add Images (up to 4)</div>
             <div class="wrap">
-                <span class="image-title">Browse</span>
+                <span class="image-title">Browse:</span>
                  <!-- making image[] array to hold multiple images and JS to display preview -->
                  <input type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
+                 <h6 style="color:gray;margin-top:0.5em;">Supported Files: jpg, jpeg, png, gif</h6>
             </div>
             
                 <div class="images-display" id="images">
