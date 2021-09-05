@@ -80,7 +80,7 @@
        
     </tr>
     <?php }}else{
-        echo '<div align="center"><h3>Empty :(</h3></div>';
+        echo '<div align="center"><h3 style="color:red;">Empty :(</h3></div>';
     } ?>
     
 </table>
