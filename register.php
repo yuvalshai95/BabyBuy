@@ -104,7 +104,7 @@
             <input class="form-control" type="password" name="validatePassword" placeholder="Confirm Password*">
         </div>
 
-        <h2>Interested</h2>
+        <h2>Interested In</h2>
         <div class="checkboxes">
 
         <!-- Get all categories from database in checkbox format-->

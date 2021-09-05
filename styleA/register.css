@@ -48,7 +48,7 @@ body {
 .signup-form h2:after {
 	content: "";
 	height: 2px;
-	width: 35%;
+	width: 28%;
 	background: #d4d4d4;
 	position: absolute;
 	top: 50%;
