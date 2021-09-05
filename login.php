@@ -19,7 +19,7 @@
 <!--Fontawesome CDN-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
-<link rel="stylesheet" href="styleA/login2.css">
+<link rel="stylesheet" href="styleA/login.css">
 
     <title>login</title>
 </head>
