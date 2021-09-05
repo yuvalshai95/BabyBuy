@@ -69,11 +69,13 @@
                     <li class="cta"> <a href="?action=logout">Logout</a> </li>
 
                     <?php }else{  ?>
-                    <!-- Login button -->
-                    <li class="cta"> <a href="login.php">Login</a> </li>
-
                     <!-- Register button -->
-                    <li class="cta"> <a href="register.php">Register</a> </li>
+                    <li class="cta"> <a href="register.php">Sign Up</a> </li>
+                    
+                    <!-- Login button -->
+                    <li class="cta"> <a href="login.php">Log In</a> </li>
+
+
                     <?php } ?>
                 </ul>
             </nav>
