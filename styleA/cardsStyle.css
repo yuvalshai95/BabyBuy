@@ -40,7 +40,7 @@ body {
 	width: 100%;
 	background: #fff;
 	cursor: pointer;
-	box-shadow: 4px 4px 8px 0.1px #949494;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .container .card .imgBx {
@@ -58,8 +58,8 @@ i {
 }
 
 .seeMore {
-    width: 68rem;
-    padding-left: 60rem;
+	width: 68rem;
+	padding-left: 60rem;
 }
 
 .seeMoreHref {
@@ -67,7 +67,7 @@ i {
 }
 
 a.seeMoreHref:hover {
-    border-bottom: solid 2px #333;
+	border-bottom: solid 2px #333;
 }
 
 .fa-angle-double-right {
