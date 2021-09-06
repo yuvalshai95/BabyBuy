@@ -31,7 +31,11 @@
         <div class="card">
             <div class="imgBx">
                <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>"> 
-               <img src="admin/<?php echo $result['Image']; ?>" alt=""> </a>
+               <img src="<?php  
+                            $img = $pd->getSingleImagesByProductId($result['ProductID'])->fetch_assoc(); 
+                            $single = $img['ImagePath']; 
+                            $single = str_replace('../','',$single); 
+                            echo $single?>"></a>
                 <ul class="action">
 
                 <!-- Checking to see if user is logged in -->

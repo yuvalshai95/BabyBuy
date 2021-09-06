@@ -45,8 +45,8 @@ class Product{
 
 public function getRecentProducts(){
   $query = "SELECT *
-            FROM product
-            ORDER BY ProductTime DESC 
+            FROM product p INNER JOIN users_products_images u ON p.ImageRefrence = u.ImageRefrence
+            ORDER BY p.ProductTime DESC 
             LIMIT 4";
   $result = $this->db->select($query);
   return $result;
@@ -238,6 +238,32 @@ else{ // some query failed
 
 }
 
+public function getAllImagesByProductId($id){
+  $query = "SELECT *
+            FROM users_products_images u
+            WHERE u.ImageRefrence IN (SELECT p.ImageRefrence
+                                      FROM product p
+                                      WHERE p.ProductID = '$id')";
+
+  $result = $this->db->select($query);
+
+  return $result;
+  
+}
+
+public function getSingleImagesByProductId($id){
+  $query = "SELECT *
+            FROM users_products_images u
+            WHERE u.ImageRefrence IN (SELECT p.ImageRefrence
+                                      FROM product p
+                                      WHERE p.ProductID = '$id')
+            LIMIT 1";
+
+  $result = $this->db->select($query);
+
+  return $result;
+  
+}
 
 
 

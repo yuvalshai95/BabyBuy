@@ -1,6 +1,9 @@
 <?php include_once 'classes/Category.php'; ?>
 <?php include_once 'classes/SubCategory.php'; ?>
+<?php include_once 'classes/Product.php'; ?>
+
 <?php
+        $pd = new Product();
         $category = new Category();
         $sub = new SubCategory();
 ?>
@@ -13,18 +16,18 @@
 
 <?php
 
-$name = "Leather Shoes";
-   //removing white space from city input
-   $name = str_replace(' ','',$name);
-   if (preg_match("/^[a-zA-Z]{2,}$/",$name)) {
-       $result = false;
-   }else{
-       $result = true;
-   }
+$test = "../admin/Web/6135e64af2a1c5.62634135.jpg";
+$test = str_replace('../','',$test);
 
 
+
+$getrecent = $pd->getRecentProducts();
+while($row = $getrecent->fetch_assoc()){
+    echo $row['ImagePath'];
 ?>
+<img src="<?php echo $row['ImagePath']; ?>" alt="">
+<?php } ?>
 
 
-
+<img src="<?php echo $test ?>" alt="">
 
