@@ -67,7 +67,12 @@
     ?>
     <tr id="tr_<?php echo $row['ID'] ?>">
         <td>
-            <img src="admin/<?php echo $product['Image']?>" alt="" height="70px;" width="70px;">
+            <img src="<?php  
+                        $img = $pd->getSingleImagesByProductId($product['ProductID'])->fetch_assoc(); 
+                        $single = $img['ImagePath']; 
+                        $single = str_replace('../','',$single); 
+                        echo $single?>" alt="" height="70px;" width="70px;">
+                        
             <?php echo $product['ProductName'] ?>
         </td>
         <td><?php echo $product['Price'] ?></td>
