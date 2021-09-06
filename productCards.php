@@ -35,7 +35,7 @@
                             $img = $pd->getSingleImagesByProductId($result['ProductID'])->fetch_assoc(); 
                             $single = $img['ImagePath']; 
                             $single = str_replace('../','',$single); 
-                            echo $single?>"></a>
+                            echo $single ?>"></a>
                 <ul class="action">
 
                 <!-- Checking to see if user is logged in -->

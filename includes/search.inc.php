@@ -65,7 +65,12 @@ if (isset($_POST['action'])) {
                         <!-- add style="border: none;" to card dive to remove border -->
                             <div class="card">
                                 <!-- product image, don't touch style: pointer-everts or code will break -->
-                                <img style="width: 100%; height: 250px;" src="admin/<?= $row['Image'];?>" class="card-img-top">
+                                <img style="width: 100%; height: 250px;" src="<?php  
+                                                                                $img = $pd->getSingleImagesByProductId($row['ProductID'])->fetch_assoc(); 
+                                                                                $single = $img['ImagePath']; 
+                                                                                $single = str_replace('../','',$single); 
+                                                                                echo $single?>" class="card-img-top">
+                                                                                
                                 <div class="card-img-overlay" style="pointer-events: none">
                                     <h6  style="margin-top: 235px; color:#585858; font-weight:bold;text-align:center;"><?= $row['ProductName'];?></h6>
                                 </div>
