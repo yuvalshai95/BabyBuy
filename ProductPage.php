@@ -1,3 +1,5 @@
+    <!-- top nav bar -->
+    <?php include_once 'includes/navTop.php'; ?>
 <?php
     if ( !isset($_GET['pdId']) || !isset($_GET['userId']) || !isset($_GET['productCategory']) 
           || $_GET['pdId']==NULL ||  $_GET['userId']==NULL ||  $_GET['productCategory']==NULL) {
@@ -12,7 +14,7 @@
         $category_id = $_GET['productCategory'];
     }
 
-
+    $pd = new Product();
     
 ?>
 
@@ -34,32 +36,48 @@
 </head>
 <body>
 
-    <!-- top nav bar -->
-    <?php include_once 'includes/navTop.php'; ?>
+
 
 <div class="productPageContainer">
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img src="img/cradle.png" width="100%" id="ProductImg">
+                <img  src="<?php  
+                        $img = $pd->getSingleImagesByProductId($pd_id)->fetch_assoc(); 
+                        $single = $img['ImagePath']; 
+                        $single = str_replace('../','',$single); 
+                        echo $single?>" width="100%" id="ProductImg">
+
+                <!-- get all product images from database -->
                 <div class="small-img-row">
-                    <div class="small-img-col">
-                        <img src="img/cradle.png" alt="" width="100%" class="small-img">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="img/cradle1.png" alt="" width="100%" class="small-img">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="img/cradle2.png" alt="" width="100%" class="small-img">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="img/cradle3.png" alt="" width="100%" class="small-img">
-                    </div>
+                <?php
+                            // init array to store all images path                
+                            $imgesPath = [];
+
+                            // get all images path
+                            $getAllImages = $pd->getAllImagesByProductId($pd_id);
+
+                            // add all images path to the array
+                            while($row = $getAllImages->fetch_assoc()){
+                                array_push($imgesPath,$row['ImagePath']);
+                            }
+
+                            // display to user images
+                            foreach ($imgesPath as $path) {
+
+                                // remove from path -> "../"
+                                $path = str_replace('../','',$path);
+                                echo '      <div class="small-img-col">
+                                                <img src="'.$path.'" alt="" width="100%" class="small-img">
+                                            </div>';
+                            }
+                ?>
                 </div>
+
             </div>
 
             <?php
-                $pd = new Product();
+               
                 $getpd = $pd->getProductByIdAndUser($pd_id,$user_id);
                 if ($getpd) {
                     $result = $getpd->fetch_assoc();

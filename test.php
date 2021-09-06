@@ -22,12 +22,19 @@ $test = str_replace('../','',$test);
 
 
 $getrecent = $pd->getRecentProducts();
+$arr = [];
 while($row = $getrecent->fetch_assoc()){
-    echo $row['ImagePath'];
+    array_push($arr,$row['ImagePath']);
+}
+
+foreach ($arr as $path) {
+    $path = str_replace('../','',$path);
+    echo $path .'</br>';
+}
 ?>
-<img src="<?php echo $row['ImagePath']; ?>" alt="">
-<?php } ?>
 
 
-<img src="<?php echo $test ?>" alt="">
+
+
+
 
