@@ -65,6 +65,7 @@ body {
 
 .Navbar nav ul.primary-nav a:hover {
 	font-weight: bold;
+	border: 1px solid white;
 }
 
 .Navbar nav li.cta a {
