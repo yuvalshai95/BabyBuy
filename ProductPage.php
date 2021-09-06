@@ -186,6 +186,7 @@
 
 
 
+<!-- script to show all product images -->
 <script>
     var ProductImgg = document.getElementById("ProductImg");
     var SmallImg = document.getElementsByClassName("small-img");
