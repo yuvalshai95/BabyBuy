@@ -175,7 +175,7 @@ if ($fileName != '') {
 } else{ //image was not selected
     $fileNameUnique = "";
 
-    // Send user back to register page with error msg
+    // Send user back to add page with error msg
     header("location: ../addproduct.php?error=emptyImage");
 
     exit(); // Stop the script from running
@@ -184,7 +184,7 @@ if ($fileName != '') {
 
   // checking the file size is not above 5MB
   if ($fileSize > 5024000) {
-    // Send user back to register page with error msg
+    // Send user back to add page with error msg
     header("location: ../addproduct.php?error=bigfile");
 
     exit(); // Stop the script from running
@@ -194,7 +194,7 @@ if ($fileName != '') {
   // fileName not empty(file was selected) && file Extention not in allowd arr (no image was selected)
   else if( !empty($fileName) && !in_array($fileActualType,$allowedExtentions) ){ 
 
-    // Send user back to register page with error msg
+    // Send user back to add page with error msg
     header("location: ../addproduct.php?error=notImage");
 
     exit(); // Stop the script from running
@@ -222,7 +222,7 @@ $result = mysqli_multi_query($this->db->link, $sqlIns);
 
 if ($result) { // checking both queries were inserted
 
-  // Send user back to register page with error msg
+  // Send user back to add page with error msg
   header("location: ../addproduct.php?error=none");
 
   exit(); // Stop the script from running
@@ -230,7 +230,7 @@ if ($result) { // checking both queries were inserted
 }
 else{ // some query failed
 
-  // Send user back to register page with error msg
+  // Send user back to add page with error msg
   header("location: ../addproduct.php?error=failed");
 
   exit(); // Stop the script from running
