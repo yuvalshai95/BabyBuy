@@ -90,7 +90,7 @@ $fm = new Foramt();
                     <li class="list-group-item" style="width: 70%;">
                         <div class="form-check">
                             <label class="form-check-label" >
-                                <input type="checkbox" class="form-check-input product_check" value="Open Box" id="condition"> Open Box
+                                <input type="checkbox" class="form-check-input product_check" value="open" id="condition"> Open Box
                             </label>
                         </div>
                     </li>

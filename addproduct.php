@@ -1,9 +1,12 @@
 <?php require_once 'includes/navTop.php'; ?>
+
 <?php 
     require_once 'classes/Category.php'; 
     require_once 'classes/Product.php'; 
-    require_once 'classes/SubCategory.php'; 
+    require_once 'classes/SubCategory.php';
 
+
+    
     $pd = new Product();
     $category = new Category();
     $sub = new SubCategory();
@@ -16,16 +19,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleA/addproductyuval.css">
-        <!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
+
+<!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
+
     <title>Add new product</title>
 </head>
 <body>
     
 <div class="container">
+
+<?php 
+    // Error handling
+    if (isset($_GET["error"])) {
+
+        if ($_GET["error"] == "emptyinput") {
+            echo "<div class='validation'>Fill in all fields !</div>";
+        }
+        else if($_GET["error"] == "bigfile"){
+            echo "<div class='validation'>Image size can't be over 5MB !</div>";
+        }
+        else if($_GET["error"] == "notImage"){
+            echo "<div class='validation'>File selected is not an image</div>";
+        }
+        else if($_GET["error"] == "none"){
+            echo "<div class='success'>Product Added !</div>";
+        }
+        else if($_GET["error"] == "failed"){
+            echo "<div class='validation'>Query failed</div>";
+        }
+        else if($_GET["error"] == "invalidproductname"){
+            echo "<div class='validation'>Product Name not valid !</div>";
+        }
+        else if($_GET["error"] == "invalidprice"){
+            echo "<div class='validation'>Price not valid</div>";
+        }
+        
+        
+    }
+?>
+
+
     <div class="title">Add new product</div>
-    <form action="" method="POST">
+    <form action="includes/addproduct.inc.php" method="POST" enctype="multipart/form-data">
         <div class="product-details">
 
             <div class="input-box">
@@ -92,24 +129,24 @@
 
                 <span class="details">Pick Up:</span>
                 <select name="pdPickUp">
-                    <option value="#">Local</option>
-                    <option value="#">Shipping</option>
+                    <option value="local">Local</option>
+                    <option value="shipping">Shipping</option>
                 </select>
 
                 <span class="details">Age Group:</span>
                 <select name="pdAge">
-                    <option value="#">0-3 months</option>
-                    <option value="#">0-12 months</option>
-                    <option value="#">12-36 months</option>
-                    <option value="#">36+ months</option>
+                    <option value="3">0-3 months</option>
+                    <option value="12">0-12 months</option>
+                    <option value="36">12-36 months</option>
+                    <option value="40">36+ months</option>
                 </select>
 
                 <span class="details">Condition:</span>
-                <select name="pdAge">
-                    <option value="#">Brand New</option>
-                    <option value="#">Open Box</option>
-                    <option value="#">Barley Used</option>
-                    <option value="#">Gently Used</option>
+                <select name="pdCondition">
+                    <option value="new">Brand New</option>
+                    <option value="open">Open Box</option>
+                    <option value="barley">Barley Used</option>
+                    <option value="gently">Gently Used</option>
                 </select>
 
                 <span class="details">Price:</span>
@@ -117,7 +154,8 @@
             </div>
 
 
-            <input type="hidden" name="pdStatus" value="For Sale">
+            <input type="hidden" name="pdStatus" value="Available">
+            <input type="hidden" name="userId" value="<?php echo Session::get("userId"); ?>">
 
             <div style="margin-top:1em;" class="button">
                 <input type="submit" name="submit" value="UPLOAD">
