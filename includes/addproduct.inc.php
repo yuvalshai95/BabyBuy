@@ -19,9 +19,6 @@ if(isset($_POST['submit'])){
     $pdCondition = $_POST['pdCondition'];
     $file = $_FILES;
 
-    /*header('location: userId='.$userId.'pdCategory='.$pdCategory.'pdName='.$pdName.'pdDesc='.$pdDescription.'pdPickUp='.$pdPickUp.'pdAge='.$pdAge.'pdPrice='.$pdPrice.'pdstatus='.$pdStatus.'pdcondition='.$pdCondition.'');
-    exit(); */
-
     // 1)Check if empty field
     if(empty($pdName) || empty($pdDescription) || empty($pdPrice)){
 
@@ -50,7 +47,7 @@ if(isset($_POST['submit'])){
     }
 
 
-
+    // No Errors -> insert product to database
     $pd->productInsert($userId, $pdCategory, $pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file);
     
 
