@@ -58,10 +58,15 @@
 </head>
 <body>
 
-<h3>My Wishlist</h3>
+
+
 
     <div class="small-container wishlist-page">
-  
+
+        <div class="header">
+            <span>My Wishlist</span>
+        </div>
+    
         <table>
             <tr>
                 <!-- Table Header -->

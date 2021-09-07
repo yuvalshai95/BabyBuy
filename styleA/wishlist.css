@@ -6,12 +6,12 @@ body {
 .wishlist-page {
 	margin: 80px auto;
 	width: 50%;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 table {
 	width: 100%;
 	border-collapse: collapse;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .wishlist-info {
@@ -89,4 +89,24 @@ td a.goto:hover {
 	cursor: pointer;
 	transition: 0.5s;
 	font-weight: bold;
+}
+
+.header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.header span {
+	font-size: 2.5em;
+}
+
+.header::before {
+	content: "";
+	position: absolute;
+	top: 228px;
+	left: 780px;
+	height: 3px;
+	width: 318px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, #fda635, #e7e7e7);
 }
