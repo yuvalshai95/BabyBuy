@@ -1,3 +1,6 @@
+    <!-- top nav bar -->
+    <?php include_once 'includes/navTop.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +17,7 @@
 </head>
 <body>
     
-    <!-- top nav bar -->
-    <?php include_once 'includes/navTop.php'; ?>
+
 
 <div class="content clearfix">
     <div class="main-content">
@@ -47,27 +49,22 @@
 
              //TODO: recmove this query from this page and insert in to Article class
              // Retrieve selected results from database and display them on page
-             $query  = "SELECT articles.*, articles_images.ImagePath
-             FROM articles
-             INNER JOIN articles_images ON articles.ImageRefrence  = articles_images.ImageRefrence
-             GROUP BY articles_images.ImageRefrence
-             ORDER BY ArticleTimeStamp DESC
-             LIMIT " . $this_page_first_result . ',' . $result_per_page;
-             $result = $db->select($query);
 
-             while ($row = $result->fetch_assoc()) {
+             $getArticles = $article->getArticlesByLimit($this_page_first_result,$result_per_page);
+
+             while ($row = $getArticles->fetch_assoc()) {
         ?>
 
         <div class="post">
             <img src="admin/<?php echo $row['ImagePath'];?>" alt="" class="post-image">
             <div class="post-preview">
-                <h2><a href="#" class="par ttl"><?= $row['ArticleHeader']; ?></a></h2>
+                <h2><a href="SingleArticlePage.php?articleId=<?= $row['ArticleID']; ?>" class="par ttl"><?= $row['ArticleHeader']; ?></a></h2>
                 <i class="far calendar"><?= $row['ArticleTimeStamp']; ?></i>
                 <p class="preview-text">
                     <?php echo $format->textShorten($row['ArticleBody'],350) ?>
                 </p>
                 <!-- TODO: Make link work -->
-                <a href="#" class="readMoreBTN read-more">Read More</a>
+                <a href="SingleArticlePage.php?articleId=<?= $row['ArticleID']; ?>" class="readMoreBTN read-more">Read More</a>
             </div>
         </div>
         <?php } ?>

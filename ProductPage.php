@@ -52,18 +52,18 @@
                 <div class="small-img-row">
                 <?php
                             // init array to store all images path                
-                            $imgesPath = [];
+                            $imagePath = [];
 
                             // get all images path
                             $getAllImages = $pd->getAllImagesByProductId($pd_id);
 
                             // add all images path to the array
                             while($row = $getAllImages->fetch_assoc()){
-                                array_push($imgesPath,$row['ImagePath']);
+                                array_push($imagePath,$row['ImagePath']);
                             }
 
                             // display to user images
-                            foreach ($imgesPath as $path) {
+                            foreach ($imagePath as $path) {
 
                                 // remove from path -> "../"
                                 $path = str_replace('../','',$path);

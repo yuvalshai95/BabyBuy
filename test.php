@@ -1,11 +1,13 @@
 <?php include_once 'classes/Category.php'; ?>
 <?php include_once 'classes/SubCategory.php'; ?>
 <?php include_once 'classes/Product.php'; ?>
+<?php include_once 'classes/Article.php'; ?>
 
 <?php
         $pd = new Product();
         $category = new Category();
         $sub = new SubCategory();
+        $article = new Article();
 ?>
 
         <!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
@@ -16,22 +18,32 @@
 
 <?php
 
-$test = "../admin/Web/6135e64af2a1c5.62634135.jpg";
-$test = str_replace('../','',$test);
+    $getArticle = $article->getArticleByID(47);
+    if($getArticle){
+        $row = $getArticle->fetch_assoc();
+    }
 
+    // init array to store all images path                
+    $imagePath = [];
 
+    // get all images path
+    $getAllImages = $article->getAllImagesByArticleId(47);
 
-$getrecent = $pd->getRecentProducts();
-$arr = [];
-while($row = $getrecent->fetch_assoc()){
-    array_push($arr,$row['ImagePath']);
-}
+    // add all images path to the array
+    while($row = $getAllImages->fetch_assoc()){
+        array_push($imagePath,$row['ImagePath']);
+    }
 
-foreach ($arr as $path) {
-    $path = str_replace('../','',$path);
-    echo $path .'</br>';
-}
+    $i=0;
 ?>
+
+<?php
+
+    if($i < sizeof($imagePath)){
+         echo $imagePath[$i];
+    }
+?>
+
 
 
 

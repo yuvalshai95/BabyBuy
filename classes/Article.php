@@ -214,9 +214,31 @@ public function getRecentArticles(){
 }
 
 
+public function getArticlesByLimit($this_page_first_result,$result_per_page){
+  $query  = "SELECT articles.*, articles_images.*
+             FROM articles
+             INNER JOIN articles_images ON articles.ImageRefrence  = articles_images.ImageRefrence
+             GROUP BY articles_images.ImageRefrence
+             ORDER BY ArticleTimeStamp DESC
+             LIMIT " . $this_page_first_result . ',' . $result_per_page;
+
+$result = $this->db->select($query);
+return $result;
+}
 
 
+public function getAllImagesByArticleId($id){
+  $query = "SELECT *
+            FROM articles_images a
+            WHERE a.ImageRefrence IN (SELECT ImageRefrence
+                                      FROM articles
+                                      WHERE ArticleID  = '$id')";
 
+  $result = $this->db->select($query);
+
+  return $result;
+  
+}
 
 
 
