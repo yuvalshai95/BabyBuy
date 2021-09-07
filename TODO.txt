@@ -44,3 +44,5 @@ when user upload product (user_products_image table) update image ref in both ta
 22) on product page make add to wishlist button work
 
 23) on product page remove wishlist button if user is logged off
+
+24) to search page (shop) add to filters sub-category and maybe status? (status:available\sold)
