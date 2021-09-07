@@ -21,7 +21,7 @@
 </head>
 <body>
     
-<footer>
+<footer id="footer">
     <div class="footer-content">
         <h3>BabyBuy</h3>
         <p>FOLLOW US ON OUR SOCIAL NETWORKS </p>

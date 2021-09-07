@@ -58,7 +58,7 @@
 </head>
 <body>
 
-
+    <div id="footer-container">
 
 
     <div class="small-container wishlist-page">
@@ -112,6 +112,7 @@
         echo '<div align="center"><h3 style="color:red;">Empty :(</h3></div>';
     } ?>
         </table>
+    </div>
     </div>
 
 </body>
