@@ -54,3 +54,5 @@ when user upload product (user_products_image table) update image ref in both ta
 27) add to user profile(my account) "see my products"
 
 28) go over all pages where nav top is included and if there is another class included delete it (all classes are included in the nav so its duplicate code)
+
+29) remove from singleArticlePage right side 
