@@ -148,6 +148,7 @@ $fm = new Foramt();
             <!-- Start of body products content -->
             <div class="col-lg-9">
                 <h4 class="text-center" style="font-weight: bold;" id="textChange">All Products</h4>
+                <h6 class="text-center" style="font-weight: bold; margin-top:10px; color:gray;font-size:12px;"><a style="color:gray;" href="homepage.php"> Home</a> > Search </h6>
                 <hr>
 
                 <!-- Show spinner when loading products from database -->

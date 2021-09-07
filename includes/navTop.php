@@ -48,15 +48,14 @@
 
                 <ul class="primary-nav">
                     <li> <a href="homePage.php">Home</a></li>
-                    <li> <a href="#">Categories</a></li>
                     <li> <a href="search.php">Shop</a></li>
-                    <li> <a href="ArticlesList.php">Articles</a></li>
-                    <li> <a href="#">About Us</a></li>
                     <?php
                      // check if user is logged in
                      if (Session::get("userId")){    ?>
                         <li> <a href="addproduct.php">Sell</a></li>
                      <?php } ?>
+                    <li> <a href="ArticlesList.php">Articles</a></li>
+                    <li> <a href="#">About Us</a></li>
                 </ul>
 
                 <ul class="secondary-nav">
