@@ -22,7 +22,14 @@
 
        // Add product to wish list if user and owner are different
        if($currentUser != $wishOwnerid){
+
+        // Check this item is not already in wishlist table
+        if ($pd->isProductInWishlist($wishPd , $wishOwnerid ) == false) {
+
+            // Add product to wishlist
             $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
+        }
+           
        }
        
     }

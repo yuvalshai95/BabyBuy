@@ -265,7 +265,19 @@ public function getSingleImagesByProductId($id){
   
 }
 
-
+public function isProductInWishlist($pd_id,$user_id){
+  $query = "SELECT *
+            FROM wishlist
+            WHERE wishlist.ProductID = '$pd_id' AND wishlist.UserID = '$user_id'";
+  
+  $result = $this->db->select($query);
+  if ($result !== false) {
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 
 
