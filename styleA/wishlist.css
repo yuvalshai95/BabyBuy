@@ -1,0 +1,91 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.wishlist-page {
+	margin: 80px auto;
+	width: 50%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.wishlist-info {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wishlist-info p {
+	margin-bottom: 0 !important;
+}
+
+th {
+	text-align: left;
+	padding: 5px;
+	color: #fff;
+	background: #bfbfbf;
+	font-weight: normal;
+}
+
+td {
+	padding: 10px 5px;
+}
+
+td img {
+	width: 90px;
+	height: 90px;
+	margin-right: 10px;
+}
+
+.delete {
+	margin-top: 10px;
+}
+
+.delete button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: red;
+}
+
+td button.view_data {
+	border-radius: 5px;
+	padding: 5px;
+	background: white;
+	color: rgb(251, 189, 73);
+	border: 1px solid rgb(251, 189, 73);
+}
+
+td button.view_data:hover {
+	border-radius: 5px;
+	padding: 5px;
+	background: rgb(255 221 97);
+	color: white;
+	border: 1px solid whitesmoke;
+	cursor: pointer;
+	transition: 0.5s;
+	font-weight: bold;
+}
+
+td a.goto {
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 5px;
+	background: white;
+	color: rgb(251, 189, 73);
+	border: 1px solid rgb(251, 189, 73);
+}
+
+td a.goto:hover {
+	text-decoration: none;
+	color: white;
+	background: rgb(255 221 97);
+	color: white;
+	border: 1px solid whitesmoke;
+	cursor: pointer;
+	transition: 0.5s;
+	font-weight: bold;
+}
