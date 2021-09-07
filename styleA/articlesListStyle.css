@@ -3,7 +3,7 @@
 /* "Montserrat", sans-serif */
 
 body {
-	background: #FFFAFA;
+	background: #fffafa;
 }
 
 h1,
@@ -36,7 +36,6 @@ h2 {
 	width: 75%;
 	margin: 30px auto 30px;
 	font-family: "Montserrat", sans-serif;
-	box-shadow: 0 0.2rem 0.9rem 0rem #949494;
 }
 
 .content .main-content {
@@ -50,12 +49,13 @@ h2 {
 
 .content .main-content .post {
 	width: 95%;
-	height: 270px;
-	margin: 20px auto;
+	height: 280px;
+	margin: 1em 1em 1em -1em;
 	border-radius: 5px;
 	background: #fff;
 	position: relative;
-	box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem #949494;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+	border: 1px solid #e2dfdf;
 }
 
 .content .main-content .post .read-more {
@@ -66,6 +66,7 @@ h2 {
 	background: transparent;
 	border-radius: 0px;
 	color: rgb(248, 185, 48);
+	text-decoration: none;
 }
 
 .content .main-content .post .read-more:hover {
@@ -106,7 +107,6 @@ h2 a:hover {
 	width: 29.5%;
 	float: left;
 	height: 500px;
-	
 }
 
 .content .sidebar .section {
