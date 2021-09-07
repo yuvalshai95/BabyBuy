@@ -50,3 +50,5 @@ when user upload product (user_products_image table) update image ref in both ta
 25) my account -> update details and update password re-do it with ajax
 
 26) on admin panel make all edit/delete with ajax
+
+27) add to user profile(my account) "see my products"
