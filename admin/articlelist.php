@@ -67,7 +67,7 @@ $format  = new Foramt();
 					<td class="tableCenter"><?= $result['ArticleCategory']; ?> </td>
 					<td class="tableCenter"><?= $format->textShorten($result['ArticleBody'], 20); ?> </td>
 					<td class="tableCenter"><?= $result['ArticleTimeStamp']; ?> </td>
-					<td class="tableCenter"> <img src="<?= $result['ImagePath']; ?>" height="40px;" width="60px;"> </td>
+					<td class="tableCenter"> <img style="width: 60px;" src="<?= $result['ImagePath']; ?>" height="40px;" width="60px;"> </td>
                    
 					
 					<!-- TODO: make Reminder work -->
