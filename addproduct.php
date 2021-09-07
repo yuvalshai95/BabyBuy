@@ -83,7 +83,7 @@
                     <div class="wrap">
                         <span class="image-title">Browse:</span>
                         <!-- making image[] array to hold multiple images and JS to display preview -->
-                        <input type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
+                        <input style="padding: 9px 10px 0px 35px;" type="file" name="image[]" onchange="displayImage(this)" id="image" multiple/>
                         <h6 style="color:gray;margin-top:0.5em;">Supported Files: jpg, jpeg, png, gif</h6>
                     </div>
                 
