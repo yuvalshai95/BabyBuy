@@ -46,3 +46,7 @@ when user upload product (user_products_image table) update image ref in both ta
 23) on product page remove wishlist button if user is logged off
 
 24) to search page (shop) add to filters sub-category and maybe status? (status:available\sold)
+
+25) my account -> update details and update password re-do it with ajax
+
+26) on admin panel make all edit/delete with ajax
