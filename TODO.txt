@@ -58,3 +58,5 @@ when user upload product (user_products_image table) update image ref in both ta
 29) remove from singleArticlePage right side 
 
 30) check to see if when product is in user x wishlist and user y delete this product what happen
+
+31) add to search filter -> north,south,central (add to user in database Area, and in register form)
