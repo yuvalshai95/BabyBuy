@@ -134,3 +134,7 @@ a.seeMoreHref:hover {
 	font-size: 20px;
 	vertical-align: middle;
 }
+
+a {
+	text-decoration: none;
+}
