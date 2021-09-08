@@ -108,7 +108,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #FFFAFA;
+	background: #fffafa;
 }
 
 .box {
@@ -166,4 +166,17 @@ input[type="submit"]:hover {
 	font-family: "Montserrat", sans-serif;
 	font-size: 24px;
 	font-weight: 600;
+	line-height: 40px;
+}
+
+.title h4::before {
+	content: "";
+	background: linear-gradient(135deg, #fda635, #e7e7e7);
+	width: 80px;
+	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }

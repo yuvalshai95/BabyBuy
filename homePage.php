@@ -70,17 +70,17 @@
 
 
     <!-- Product Cards - category -->
-    <div class="title"><h2>FAVORITE CATEGORY</h2></div>
+    <div class="title"><h4>FAVORITE CATEGORY</h4></div>
     <?php include 'favoriteCards.php'; ?>
 
            
     <!-- Product Cards - recent added -->
-    <div class="title"><h2>RECENT ADDED</h2></div>
+    <div class="title"><h4>RECENT ADDED</h4></div>
     <?php include 'productCards.php'; ?>
 
 
     <!-- Articles Cards -->
-    <div class="title"><h2>ARTICLES</h2></div>
+    <div class="title"><h4>ARTICLES</h4></div>
     <?php include 'articlesCards.php'; ?>
 
 
