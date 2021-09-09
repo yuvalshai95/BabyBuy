@@ -161,7 +161,7 @@ body {
 .header .hero-img {
 	position: absolute;
 	top: 20%;
-	left: 25%;
+	left: 20%;
 	height: 50em;
 	object-fit: contain;
 }
@@ -169,7 +169,7 @@ body {
 .hero-content {
 	position: absolute;
 	top: 50%;
-	transform: translate(25%, -50%);
+	transform: translate(20%, -50%);
 }
 
 .hero-content h2 {
