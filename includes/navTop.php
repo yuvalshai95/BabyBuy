@@ -45,52 +45,57 @@
 </head>
 <body>
 
-    <div class="Navbar">
-
-        <div class="con">
-
-            <a  class="logo" href="homepage.php">Baby<span>Buy</span></a>
-
-            <nav>
-
-                <ul class="primary-nav">
-                    <li> <a href="homePage.php">Home</a></li>
-                    <li> <a href="search.php">Shop</a></li> 
-                    <?php 
-                     // check if user is logged in
-                     if (Session::get("userId")){    ?> 
-                        <li> <a href="addproduct.php">Sell</a></li> 
-                     <?php  } ?> 
-                    <li> <a href="ArticlesList.php">Articles</a></li>
-                    <li> <a href="#">About Us</a></li>
-                </ul>
-
-                <ul class="secondary-nav">
-
-                <?php 
-                     // check if user is logged in
-                     if (Session::get("userId")){    ?> 
-                
-                    <li class="cta"> <a href="wishlist.php" class="wishlistBTN">Wishlist</a></li> 
-
-                    <!-- Profile button -->
-                    <li class="cta"> <a href="profile.php">My Account</a> </li> 
-
-                    <!-- Logout button -->
-                   <li class="cta"> <a href="?action=logout">Logout</a> </li> 
-
-                    <?php  }else{   ?>
-                     <!-- Login button -->
-                    <li class="cta"> <a href="login.php">Log In</a> </li> 
-
-                    <!-- Register button -->
-                    <li class="cta"> <a href="register.php">Sign Up</a> </li> 
-                    
-                    <?php  }  ?> 
-                </ul>
-            </nav>
+<nav style="background-color: rgb(250, 206, 110);" class="nav">
+      <div class="navigation nav-container">
+        <div class="navigation-logo">
+            <h1>BabyBuy</h1>
         </div>
-    </div> 
+
+        <div class="menu-primary">
+          <ul class="nav-list-primary">
+
+            <li class="nav-item-primary" >
+                <a href="homepage.php" class="nav-link-primary" style="text-decoration: none;">Home</a>
+            </li>
+
+            <li class="nav-item-primary">
+                <a href="search.php" class="nav-link-primary" style="text-decoration: none;">Shop</a>
+            </li>
+
+            <li class="nav-item-primary">
+                <a href="addproduct.php" class="nav-link-primary" style="text-decoration: none;">Sell</a>
+            </li>
+
+            <li class="nav-item-primary">
+                <a href="ArticlesList.php" class="nav-link-primary" style="text-decoration: none;">Articles</a>
+            </li>
+
+            <li class="nav-item-primary">
+                <a href="#" class="nav-link-primary" style="text-decoration: none;">Contact</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="menu-secondary">
+          <ul class="nav-list-secondary">
+
+            <li class="nav-item-secondary">
+                <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:black; font-size:30px;'  ></i></a>
+            </li>
+
+            <li class="nav-item-secondary">
+                <a href="profile.php" class="nav-link-secondary"><i class='bx bxs-user-circle' style='color:black; font-size:30px;' ></i></a>
+            </li>
+
+            <li class="nav-item-secondary">
+                <a href="?action=logout" class="nav-link-secondary"><i class='bx bx-log-out bx-rotate-180' style='color:black; font-size:30px;' ></i></a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 </body>
 </html>

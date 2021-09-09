@@ -11,7 +11,7 @@ footer {
 	bottom: 0;
 	right: 0;
 	left: 0;
-	background: rgb(248, 185, 48);
+	background: rgb(156 156 156);
 	height: auto;
 	width: 100%;
 	font-family: "Montserrat", sans-serif;
@@ -68,7 +68,7 @@ footer {
 }
 
 .footer-bottom {
-	background: rgb(248, 185, 48);
+	background: rgb(156 156 156);
 	width: 100%;
 	padding: 15px 0;
 	text-align: center;
