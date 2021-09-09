@@ -110,8 +110,8 @@ $fm = new Foramt();
             </div>
         </div>
         <?php }}else{
-                header("location: 404.php");
-                exit();
+            
+                echo "<script>window.location = '404.php'; </script>";
         } ?>
     </div>
 </body>

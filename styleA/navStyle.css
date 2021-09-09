@@ -98,11 +98,9 @@ body {
 	overflow: hidden;
 }
 
-/*
 .nav {
-	padding: 1rem 0;
+	padding: 5px;
 }
-*/
 
 .nav.fix-nav {
 	position: fixed;
@@ -168,6 +166,25 @@ body {
 	border: 1px solid rgb(0, 0, 0);
 }
 
+.nav-link-secondary {
+	color: black !important;
+}
+
+.login,
+.register {
+	padding: 0.8rem 1rem;
+}
+
+.login:hover,
+.register:hover {
+	border: 1px solid rgb(0, 0, 0);
+}
+
+.nav.fix-nav .login:hover,
+.nav.fix-nav .register:hover {
+	border: 1px solid white;
+}
+
 .nav.fix-nav .nav-link-primary:hover {
 	border: 1px solid white;
 }
@@ -186,12 +203,6 @@ body {
 	position: absolute;
 	top: 50%;
 	transform: translate(20%, -50%);
-}
-
-.hero-content h2 {
-	color: rgb(195, 97, 251);
-	font-size: 3em;
-	margin-bottom: 1em;
 }
 
 .hero-content .colored {

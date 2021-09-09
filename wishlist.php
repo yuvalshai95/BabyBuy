@@ -62,7 +62,7 @@
 
     <div class="small-container wishlist-page">
 
-        <div class="header">
+        <div class="header_wishlist">
             <span>My Wishlist</span>
         </div>
     

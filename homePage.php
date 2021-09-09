@@ -70,9 +70,13 @@
                 <a href="search.php" class="nav-link-primary">Shop</a>
             </li>
 
+            <?php 
+              // check if user is logged in
+              if (Session::get("userId")){    ?> 
             <li class="nav-item-primary">
                 <a href="addproduct.php" class="nav-link-primary">Sell</a>
             </li>
+            <?php } ?>
 
             <li class="nav-item-primary">
                 <a href="ArticlesList.php" class="nav-link-primary">Articles</a>
@@ -88,6 +92,9 @@
         <div class="menu-secondary">
           <ul class="nav-list-secondary">
 
+          <?php 
+            // check if user is logged in
+            if (Session::get("userId")){    ?> 
             <li class="nav-item-secondary">
                 <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:black; font-size:30px;'  ></i></a>
             </li>
@@ -100,6 +107,16 @@
                 <a href="?action=logout" class="nav-link-secondary"><i class='bx bx-log-out bx-rotate-180' style='color:black; font-size:30px;' ></i></a>
             </li>
 
+            <?php }else{ ?>
+
+              <li class="nav-item-secondary">
+                <a href="login.php" class="nav-link-secondary login">Login</a>
+            </li>
+
+            <li class="nav-item-secondary">
+                <a href="register.php" class="nav-link-secondary register">Register</a>
+            </li>
+            <?php } ?>
           </ul>
         </div>
       </div>
