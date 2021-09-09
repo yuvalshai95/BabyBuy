@@ -128,11 +128,12 @@
     <!-- Hero body -->
     <div class="hero-content">
       <h1>
-        <span>Welcome To BabyBuy</span>
+        <span>Shop & sell used</span>
+        <span>baby and kid items</span>
       </h1>
 
         <!-- Button -->
-        <a href="search.php" class="btn">Shop Now</a>
+        <a href="search.php" class="hero-btn">Start Shopping</a>
     </div>
     
   </header>
@@ -198,7 +199,7 @@
 
 <br> <br> <br><br><br><br><br><br>
 
-
+<section class="items">
     <!-- Product Cards - category -->
     <div class="title"><h4>FAVORITE CATEGORY</h4></div>
     <?php include 'favoriteCards.php'; ?>
@@ -213,7 +214,7 @@
     <div class="title"><h4>ARTICLES</h4></div>
     <?php include 'articlesCards.php'; ?>
 
-
+</section>
 
 
 

@@ -15,7 +15,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	background: #fffafa;
+	background: rgb(250, 250, 227);
 	font-family: 'Montserrat' !important;
 	position: relative;
 	z-index: 1;
