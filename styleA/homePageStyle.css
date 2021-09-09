@@ -86,6 +86,7 @@ input[type="submit"]:hover {
 /* *********************** end search line ************************* */
 
 .title {
+	margin-bottom: 15px;
 	position: relative;
 	text-align: center;
 	padding-bottom: 10px;
@@ -125,4 +126,10 @@ input[type="submit"]:hover {
 	margin: 20px;
 	object-fit: contain;
 	border: 5px solid white;
+}
+
+.section-flex {
+	background-color: #f4f4f4;
+	margin-bottom: 5em;
+	min-height: 39em;
 }

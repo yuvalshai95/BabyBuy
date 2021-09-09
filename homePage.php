@@ -174,7 +174,7 @@
     <br> <br>
     <!--  .............................................................................................................  -->
  
- 
+<section class="section-flex">
 <!--Flex Slider START -->
 <div class="flexslider">
   <ul class="slides">
@@ -194,10 +194,10 @@
   </ul>
 </div>
 <!--Flex Slider END -->
-
+</section>
 <!--  .............................................................................................................  -->
 
-<br> <br> <br><br><br><br><br><br>
+
 
 <section class="items">
     <!-- Product Cards - category -->
@@ -215,32 +215,32 @@
         <div class="row">
 
           <div class="col-items">
-            <img src="img/babyCarrier.png" alt="">
+           <a href="productsearch?search=Carrier"><img src="img/babyCarrier.png" alt=""></a> 
           </div>
 
           <div class="col-items">
-            <img src="img/babycarseat.png" alt="">
+           <a href="productsearch?search=Car Seat"><img src="img/babycarseat.png" alt=""></a> 
           </div>
 
           
           <div class="col-items">
-            <img src="img/babyCrib.png" alt="">
+           <a href="productsearch?search=Crib"><img src="img/babyCrib.png" alt=""></a> 
           </div>
 
         </div>
         <div class="row">
 
           <div class="col-items">
-            <img src="img/babyToys.png" alt="">
+           <a href="productsearch?search=Toys"><img src="img/babyToys.png" alt=""></a> 
           </div>
 
           <div class="col-items">
-            <img src="img/BabyStroller.png" alt="">
+           <a href="productsearch?search=Stroller"><img src="img/BabyStroller.png" alt=""></a> 
           </div>
 
 
           <div class="col-items">
-            <img src="img/babyDiapering.png" alt="">
+           <a href="productsearch?search=Diaper"><img src="img/babyDiapering.png" alt=""></a> 
           </div>
 
         </div>
