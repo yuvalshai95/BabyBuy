@@ -114,8 +114,9 @@ body {
 
 .nav.fix-nav .nav-link-primary,
 .nav.fix-nav .nav-link-secondary,
-.nav.fix-nav .navigation-logo {
-	color: #fff;
+.nav.fix-nav .navigation-logo,
+.nav.fix-nav .nav-item-secondary i.bx {
+	color: #fff !important;
 }
 
 .navigation {
