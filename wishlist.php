@@ -5,8 +5,7 @@
 
 <?php
     if (Session::get("userId") == false) {
-        header("location: 404.php");
-        exit();
+        echo "<script>window.location = '404.php'; </script>";
     }
     $currentUser = Session::get("userId");
     $pd = new Product();
