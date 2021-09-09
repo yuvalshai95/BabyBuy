@@ -128,8 +128,7 @@
     <!-- Hero body -->
     <div class="hero-content">
       <h1>
-        <span>Text H1</span>
-        <span> Line 2 Another Text H1</span>
+        <span>Welcome To BabyBuy</span>
       </h1>
 
         <!-- Button -->
