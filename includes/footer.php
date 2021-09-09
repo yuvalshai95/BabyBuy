@@ -26,9 +26,9 @@
         <h3>BabyBuy</h3>
         <p>FOLLOW US ON OUR SOCIAL NETWORKS </p>
         <ul class="socials">
-            <li><a href="<?= $getSocial['facebook']?>"><i class="fa fa-facebook-square" style="color: #edf0f1;"></i></a></li>
-            <li><a href="<?= $getSocial['instagram']?>"><i class="fa fa-instagram" style="color: #edf0f1;"></i></a></li>
-            <li><a href="<?= $getSocial['linkedin']?>"><i class="fa fa-linkedin" style="color: #edf0f1;"></i></a></li>
+            <li><a href="<?= $getSocial['facebook']?>"><i class="fa fa-facebook-square" style="color: ##8f8f8f;;"></i></a></li>
+            <li><a href="<?= $getSocial['instagram']?>"><i class="fa fa-instagram" style="color: ##8f8f8f;;"></i></a></li>
+            <li><a href="<?= $getSocial['linkedin']?>"><i class="fa fa-linkedin" style="color: ##8f8f8f;;"></i></a></li>
         </ul>
     </div>
 

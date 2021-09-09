@@ -106,3 +106,23 @@ input[type="submit"]:hover {
 	left: 50%;
 	transform: translateX(-50%);
 }
+
+/*  Categories section  */
+
+.categories {
+	background-color: #f4f4f4;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+}
+
+.row img {
+	border-radius: 50%;
+	height: 300px;
+	width: 300px;
+	margin: 20px;
+	object-fit: contain;
+	border: 5px solid white;
+}

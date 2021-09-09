@@ -209,6 +209,44 @@
     <div class="title"><h4>RECENTLY ADDED</h4></div>
     <?php include 'productCards.php'; ?>
 
+    <section class="categories">
+      <div class="title"><h4>CATEGORIES</h4></div>
+      <div class="categories-container">
+        <div class="row">
+
+          <div class="col-items">
+            <img src="img/babyCarrier.png" alt="">
+          </div>
+
+          <div class="col-items">
+            <img src="img/babycarseat.png" alt="">
+          </div>
+
+          
+          <div class="col-items">
+            <img src="img/babyCrib.png" alt="">
+          </div>
+
+        </div>
+        <div class="row">
+
+          <div class="col-items">
+            <img src="img/babyToys.png" alt="">
+          </div>
+
+          <div class="col-items">
+            <img src="img/BabyStroller.png" alt="">
+          </div>
+
+
+          <div class="col-items">
+            <img src="img/babyDiapering.png" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 
     <!-- Articles Cards -->
     <div class="title"><h4>ARTICLES</h4></div>
