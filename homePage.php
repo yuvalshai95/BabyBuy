@@ -44,6 +44,7 @@
 
   <!-- CSS Nav style -->
   <link rel="stylesheet" href="styleA/navStyle.css">
+
 </head>
 
 
