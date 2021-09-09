@@ -123,7 +123,7 @@
     </nav>
 
     <!-- Hero Image -->
-    <img src="./img/BabyBoss.png" class="hero-img">
+    <img src="./img/kid2.png" class="hero-img">
 
     <!-- Hero body -->
     <div class="hero-content">
