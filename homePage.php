@@ -205,7 +205,7 @@
 
            
     <!-- Product Cards - recent added -->
-    <div class="title"><h4>RECENT ADDED</h4></div>
+    <div class="title"><h4>RECENTLY ADDED</h4></div>
     <?php include 'productCards.php'; ?>
 
 
