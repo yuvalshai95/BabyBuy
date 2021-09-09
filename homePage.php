@@ -13,23 +13,21 @@
     <!-- JS Flex Slider-->
     <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 
-
     <!-- style Home Page -->
     <link href="styleA/homePageStyle.css" rel="stylesheet">
 
-
+<!-- Fav icon -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
 </head>
 
 <body>
-    
+
+
     <!-- top nav bar -->
     <?php include_once 'includes/navTop.php'; ?>
-    
-    <?php $slider = new Slider(); ?>
-
+  
     <br> <br> <br>
-
 
 
     <!-- search line --> 
@@ -49,6 +47,7 @@
 <div class="flexslider">
   <ul class="slides">
     <?php
+         $slider = new Slider();
           $getslider = $slider->getAllSliders();
           if($getslider)
           {
