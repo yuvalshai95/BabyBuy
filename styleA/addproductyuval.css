@@ -48,7 +48,7 @@ figure {
 	height: 3px;
 	width: 290px;
 	border-radius: 5px;
-	background: linear-gradient(135deg, #fda635, #e7e7e7);
+	background: linear-gradient(135deg, #fc7c7c, #e7e7e7);
 }
 
 .container form .product-details {
@@ -86,7 +86,7 @@ select {
 }
 
 .input-box textarea:focus {
-	border-color: #fda635;
+	border-color: #fc7c7c;
 	outline: none !important;
 }
 
@@ -95,7 +95,7 @@ select {
 }
 
 .product-details .input-box input:focus {
-	border-color: #fda635;
+	border-color: #fc7c7c;
 }
 
 form .button input {
@@ -108,13 +108,13 @@ form .button input {
 	font-weight: 500;
 	letter-spacing: 5px;
 	cursor: pointer;
-	background: linear-gradient(135deg, #fda635, #e7e7e7);
+	background: linear-gradient(135deg, #fc7c7c, #e7e7e7);
 	padding: 0.3em;
 	border: 1px solid #e7e7e7;
 }
 form .button input:hover {
 	/* transform: scale(0.99); */
-	background: linear-gradient(-135deg, #fda635, #e7e7e7);
+	background: linear-gradient(-135deg, #fc7c7c, #e7e7e7);
 }
 
 #pd_Sub_bags_5,

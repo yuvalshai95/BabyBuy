@@ -59,7 +59,7 @@ $fm = new Foramt();
                 <input type="hidden" id="key" value="<?php echo $key;?>">
 
                 <!-- Category filter -->
-                <h6 style="color:#0ac8e6; font-weight:bold;"">Select Category</h6>
+                <h6 style="color:#fc7c7c;; font-weight:bold;"">Select Category</h6>
                 <ul class="list-group">
                     <?php
                         $getAllCategories = $category->getAllCategories();
@@ -79,7 +79,7 @@ $fm = new Foramt();
 
                 <!-- Price Filter Range -->
                 <div class="list-group">
-                    <h6 style="color:#0ac8e6; font-weight:bold; margin-top: 1em;">Price</h6>
+                    <h6 style="color:#fc7c7c;; font-weight:bold; margin-top: 1em;">Price</h6>
                     <input type="hidden" id="hidden_minimum_price" value="5">
                     <input type="hidden" id="hidden_maximum_price" value="1000">
                     <div class="wrap" style="width: 70%;">
@@ -88,7 +88,7 @@ $fm = new Foramt();
                 </div>
                 
                 <!-- Condition Filter -->
-                <h6 style="color:#0ac8e6; font-weight:bold; margin-top: 1em;">Select Condition</h6>
+                <h6 style="color:#fc7c7c; font-weight:bold; margin-top: 1em;">Select Condition</h6>
                 <ul class="list-group">
                     
                     <li class="list-group-item" style="width: 70%;">
@@ -122,7 +122,7 @@ $fm = new Foramt();
                 </ul>
 
                  <!-- Age Filter -->
-                <h6 style="color:#0ac8e6; font-weight:bold; margin-top: 1em;">Select Age Group</h6>
+                <h6 style="color:#fc7c7c; font-weight:bold; margin-top: 1em;">Select Age Group</h6>
                 <ul class="list-group">
                     
                     <li class="list-group-item" style="width: 70%;">

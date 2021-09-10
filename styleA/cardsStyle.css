@@ -111,7 +111,7 @@ a.seeMoreHref:hover {
 }
 
 .action li:hover {
-	background: rgba(226, 136, 0, 0.808);
+	background: #fc7c7c;
 	color: #fff;
 }
 
@@ -174,7 +174,8 @@ a.seeMoreHref:hover {
 .container .card .content .price_status .status {
 	font-size: 13px;
 	padding: 4px 18px;
-	background-color: rgb(233, 170, 54);
+	background-color: #253b70;
 	border: none;
 	border-radius: 8px;
+	color: white;
 }
