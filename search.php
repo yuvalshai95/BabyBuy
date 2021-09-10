@@ -179,7 +179,7 @@ $fm = new Foramt();
 
                                 <!-- Card content -->
                                 <div class="card-body">
-                                    <h3 class="card-title" style="margin-top: 25px;">Price: $<?= $row['Price'];?></h3>
+                                    <h3 class="card-title" style="margin-top: 52px;">Price: $<?= $row['Price'];?></h3>
                                     <h6>Condition: <span class="badge badge-<?php 
                                     if (strtolower($row['ProductCondition']) == "new"){ 
                                         echo 'primary';}
