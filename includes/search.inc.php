@@ -14,7 +14,7 @@ if (isset($_POST['action'])) {
     $query = "SELECT * FROM product WHERE ProductCategory != ''";
 
     // Check key filter
-    if(isset($_POST['key'])){
+    if(isset($_POST['key']) && $_POST['key'] !== "none"){
         $key = $_POST['key'];
         $query .= "AND product.ProductName LIKE '%$key%' 
         OR product.Description LIKE '%$key%'";

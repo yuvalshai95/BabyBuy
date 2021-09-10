@@ -10,8 +10,10 @@ $fm = new Foramt();
 ?>
 
 <?php 
-    if (isset($_GET['search']) || $_GET['search'] !== NULL) {
+    if (isset($_GET['search'])) {
         $key = $_GET['search'];
+    }else{
+        $key = "none";
     }  
 ?>
 
