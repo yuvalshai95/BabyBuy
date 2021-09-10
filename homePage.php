@@ -219,7 +219,7 @@
           </div>
 
           <div class="col-items">
-           <a href="search.php?search=car"><img src="img/babycarseat.png" alt=""></a> 
+           <a href="search.php?search=car seat"><img src="img/babycarseat.png" alt=""></a> 
           </div>
 
           
