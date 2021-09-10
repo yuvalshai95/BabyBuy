@@ -11,7 +11,7 @@ body {
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
-	background-image: linear-gradient(180deg, rgb(250, 206, 110), rgb(250, 250, 227));
+	background-image: linear-gradient(180deg, rgb(113, 198, 219), rgb(250, 250, 227));
 	overflow: hidden;
 }
 
@@ -49,13 +49,13 @@ body {
 	margin-left: 35em;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1800px) {
 	.menu-primary {
 		margin-left: 0em;
 	}
 
 	.menu-secondary {
-		margin-left: 0em;
+		margin-left: 20em;
 	}
 }
 

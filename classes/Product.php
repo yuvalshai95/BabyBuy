@@ -47,7 +47,7 @@ public function getRecentProducts(){
   $query = "SELECT *
             FROM product p
             ORDER BY ProductTime DESC 
-            LIMIT 4";
+            LIMIT 8";
   $result = $this->db->select($query);
   return $result;
 }
