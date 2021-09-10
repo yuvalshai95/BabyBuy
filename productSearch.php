@@ -60,7 +60,7 @@ $fm = new Foramt();
             <!-- add style="border: none;" to card dive to remove border -->
                 <div class="card">
                     <!-- product image, don't touch style: pointer-everts or code will break -->
-                    <img style="width: 100%; height: 250px;" src="<?php  
+                    <img style="width: 100%; height: 250px; border-radius:0;margin:0;border:none;" src="<?php  
                                                                     $img = $pd->getSingleImagesByProductId($row['ProductID'])->fetch_assoc(); 
                                                                     $single = $img['ImagePath']; 
                                                                     $single = str_replace('../','',$single); 
@@ -74,7 +74,7 @@ $fm = new Foramt();
                     <div  style="padding:.5em .6em .2em .6em;" class="card-body">
                         
                         <!-- Description -->
-                        <p style="margin-top:20px; margin-bottom:0;"><?= $fm->textShorten($row['Description'],65) ?></p>
+                        <p style="margin-top:52px; margin-bottom:0;"><?= $fm->textShorten($row['Description'],65) ?></p>
 
                         <!-- div wrap price and badge -->
                         <div class="wrap" style="display: flex; justify-content:space-between; padding:.2em .3em 0 .3em; margin-top:10px;">
@@ -90,7 +90,7 @@ $fm = new Foramt();
                             else if(strtolower($row['ProductCondition']) == "used"){
                                 echo 'warning';
                             }
-                            else if(strtolower($row['ProductCondition']) == "barely used"){
+                            else if(strtolower($row['ProductCondition']) == "barley"){
                                 echo 'info';
                             }
                             else if(strtolower($row['ProductCondition']) == "open box"){

@@ -45,8 +45,7 @@ class Product{
 
 public function getRecentProducts(){
   $query = "SELECT *
-            FROM product p INNER JOIN users_products_images u ON p.ImageRefrence = u.ImageRefrence
-            ORDER BY p.ProductTime DESC 
+            FROM product p 
             LIMIT 4";
   $result = $this->db->select($query);
   return $result;

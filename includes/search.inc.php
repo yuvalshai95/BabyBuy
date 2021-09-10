@@ -79,7 +79,7 @@ if (isset($_POST['action'])) {
                                 <div  style="padding:.5em .6em .2em .6em;" class="card-body">
                                    
                                     <!-- Description -->
-                                    <p style="margin-top:20px; margin-bottom:0;"><?= $fm->textShorten($row['Description'],65) ?></p>
+                                    <p style="margin-top:52px; margin-bottom:0;"><?= $fm->textShorten($row['Description'],65) ?></p>
 
                                     <!-- div wrap price and badge -->
                                     <div class="wrap" style="display: flex; justify-content:space-between; padding:.2em .3em 0 .3em; margin-top:10px;">
@@ -95,7 +95,7 @@ if (isset($_POST['action'])) {
                                         else if(strtolower($row['ProductCondition']) == "used"){
                                             echo 'warning';
                                         }
-                                        else if(strtolower($row['ProductCondition']) == "barely used"){
+                                        else if(strtolower($row['ProductCondition']) == "barley"){
                                             echo 'info';
                                         }
                                         else if(strtolower($row['ProductCondition']) == "open box"){

@@ -210,7 +210,7 @@
     <?php include 'productCards.php'; ?>
 
     <section class="categories">
-      <div class="title"><h4>CATEGORIES</h4></div>
+      <div class="title"><h4>TOP CATEGORIES</h4></div>
       <div class="categories-container">
         <div class="row">
 
