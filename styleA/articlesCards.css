@@ -98,7 +98,7 @@ html {
 
 .card-btn:hover,
 .card-btn:active {
-	background-color: rgba(226, 136, 0, 0.808);
+	background-color: #df5454;
 }
 
 .card-btn span:hover,

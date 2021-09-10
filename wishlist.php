@@ -142,7 +142,7 @@
 
             <!-- Header -->
             <div class="modal-header">
-                <button type="button" name="close" data-dismiss="modal">X</button>
+                <button style="color:white; background-color:#253b70; padding:5px; border-radius:10px;" type="button" name="close" data-dismiss="modal">X</button>
                 <h4 class="modal-title">User Details</h4>
             </div>
 
@@ -152,7 +152,7 @@
 
             <!-- Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button style="color:white; background-color:#253b70;" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
 
         </div>

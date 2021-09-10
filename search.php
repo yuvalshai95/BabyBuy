@@ -210,7 +210,7 @@ $fm = new Foramt();
                                     <?= strtoupper($row['ProductCondition']);?></span></h6>
 
                                     <p><?= $fm->textShorten($row['Description'],100) ?></p>
-                                    <a href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" class="btn btn-primary btn-block">Product Page</a>
+                                    <a href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" style="background-color: #253b70;" class="btn btn-primary btn-block">Product Page</a>
                                 </div>
                             </div>
                         </div>
