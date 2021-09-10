@@ -62,3 +62,7 @@ when user upload product (user_products_image table) update image ref in both ta
 31) add to search filter -> north,south,central (add to user in database Area, and in register form)
 
 32) on addproduct name input (make it so its ok to enter numbers and letters -> curently only letters allowed)
+
+33) on product page make all images same size (with style)
+
+34) when clicking on category you go to search page and filtering not working -> fix it
