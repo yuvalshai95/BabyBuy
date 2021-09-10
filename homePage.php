@@ -215,32 +215,32 @@
         <div class="row">
 
           <div class="col-items">
-           <a href="productsearch?search=Carrier"><img src="img/babyCarrier.png" alt=""></a> 
+           <a href="search.php?search=carrier"><img src="img/babyCarrier.png" alt=""></a> 
           </div>
 
           <div class="col-items">
-           <a href="productsearch?search=Car Seat"><img src="img/babycarseat.png" alt=""></a> 
+           <a href="search.php?search=car"><img src="img/babycarseat.png" alt=""></a> 
           </div>
 
           
           <div class="col-items">
-           <a href="productsearch?search=Crib"><img src="img/babyCrib.png" alt=""></a> 
+           <a href="search.php?search=crib"><img src="img/babyCrib.png" alt=""></a> 
           </div>
 
         </div>
         <div class="row">
 
           <div class="col-items">
-           <a href="productsearch?search=Toys"><img src="img/babyToys.png" alt=""></a> 
+           <a href=search.php?search=toys"><img src="img/babyToys.png" alt=""></a> 
           </div>
 
           <div class="col-items">
-           <a href="productsearch?search=Stroller"><img src="img/BabyStroller.png" alt=""></a> 
+           <a href="search.php?search=stroller"><img src="img/BabyStroller.png" alt=""></a> 
           </div>
 
 
           <div class="col-items">
-           <a href="productsearch?search=Diaper"><img src="img/babyDiapering.png" alt=""></a> 
+           <a href="search.php?search=diaper"><img src="img/babyDiapering.png" alt=""></a> 
           </div>
 
         </div>

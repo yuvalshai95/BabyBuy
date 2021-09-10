@@ -13,6 +13,13 @@ if (isset($_POST['action'])) {
 
     $query = "SELECT * FROM product WHERE ProductCategory != ''";
 
+    // Check key filter
+    if(isset($_POST['key'])){
+        $key = $_POST['key'];
+        $query .= "AND product.ProductName LIKE '%$key%' 
+        OR product.Description LIKE '%$key%'";
+    }
+
     // Check price filter
     if (isset($_POST['minimum_price'],$_POST['maximum_price']) && !empty($_POST['minimum_price']) && !empty($_POST['maximum_price'])) {
         $query .= "AND Price BETWEEN '".$_POST['minimum_price']."' AND '".$_POST['maximum_price']."'";

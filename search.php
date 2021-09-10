@@ -9,6 +9,12 @@ $pd = new Product();
 $fm = new Foramt();
 ?>
 
+<?php 
+    if (isset($_GET['search']) || $_GET['search'] !== NULL) {
+        $key = $_GET['search'];
+    }  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +52,9 @@ $fm = new Foramt();
             <div class="col-lg-3">
                 <h5 style="font-weight: bold;">Filter Product</h5>
                 <hr>
+
+                <!-- key filter -->
+                <input type="hidden" id="key" value="<?php echo $key;?>">
 
                 <!-- Category filter -->
                 <h6 style="color:#0ac8e6; font-weight:bold;"">Select Category</h6>
@@ -228,6 +237,7 @@ $fm = new Foramt();
             var age = get_filter_text('age');
             var minimum_price = $('#hidden_minimum_price').val();
             var maximum_price = $('#hidden_maximum_price').val();
+            var key = $('#key').val();
 
             $.ajax({
                     url: 'includes/search.inc.php',
@@ -237,7 +247,8 @@ $fm = new Foramt();
                            condition:condition,
                            age:age,
                            minimum_price:minimum_price,
-                           maximum_price:maximum_price },
+                           maximum_price:maximum_price,
+                           key:key },
 
                     success:function(data){
                         $("#data").html(data);
