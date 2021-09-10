@@ -13,6 +13,14 @@
     include_once 'admin/helpers/Format.php'; 
  ?> 
 
+ <!--Logout user after clicked logout btn-->
+<?php
+    if (isset($_GET['action']) &&  $_GET['action']=="logout") {
+        session_destroy();
+        header("Location: homepage.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
