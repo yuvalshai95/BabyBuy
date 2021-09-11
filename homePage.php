@@ -64,7 +64,7 @@
     <nav class="nav">
       <div class="navigation nav-container">
         <div class="navigation-logo">
-            <h1>BabyBuy</h1>
+            <a style="color:black;text-decoration: none;" href="homepage.php"><h1>BabyBuy</h1></a> 
         </div>
 
         <div class="menu-primary">

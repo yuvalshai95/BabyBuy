@@ -147,10 +147,14 @@ input:focus {
 }
 .stars img:nth-child(6) {
 	animation-delay: 6s;
-	width: 20px;
+	width: 40px;
 }
 .stars img:nth-child(7) {
 	animation-delay: 7s;
 	width: 35px;
+}
+.stars img:nth-child(8) {
+	animation-delay: 5s;
+	width: 30px;
 }
 /* animation */

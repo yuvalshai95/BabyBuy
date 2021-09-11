@@ -56,7 +56,7 @@
 <nav style="background-color: #253b70;" class="nav">
       <div class="navigation nav-container">
         <div style="color:white;" class="navigation-logo">
-            <h1>BabyBuy</h1>
+           <a style="color:white;text-decoration: none;" href="homepage.php"><h1>BabyBuy</h1></a> 
         </div>
 
         <div  class="menu-primary">
