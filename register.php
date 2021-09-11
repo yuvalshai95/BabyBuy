@@ -19,6 +19,9 @@
 
 <link rel="stylesheet" href="styleA/register.css">
 
+<!-- GSAP Animations (for Hero section)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +74,7 @@
         }
     }
 
-?>
+    ?>
         <h2>Sign up</h2>
         <p class="hint-text">Create your account. It's free and only takes a minute.</p>
         
@@ -126,10 +129,14 @@
     <div class="text-center">Already have an account? <a href="login.php">Sign in</a> </div>
 </div>
 
-<img src="img/register-teddy.png" class="teddy-bear">
+
+    <img src="img/register-teddy.png" class="teddy-bear">
+
+
     
 </body>
 </html>
 
-
- 
+<script>
+      gsap.from(".teddy-bear", { opacity: 0, duration: 2, delay: 1.5, x: -200 });
+</script>

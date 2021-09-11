@@ -28,6 +28,22 @@ body {
 	padding: 30px 0;
 	margin-left: 25em;
 	margin-top: 2em;
+	animation: movedown 1s linear 1;
+	animation-delay: 0.5s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+}
+
+/* animation */
+@keyframes movedown {
+	0% {
+		transform: translateY(-100px);
+		visibility: visible;
+	}
+	100% {
+		transform: translateY(0px);
+		visibility: visible;
+	}
 }
 
 .row {
@@ -148,6 +164,7 @@ body {
 	top: 26%;
 	height: 560px;
 	width: 555px;
+	transform: translate(120%, 0%);
 }
 
 @media only screen and (max-width: 1800px) {
@@ -164,6 +181,7 @@ body {
 		top: 21%;
 		height: 550px;
 		width: 550px;
+		transform: translate(120%, 0%);
 	}
 }
 
@@ -181,6 +199,7 @@ body {
 		top: 21%;
 		height: 470px;
 		width: 430px;
+		transform: translate(115%, 0%);
 	}
 }
 
@@ -198,6 +217,7 @@ body {
 		top: 21%;
 		height: 470px;
 		width: 430px;
+		transform: translate(115%, 0%);
 	}
 }
 
