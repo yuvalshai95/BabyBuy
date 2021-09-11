@@ -90,9 +90,6 @@
           </ul>
         </div>
 
-        <div class="search-bar">
-            <h1>TEST</h1>
-        </div>
 
         <div class="menu-secondary">
           <ul class="nav-list-secondary"> 
