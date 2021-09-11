@@ -125,6 +125,8 @@
     </form>
     <div class="text-center">Already have an account? <a href="login.php">Sign in</a> </div>
 </div>
+
+<img src="img/register-teddy.png" class="teddy-bear">
     
 </body>
 </html>
