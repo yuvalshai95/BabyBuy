@@ -57,7 +57,7 @@
 </head>
 <body>
 
-    <div id="footer-container">
+
 
 
     <div class="small-container wishlist-page">
@@ -112,7 +112,7 @@
     } ?>
         </table>
     </div>
-    </div>
+
 
 </body>
 </html>
