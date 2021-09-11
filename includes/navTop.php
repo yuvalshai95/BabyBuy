@@ -86,8 +86,12 @@
             <li class="nav-item-primary">
                 <a href="#" class="nav-link-primary" style="text-decoration: none;">Contact</a>
             </li>
-
+                
           </ul>
+        </div>
+
+        <div class="search-bar">
+            <h1>TEST</h1>
         </div>
 
         <div class="menu-secondary">

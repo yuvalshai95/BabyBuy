@@ -46,16 +46,16 @@ body {
 }
 
 .menu-secondary {
-	margin-left: 35em;
+	margin-left: 30%;
 }
 
-@media only screen and (max-width: 1800px) {
+@media only screen and (max-width: 2500px) {
 	.menu-primary {
 		margin-left: 0em;
 	}
 
 	.menu-secondary {
-		margin-left: 20em;
+		margin-left: 30%;
 	}
 
 	.nav-link-primary,
