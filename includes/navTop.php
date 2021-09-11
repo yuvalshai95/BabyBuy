@@ -21,6 +21,14 @@
     }
 ?>
 
+<style>
+    .nav-list-primary li a{
+        color:white !important;
+    }
+    .nav-list-secondary li a{
+        color:white !important;
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,17 +53,17 @@
 </head>
 <body>
 
-<nav style="background-color: rgb(250, 206, 110);" class="nav">
+<nav style="background-color: #253b70;" class="nav">
       <div class="navigation nav-container">
-        <div class="navigation-logo">
+        <div style="color:white;" class="navigation-logo">
             <h1>BabyBuy</h1>
         </div>
 
-        <div class="menu-primary">
-          <ul class="nav-list-primary">
+        <div  class="menu-primary">
+          <ul  class="nav-list-primary">
 
             <li class="nav-item-primary" >
-                <a href="homepage.php" class="nav-link-primary" style="text-decoration: none;">Home</a>
+                <a  href="homepage.php" class="nav-link-primary" style="text-decoration: none;">Home</a>
             </li>
 
             <li class="nav-item-primary">
@@ -90,15 +98,15 @@
                 if (Session::get("userId")){    ?> 
 
                 <li class="nav-item-secondary">
-                    <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:black; font-size:30px;'  ></i></a>
+                    <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:white; font-size:30px;'  ></i></a>
                 </li>
 
                 <li class="nav-item-secondary">
-                    <a href="profile.php" class="nav-link-secondary"><i class='bx bxs-user-circle' style='color:black; font-size:30px;' ></i></a>
+                    <a href="profile.php" class="nav-link-secondary"><i class='bx bxs-user-circle' style='color:white; font-size:30px;' ></i></a>
                 </li>
 
                 <li class="nav-item-secondary">
-                    <a href="?action=logout" class="nav-link-secondary"><i class='bx bx-log-out bx-rotate-180' style='color:black; font-size:30px;' ></i></a>
+                    <a href="?action=logout" class="nav-link-secondary"><i class='bx bx-log-out bx-rotate-180' style='color:white; font-size:30px;' ></i></a>
                 </li>
 
                 <?php }else{ ?>

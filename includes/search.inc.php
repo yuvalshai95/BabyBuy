@@ -116,7 +116,7 @@ if (isset($_POST['action'])) {
                                     </div>
                                    
                                     <!-- product page button -->
-                                  <a style="margin-bottom: 5px;background-color: #21b8e6;border-color: #21b8e6;" href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" class="btn btn-primary btn-block">Product Page</a>
+                                  <a style="margin-bottom: 5px;background-color:#253b70;border-color: #253b70;" href="ProductPage.php?pdId=<?= $row['ProductID'];?>&userId=<?= $row['UserID'];?>&productCategory=<?= $row['ProductCategory']?>" class="btn btn-primary btn-block">Product Page</a>
                                 </div>
                             </div>
                         </div>

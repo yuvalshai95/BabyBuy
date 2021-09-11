@@ -15,7 +15,7 @@ body {
 }
 
 .form-control:focus {
-	border-color: #5cb85c;
+	border-color: #253b70;
 }
 
 .form-control,
@@ -37,7 +37,7 @@ body {
 
 /* "Register" style  */
 .signup-form h2 {
-	color: #f8b930;
+	color: #fc7c7c;
 	margin: 0 0 15px;
 	position: relative;
 	text-align: center;
@@ -111,9 +111,11 @@ body {
 }
 
 .create_account:hover {
-	background-color: rgb(240, 181, 20);
+	background-color: #fc7c7c;
 	cursor: pointer;
 	transition: 0.5s;
+	color: white;
+	border-color: #fc7c7c;
 }
 
 .info,

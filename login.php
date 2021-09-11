@@ -86,7 +86,7 @@
         </div>
         <div class="card-footer">
             <div class="d-flex justify-content-center links">
-              <span style="color:white;">Don't have an account?</span><a style="color:orange;" href="register.php">Sign Up</a>
+              <span style="color:white;">Don't have an account?</span><a style="color:#fc7c7c;" href="register.php">Sign Up</a>
             </div>
         </div> 
 
