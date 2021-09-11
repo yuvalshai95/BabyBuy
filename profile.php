@@ -5,11 +5,19 @@
 <?php require_once 'includes/navTop.php'; ?>
 
 <style>
+    .container-profileDetails{
+        width: 100%;
+        padding: 0;
+        margin: 120px auto;
+    }
+
     table{
-        width: 550px;
-        margin: 0 auto;
-        border: 2px solid black;
-        border-spacing: 10px;
+        height: 315px;
+        width: 600px;
+        background-color: rgb(240, 248, 255);
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+        border-spacing: 15px;
+        margin-left: 272px;
     }
 
     table tr td{
@@ -38,6 +46,41 @@
 			background-color: #FFCCBA;
 			background-image: url('https://i.imgur.com/GnyDvKN.png');
 		}
+
+    
+    .profileDetails-btn {
+        border: 2px solid #253b70;
+        background: transparent;
+        border-radius: 3px;
+        color: #253b70;
+        text-decoration: none;
+        padding: .5rem 1rem;
+        font-family: 'Montserrat' !important;
+        font-size: 11px;
+        cursor: pointer;
+    }
+    .profileDetails-btn:hover {
+        background-color: #253b70;
+        color: white !important;
+        cursor: pointer;
+ 
+    }
+
+    .a-btn {
+        text-decoration: none;
+        color: #253b70;
+    }
+    .a-btn:hover{
+        color: white; 
+    }
+
+    .background-img-profile-details{
+        width: 400px;
+        position: absolute;
+        right: 60px;
+        top: 170px;
+    }
+
 </style>
 
 
@@ -65,6 +108,9 @@
         echo "<div class='validation'>Error occurred update failed</div>";
     }
 ?>
+<div class="container-profileDetails">
+
+    <img class="background-img-profile-details" src="img/profileDetails.png" alt="baby-profile-details">
 
 <table>
 
@@ -106,13 +152,13 @@
     </tr>
 
     <tr>
-        <td width = "30%"><button><a href="editpassword.php">Update Password</a></button></td>
-        <td width = "30%"><button><a href="editprofile.php">Update Details</a></button></td>
+        <td width = "30%"><a class="a-btn" href="editpassword.php"><button class="profileDetails-btn">Update Password</button></a></td>
+        <td width = "30%"><a class="a-btn" href="editprofile.php"><button class="profileDetails-btn">Update Details</button></a></td>
     </tr>
 
 </table>
 
-
+</div>
 
 
 
