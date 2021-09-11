@@ -127,7 +127,10 @@
                 <!--TODO Make whatsapp phone number work -->
                    <label class="contact" for="" id="nav-toggle-bottom" data-toggle="tooltip" 
                             title="Ask me about this product" data-placement="bottom">
-                        <a href="https://wa.me/972526682665" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+                        <a href="https://wa.me/<?php 
+                                                $result['PhoneNumber'] = str_replace('0','972',$result['PhoneNumber']);
+                                                 echo $result['PhoneNumber'];?>" 
+                                                 target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
                    </label> 
                 </div>
 
