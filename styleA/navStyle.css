@@ -46,10 +46,66 @@ body {
 }
 
 .menu-secondary {
-	margin-left: 30%;
+	margin-left: 33%;
 }
 
-@media only screen and (max-width: 2500px) {
+@media only screen and (min-width: 1550px) and (max-width: 16390px) {
+	.menu-primary {
+		margin-left: 0em;
+	}
+
+	.menu-secondary {
+		margin-left: 28%;
+	}
+
+	.nav-link-primary,
+	.nav-link-primary:visited,
+	.nav-list-secondary,
+	.nav-list-secondary:visited {
+		padding: 0.8rem 1rem;
+		transition: all 300ms ease-in-out;
+		text-decoration: none;
+		color: black;
+		font-size: 18px;
+	}
+
+	.nav-item-primary,
+	.nav-item-secondary {
+		margin-right: 3rem;
+		list-style-type: none;
+		margin-top: 1.5em;
+	}
+}
+
+@media screen and (max-width: 1549px) and (min-width: 1354px) {
+	.menu-primary {
+		margin-left: 0em;
+	}
+
+	.menu-secondary {
+		margin-left: 15%;
+	}
+
+	.nav-link-primary,
+	.nav-link-primary:visited,
+	.nav-list-secondary,
+	.nav-list-secondary:visited {
+		padding: 0.8rem 1rem;
+		transition: all 300ms ease-in-out;
+		text-decoration: none;
+		color: black;
+		font-size: 18px;
+	}
+
+	.nav-item-primary,
+	.nav-item-secondary {
+		margin-right: 3rem;
+		list-style-type: none;
+		margin-top: 1.5em;
+	}
+}
+
+@media only screen and (min-width: 1640px) and (max-width: 1800px) {
 	.menu-primary {
 		margin-left: 0em;
 	}
