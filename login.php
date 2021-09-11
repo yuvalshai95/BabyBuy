@@ -30,6 +30,18 @@
 
 
 <body>
+
+<div class="stars">
+<img src="img/floating-cloud.png">
+    <img src="img/floating-star.png">
+    <img src="img/floating-star.png">
+    <img src="img/floating-star.png">
+    <img src="img/floating-star.png">
+    <img src="img/floating-star.png">
+    <img src="img/floating-star.png">
+    <img src="img/floating-cloud.png">
+</div>
+
 <div class="container">
 
     <div class="d-flex justify-content-center h-100">
@@ -91,8 +103,13 @@
         </div> 
 
         </div>
+        
     </div>
+    
 </div>
+
+
+
 </body>
 </html>
 
@@ -134,39 +151,6 @@
     });
 </script>
 -->
-
-
-
-<style>
-    /*
-    input{
-        margin:1em 1em 1em 65em;
-        display: block;
-    }
-    h1{
-        text-align: center;
-    }
-    */
-    .info, .success, .warning, .error, .validation {
-			border: 1px solid;
-			margin: 10px 0px;
-			padding: 15px 10px 15px 50px;
-			background-repeat: no-repeat;
-			background-position: 10px center;
-		}
-
-        .success {
-			color: #4F8A10;
-			background-color: #DFF2BF;
-			background-image: url('https://i.imgur.com/Q9BGTuy.png');
-		}
-
-        .validation{
-			color: #D63301;
-			background-color: #FFCCBA;
-			background-image: url('https://i.imgur.com/GnyDvKN.png');
-		}
-</style>
 
 
 
