@@ -15,36 +15,13 @@
 <!-- jQuery CDN  DON'T TOUCH OR CODE WILL BREAK-->
 
 
-
 <?php
+    $getpd = $pd->getProductByIdAndUser(22,1)->fetch_assoc();
 
-    $getArticle = $article->getArticleByID(47);
-    if($getArticle){
-        $row = $getArticle->fetch_assoc();
-    }
-
-    // init array to store all images path                
-    $imagePath = [];
-
-    // get all images path
-    $getAllImages = $article->getAllImagesByArticleId(47);
-
-    // add all images path to the array
-    while($row = $getAllImages->fetch_assoc()){
-        array_push($imagePath,$row['ImagePath']);
-    }
-
-    $i=0;
+    $phone = $getpd['PhoneNumber'];
+    $phone = str_replace('0','972',$phone);
+    echo $phone;
 ?>
-
-<?php
-
-    if($i < sizeof($imagePath)){
-         echo $imagePath[$i];
-    }
-?>
-
-
 
 
 
