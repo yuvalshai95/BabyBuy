@@ -173,7 +173,7 @@
     <!-- search line --> 
 
     <div class="box">
-        <form action="productSearch.php" method="GET">
+        <form action="search.php" method="GET">
             <input type="text" name="search" placeholder="Search For Products ">
             <input type="submit" name="" value="Search">
         </form>
@@ -203,10 +203,8 @@
 </div>
 <!--Flex Slider END -->
 </section>
-<!--  .............................................................................................................  -->
 
-
-
+<!-- Category Section -->
 <section class="items">
     <!-- Product Cards - category -->
     <div class="title"><h4>FAVORITE CATEGORY</h4></div>
