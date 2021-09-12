@@ -1,0 +1,72 @@
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.myproducts-page {
+	margin: 80px auto;
+	width: 90%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.product-info {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product-info p {
+	margin-bottom: 0 !important;
+}
+
+th {
+	text-align: left;
+	padding: 5px;
+	color: #fff;
+	background: #253b70;
+	font-weight: normal;
+}
+
+td {
+	padding: 10px 5px;
+}
+
+td img {
+	width: 90px;
+	height: 90px;
+	margin-right: 10px;
+}
+
+.delete {
+	margin-top: 10px;
+}
+
+.delete button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: gray;
+	font-size: 32px;
+}
+
+.myproducts-page .header_myproducts {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.header_myproducts span {
+	font-size: 2.5em;
+	color: #cccccc;
+}

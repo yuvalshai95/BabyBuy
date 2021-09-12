@@ -66,3 +66,5 @@ when user upload product (user_products_image table) update image ref in both ta
 33) on product page make all images same size (with style)
 
 34) when clicking on category you go to search page and filtering not working -> fix it
+
+35) When you delete product from wishlist or "my products" page -> need to have a "are you sure" message

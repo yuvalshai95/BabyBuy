@@ -280,6 +280,38 @@ public function isProductInWishlist($pd_id,$user_id){
 }
 
 
+public function getAllProductsByUserId($id){
+  $query = "SELECT *
+            FROM product p
+            WHERE p.UserID = '$id'";
+
+  $result = $this->db->select($query);
+  return $result;
+}
+
+public function deleteFromProductById($pdId){
+  
+    $query = "DELETE FROM product p
+              WHERE p.ProductID = ?";
+              
+    $stmt = mysqli_stmt_init($this->db->link);
+    mysqli_stmt_prepare($stmt,$query);
+    mysqli_stmt_bind_param($stmt,"i", $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_get_result($stmt);
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
 
 }
 ?>
