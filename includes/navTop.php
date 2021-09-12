@@ -103,7 +103,13 @@
                 </li>
 
                 <li class="nav-item-secondary">
-                    <a href="profile.php" class="nav-link-secondary"><i class='bx bxs-user-circle' style='color:white; font-size:30px;' ></i></a>
+                   <i class='bx bxs-user-circle' style='color:white; font-size:30px;' ></i>
+                   <div class="sub-menu">
+                    <ul>
+                      <li><a href="profile.php">Profile</a></li>
+                      <li><a href="userproducts.php">Products</a></li>
+                    </ul>
+                </div>
                 </li>
 
                 <li class="nav-item-secondary">

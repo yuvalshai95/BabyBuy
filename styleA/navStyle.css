@@ -254,6 +254,7 @@ body {
 
 .sub-menu ul li a {
 	color: white;
+	text-decoration: none;
 }
 
 .nav-item-secondary a:hover {
@@ -282,4 +283,8 @@ body {
 
 .menu-secondary .nav-list-secondary li:hover > .sub-menu ul li a:hover {
 	color: #fc7c7c;
+}
+
+.sub-menu ul li a:hover {
+	color: #fc7c7c !important;
 }
