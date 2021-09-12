@@ -176,25 +176,12 @@ body {
 }
 .nav-list-secondary .nav-link-secondary {
 	color: white;
+	text-decoration: none;
 }
 
 .login,
 .register {
 	padding: 0.8rem 1rem;
-}
-
-.login:hover,
-.register:hover {
-	border: 1px solid rgb(0, 0, 0);
-}
-
-.nav.fix-nav .login:hover,
-.nav.fix-nav .register:hover {
-	border: 1px solid white;
-}
-
-.nav.fix-nav .nav-link-primary:hover {
-	border: 1px solid white;
 }
 
 /* *********  Hero **********  */
@@ -246,7 +233,6 @@ body {
 }
 
 /*  profile Sub-menu  */
-
 .sub-menu ul {
 	list-style: none;
 	display: none;
@@ -255,10 +241,6 @@ body {
 .sub-menu ul li a {
 	color: white;
 	text-decoration: none;
-}
-
-.nav-item-secondary a:hover {
-	display: block;
 }
 
 .menu-secondary .nav-list-secondary li:hover > .sub-menu ul {
