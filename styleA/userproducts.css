@@ -29,6 +29,7 @@ table {
 
 .product-info p {
 	margin-bottom: 0 !important;
+	margin-top: 28px;
 }
 
 th {
@@ -69,4 +70,22 @@ td img {
 .header_myproducts span {
 	font-size: 2.5em;
 	color: #cccccc;
+}
+
+.edit_data {
+	border-radius: 5px;
+	padding: 5px;
+	background: white;
+	color: #fc7c7c;
+	border: 1px solid #fc7c7c;
+}
+.edit_data:hover {
+	border-radius: 5px;
+	padding: 5px;
+	background: #fc7c7c;
+	color: white;
+	border: 1px solid whitesmoke;
+	cursor: pointer;
+	transition: 0.5s;
+	font-weight: bold;
 }

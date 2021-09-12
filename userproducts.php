@@ -82,7 +82,10 @@
                 </td>
 
                 <!-- Details -->
-                <td>EDIT</td>
+                <td>
+                    <button type="button" name="edit" class="edit_data" id="<?php echo $row['ProductID']; ?>">Details</button>
+                    <input type="hidden" name="currentUser_id" class="current_user" id="<?php echo $currentUser;?>">
+                </td>
 
                 <!-- Remove -->
                 <td>
@@ -103,6 +106,32 @@
 </html>
 
 
+<!--  product Details after button click bootstrap modal -->
+    <div id="edit_data_Modal" class="modal fade">  
+      <div class="modal-dialog">  
+           <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">  
+                     <button style="color:white; background-color:#253b70; margin:0 0;" type="button" class="close" data-dismiss="modal">&times;</button>  
+                     <h4 style="    margin-top: 1em;margin-right: 5.5em;" class="modal-title">Product Details</h4>  
+                </div>  
+
+                <!-- Body, get body content from ajax function call -->
+                <div class="modal-body" id="product_detail">  
+                    
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">  
+                     <button style="color:white; background-color:#253b70;" type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
+                </div>  
+           </div>  
+      </div>  
+ </div>  
+<!--  product Details after button click bootstrap modal -->
+
+
     <!-- jQuery Script to delete item from wishlist table -->
 <script>
     function delete_data(id){
@@ -121,4 +150,29 @@
 
 
 
+<!-- Script to show user details modal on click -->
+<script>
+    $(document).ready(function(){
+        $('.edit_data').click(function(){
+            var product_id = $(this).attr("id"); // id from details button 
+            var currentUser_id = $('.current_user').attr("id") // user id from hidden input
+
+            $.ajax({
+                url:"includes/productdata.inc.php",
+                method:"POST",
+                data:{product_id:product_id,
+                      currentUser_id:currentUser_id},
+                success: function(data){
+                    // data we get back from the sever we want to show it in class=modal-body, id=user_detail
+                    $('#product_detail').html(data);
+
+                    //div id=datamodal selector -> on success show modal
+                    $('#edit_data_Modal').modal("show");
+                }
+            });
+        });
+    });
+ 
+</script>
+<!-- Script to show user details modal on click -->
 <?php require_once 'includes/footer.php';  ?>

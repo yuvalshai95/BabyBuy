@@ -291,12 +291,12 @@ public function getAllProductsByUserId($id){
 
 public function deleteFromProductById($pdId){
   
-    $query = "DELETE FROM product p
-              WHERE p.ProductID = ?";
+    $query = "DELETE FROM product
+              WHERE product.ProductID = ?";
               
     $stmt = mysqli_stmt_init($this->db->link);
     mysqli_stmt_prepare($stmt,$query);
-    mysqli_stmt_bind_param($stmt,"i", $id);
+    mysqli_stmt_bind_param($stmt,"i", $pdId);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_get_result($stmt);
   
@@ -304,9 +304,23 @@ public function deleteFromProductById($pdId){
 }
 
 
+public function getProductByProductId($pdId){
+  $query = "SELECT *
+  FROM product
+  WHERE product.ProductID  = '$pdId'";
+
+$result = $this->db->select($query);
+return $result;
+}
 
 
 
+public function updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status){
+  $query = "UPDATE product
+            SET ProductName = '$name', Description = '$description', Price = '$price', PickupOptions = '$pickup', Age = '$age', ProductCondition = '$condition', Status = '$status'
+            WHERE UserID = '$userId' AND ProductID = '$productId'";
+  $this->db->update($query);
+}
 
 
 
