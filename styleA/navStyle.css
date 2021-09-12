@@ -171,14 +171,6 @@ body {
 	font-size: 18px;
 }
 
-.nav-link-primary:hover {
-	border: 1px solid rgb(0, 0, 0);
-}
-
-.nav-list-primary .nav-link-primary:hover {
-	border: 1px solid white;
-}
-
 .nav-link-secondary {
 	color: black !important;
 }
@@ -251,4 +243,43 @@ body {
 	color: #fc7c7c;
 	border: 5px solid #fc7c7c;
 	font-weight: 600;
+}
+
+/*  profile Sub-menu  */
+
+.sub-menu ul {
+	list-style: none;
+	display: none;
+}
+
+.sub-menu ul li a {
+	color: white;
+}
+
+.nav-item-secondary a:hover {
+	display: block;
+}
+
+.menu-secondary .nav-list-secondary li:hover > .sub-menu ul {
+	display: block;
+	position: absolute;
+	background: #253b70;
+	margin-left: -10px;
+}
+
+.menu-secondary .nav-list-secondary li:hover > .sub-menu ul li {
+	width: 150px;
+	padding: 10px;
+	border-bottom: 1px solid white;
+	background: transparent;
+	border-radius: 0;
+	text-align: left;
+}
+
+.menu-secondary .nav-list-secondary li:hover > .sub-menu ul li:last-child {
+	border-bottom: none;
+}
+
+.menu-secondary .nav-list-secondary li:hover > .sub-menu ul li a:hover {
+	color: #fc7c7c;
 }
