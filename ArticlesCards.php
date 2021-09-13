@@ -45,9 +45,7 @@
 
             <?php } } ?> 
 
-            <div class="seeMore">
-                <a href="#" class="seeMoreHref">See More <i class='fas fa-angle-double-right'></i></a>
-            </div>
+
         </div>
     </div>
 
