@@ -5,6 +5,11 @@
     .notfound h2{ font-size: 80px; line-height: 130px;text-align: center;}
     .notfound h2 span{display: block; color: red; font-size: 150px;}
     .notfound h4{text-align: center;margin:.5em;}
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
 </style>
 
     <div class="notfound">
