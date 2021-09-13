@@ -121,6 +121,19 @@
 <script src="js/imagePrev.js"></script>
 <!-- Image Preview -->
 
+<style>
+    figcaption{
+        font-size: 10px;
+    }
+    figure img{
+        height: 86px;
+        width: 100px;
+    }
+    images-display{
+        width: 0%;
+    }
+</style>
+
 <?php include 'inc/footer.php';?>
 
 
