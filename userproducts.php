@@ -40,13 +40,13 @@
 <body>
 
 
-
+    <div class="header_myproducts">
+                <span>My Products</span>
+    </div>
 
     <div class="small-container myproducts-page">
 
-        <div class="header_myproducts">
-            <span>My Products</span>
-        </div>
+
     
         <table>
             <tr>
