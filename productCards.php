@@ -45,8 +45,8 @@
 
                 <!-- Checking to see if user is logged in -->
                 <?php 
-                        // User is logged in -> show wishlist button
-                        if(Session::get("userId") !== false){ ?>
+                    // User is logged in -> show wishlist button
+                    if(Session::get("userId") !== false){ ?>
                     <li>
                         <i class='bx bx-heart' style='font-size:22px;' onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" ></i>
                     </li>
@@ -81,7 +81,7 @@
 </div>
 
 
-
+<!-- alert adding item to user wishlist -->
 <script>
     function addToWishlist(currentUserId,pdId,ownerId){
         $.ajax({
