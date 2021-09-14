@@ -34,8 +34,8 @@ table {
 th {
 	text-align: left;
 	padding: 5px;
-	color: #fff;
-	background: #253b70;
+	color: #253b70;
+	border-bottom: 1px solid gray;
 	font-weight: normal;
 }
 
@@ -75,13 +75,13 @@ td img {
 	border-radius: 5px;
 	padding: 5px;
 	background: white;
-	color: #fc7c7c;
-	border: 1px solid #fc7c7c;
+	color: #253b70;
+	border: 1px solid #253b70;
 }
 .edit_data:hover {
 	border-radius: 5px;
 	padding: 5px;
-	background: #fc7c7c;
+	background: #253b70;
 	color: white;
 	border: 1px solid whitesmoke;
 	cursor: pointer;
