@@ -13,26 +13,6 @@
 ?>
 
 
-<!-- Add to wish list product user clicked on -->
-<?php
-    if (isset($_POST['currentUserId'])) {
-        $wishPd     = $_POST['pdId'];
-       $wishOwnerid = $_POST['ownerId'];
-
-       // Add product to wish list if user and owner are different
-       if($currentUser != $wishOwnerid){
-
-        // Check this item is not already in wishlist table
-        if ($pd->isProductInWishlist($wishPd , $wishOwnerid ) == false) {
-
-            // Add product to wishlist
-            $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
-        }
-           
-       }
-       
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
