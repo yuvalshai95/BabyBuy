@@ -53,6 +53,8 @@
                 <th>Status</th>
                 <th>Seller Details</th>
                 <th>Product Page</th>
+                <th>Remove</th>
+
             </tr>
 
             
@@ -76,16 +78,18 @@
                         <div>
                             <p><?php echo $product['ProductName'] ?></p>
                             <small>Unit Price: $<?php echo $product['Price'] ?></small>
-                            <br>
-                            <div class="delete">
-                                <button type="button" onclick="delete_data('<?php echo $row['ID']?>')">Delete</button>
-                            </div>
                         </div>              
                     </div>
                 </td>
                 <td><?php echo $product['Status'] ?></td>
                 <td><button type="button" name="view" class="view_data" id="<?php echo $row['UserID']; ?>">Details</button></td>
                 <td><a class="goto" href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">Go to page</a></td>
+                <td>
+                    <div class="delete">
+                        <button type="button" onclick="delete_data('<?php echo $row['ID']?>')"><i class='bx bx-x-circle'></i></button>
+                    </div>
+                </td>
+                
             </tr>
             <?php }}else{
         echo '<div align="center"><h3 style="color:red;">Empty :(</h3></div>';

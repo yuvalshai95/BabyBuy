@@ -12,7 +12,7 @@ body {
 }
 
 .myproducts-page {
-	margin: 80px auto;
+	margin: 25px auto;
 	width: 90%;
 }
 
@@ -61,9 +61,9 @@ td img {
 	font-size: 32px;
 }
 
-.myproducts-page .header_myproducts {
+.header_myproducts {
 	text-align: center;
-	margin-bottom: 40px;
+	margin-top: 10px;
 }
 
 .header_myproducts span {
