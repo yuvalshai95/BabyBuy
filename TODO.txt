@@ -70,3 +70,5 @@ when user upload product (user_products_image table) update image ref in both ta
 35) When you delete product from wishlist or "my products" page -> need to have a "are you sure" message
 
 36) no form validation in userproducts edit details
+
+37) when hover over wishlist icon on home page add "Add to wishlist tag" just like "view details" (Adi did it) 
