@@ -210,7 +210,7 @@
 <!--Flex Slider END -->
 </section>
 
-<!-- Category Section -->
+<!-- General Section -->
 <section class="items">
     <!-- Product Cards - category -->
     <div class="title"><h4>FAVORITE CATEGORY</h4></div>

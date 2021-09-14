@@ -13,6 +13,11 @@
 
     <!-- style product cards -->
     <link href="styleA/cardsStyle.css" rel="stylesheet">
+
+    <!-- Box icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
 </head>
 <body>
     
@@ -43,15 +48,7 @@
                         // User is logged in -> show wishlist button
                         if(Session::get("userId") !== false){ ?>
                     <li>
-
-                        <form action="wishlist.php" method="POST">
-                            <input type="hidden" name="currentUserId" value="<?php echo Session::get("userId")?>">
-                            <input type="hidden" name="pdId" value="<?php echo $result['ProductID']; ?>">
-                            <input type="hidden" name="ownerId" value=<?php echo $result['UserID']; ?>">
-                            <button><a href="wishlist.php"> <i class="fas fa-heart"></i> </a></button>
-                            <span>Add to Wishlist</span>
-                        
-                        </form>
+                        <i class='bx bx-heart' style='font-size:22px;' onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" ></i>
                     </li>
                     <?php } ?>
 
@@ -85,8 +82,22 @@
 
 
 
+<script>
+    function addToWishlist(currentUserId,pdId,ownerId){
+        $.ajax({
+            url:'includes/addToWishList.inc.php',
+            type:'POST',
+            data:{currentUserId:currentUserId,pdId:pdId,ownerId:ownerId},
+            success: function(data){
+                // Remove all white spaces
+                var trimData = $.trim(data);
 
-
+                // alert the message
+                alert(trimData);
+            }
+        })
+    }
+</script>
 
 
 
