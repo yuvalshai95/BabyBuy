@@ -72,3 +72,5 @@ when user upload product (user_products_image table) update image ref in both ta
 36) no form validation in userproducts edit details
 
 37) when hover over wishlist icon on home page add "Add to wishlist tag" just like "view details" (Adi did it) 
+
+38) make sure adi has current database with foreign key on delete cascade on wishlist and sub_category tables
