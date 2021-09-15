@@ -65,8 +65,22 @@
                 </div>
                 <div class="price_status">
                     <h2>$<?= $result['Price']; ?></h2>
-                    <div class="status">
-                        <h4><?= $result['ProductCondition']; ?></h4>
+                    <div style="background: <?php 
+                                                if($result['ProductCondition'] == "new"){
+                                                    echo '#007bff';
+                                                }
+                                                else if($result['ProductCondition'] == "barley"){
+                                                    echo '#6c757d';
+                                                }
+                                                else if($result['ProductCondition'] == "open"){
+                                                    echo '#28a745';
+                                                } 
+                                                else if($result['ProductCondition'] == "gently"){
+                                                    echo '#343a40';
+                                                } 
+                                                ?>;" class="status">
+
+                        <h4><?= strtoupper($result['ProductCondition']); ?></h4>
                     </div>
                 </div>
             </div>

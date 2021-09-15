@@ -218,16 +218,13 @@ $fm = new Foramt();
                                     <h6>Condition: <span class="badge badge-<?php 
                                     if (strtolower($row['ProductCondition']) == "new"){ 
                                         echo 'primary';}
-                                    else if(strtolower($row['ProductCondition']) == "used"){
-                                        echo 'warning';
-                                    }
-                                    else if(strtolower($row['ProductCondition']) == "barely used"){
+                                    else if(strtolower($row['ProductCondition']) == "barley"){
                                         echo 'info';
                                     }
-                                    else if(strtolower($row['ProductCondition']) == "open box"){
+                                    else if(strtolower($row['ProductCondition']) == "open"){
                                         echo 'success';
                                     }
-                                    else if(strtolower($row['ProductCondition']) == "gently used"){
+                                    else if(strtolower($row['ProductCondition']) == "gently"){
                                         echo 'dark';
                                     }  
                                     ?>">
