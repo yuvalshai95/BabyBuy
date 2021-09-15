@@ -77,6 +77,25 @@ $fm = new Foramt();
                     <?php }}?>
                 </ul>
 
+                 <!-- Sub-Category filter -->
+                 <h6 style="color:#fc7c7c; font-weight:bold;margin-top:1em;">Select Sub-Category</h6>
+                <ul class="list-group">
+                    <?php
+                        $getAllSubCategories = $category->getAllSubCategories();
+                        if ($getAllSubCategories) {
+                            while ($row = $getAllSubCategories->fetch_assoc()) {
+                    ?>
+                    <li class="list-group-item" style="width: 70%;">
+                        <div class="form-check">
+                            <label class="form-check-label" >
+                                <input type="checkbox" class="form-check-input product_check" value="<?= $row['SubCategoryID'];?>" id="subCategory">
+                                <?= $row['SubCategoryName'];?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php }}?>
+                </ul>
+
                 <!-- Price Filter Range -->
                 <div class="list-group">
                     <h6 style="color:#fc7c7c;; font-weight:bold; margin-top: 1em;">Price</h6>
@@ -155,6 +174,11 @@ $fm = new Foramt();
                     </li>
                 </ul>
             </div>
+
+            <!-- Hidden Status Filter -->
+            <input type="hidden" class="form-check-input product_check" value="Available" id="status">
+
+
 
             <!-- Start of body products content -->
             <div class="col-lg-9">
@@ -235,22 +259,26 @@ $fm = new Foramt();
 
             var action = 'data';
             var category = get_filter_text('category');
+            var subCategory = get_filter_text('subCategory');
             var condition = get_filter_text('condition');
             var age = get_filter_text('age');
             var minimum_price = $('#hidden_minimum_price').val();
             var maximum_price = $('#hidden_maximum_price').val();
             var key = $('#key').val();
+            var status = $('#status').val();
 
             $.ajax({
                     url: 'includes/search.inc.php',
                     method: 'POST',
                     data:{ action:action,
                            category:category,
+                           subCategory:subCategory,
                            condition:condition,
                            age:age,
                            minimum_price:minimum_price,
                            maximum_price:maximum_price,
-                           key:key },
+                           key:key,
+                           status:status },
 
                     success:function(data){
                         $("#data").html(data);

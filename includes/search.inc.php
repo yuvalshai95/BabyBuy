@@ -11,7 +11,7 @@
 <?php
 if (isset($_POST['action'])) {
 
-    $query = "SELECT * FROM product WHERE ProductCategory != ''";
+    $query = "SELECT * FROM product WHERE ProductCategory  != ''";
 
     // Check key filter
     if(isset($_POST['key']) && $_POST['key'] !== "none"){
@@ -25,7 +25,7 @@ if (isset($_POST['action'])) {
         $query .= "AND Price BETWEEN '".$_POST['minimum_price']."' AND '".$_POST['maximum_price']."'";
     }
     
-    // 1) Check all category checked boxes
+    //  Check all category checked boxes
     if(isset($_POST['category'])){
 
         //Data from filterData var is array {shoes,bags,toys}
@@ -37,7 +37,19 @@ if (isset($_POST['action'])) {
 
     }
 
-    // 2) Check all category checked boxes
+
+    // Check all sub-categories checked boxes
+    if(isset($_POST['subCategory'])){
+
+        //Data from filterData var is array {shoes,bags,toys}
+        //convert array to string for the sql query using implode php function
+        $sub = implode("','",$_POST['subCategory']);
+
+        //Creating a query with all the selected checkbox
+         $query .= "AND SubCategoryID IN ('".$sub."')";
+    }
+
+    //  Check all condition checked boxes
     if(isset($_POST['condition'])){
 
         $condition = implode("','", $_POST['condition']);
@@ -47,7 +59,7 @@ if (isset($_POST['action'])) {
 
     }
 
-    // 2) Check all category checked boxes
+    //  Check all age checked boxes
     if(isset($_POST['age'])){
 
         $age = implode("','", $_POST['age']);
@@ -57,6 +69,7 @@ if (isset($_POST['action'])) {
 
     }
 
+    $query .= "AND Status = 'Available' ";
     $query .= "ORDER BY ProductName ASC ";
 
     $result = $db->select($query);
