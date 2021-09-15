@@ -6,7 +6,7 @@
 
 7) in article list page on page 3 when we have 1 article the footer is hiding the search option - no padding?
 
-8) when adding category/sub-category/slider/article/product -> make sure a file with that name doesn't already exists in
+8) when adding sub-category/slider/article/product -> make sure a file with that name doesn't already exists in
 
 9) in articleList page make query to database from class object
 
