@@ -129,6 +129,12 @@ class Category{
 }
 
 
+public function checkIfCategoryNameExists($name){
+    $query = "SELECT * FROM category WHERE CategoryName = '$name'";
+
+    $result = $this->db->select($query);
+    return $result;
+}
 
 
 

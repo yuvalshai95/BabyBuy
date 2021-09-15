@@ -9,7 +9,13 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $CategoryName = $_POST['CategoryName']; // Input from the form to send to the db
 
-        $insertCat = $cat->catInsert($CategoryName); // Getting the msg from the method
+        if($cat->checkIfCategoryNameExists($CategoryName) == false){
+
+            $insertCat = $cat->catInsert($CategoryName); // Getting the msg from the method
+        }else{
+            $insertCat = "<span  class='alert alert-danger' role='alert'>This name already exists !</span>";
+        }
+
     }
 ?>
 
