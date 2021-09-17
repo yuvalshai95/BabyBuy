@@ -15,7 +15,7 @@ body {
 	overflow: hidden;
 }
 
-.nav {
+.Nav {
 	padding: 5px;
 }
 
@@ -55,6 +55,16 @@ body {
 
 .menu-secondary {
 	margin-left: 33%;
+}
+
+.number {
+	color: white;
+	position: relative;
+	background-color: red;
+	padding: 0px 5px 0px 8px;
+	border-radius: 50%;
+	right: -50px;
+	top: -20px;
 }
 
 @media only screen and (min-width: 1550px) and (max-width: 16390px) {

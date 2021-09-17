@@ -113,7 +113,7 @@
 
                 <!-- Header -->
                 <div class="modal-header">  
-                     <button style="color:white; background-color:#253b70; margin:0 0;" type="button" class="close" data-dismiss="modal">&times;</button>  
+                     <button style="color:white; background-color:#253b70; margin:0 0;opacity: 1;" type="button" class="close" data-dismiss="modal">&times;</button>  
                      <h4 style="    margin-top: 1em;margin-right: 5.5em;" class="modal-title">Product Details</h4>  
                 </div>  
 

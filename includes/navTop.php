@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<nav style="background-color: #253b70;" class="nav">
+<nav style="background-color: #253b70;display:grid" class="Nav">
       <div class="navigation nav-container">
         <div style="color:white;" class="navigation-logo">
            <a style="color:white;text-decoration: none;" href="homepage.php"><h1 class="h1">BabyBuy</h1></a> 
@@ -99,6 +99,12 @@
                 if (Session::get("userId")){    ?> 
 
                 <li class="nav-item-secondary">
+                    <span class="number"> <?php 
+                                            $pd = new Product();
+                                            $num =  $pd->getNumberOfItemsInWishlist(Session::get("userId"));
+                                             echo $num;
+                                         ?>
+                    </span>
                     <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:white; font-size:30px;'  ></i></a>
                 </li>
 
@@ -135,7 +141,6 @@
 
 </body>
 </html>
-
 
 
 

@@ -323,7 +323,17 @@ public function updateProductById($userId,$productId,$name,$description,$price,$
 }
 
 
-
+public function getNumberOfItemsInWishlist($id){
+  $query = "SELECT * FROM  wishlist WHERE UserWishlistId = '$id'";
+  $result = $this->db->select($query);
+  if($result !==false){
+    $num = $result->num_rows;
+    return $num;
+  }else{
+    $num = 0;
+    return $num;
+  }
+}
 
 
 

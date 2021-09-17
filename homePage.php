@@ -104,6 +104,12 @@
             // check if user is logged in
             if (Session::get("userId")){    ?> 
             <li class="nav-item-secondary">
+              <span class="number"> <?php 
+                                        $pd = new Product();
+                                        $num =  $pd->getNumberOfItemsInWishlist(Session::get("userId"));
+                                          echo $num;
+                                    ?>
+                </span>
                 <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:black; font-size:30px;'  ></i></a>
             </li>
 
