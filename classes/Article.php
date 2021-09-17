@@ -241,8 +241,14 @@ public function getAllImagesByArticleId($id){
 }
 
 
+public function checkIfArticleNameExists($name){
+  $query = "SELECT * FROM articles WHERE ArticleHeader = '$name'";
+
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 
-} // closing Article class --
+} 
 ?>

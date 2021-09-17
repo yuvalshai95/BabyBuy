@@ -14,6 +14,9 @@
     }
 ?>
 
+<!-- Box icon For nav icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
 <div class="grid_10">  
 
     <div class="box round first grid"> 
@@ -39,7 +42,7 @@
                             <td><?= $_SESSION['AdminPhone']; ?></td>
                             <td><?= $_SESSION['AdminEmail']; ?></td>
                             <td>
-                                <a href="adminedit.php?adminId=<?php echo $_SESSION['AdminID']; ?>" style="  width: 115px;height: 32px;line-height: 29px;font-size: 12px;background-color: #007bff; border-color: #007bff;padding: 10px;text-align: center;border-radius: 5px;color: white;font-weight: bold;line-height: 25px;"> Update</a>
+                                <a href="adminedit.php?adminId=<?php echo $_SESSION['AdminID']; ?>"> <i class='bx bx-edit' style="font-size: 30px;" ></i></a>
                             </td>
                         </tr>
                      

@@ -8,7 +8,12 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 
-        $insertSubCategory = $subCategory->subCategoryInsert($_POST); // Getting the msg from the method
+        if($subCategory->checkIfSubCategoryNameExists($_POST['subCategoryName']) == false){
+
+            $insertSubCategory = $subCategory->subCategoryInsert($_POST); // Getting the msg from the method
+        }else{
+            $insertSubCategory = "<span  class='alert alert-danger' role='alert'>This name already exists !</span>";
+        }
     }
 ?>
 
@@ -26,7 +31,7 @@
             }
         ?>
 
-         <form action="" method="POST">
+         <form style="margin-top: 15px;" action="" method="POST">
             <table class="form">
                
                 <tr>

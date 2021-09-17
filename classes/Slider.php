@@ -190,6 +190,12 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
     return $result;
 }
 
+public function checkIfSliderNameExists($name){
+  $query = "SELECT * FROM slider WHERE SliderTitle = '$name'";
+
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 

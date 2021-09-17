@@ -7,7 +7,12 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 
-        $insertSlider = $slider->sliderInsert($_POST, $_FILES); // Getting the msg from the method
+        if($slider->checkIfSliderNameExists($_POST['title']) == false){
+
+            $insertSlider = $slider->sliderInsert($_POST, $_FILES); // Getting the msg from the method
+        }else{
+            $insertSlider = "<span  class='alert alert-danger' role='alert'>This name already exists !</span>";
+        }
     }
 ?>
 
@@ -25,7 +30,7 @@
         ?>
 
 
-         <form action="" method="post" enctype="multipart/form-data">
+         <form style="margin-top:10px;" action="" method="post" enctype="multipart/form-data">
             <table class="form">     
                 <tr>
                     <td>

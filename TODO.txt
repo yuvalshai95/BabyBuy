@@ -1,14 +1,7 @@
 
-
 5) in product page -> shipping price???
 
-
-
 7) in article list page on page 3 when we have 1 article the footer is hiding the search option - no padding?
-
-8) when adding sub-category/slider/article/product -> make sure a file with that name doesn't already exists in
-
-9) in articleList page make query to database from class object
 
 10) change all delete/edit btn on admin panel from GET to POST
 
@@ -16,49 +9,25 @@
 
 12) on productlist page in the email body make all info dynamic and fix on first load empty vars for error fix -> can't pass images to email(dont try to fix)
 
-13) when adding new category/slider make sure name is not taken in database
-
-14) add profile btn when user is logged in
-
 15) add contact form?
 
 16) check all pages chrome tabs title
 
-17) on admin panel add menu icons for better appearance
-
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
-
-19) make sure user cant add to wishlist his own products
-
-20) make sure you cant add the same product to wishlist twice
-
-21) user profile -> add see my products ? (to be able to change/delete items)
 
 22) on product page make add to wishlist button work
 
 23) on product page remove wishlist button if user is logged off
 
-24) to search page (shop) add to filters sub-category and maybe status? (status:available\sold)
-
-25) my account -> update details and update password re-do it with ajax
-
 26) on admin panel make all edit/delete with ajax
-
-27) add to user profile(my account) "see my products"
 
 28) go over all pages where nav top is included and if there is another class included delete it (all classes are included in the nav so its duplicate code)
 
 29) remove from singleArticlePage right side 
 
-30) check to see if when product is in user x wishlist and user y delete this product what happen
-
-31) add to search filter -> north,south,central (add to user in database Area, and in register form)
-
 32) on addproduct name input (make it so its ok to enter numbers and letters -> curently only letters allowed)
 
 33) on product page make all images same size (with style)
-
-34) when clicking on category you go to search page and filtering not working -> fix it
 
 35) When you delete product from wishlist or "my products" page -> need to have a "are you sure" message
 

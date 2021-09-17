@@ -8,7 +8,12 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) ){
 
-        $insertArticle = $article->articleInsert($_POST, $_FILES); // Getting the msg from the method
+        if($article -> checkIfArticleNameExists($_POST['ArticleHeader']) == false){
+
+            $insertArticle = $article->articleInsert($_POST, $_FILES); // Getting the msg from the method
+        }else{
+            $insertArticle = "<span  class='alert alert-danger' role='alert'>This name already exists !</span>";
+        }
     }
 ?>
 

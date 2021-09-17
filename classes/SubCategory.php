@@ -135,7 +135,12 @@ class SubCategory{
 }
 
 
+public function checkIfSubCategoryNameExists($name){
+  $query = "SELECT * FROM sub_category WHERE SubCategoryName = '$name'";
 
+  $result = $this->db->select($query);
+  return $result;
+}
 
 
 
