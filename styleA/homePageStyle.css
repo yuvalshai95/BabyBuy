@@ -119,6 +119,14 @@ input[type="submit"]:hover {
 	justify-content: center;
 }
 
+.col-items {
+	text-align: center;
+}
+
+.col-items p {
+	font-weight: bold;
+}
+
 .row img {
 	border-radius: 50%;
 	height: 300px;

@@ -153,6 +153,7 @@
     
   </header>
 
+<!-- Fix Nav Script -->
 <script>
   // Fix Nav
   const navBar = document.querySelector(".nav");
@@ -228,15 +229,18 @@
         <div class="row">
 
           <div class="col-items">
+          <p>Travel Gear</p>
            <a href="search.php?search=carrier"><img src="img/babyCarrier.png" alt=""></a> 
           </div>
 
           <div class="col-items">
+          <p>Car Seats</p>
            <a href="search.php?search=car seat"><img src="img/babycarseat.png" alt=""></a> 
           </div>
 
           
           <div class="col-items">
+          <p>Cribs</p>
            <a href="search.php?search=crib"><img src="img/babyCrib.png" alt=""></a> 
           </div>
 
@@ -244,16 +248,19 @@
         <div class="row">
 
           <div class="col-items">
-           <a href=search.php?search=toys"><img src="img/babyToys.png" alt=""></a> 
+           <a href=search.php?search=toys"><img src="img/babyToys.png" alt=""></a>
+           <p>Toys</p>
           </div>
 
           <div class="col-items">
            <a href="search.php?search=stroller"><img src="img/BabyStroller.png" alt=""></a> 
+           <p>Strollers</p>
           </div>
 
 
           <div class="col-items">
-           <a href="search.php?search=diaper"><img src="img/babyDiapering.png" alt=""></a> 
+           <a href="search.php?search=diaper"><img src="img/babyDiapering.png" alt=""></a>
+           <p>Diapering</p>
           </div>
 
         </div>
