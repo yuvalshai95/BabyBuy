@@ -86,7 +86,7 @@
                 <td><a class="goto" href="ProductPage.php?pdId=<?php echo $row['ProductID']?>&userId=<?php echo $row['UserID']?>&productCategory=<?php echo $product['ProductCategory']?>">Go to page</a></td>
                 <td>
                     <div class="delete">
-                        <button type="button" onclick="delete_data('<?php echo $row['ID']?>')"><i class='bx bx-x-circle'></i></button>
+                        <button type="button" onclick="delete_data('<?php echo $row['ID']?>',<?php echo $currentUser; ?>)"><i class='bx bx-x-circle'></i></button>
                     </div>
                 </td>
                 
@@ -104,7 +104,7 @@
 
     <!-- jQuery Script to delete item from wishlist table -->
 <script>
-    function delete_data(id){
+    function delete_data(id,currentUserId){
         jQuery.ajax({
             url: 'includes/wishlist.inc.php',
             type:'post',
@@ -112,6 +112,20 @@
             success: function(result){
                 // on success hide row
                 jQuery("#tr_"+id).hide(600);
+
+                    //wishlist number
+                    $(document).ready(function(){
+                    var sessionId = currentUserId;
+                    $.ajax({
+                    url:'includes/wishlistNumber.inc.php',
+                    method:"POST",
+                    data:{userId:sessionId},
+                    success: function(data){
+                        $('#wishlistNumber').html(data);
+                    }
+                    });
+                });
+
             }
         });
     }

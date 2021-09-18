@@ -108,6 +108,20 @@
 
                 // alert the message
                 alert(trimData);
+
+                // wishlist number function
+                $(document).ready(function(){
+                    var sessionId = currentUserId;
+                    $.ajax({
+                    url:'includes/wishlistNumber.inc.php',
+                    method:"POST",
+                    data:{userId:sessionId},
+                    success: function(data){
+                        $('#wishlistNumber').html(data);
+                    }
+                    });
+                });
+
             }
         })
     }

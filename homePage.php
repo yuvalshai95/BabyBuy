@@ -104,12 +104,7 @@
             // check if user is logged in
             if (Session::get("userId")){    ?> 
             <li class="nav-item-secondary">
-              <span class="number"> <?php 
-                                        $pd = new Product();
-                                        $num =  $pd->getNumberOfItemsInWishlist(Session::get("userId"));
-                                          echo $num;
-                                    ?>
-                </span>
+              <span class="number" id="wishlistNumber"> <input type="hidden" id="sessionId" value="<?php echo Session::get("userId"); ?>"> </span>
                 <a href="wishlist.php" class="nav-link-secondary icon"><i class='bx bx-heart' style='color:black; font-size:30px;'  ></i></a>
             </li>
 
@@ -290,6 +285,24 @@
     });
 </script>
 <!--Flex Slider Script -->
+
+<!-- wishlist number script -->
+<script>
+   $(document).ready(function(){
+      var sessionId = $('#sessionId').val();
+    $.ajax({
+      url:'includes/wishlistNumber.inc.php',
+      method:"POST",
+      data:{userId:sessionId},
+      success: function(data){
+        $('#wishlistNumber').html(data);
+      }
+    });
+
+   });
+</script>
+
+
 
     <!-- footer-->
     <?php include_once 'includes/footer.php'; ?>
