@@ -131,7 +131,7 @@ input[type="submit"]:hover {
 	border-radius: 50%;
 	height: 300px;
 	width: 300px;
-	margin: 20px;
+	margin: 0px 20px 0px 20px;
 	object-fit: contain;
 	border: 5px solid white;
 }

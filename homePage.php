@@ -269,7 +269,7 @@
 
 
     <!-- Articles Cards -->
-    <div class="title"><h4>ARTICLES</h4></div>
+    <div class="title" style="margin-top:20px;"><h4>ARTICLES</h4></div>
     <?php include 'articlesCards.php'; ?>
 
 </section>
