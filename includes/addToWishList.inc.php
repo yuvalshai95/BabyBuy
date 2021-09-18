@@ -17,7 +17,7 @@
 
             // Add product to wishlist
             $pd->InsertToWishlist($wishPd, $wishOwnerid , $currentUser);
-            echo 'Product added !';
+            echo 'This product was added to your wishlist successfully';
 
         }else{
             echo "This product is already in your wishlist";
