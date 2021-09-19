@@ -8,7 +8,6 @@
     include_once 'classes/Product.php'; 
     include_once 'classes/Article.php'; 
     include_once 'classes/Category.php';
-    include_once 'classes/SubCategory.php';
     include_once 'classes/User.php';  
     include_once 'admin/helpers/Format.php'; 
  ?> 
