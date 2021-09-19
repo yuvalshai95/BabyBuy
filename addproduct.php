@@ -8,7 +8,7 @@
 
     $pd = new Product();
     $category = new Category();
-    $sub = new SubCategory();
+
 ?>
 
 <!DOCTYPE html>
@@ -109,24 +109,6 @@
                 <?php } ?>
                 </select>
 
-                <!-- Sub-Category -->
-                <span class="details">Sub-Category:</span>
-                <select id="pd_Sub_shoes_12" name="pd_Sub_shoes_12">
-                    <option value="2">sub2</option>
-                </select>
-
-                <!-- hidden sub -->
-                <select id="pd_Sub_bags_5" name="pd_Sub_bags_5">
-                    <option value="4">sub4</option>
-                    <option value="5">sub5</option>
-                </select>
-                <!-- hidden sub-->
-
-                <!-- hidden sub-->
-                <select id="pd_Sub_toys_1" name="pd_Sub_bags_1">
-                    <option value="1">sub1</option>
-                </select>
-                <!-- hidden sub-->
 
                 <!-- Pick Up -->
                 <span class="details">Pick Up:</span>
@@ -183,27 +165,6 @@
 <script src="js/imagePrev.js"></script>
 <!-- Image Preview -->
 
-<!-- Show sub categories by main category -->
-<script>
- $("#pdCategory").change(function(){
-    if($('#pdCategory').val() == 5){
-      $("#pd_Sub_bags_5").show();
-      $("#pd_Sub_shoes_12").hide();
-      $("#pd_Sub_toys_1").hide();
-    }else if(($('#pdCategory').val() == 1)){
-      $("#pd_Sub_bags_5").hide();
-      $("#pd_Sub_shoes_12").hide();
-      $("#pd_Sub_toys_1").show();
-
-    }else if($('#pdCategory').val() == 12){
-        $("#pd_Sub_bags_5").hide();
-      $("#pd_Sub_shoes_12").show();
-      $("#pd_Sub_toys_1").hide();
-    }
-    
-});
-</script>
-<!-- Show sub categories by main category -->
 
 
 <?php require_once 'includes/footer.php'; ?>

@@ -25,8 +25,6 @@
                     <ul class="submenu">
                         <li><a href="catadd.php"><i class='bx bx-add-to-queue' style="margin-right: 5px;"></i>Add Category</a> </li>
                         <li><a href="catlist.php"><i class='bx bx-list-ul' style="margin-right: 5px;"></i>Category List</a> </li>
-                        <li><a href="subcategoryadd.php"><i class='bx bx-add-to-queue' style="margin-right: 5px;"></i>Add Sub-Category</a> </li>
-                        <li><a href="subcategorylist.php"><i class='bx bx-list-ul' style="margin-right: 5px;"></i>Sub-Category List</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Product Option <i class='bx bxs-down-arrow' style="margin-left:44px;"></i></a>
