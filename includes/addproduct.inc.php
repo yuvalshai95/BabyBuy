@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 
 
     // No Errors -> insert product to database
-    $pd->productInsert($userId, $pdCategory, $pdSubCategory, $pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file);
+    $pd->productInsert($userId, $pdCategory, $pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file);
     
 
 }else{

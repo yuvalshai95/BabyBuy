@@ -9,7 +9,6 @@
 <?php
         $pd = new Product();
         $category = new Category();
-        $sub = new SubCategory();
         $article = new Article();
 ?>
 
