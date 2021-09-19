@@ -3,8 +3,6 @@
 <?php 
     require_once 'classes/Category.php'; 
     require_once 'classes/Product.php'; 
-    require_once 'classes/SubCategory.php';
-
 
     $pd = new Product();
     $category = new Category();
