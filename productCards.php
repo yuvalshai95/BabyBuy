@@ -17,6 +17,10 @@
     <!-- Box icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 </head>
 <body>
@@ -106,8 +110,33 @@
                 // Remove all white spaces
                 var trimData = $.trim(data);
 
-                // alert the message
-                alert(trimData);
+                // alert the message using sweet alert
+               if(trimData == "This product is already in your wishlist"){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        backdrop: 'rgba(0,0,123,0.4)',
+                        text: trimData,
+                        footer: ''
+                    })
+               }else if(trimData == "You cant add your own products to wishlist"){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    backdrop: 'rgba(0,0,123,0.4)',
+                    text: trimData,
+                    footer: ''
+                })
+               }else{
+                Swal.fire({
+                    icon: 'success',
+                    title: trimData,
+                    showConfirmButton: false,
+                    padding: '1em',
+                    timer: 2500
+                    })
+               }
+
 
                 // wishlist number function
                 $(document).ready(function(){
