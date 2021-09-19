@@ -35,6 +35,9 @@
 <!-- Box icon -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
+<!-- Sweet Alert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>MyProducts</title>
 </head>
 <body>
@@ -135,15 +138,28 @@
     <!-- jQuery Script to delete item from wishlist table -->
 <script>
     function delete_data(id){
-        jQuery.ajax({
-            url: 'includes/userproducts.inc.php',
-            type:'post',
-            data: {id:id},
-            success: function(result){
-                // on success hide row
-                jQuery("#tr_"+id).hide(600);
+
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                jQuery.ajax({
+                url: 'includes/userproducts.inc.php',
+                type:'post',
+                data: {id:id},
+                success: function(result){
+                    // on success hide row
+                    jQuery("#tr_"+id).hide(600);
+                    }
+                });
             }
-        });
+        })
     }
 </script>
  <!-- jQuery Script to delete item from wishlist table -->

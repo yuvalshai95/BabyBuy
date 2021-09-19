@@ -19,6 +19,16 @@ if(isset($_POST['submit'])){
     $pdCondition = $_POST['pdCondition'];
     $file = $_FILES;
 
+    if(isset($_POST['pd_Sub_shoes_12'])){
+        $pdSubCategory = $_POST['pd_Sub_shoes_12'];
+    }
+    else if(isset($_POST['pd_Sub_bags_5'])){
+        $pdSubCategory = $_POST['pd_Sub_bags_5'];
+    }
+    else if(isset($_POST['pd_Sub_bags_1'])){
+        $pdSubCategory = $_POST['pd_Sub_bags_1'];
+    }
+
     // 1)Check if empty field
     if(empty($pdName) || empty($pdDescription) || empty($pdPrice)){
 
@@ -48,7 +58,7 @@ if(isset($_POST['submit'])){
 
 
     // No Errors -> insert product to database
-    $pd->productInsert($userId, $pdCategory, $pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file);
+    $pd->productInsert($userId, $pdCategory, $pdSubCategory, $pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file);
     
 
 }else{

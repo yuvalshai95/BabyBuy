@@ -131,7 +131,7 @@ public function getProductBySearch($key){
   return $result;
 }
 
-public function productInsert($userId, $pdCategory, $pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file){
+public function productInsert($userId, $pdCategory, $pdSubCategory,$pdName, $pdDescription,$pdPickUp,$pdAge, $pdPrice, $pdStatus,$pdCondition,$file){
 
   $pdName         = mysqli_real_escape_string($this->db->link, $pdName);
   $pdDescription  = mysqli_real_escape_string($this->db->link, $pdDescription);
@@ -210,8 +210,8 @@ $store = move_uploaded_file($fileTmpName,$filePath.$fileNameUnique);
 
 $timestamp = date("Y-m-d H:i:s");
 
-$sqlIns = "INSERT INTO product(UserID,ProductCategory,ProductName,Description,PickupOptions,Age,Price,Status,ProductCondition,ImageRefrence) 
-            VALUES ('$userId','$pdCategory','$pdName','$pdDescription','$pdPickUp','$pdAge','$pdPrice','$pdStatus','$pdCondition','".$img_ref."');";
+$sqlIns = "INSERT INTO product(UserID,ProductCategory,SubCategoryID,ProductName,Description,PickupOptions,Age,Price,Status,ProductCondition,ImageRefrence) 
+            VALUES ('$userId','$pdCategory','$pdSubCategory','$pdName','$pdDescription','$pdPickUp','$pdAge','$pdPrice','$pdStatus','$pdCondition','".$img_ref."');";
 
 $sqlIns .= "INSERT INTO users_products_images(ImageName,ImagePath,ImageRefrence) 
             VALUES $sqlValues";

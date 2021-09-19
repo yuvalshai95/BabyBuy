@@ -31,6 +31,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 <!-- BOOTSTRAP DON'T TOUCH OR CODE WILL BREAK -->
 
+<!-- Sweet Alert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <link rel="stylesheet" href="styleA/wishlist.css">
 
     <title>Wishlist</title>
@@ -102,30 +105,45 @@
 </html>
 
 
-    <!-- jQuery Script to delete item from wishlist table -->
+<!-- jQuery Script to delete item from wishlist table -->
 <script>
+
     function delete_data(id,currentUserId){
-        jQuery.ajax({
-            url: 'includes/wishlist.inc.php',
-            type:'post',
-            data: {id:id},
-            success: function(result){
-                // on success hide row
-                jQuery("#tr_"+id).hide(600);
+        // using sweet alert to popup an alert asking user if he is sure he want to delete
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#253b70',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            // User clicked yes, he wants to delete
+            if (result.isConfirmed) {
+                jQuery.ajax({
+                            url: 'includes/wishlist.inc.php',
+                            type:'post',
+                            data: {id:id},
+                            success: function(result){
+                                // on success hide row
+                                jQuery("#tr_"+id).hide(600);
 
-                    //wishlist number
-                    $(document).ready(function(){
-                    var sessionId = currentUserId;
-                    $.ajax({
-                    url:'includes/wishlistNumber.inc.php',
-                    method:"POST",
-                    data:{userId:sessionId},
-                    success: function(data){
-                        $('#wishlistNumber').html(data);
-                    }
-                    });
-                });
+                                //wishlist number
+                                $(document).ready(function(){
+                                var sessionId = currentUserId;
+                                $.ajax({
+                                url:'includes/wishlistNumber.inc.php',
+                                method:"POST",
+                                data:{userId:sessionId},
+                                success: function(data){
+                                    $('#wishlistNumber').html(data);
+                                }
+                                });
+                            });
 
+                        }
+                    })
             }
         });
     }

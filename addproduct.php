@@ -112,19 +112,19 @@
                 <!-- Sub-Category -->
                 <span class="details">Sub-Category:</span>
                 <select id="pd_Sub_shoes_12" name="pd_Sub_shoes_12">
-                    <option value="#">sub2</option>
+                    <option value="2">sub2</option>
                 </select>
 
                 <!-- hidden sub -->
                 <select id="pd_Sub_bags_5" name="pd_Sub_bags_5">
-                    <option value="#">sub4</option>
-                    <option value="#">sub5</option>
+                    <option value="4">sub4</option>
+                    <option value="5">sub5</option>
                 </select>
                 <!-- hidden sub-->
 
                 <!-- hidden sub-->
-                <select id="pd_Sub_toys_1" name="pd_Sub_bags_5">
-                    <option value="#">sub1</option>
+                <select id="pd_Sub_toys_1" name="pd_Sub_bags_1">
+                    <option value="1">sub1</option>
                 </select>
                 <!-- hidden sub-->
 
