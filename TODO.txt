@@ -1,7 +1,4 @@
-
 5) in product page -> shipping price???
-
-7) in article list page on page 3 when we have 1 article the footer is hiding the search option - no padding?
 
 10) change all delete/edit btn on admin panel from GET to POST
 
@@ -13,10 +10,7 @@
 
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
-
 28) go over all pages where nav top is included and if there is another class included delete it (all classes are included in the nav so its duplicate code)
-
-29) remove from singleArticlePage right side 
 
 32) on addproduct name input (make it so its ok to enter numbers and letters -> curently only letters allowed)
 

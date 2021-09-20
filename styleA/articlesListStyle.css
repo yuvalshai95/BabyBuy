@@ -4,6 +4,8 @@
 
 body {
 	background: #fffafa;
+	display: flex;
+	flex-direction: column;
 }
 
 h1,

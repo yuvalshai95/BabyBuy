@@ -76,55 +76,6 @@
             <img src="admin/<?php if($i < sizeof($imagePath)){echo $imagePath[$i]; $i++;}else{echo 'img/general_photo.jpg';} ?>" alt="" class="article-img">
         </div>
     </div>
-
-
-
-
-    <!-- Side bar start -->
-    <div class="sidebar single">
-
-        <div class="section popular">
-            <h2 class="section-title">Popular</h2>
-
-            <div class="post clearfix">
-                <img src="img/article1.png" alt="">
-                <a href="" class="title a"><h4>Title Title Title</h4></a>
-            </div>
-
-            <div class="post clearfix">
-                <img src="img/article1.png" alt="">
-                <a href="" class="title a"><h4>Title Title Title</h4></a>
-            </div>
-
-            <div class="post clearfix">
-                <img src="img/article1.png" alt="">
-                <a href="" class="title a"><h4>Title Title Title Title</h4></a>
-            </div>
-
-            <div class="post clearfix">
-                <img src="img/article1.png" alt="">
-                <a href="" class="title a"><h4>Title Title Title Title Title</h4></a>
-            </div>
-        </div>
-
-        <div class="section topics">
-            <h2 class="section-title">Topics</h2>
-            <ul>
-                <li><a href="#" class="par">Pregnancy</a></li>
-                <li><a href="#" class="par">Toys</a></li>
-                <li><a href="#" class="par">Food</a></li>
-                <li><a href="#" class="par">Clothing</a></li>
-                <li><a href="#" class="par">Carriages</a></li>
-                <li><a href="#" class="par">Education</a></li>
-                <li><a href="#" class="par">Babies</a></li>
-                <li><a href="#" class="par">Leisure</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- Side bar end -->
-
 </div>
 
 

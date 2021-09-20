@@ -97,38 +97,6 @@
             ?>
         </div>
     </div>
- 
-
-    <div class="sidebar">
-
-        <div class="section search">
-            <h2 class="section-title">
-                Search
-            </h2>
-            <form action="index.html" method="post">
-                <input type="text" name="search-term" class="text-input" placeholder="Search...">
-            </form>
-        </div>
-
-
-
-
-        <div class="section topics">
-            <h2 class="section-title">Topics</h2>
-            <ul>
-                <li><a href="#" class="par">Pregnancy</a></li>
-                <li><a href="#" class="par">Toys</a></li>
-                <li><a href="#" class="par">Food</a></li>
-                <li><a href="#" class="par">Clothing</a></li>
-                <li><a href="#" class="par">Education</a></li>
-                <li><a href="#" class="par">Babies</a></li>
-                <li><a href="#" class="par">Leisure</a></li>
-            </ul>
-        </div>
-
-
-    </div>
-
 </div>
 
 
