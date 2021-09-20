@@ -1,49 +1,31 @@
-﻿<!--
-<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script> 
-  -->
-
-<?php include 'inc/header.php';?>
+﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php require_once '../classes/Category.php'; ?>
 
-<?php 
-    $cat = new Category(); // Creating new instance that connect to db with CRUD operation
+<!-- Box icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-	// We have a *Delete button so we have to check using the GET Method if it was clicked
-	if ((isset($_GET['categoryId']) && (isset($_GET['categoryName'])))) {
-		$idToDelete = $_GET['categoryId'];
-		$catName = $_GET['categoryName'];
-		$deleteCategory = $cat->deleteCategoryById($idToDelete,$catName);
-	}
-
-?>
+<!-- Sweet Alert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Category List</h2>
                 <div class="block"> 
 					
-				<?php
-				if (isset($deleteCategory)) {
-					echo $deleteCategory;
-				}
-
-				?>
-
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
 							<th>Serial No.</th>
 							<th>Category Name</th>
-							<th>Action</th>
+							<th>Edit</th>
+							<th>Remove</th>
 						</tr>
 					</thead>
 					<tbody>
 
 					<?php
+					$cat = new Category();
 					$getCat = $cat->getAllCategories(); // Getting a list of all categories
 					if($getCat){
 						$i = 0; // Var for replacing id
@@ -54,15 +36,21 @@
 							$i++;
 					?> <!-- Ending the php tag to write html code -->
 
-						<tr class="odd gradeX">
+						<tr class="odd gradeX" id="tr_<?php echo $result['CategoryID']; ?>">
 							<td> <?php echo $i; ?> </td> <!-- category id using i var -->
 
 							<td><?php echo $result['CategoryName']; ?></td> <!-- category name from db -->
 
-							<td><a href="catedit.php?categoryid=<?php echo $result['CategoryID']; ?>"> Edit </a> || 
-								<a onclick="return confirm('Are You Sure You Want To Delete This Category?')" href="?categoryId=<?php echo $result['CategoryID']; ?>&categoryName=<?php echo $result['CategoryName']; ?>" > Delete </a>
+							<td>
+								<a href="catedit.php?categoryid=<?php echo $result['CategoryID']; ?>"> <i class='bx bx-edit' style="font-size: 32px;color:gray;"></i> </a>
 							</td>
-								<!-- Get method to delete if the btn was click is at the top of the page -->
+								
+							<td>
+								<div class="delete">
+									<button type="button" onclick="delete_data('<?php echo $result['CategoryID']?>')"><i class='bx bx-x-circle'></i></button>
+								</div>
+							</td>
+								
 						</tr>
 
 						<?php } } ?> <!-- closing the While loop and if stmt with php tags -->
@@ -75,20 +63,38 @@
 
 
 
-		<!-- JavaScript to reaplce the onclick in the <a> tag in the Delete tag (must add class="confirmation") -->
-			<!-- 
-					<script type="text/javascript">
-				var elems = document.getElementsByClassName('confirmation');
-				var confirmIt = function (e) {
-					if (!confirm('Are you sure?')) e.preventDefault();
-				};
-				for (var i = 0, l = elems.length; i < l; i++) {
-					elems[i].addEventListener('click', confirmIt, false);
-				}
-			</script> -->
 
 
-		<!-- plug-in for the jQuery Javascript library. to show X entries && Smart Search option && showing total entries -->
+<!-- jQuery Script to delete item from wishlist table -->
+<script>
+function delete_data(id){
+	// using sweet alert to popup an alert asking user if he is sure he want to delete
+	Swal.fire({
+	title: 'Are you sure?',
+	text: "You won't be able to revert this!",
+	icon: 'warning',
+	showCancelButton: true,
+	confirmButtonColor: '#253b70',
+	cancelButtonColor: '#d33',
+	confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		// User clicked yes, he wants to delete
+		if (result.isConfirmed) {
+			jQuery.ajax({
+						url: 'inc/removeCategory.inc.php',
+						type:'post',
+						data: {id:id},
+						success: function(result){
+							// on success hide row
+							jQuery("#tr_"+id).hide(600);
+					}
+				})
+		}
+	});
+}
+</script>
+ <!-- jQuery Script to delete item from wishlist table -->
+
 		<script type="text/javascript">
 			$(document).ready(function () {
 				setupLeftMenu();
@@ -96,7 +102,22 @@
 				setSidebarHeight();
 			});
 		</script>
-		<!----------------------------------------------------------------------------------->
 
+<style>
+	.delete button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 32px;
+}
+.edit button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 32px;
+}
+</style>
 <?php include 'inc/footer.php';?>
 

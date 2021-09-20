@@ -98,19 +98,24 @@ class Category{
 
 
  // Delete Category By ID
-  public function deleteCategoryById($id, $name){
+//   public function deleteCategoryById($id, $name){
 
-    // Syntax DELETE FROM table_name WHERE condition1 = value1
+//     // Syntax DELETE FROM table_name WHERE condition1 = value1
+//     $query = "DELETE FROM category WHERE CategoryID = '$id'";
+//     $deletedData = $this->db->delete($query);
+//     if ($deletedData) {
+//         $msg = "<span class='alert alert-success' role='alert'>Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
+//         return $msg;
+//     }else{
+//         $msg = "<span  class='alert alert-danger' role='alert'> Category was not deleted an error occurred! </span>";
+//         return $msg;
+//     }
+
+// }
+
+public function deleteCategoryById($id){
     $query = "DELETE FROM category WHERE CategoryID = '$id'";
-    $deletedData = $this->db->delete($query);
-    if ($deletedData) {
-        $msg = "<span class='alert alert-success' role='alert'>Category ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
-        return $msg;
-    }else{
-        $msg = "<span  class='alert alert-danger' role='alert'> Category was not deleted an error occurred! </span>";
-        return $msg;
-    }
-
+    $this->db->delete($query);
 }
 
 

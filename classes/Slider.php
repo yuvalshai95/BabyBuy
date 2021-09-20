@@ -103,21 +103,6 @@ if (in_array($fileActualExtention, $allowedExtentions)) {
   }
 
  // Delete Slider By ID
-//  public function deleteSliderById($id, $name){
-
-//   // Syntax DELETE FROM table_name WHERE condition1 = value1
-//   $query = "DELETE FROM slider WHERE SliderID = '$id'";
-//   $deletedData = $this->db->delete($query);
-//   if ($deletedData) {
-//       $msg = "<span class='alert alert-success' role='alert'>Slider ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
-//       return $msg;
-//   }else{
-//       $msg = "<span  class='alert alert-danger' role='alert'> Category was not deleted an error occurred! </span>";
-//       return $msg;
-//   }
-
-// }
-
 public function deleteSliderById($id){
   $query = "DELETE FROM slider WHERE SliderID = '$id'";
   $this->db->delete($query);
