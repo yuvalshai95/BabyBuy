@@ -14,7 +14,6 @@
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
 
-
 26) on admin panel make all edit/delete with ajax
 
 28) go over all pages where nav top is included and if there is another class included delete it (all classes are included in the nav so its duplicate code)
@@ -25,12 +24,9 @@
 
 33) on product page make all images same size (with style)
 
-35) When you delete product from wishlist or "my products" page -> need to have a "are you sure" message
-
 36) no form validation in userproducts edit details
 
 37) when hover over wishlist icon on home page add "Add to wishlist tag" just like "view details" (Adi did it) 
 
 38) make sure adi has current database with foreign key on delete cascade on wishlist and sub_category tables
 
-39) remember in add product page -> sub-categories is not dynamic and need to update all products in database to give them subcategory
