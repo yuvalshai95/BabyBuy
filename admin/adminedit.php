@@ -176,19 +176,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </tr>
 
 
+                            <tr style="display: flex;justify-content: space-between;margin-top:2em">
+                                <td>
+                                    <a href="adminprofile.php" class="btn btn-red">CANCEL</a>
+                                </td> 
 
-						<tr> 
-                            <tr>   
                                 <td>
                                     <input type="submit" name="submit" Value="Update" class="btn btn-green"/>
                                 </td>
+                                
                             </tr>
-
-                             <td>
-                                <a href="adminprofile.php" class="btn btn-red">CANCEL</a>
-                            </td> 
-
-                        </tr>
 
                     </table>
                     </form>

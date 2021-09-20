@@ -14,8 +14,6 @@
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
 
-26) on admin panel make all edit/delete with ajax
-
 28) go over all pages where nav top is included and if there is another class included delete it (all classes are included in the nav so its duplicate code)
 
 29) remove from singleArticlePage right side 
