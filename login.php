@@ -51,8 +51,8 @@
             <div class="card-header">
                 <h3>Sign In</h3><span id="msg"></span>
                 <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
-                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <!-- <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span> -->
                 </div><p class="display"></p> <span id="msg"></span>
              </div>
 
@@ -113,44 +113,6 @@
 </body>
 </html>
 
-<!--
-<script>
-    $(document).ready(function(){
-        $('#rolling').slideDown('slow');
-    });
-
-    $(document).ready(function(){
-        $("#submit").click(function(){
-            if($("#email").val() === "" || $('#password').val() === ""){
-                $(".display").fadeTo('slow','0.99');
-                $('#msg').hide();
-                $(".display").fadeIn('slow',function(){$("p").html("<span id='error'>Please enter email and password</span>");});
-                return false;
-            }else{
-                $(".display").html('<span class="normal"><img src="img/Spinner.gif"></span>');
-                var email = $('#email').val();
-                var pass = $('#password').val();
-                $.getJSON("includes/login.inc.php",{email:email,password:pass},function(json){
-                        
-                    // Parse JSON data if json.response.error = 1 then login successful
-                    if(json.response.error == "1")
-                    {
-                        $(".display").css('background','#CBF8AF');
-                        $(".display").css('border-bottom','4px solid #109601');
-                        data = "<span id='msg'>Welcome To BabyBuy</span>";
-                        window.location.href = "theme_profile.html";
-                        /*
-                        login successful, write code to Show next page here 
-                        */
-                    }
-
-                });
-                return false;
-            }
-        });
-    });
-</script>
--->
 
 
 

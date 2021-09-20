@@ -335,6 +335,15 @@ public function getNumberOfItemsInWishlist($id){
   }
 }
 
+public function getInterstProducts($interest){
+  $query = 'SELECT * FROM product p INNER JOIN category c on p.ProductCategory = c.CategoryID WHERE c.CategoryName IN ('.$interest.') LIMIT 8';
+  $result = $this->db->select($query);
+  return $result;
+}
+
+
+
+
 
 
 }

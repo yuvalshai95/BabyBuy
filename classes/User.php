@@ -67,7 +67,7 @@ class User{
         $interestToInsert = rtrim($interestToInsert,",");
         
         // Replace all "," with white spaces
-        $interestToInsert = str_replace(',',' ',$interestToInsert);
+        //$interestToInsert = str_replace(',',' ',$interestToInsert);
        
 
         $query = "INSERT INTO users (FirstName,LastName,City,UserEmail,UserPassword,PhoneNumber,Interest,Address)

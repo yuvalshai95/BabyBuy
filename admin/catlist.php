@@ -60,8 +60,7 @@
 							<td><?php echo $result['CategoryName']; ?></td> <!-- category name from db -->
 
 							<td><a href="catedit.php?categoryid=<?php echo $result['CategoryID']; ?>"> Edit </a> || 
-								<a onclick="return confirm('Are You Sure You Want To Delete This Category?')" href="?categoryId=<?php echo $result['CategoryID']; ?>&categoryName=<?php echo $result['CategoryName']; ?>" > Delete </a> ||
-								<a href="subcategorybyid.php?categoryid=<?php echo $result['CategoryID']; ?>">Sub-Categories</a>
+								<a onclick="return confirm('Are You Sure You Want To Delete This Category?')" href="?categoryId=<?php echo $result['CategoryID']; ?>&categoryName=<?php echo $result['CategoryName']; ?>" > Delete </a>
 							</td>
 								<!-- Get method to delete if the btn was click is at the top of the page -->
 						</tr>

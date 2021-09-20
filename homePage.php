@@ -56,7 +56,7 @@
 
 
 <body>
-
+<!---------------------------------------------------------------------------------------------------------------->
    <!-- Header -->
   <header class="header">
     <!-- Navigation -->
@@ -173,7 +173,8 @@
   gsap.from(".hero-content h1", { opacity: 0, duration: 1, delay: 2.5, y: -45 });
   gsap.from(".hero-content a", { opacity: 0, duration: 1, delay: 3.5, y: 50 });
 </script>
-  
+ <!---------------------------------------------------------------------------------------------------------------->
+
     <br> <br> <br>
 
 
@@ -210,18 +211,114 @@
 </div>
 <!--Flex Slider END -->
 </section>
+<!---------------------------------------------------------------------------------------------------------------->
+
 
 <!-- General Section -->
 <section class="items">
+<!---------------------------------------------------------------------------------------------------------------->
+<!-- Favorite Cards Start -->
+    <?php
+      // check if user is logged in
+      if (Session::get("userId")){ 
+          $pd = new Product();
+          $foramt = new Foramt();
+          $user = new User(); 
+          // get user by id
+          $getUser = $user->getUserById(Session::get("userId"))->fetch_assoc();
+            if(($getUser['Interest'] !== NULL)){
+    ?>
     <!-- Product Cards - category -->
     <div class="title"><h4>FAVORITE CATEGORY</h4></div>
-    <?php include 'favoriteCards.php'; ?>
+    <div class="productCardsContainer">
+      <div class="container">
+        <?php
+
+
+              // get user interest
+              $myString = $getUser['Interest'];
+
+              // insert user interest into array
+              $myArray = explode(',',$myString);
+
+              //make array into string for database query
+              $interest = implode("','", $myArray);
+
+              //add "'" to the start of the string
+              $interest = "'".$interest;
+
+              // add "'" to the end of the string
+              $interest = $interest."'";
+
+              $getInterest = $pd->getInterstProducts($interest);
+              if($getInterest){
+                  while($result = $getInterest->fetch_assoc()){
+          ?>
+
+            <div class="card">
+              <div class="imgBx">
+                <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?= $result['ProductCategory']; ?>"> 
+                <img src="<?php  
+                              $img = $pd->getSingleImagesByProductId($result['ProductID'])->fetch_assoc(); 
+                              $single = $img['ImagePath']; 
+                              $single = str_replace('../','',$single); 
+                              echo $single ?>"></a>
+                  <ul class="action">
+                    <li>
+                      <i class='bx bx-heart' style='font-size:22px;' onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" ></i>
+                    </li>
+
+                    <li>
+                      <a href="ProductPage.php?pdId=<?php echo $result['ProductID']; ?>&userId=<?php echo $result['UserID']; ?>&productCategory=<?php echo $result['ProductCategory']; ?>">  <i class="far fa-eye"></i> </a>
+                      <span>View Details</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="content">
+                  <div class="productName">
+                      <h3><?=$result['ProductName'];?></h3>
+                  </div>
+                  <div class="price_status">
+                      <h2>$<?= $result['Price']; ?></h2>
+                      <div style="background: <?php 
+                                                if($result['ProductCondition'] == "new"){
+                                                    echo '#007bff';
+                                                }
+                                                else if($result['ProductCondition'] == "barley"){
+                                                    echo '#6c757d';
+                                                }
+                                                else if($result['ProductCondition'] == "open"){
+                                                    echo '#28a745';
+                                                } 
+                                                else if($result['ProductCondition'] == "gently"){
+                                                    echo '#343a40';
+                                                } 
+                                                ?>;" class="status">
+
+                        <h4><?= strtoupper($result['ProductCondition']); ?></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php }}}} ?>
+
+    </div>
+</div>
+<!-- Favorite Cards END -->
+<!---------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
 
            
     <!-- Product Cards - recent added -->
     <div class="title"><h4>RECENTLY ADDED</h4></div>
     <?php include 'productCards.php'; ?>
+    <!-- Product Cards - recent added -->
 
+    <!-- Top Categories -->
     <section class="categories">
       <div class="title"><h4>TOP CATEGORIES</h4></div>
       <div class="categories-container">
@@ -265,18 +362,13 @@
         </div>
       </div>
     </section>
+    <!-- Top Categories -->
 
 
     <!-- Articles Cards -->
     <div class="title" style="margin-top:20px;"><h4>ARTICLES</h4></div>
     <?php include 'articlesCards.php'; ?>
-
 </section>
-
-
-
-
-
 
 
 
@@ -310,8 +402,8 @@
 
 
 
-    <!-- footer-->
-    <?php include_once 'includes/footer.php'; ?>
+  <!-- footer-->
+  <?php include_once 'includes/footer.php'; ?>
 
 </body>
 </html>
