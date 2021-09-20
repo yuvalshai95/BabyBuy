@@ -11,8 +11,6 @@
 
 15) add contact form?
 
-16) check all pages chrome tabs title
-
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
 22) on product page make add to wishlist button work

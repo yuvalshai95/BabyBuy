@@ -115,6 +115,7 @@ a {
 
 .btn:hover {
 	background: rgba(226, 136, 0, 0.808);
+	cursor: pointer;
 }
 
 .seller {

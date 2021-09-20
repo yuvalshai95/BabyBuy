@@ -26,12 +26,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Product</title>
     <link href="styleA/css/all.css" rel="stylesheet">
     <link href="styleA/css/all.min.css" rel="stylesheet">
 
-        <!-- style Product Page -->
-        <link href="styleA/productPage.css" rel="stylesheet">
+    <!-- style Product Page -->
+    <link href="styleA/productPage.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body>
@@ -106,7 +109,11 @@
                 <h5>Pickup Option: <?= $result['PickupOptions']; ?></h5>
                 <h5>Condition: <?= $result['ProductCondition']; ?></h5>
                 <h5>Status: <?= $result['Status']; ?></h5>
-                <a href="" class="btn"><i class="fas fa-heart"></i> Add to Wishlist</a>
+
+               <!-- Wishlist button -->
+                <span class="btn" onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" > <i class="fas fa-heart"></i> Add to Wishlist</span>
+
+
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
                 <p class="prodDetails"> <?= $result['Description']; ?></p>
@@ -217,6 +224,65 @@
             $("[data-toggle='tooltip']").tooltip();
         });
     </script>
+
+
+
+<!-- alert adding item to user wishlist -->
+<script>
+    function addToWishlist(currentUserId,pdId,ownerId){
+        $.ajax({
+            url:'includes/addToWishList.inc.php',
+            type:'POST',
+            data:{currentUserId:currentUserId,pdId:pdId,ownerId:ownerId},
+            success: function(data){
+                // Remove all white spaces
+                var trimData = $.trim(data);
+
+                // alert the message using sweet alert
+               if(trimData == "This product is already in your wishlist"){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        backdrop: 'rgba(0,0,123,0.4)',
+                        text: trimData,
+                        footer: ''
+                    })
+               }else if(trimData == "You cant add your own products to wishlist"){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    backdrop: 'rgba(0,0,123,0.4)',
+                    text: trimData,
+                    footer: ''
+                })
+               }else{
+                Swal.fire({
+                    icon: 'success',
+                    title: trimData,
+                    showConfirmButton: false,
+                    padding: '1em',
+                    timer: 2500
+                    })
+               }
+
+
+                // wishlist number function
+                $(document).ready(function(){
+                    var sessionId = currentUserId;
+                    $.ajax({
+                    url:'includes/wishlistNumber.inc.php',
+                    method:"POST",
+                    data:{userId:sessionId},
+                    success: function(data){
+                        $('#wishlistNumber').html(data);
+                    }
+                    });
+                });
+
+            }
+        })
+    }
+</script>
 
 
 </body>
