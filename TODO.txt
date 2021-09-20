@@ -13,9 +13,7 @@
 
 18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
-22) on product page make add to wishlist button work
 
-23) on product page remove wishlist button if user is logged off
 
 26) on admin panel make all edit/delete with ajax
 

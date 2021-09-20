@@ -110,9 +110,10 @@
                 <h5>Condition: <?= $result['ProductCondition']; ?></h5>
                 <h5>Status: <?= $result['Status']; ?></h5>
 
-               <!-- Wishlist button -->
+                <!-- Wishlist button if user logged in-->
+                <?php if(Session::get("userId")) {?>
                 <span class="btn" onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" > <i class="fas fa-heart"></i> Add to Wishlist</span>
-
+                <?php } ?>
 
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
