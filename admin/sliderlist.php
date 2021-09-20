@@ -6,12 +6,16 @@
 
 <!-- Box icon -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
 <!-- Sweet Alert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Slider List</h2>
+
+
 
         <div class="block">  
             <table class="data display datatable" id="example">
@@ -46,7 +50,9 @@
 					<td class="tableCenter"><?= $result['SliderTitle']; ?> </td>
 					<td class="center"> <img src="<?= $result['SliderImage']; ?>" height="40px;" width="60px;"></td>				
 					<td>
+						<div class="edit">
 						<a href="slideredit.php?sliderId=<?php echo $result['SliderID']; ?>" > <i class='bx bx-edit' style="font-size: 32px;color:gray;"></i> </a>
+						</div>
 					</td>
 					<td>
 						<div class="delete">
@@ -65,6 +71,9 @@
     </div>
 </div>
 
+
+
+
 <script type="text/javascript">
     $(document).ready(function () {
         setupLeftMenu();
@@ -73,9 +82,10 @@
     });
 </script>
 
+
+
 <!-- jQuery Script to delete item from wishlist table -->
 <script>
-
 function delete_data(id){
 	// using sweet alert to popup an alert asking user if he is sure he want to delete
 	Swal.fire({
@@ -104,13 +114,15 @@ function delete_data(id){
 </script>
  <!-- jQuery Script to delete item from wishlist table -->
 
-
-
-
-
-
 <style>
 	.delete button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 32px;
+}
+.edit button {
     background: none;
     border: none;
     cursor: pointer;

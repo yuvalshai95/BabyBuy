@@ -159,7 +159,7 @@ public function deleteSliderById($id){
   $filePath = "Web/".$fileNameUnique;
 
     // Syntax UPDATE table_name SET field1 = new-value1
-    $query = "UPDATE slider SET SliderTitle = '$SliderName', SliderImage = ' $filePath'  WHERE SliderID = '$id'";
+    $query = "UPDATE slider SET SliderTitle = '$SliderName', SliderImage = '$filePath'  WHERE SliderID = '$id'";
 
     // Using the DataBase class update method
     // Running the query
