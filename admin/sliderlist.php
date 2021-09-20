@@ -4,30 +4,14 @@
 
 <?php $slider = new Slider(); ?> <!-- Creating new instance that connect to db with CRUD operation -->
 
-
-<?php 
-
-	// We have a *Delete button so we have to check using the GET Method if it was clicked
-	if ((isset($_GET['sliderId']) && (isset($_GET['sliderTitle'])))) {
-		$idToDelete = $_GET['sliderId'];
-		$sliderName = $_GET['sliderTitle'];
-		$deleteSlider = $slider->deleteSliderById($idToDelete,$sliderName);
-	}
-
-?>
-
+<!-- Box icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<!-- Sweet Alert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Slider List</h2>
-
-		<?php
-			if(isset($deleteSlider)){
-				echo $deleteSlider;
-			}
-
-		?>
-
 
         <div class="block">  
             <table class="data display datatable" id="example">
@@ -39,8 +23,9 @@
 					<th>No.</th>
 					<th>Slider Title</th>
 					<th>Slider Image</th>
-					<th>Action</th>
-				<!--/ Table Titles -->
+					<th>Edit</th>
+					<th>Remove</th>
+					<!--/ Table Titles -->
 				</tr>
 
 			</thead>
@@ -56,14 +41,18 @@
 					$i++;	
 			?>
 
-				<tr class="odd gradeX">
+				<tr class="odd gradeX" id="tr_<?php echo $result['SliderID']; ?>">
 					<td class="tableCenter"> <?= $i; ?> </td>
 					<td class="tableCenter"><?= $result['SliderTitle']; ?> </td>
 					<td class="center"> <img src="<?= $result['SliderImage']; ?>" height="40px;" width="60px;"></td>				
 					<td>
-						<a href="slideredit.php?sliderId=<?php echo $result['SliderID']; ?>" > Edit </a> || 
-						<a onclick="return confirm('Are You Sure You Want To Delete This Slider?')" href="?sliderId=<?php echo $result['SliderID']; ?>&sliderTitle=<?php echo $result['SliderTitle']; ?>" > Delete </a> 
+						<a href="slideredit.php?sliderId=<?php echo $result['SliderID']; ?>" > <i class='bx bx-edit' style="font-size: 32px;color:gray;"></i> </a>
 					</td>
+					<td>
+						<div class="delete">
+							<button type="button" onclick="delete_data('<?php echo $result['SliderID']?>')"><i class='bx bx-x-circle'></i></button>
+						</div>
+						</td>
 
 				</tr>
 
@@ -83,4 +72,54 @@
 		setSidebarHeight();
     });
 </script>
+
+<!-- jQuery Script to delete item from wishlist table -->
+<script>
+
+function delete_data(id){
+	// using sweet alert to popup an alert asking user if he is sure he want to delete
+	Swal.fire({
+	title: 'Are you sure?',
+	text: "You won't be able to revert this!",
+	icon: 'warning',
+	showCancelButton: true,
+	confirmButtonColor: '#253b70',
+	cancelButtonColor: '#d33',
+	confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		// User clicked yes, he wants to delete
+		if (result.isConfirmed) {
+			jQuery.ajax({
+						url: 'inc/removeSlider.inc.php',
+						type:'post',
+						data: {id:id},
+						success: function(result){
+							// on success hide row
+							jQuery("#tr_"+id).hide(600);
+					}
+				})
+		}
+	});
+}
+</script>
+ <!-- jQuery Script to delete item from wishlist table -->
+
+
+
+
+
+
+<style>
+	.delete button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 32px;
+}
+</style>
+
+
 <?php include 'inc/footer.php';?>
+
+
