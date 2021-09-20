@@ -8,14 +8,12 @@ $article = new Article();
 $format  = new Foramt();
 ?>
 
-<?php 
-	// We have a *Delete button so we have to check using the GET Method if it was clicked
-	if ((isset($_GET['articleId']) && (isset($_GET['articleName'])))) {
-		$idToDelete = $_GET['articleId'];
-		$articleName = $_GET['articleName'];
-		$deleteArticle = $article->deleteArticleById($idToDelete,$articleName);
-	}
-?>
+
+<!-- Box icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+<!-- Sweet Alert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="grid_10">
     <div class="box round first grid">
@@ -40,7 +38,8 @@ $format  = new Foramt();
 					<th>Article Body</th>
 					<th>Article Date</th>
 					<th>Image</th>
-                    <th>Action</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
 
 				</tr>
 				
@@ -60,7 +59,7 @@ $format  = new Foramt();
 					$i++;	
 			?>
 
-				<tr class="odd gradeX">
+				<tr class="odd gradeX" id="tr_<?php echo $result['ArticleID']; ?>">
 				
 					<td class="tableCenter"> <?= $i; ?> </td>
 					<td class="tableCenter"><?= $result['ArticleHeader']; ?> </td>
@@ -72,8 +71,13 @@ $format  = new Foramt();
 					
 					<!-- TODO: make Reminder work -->
 					<td class="tableCenter"> 
-						<a href="articleedit.php?articleId=<?php echo $result['ArticleID']; ?> ">Edit</a> || 
-						<a onclick="return confirm('Are You Sure You Want To Delete This Article?')" href="?articleId=<?php echo $result['ArticleID']; ?>&articleName=<?php echo $result['ArticleHeader']; ?>"> Delete</a>
+						<a href="articleedit.php?articleId=<?php echo $result['ArticleID']; ?> "><i class='bx bx-edit' style="font-size: 32px;color:gray;"></i></a>
+					</td>
+
+					<td>
+						<div class="delete">
+							<button type="button" onclick="delete_data('<?php echo $result['ArticleID']?>')"><i class='bx bx-x-circle'></i></button>
+						</div>
 					</td>
                     
 				</tr>
@@ -95,4 +99,55 @@ $format  = new Foramt();
 		setSidebarHeight();
     });
 </script>
+
+
+
+<!-- jQuery Script to delete item from wishlist table -->
+<script>
+function delete_data(id){
+	// using sweet alert to popup an alert asking user if he is sure he want to delete
+	Swal.fire({
+	title: 'Are you sure?',
+	text: "You won't be able to revert this!",
+	icon: 'warning',
+	showCancelButton: true,
+	confirmButtonColor: '#253b70',
+	cancelButtonColor: '#d33',
+	confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		// User clicked yes, he wants to delete
+		if (result.isConfirmed) {
+			jQuery.ajax({
+						url: 'inc/removeArticle.inc.php',
+						type:'post',
+						data: {id:id},
+						success: function(result){
+							// on success hide row
+							jQuery("#tr_"+id).hide(600);
+					}
+				})
+		}
+	});
+}
+</script>
+ <!-- jQuery Script to delete item from wishlist table -->
+
+
+
+<style>
+	.delete button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 32px;
+}
+.edit button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 32px;
+}
+</style>
 <?php include 'inc/footer.php';?>

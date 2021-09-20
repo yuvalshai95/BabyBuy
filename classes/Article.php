@@ -139,19 +139,9 @@ public function getAllArticles(){
 
 
  // Delete Article By ID
- public function deleteArticleById($id, $name){
-
-  // Syntax DELETE FROM table_name WHERE condition1 = value1
+ public function deleteArticleById($id){
   $query = "DELETE FROM articles WHERE ArticleID = '$id'";
-  $deletedData = $this->db->delete($query);
-  if ($deletedData) {
-      $msg = "<span class='alert alert-success' role='alert'>Article ".'"'.$name.'"'." Was Deleted Successfully.</span> ";
-      return $msg;
-  }else{
-      $msg = "<span  class='alert alert-danger' role='alert'> Article was not deleted an error occurred! </span>";
-      return $msg;
-  }
-
+  $this->db->delete($query);
 }
 
 
