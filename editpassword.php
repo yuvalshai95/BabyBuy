@@ -7,20 +7,58 @@
 
 <!-- Temporary style -->
 <style>
+    form {
+        margin: 70px 15px 70px 15px;
+    }
+    
+    td h2 {
+        margin: 8px;
+    }
+
     table{
         width: 550px;
         margin: 0 auto;
-        border: 2px solid black;
         border-spacing: 10px;
+        background-color: rgb(240, 248, 255);
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     }
 
     table tr td{
         text-align: justify;
+        padding: 3px;
+        font-size: 18px;
     }
-  label{
-      margin-left: 49.5em;
 
-  }
+    input {
+        font-size: 16px;
+        padding: 0.175rem .55rem;
+        line-height: 1.2;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+    }
+
+    .save-changes, .go-back{
+        border: 2px solid #253b70;
+        background: transparent;
+        color: #253b70 !important;
+        border-radius: 3px;
+        text-decoration: none;
+        padding: .5rem 1rem;
+        font-family: 'Montserrat' !important;
+        font-size: 13px;
+    }
+    .save-changes:hover, .go-back:hover{
+        background-color: #253b70;
+        color: white !important;
+        cursor: pointer;
+    }
+
+    label{
+        margin-left: 49.5em;
+    }
+
   .info, .success, .warning, .error, .validation {
 			border: 1px solid;
 			margin: 10px 0px;
@@ -101,8 +139,8 @@
 
             <td><input type="password" name="confrimPwd"</td>
         </tr>
-            <td><button><a href="profile.php"> << Go Back</a></button></td>
-            <td width = "30%"><input type="submit" name="submit" value="Save Changes"></td>
+            <td><a class="go-back" href="profile.php"><span style="font-size: 16px;">&#171;</span> Go Back</a></td>
+            <td width = "30%"><input class="save-changes" type="submit" name="submit" value="Save Changes"></td>
            
         </tr>
 
