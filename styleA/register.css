@@ -9,9 +9,10 @@ body {
 }
 
 .form-control {
-	height: 40px;
+	height: 30px;
 	box-shadow: none;
 	color: #969fa4;
+	font-size: 15px !important;
 }
 
 .form-control:focus {
@@ -56,7 +57,7 @@ body {
 /* "Register" style  */
 .signup-form h2 {
 	color: #fc7c7c;
-	margin: 0 0 15px;
+	margin: 0 0 5px;
 	position: relative;
 	text-align: center;
 }
@@ -83,21 +84,21 @@ body {
 
 .signup-form .hint-text {
 	color: #999;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	text-align: center;
 }
 
 .signup-form form {
 	color: #999;
 	border-radius: 3px;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 	background: #f2f3f7;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 8px 10px 5px 10px;
 }
 
 .signup-form .form-group {
-	margin-bottom: 20px;
+	margin-bottom: 12px;
 }
 
 .signup-form input[type="checkbox"] {
@@ -106,7 +107,7 @@ body {
 
 .checkboxes {
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 2px;
 }
 
 .checkboxes input {
@@ -142,8 +143,8 @@ body {
 .error,
 .validation {
 	border: 1px solid;
-	margin: 10px 0px;
-	padding: 15px 10px 15px 50px;
+	margin: 6px 0px;
+	padding: 5px 10px 5px 50px;
 	background-repeat: no-repeat;
 	background-position: 10px center;
 }
@@ -158,6 +159,7 @@ body {
 	color: #d63301;
 	background-color: #ffccba;
 	background-image: url('https://i.imgur.com/GnyDvKN.png');
+	font-size: 15px !important;
 }
 
 .teddy-bear {
@@ -172,15 +174,15 @@ body {
 @media only screen and (max-width: 1800px) {
 	.signup-form {
 		width: 580px;
-		padding: 30px 0;
+		padding: 20px 0;
 		margin-left: 10%;
-		margin-top: 3%;
+		margin-top: 0px;
 	}
 
 	.teddy-bear {
 		position: absolute;
 		right: 47%;
-		top: 28%;
+		top: 22%;
 		height: 480px;
 		width: 420px;
 		transform: translate(120%, 0%);
