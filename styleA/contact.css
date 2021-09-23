@@ -19,9 +19,13 @@ body {
 .contact-title h1 {
 	font-size: 32px;
 	margin-bottom: 10px;
+	color: #253b70;
+	text-shadow: 1px 1px 0 #f1f1f1, 1px 1px 0 #f1f1f1;
 }
 .contact-title h2 {
 	font-size: 16px;
+	color: #253b70;
+	text-shadow: 1px 1px 0 #f1f1f1, 1px 1px 0 #f1f1f1;
 }
 
 .contact-form {

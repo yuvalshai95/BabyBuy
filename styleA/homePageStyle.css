@@ -134,6 +134,9 @@ input[type="submit"]:hover {
 	object-fit: contain;
 	border: 5px solid white;
 }
+.row img:hover {
+	border: 2px solid #fc7c7c;
+}
 
 .section-flex {
 	margin-bottom: 5em;
