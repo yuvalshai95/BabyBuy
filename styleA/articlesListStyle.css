@@ -172,3 +172,6 @@ h2 a:hover {
 .ads img {
 	width: 100%;
 }
+.ads img:hover {
+	cursor: pointer;
+}
