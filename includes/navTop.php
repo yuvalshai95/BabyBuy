@@ -86,7 +86,7 @@
             </li>
 
             <li class="nav-item-primary">
-                <a href="#" class="nav-link-primary" style="text-decoration: none;">Contact</a>
+                <a href="contact.php" class="nav-link-primary" style="text-decoration: none;">Contact</a>
             </li>
                 
           </ul>

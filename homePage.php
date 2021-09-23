@@ -90,7 +90,7 @@
             </li>
 
             <li class="nav-item-primary">
-                <a href="#" class="nav-link-primary">Contact</a>
+                <a href="contact.php" class="nav-link-primary">Contact</a>
             </li>
 
           </ul>

@@ -123,7 +123,7 @@ $fm = new Foramt();
 
                  <!-- Age Filter -->
                 <h6 style="color:#fc7c7c; font-weight:bold; margin-top: 1em;">Select Age Group</h6>
-                <ul class="list-group">
+                <ul class="list-group" style="margin-bottom: 100px;">
                     
                     <li class="list-group-item" style="width: 70%;">
                         <div class="form-check">

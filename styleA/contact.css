@@ -1,0 +1,107 @@
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background-image: linear-gradient(180deg, rgb(113, 198, 219), rgb(250, 250, 227));
+	background-size: cover;
+	font-family: sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-title {
+	margin-top: 30px;
+	color: white;
+	text-transform: uppercase;
+}
+
+.contact-title h1 {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+.contact-title h2 {
+	font-size: 16px;
+}
+
+.contact-form {
+	margin-bottom: 9em;
+	margin-top: .5em;
+}
+
+form {
+	margin-top: 50px;
+}
+
+.form-control {
+	width: 600px;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid white;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 16px;
+	margin-top: 15px;
+}
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white;
+	opacity: 1; /* Firefox */
+}
+
+input {
+	height: 45px;
+}
+
+form .submit {
+	background: #fc7c7c;
+	border-color: transparent;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 50px;
+	margin-top: 20px;
+}
+
+form .submit:hover {
+	background-color: #e97979;
+	cursor: pointer;
+}
+
+/* Hero */
+.hero-img {
+	position: absolute;
+	top: 32%;
+	left: 4%;
+	height: 17em;
+}
+
+.info,
+.success,
+.warning,
+.error,
+.validation {
+	border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	width: 600px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+.success {
+	color: #4f8a10;
+	background-color: #dff2bf;
+	background-image: url('https://i.imgur.com/Q9BGTuy.png');
+}
+
+.validation {
+	color: #d63301;
+	background-color: #ffccba;
+	background-image: url('https://i.imgur.com/GnyDvKN.png');
+}
