@@ -1,14 +1,8 @@
 5) in product page -> shipping price???
 
-10) change all delete/edit btn on admin panel from GET to POST
-
 11) make email html designed template
 
 12) on productlist page in the email body make all info dynamic and fix on first load empty vars for error fix -> can't pass images to email(dont try to fix)
-
-15) add contact form?
-
-18) on product page change method from GET to POST or refer user to 404 page if he changes the url
 
 28) go over all pages where nav top is included and if there is another class included delete it (all classes are included in the nav so its duplicate code)
 
