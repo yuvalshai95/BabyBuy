@@ -159,3 +159,16 @@ h2 a:hover {
 	padding-left: 10px;
 	transition: all 0.3s;
 }
+
+.ads {
+	background: red;
+	height: 400px;
+	width: 25%;
+	position: absolute;
+	top: 12em;
+	right: 6em;
+}
+
+.ads img {
+	width: 100%;
+}

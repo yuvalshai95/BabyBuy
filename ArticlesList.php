@@ -99,6 +99,10 @@
     </div>
 </div>
 
+<!-- right side ad -->
+<div class="ads">
+    <img src="img/ads-dog.jpg" alt="">
+</div>
 
 
     <!-- footer-->
