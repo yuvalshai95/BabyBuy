@@ -140,3 +140,27 @@ input[type="submit"]:hover {
 	margin-bottom: 5em;
 	min-height: 34em;
 }
+
+/* Top banner */
+.banner-top {
+	background-color: #7298a5;
+	padding: 50px 0;
+	margin-top: .3em;
+}
+
+.banner-top .row {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.banner-top .row .col {
+	text-align: center;
+	color: white;
+}
+
+.banner-top .row .col h1 {
+	color: #fdfeff;
+}
+.banner-top .row .col p {
+	color: #fafdfb;
+}

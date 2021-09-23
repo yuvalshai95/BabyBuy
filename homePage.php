@@ -175,17 +175,31 @@
 </script>
  <!---------------------------------------------------------------------------------------------------------------->
 
-    <br> <br> <br>
+  <section>
+    <div class="banner-top">
+      <div class="row">
 
+        <div class="col">
+          <h1>Declutter</h1>
+          <p>Breath new life into your home</p>
+          <p>and sell last year's go-tos.</p> 
+        </div>
 
-    <!-- search line --> 
+        <div class="col">
+          <h1>Discover</h1>
+          <p>Shop one-of-a-kind treasures</p>
+          <p>and all of yours favorite brands.</p>
+        </div>
 
-    <div class="box">
-        <form action="search.php" method="GET">
-            <input type="text" name="search" placeholder="Search For Products ">
-            <input type="submit" name="" value="Search">
-        </form>
+        <div class="col">
+          <h1>All from home</h1>
+          <p>Make your space feel more like</p>
+          <p>home without ever leaving it.</p>
+        </div>
+
+      </div>
     </div>
+  </section>
 
     <br> <br>
     <!--  .............................................................................................................  -->
@@ -210,6 +224,20 @@
   </ul>
 </div>
 <!--Flex Slider END -->
+<br><br><br><br><br><br>
+
+
+    <!-- search line --> 
+
+    <div class="box">
+        <form action="search.php" method="GET">
+            <input type="text" name="search" placeholder="Search for anything ">
+            <input type="submit" name="" value="Search">
+        </form>
+    </div>
+
+
+
 </section>
 <!---------------------------------------------------------------------------------------------------------------->
 
@@ -317,6 +345,13 @@
     <div class="title"><h4>RECENTLY ADDED</h4></div>
     <?php include 'productCards.php'; ?>
     <!-- Product Cards - recent added -->
+
+    <!-- Banner -->
+    <section>
+      <div class="banner">
+
+      </div>
+    </section>
 
     <!-- Top Categories -->
     <section class="categories">
