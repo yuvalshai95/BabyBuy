@@ -101,7 +101,7 @@
 
 <!-- right side ad -->
 <div class="ads">
-    <img src="img/ads-dog.jpg" alt="">
+    <img src="img/ads-labor.jpg" alt="">
 </div>
 
 
