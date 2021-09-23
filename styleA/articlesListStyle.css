@@ -6,6 +6,7 @@ body {
 	background: #fffafa;
 	display: flex;
 	flex-direction: column;
+	min-height: 155vh;
 }
 
 h1,
