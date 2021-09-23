@@ -348,8 +348,21 @@
 
     <!-- Banner -->
     <section>
-      <div class="banner">
+      <div class="banner-bottom">
+        <div class="row-2">
 
+          <div class="col-2">
+            <img src="img/kids-banner.png" alt="">
+          </div>
+
+          <div class="col-2">
+            <p class="top">Lorem Ipsum is simply dummy text </p>
+            <h1>Lorem Ipsum</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>                         
+            <p>passages, and more recently with desktop publishing software like Aldus.</p>                         
+          </div>
+
+        </div>                                    
       </div>
     </section>
 

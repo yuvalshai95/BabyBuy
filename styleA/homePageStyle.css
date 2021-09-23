@@ -86,7 +86,7 @@ input[type="submit"]:hover {
 /* *********************** end search line ************************* */
 
 .title {
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	position: relative;
 	text-align: center;
 	padding-bottom: 10px;
@@ -109,9 +109,8 @@ input[type="submit"]:hover {
 }
 
 /*  Categories section  */
-
 .categories {
-	background-color: #f4f4f4;
+	margin-bottom: 100px;
 }
 
 .row {
@@ -163,4 +162,28 @@ input[type="submit"]:hover {
 }
 .banner-top .row .col p {
 	color: #fafdfb;
+}
+
+/* Bottom Bannter */
+.banner-bottom {
+	background: radial-gradient(#fff, #ffd6d6);
+}
+.banner-bottom .row-2 {
+	display: flex;
+	padding: 50px 0;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.col-2 .top {
+	color: gray;
+	position: absolute;
+	top: 152em;
+}
+.col-2 h1 {
+	font-size: 48px;
+	margin-top: 1em;
+	margin-bottom: .5em;
 }
