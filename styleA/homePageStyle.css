@@ -137,7 +137,6 @@ input[type="submit"]:hover {
 }
 
 .section-flex {
-	background-color: #f4f4f4;
 	margin-bottom: 5em;
-	min-height: 39em;
+	min-height: 34em;
 }
