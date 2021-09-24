@@ -108,17 +108,25 @@ $format  = new Foramt();
 								<td align="center" style="padding:0;">
 								<table role="presentation" style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
 									<tr>
-									<td align="center" style="padding:40px 0 30px 0;background:orange;">
-										<img src="https://assets.codepen.io/210284/h1.png" alt="" width="300" style="height:auto;display:block;" />
+									<td align="center" style="padding:5px 0 10px 0;background:#253B70;">
+										<img src="https://www.fergal.it/images/varie/icona-email-300x300.png" class="mail-img" alt="" width="100" style="height:auto;display:block;" />
+										<br>
+										<h3 style="color: white; text-align: center; font-size: 37px; font-family: Gisha; margin-top: 0px; margin-bottom: 0px;">Reminder Email</h3>
 									</td>
 									</tr>
 									<tr>
 									<td style="padding:36px 30px 42px 30px;">
 										<table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
 										<tr>
-											<td style="padding:0 0 36px 0;color:#153643;">
-											<h1 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Creating Email Magic '.$userDetails['LastName'].'</h1>
-											<p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan et dictum, nisi libero ultricies ipsum, posuere neque at erat.</p>
+											<td style="padding:0 0 36px 0;color:#153643; direction: ltr;">
+											<h1 style="font-size:24px;margin:0 0 20px 0;font-family:Gisha;">Hello '.$userDetails['FirstName'].'!</h1>
+											<p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Gisha;">
+											We noticed that there are products you posted a long time ago.<br>
+											Have these products been discounted?<br>
+											We will be happy if you can update the status of the products on the site to "Sold".<br><br>
+											Do you have more products to advertise?<br>
+											Feel free to publish them on our website at any time!<br><br>
+											</p>
 											
 											</td>
 										</tr>
@@ -130,14 +138,14 @@ $format  = new Foramt();
 									
 									
 									<tr>
-							<td style="padding:30px;background:#ee4c50;">
+							<td style="padding:30px;background:#FF642F;">
 							<table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
 							<tr>
 							<td style="padding:0;width:50%;" align="left">
-								<p style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
-								&reg; Someone, Somewhere 2021<br/>
+								<p style="margin:0;font-size:14px;line-height:16px;font-family:Gisha;color:#ffffff;">
+								&reg; Yuval & Adi, Baby-Buy 2021<br/>
 							</td>
-							<td style="padding:0;width:50%;" align="right">
+							<td style="padding:0; width: 25%; padding-right: 10px;" align="right">
 								<table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
 								<tr>
 									<td style="padding:0 0 0 10px;width:38px;">
