@@ -29,6 +29,7 @@ $format  = new Foramt();
 			});
 		</script>';
 	}else{
+		$userDetails['FirstName'] = "";
 		$userDetails['LastName']=" ";
 		// User email was not received by POST method
 		$userEmail = "";
