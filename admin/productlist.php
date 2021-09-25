@@ -112,7 +112,7 @@ $format  = new Foramt();
 									<td align="center" style="padding:5px 0 10px 0;background:#253B70;">
 										<img src="https://www.fergal.it/images/varie/icona-email-300x300.png" class="mail-img" alt="" width="100" style="height:auto;display:block;" />
 										<br>
-										<h3 style="color: white; text-align: center; font-size: 37px; font-family: Gisha; margin-top: 0px; margin-bottom: 0px;">Reminder Email</h3>
+										<h3 style="color: white; text-align: center; font-size: 37px; font-family: Gisha; margin-top: 0px; margin-bottom: 0px;">Reminder</h3>
 									</td>
 									</tr>
 									<tr>
