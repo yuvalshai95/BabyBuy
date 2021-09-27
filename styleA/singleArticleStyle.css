@@ -197,3 +197,24 @@ h2 a:hover {
 	padding-left: 10px;
 	transition: all 0.3s;
 }
+
+.ads {
+	position: absolute;
+	top: 14em;
+	right: 10em;
+	width: 22%;
+}
+.ads-shoes {
+	position: absolute;
+	top: 70em;
+	right: 10em;
+	width: 22%;
+}
+
+.ads:hover {
+	cursor: pointer;
+}
+
+.ads-shoes:hover {
+	cursor: pointer;
+}

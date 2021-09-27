@@ -30,6 +30,7 @@
     
 
 
+
 <div class="content clearfix">
     <div class="main-content single">
 
@@ -79,6 +80,8 @@
 </div>
 
 
+<img class="ads" src="img/ads-labor2.jpg" alt="">
+<img class="ads-shoes" src="img/ads-shoes.jpg" alt="">
 
 
 <!-- footer-->
