@@ -71,7 +71,7 @@ public function getSimilarProducts($category_id){
 }
 
 public function getUserProduct($pdId , $userId){
-  $query = "SELECT users.* 
+  $query = "SELECT users.* , product.*
             FROM product 
             INNER JOIN users ON product.UserID = users.UserID 
             WHERE product.ProductID = '$pdId' AND product.UserID = '$userId'";

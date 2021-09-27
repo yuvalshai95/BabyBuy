@@ -31,6 +31,8 @@ $format  = new Foramt();
 	}else{
 		$userDetails['FirstName'] = "";
 		$userDetails['LastName']=" ";
+		$userDetails['Price'] = " ";
+		$userDetails['ProductName'] = " ";
 		// User email was not received by POST method
 		$userEmail = "";
 	}
@@ -122,11 +124,16 @@ $format  = new Foramt();
 											<td style="padding:0 0 36px 0;color:#153643; direction: ltr;">
 											<h1 style="font-size:24px;margin:0 0 20px 0;font-family:Gisha;">Hello '.$userDetails['FirstName'].'!</h1>
 											<p style="margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Gisha;">
-											We noticed that there are products you posted a long time ago.<br>
-											Have these products been discounted?<br>
-											We will be happy if you can update the status of the products on the site to "Sold".<br><br>
+											We have noticed that there are products you posted a long time ago.<br>
+											Would you consider giving a discount on those products?<br>
+											If you sold that product we will be happy if you can update the status of the products on the site to "Sold".<br><br>
+											<h2 style="margin: 0 0 5px 0;display: inline-block;">This reminder is for the following product: </h2> <br>
+											<h3 style="margin: 0 0 0 0;display: inline-block;">Product Name: </h3> '.$userDetails['ProductName'].' <br>
+											<h3 style="margin: 0 0 0 0;display: inline-block;">Price:</h3> $'.$userDetails['Price'].' <br>
+											<br><br>
 											Do you have more products to advertise?<br>
 											Feel free to publish them on our website at any time!<br><br>
+											<button style="background-color: #253b70;border-color: #253b70;padding:10px;border-radius: 10%;"> <a href="http://localhost/babybuy/homepage.php" style="color:white;text-decoration:none;font-size:18px;">Visit BabyBuy</a> </button>
 											</p>
 											
 											</td>
@@ -139,7 +146,7 @@ $format  = new Foramt();
 									
 									
 									<tr>
-							<td style="padding:30px;background:#FF642F;">
+							<td style="padding:30px;background:#fc7c7c;">
 							<table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">
 							<tr>
 							<td style="padding:0;width:50%;" align="left">
