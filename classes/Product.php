@@ -52,6 +52,15 @@ public function getRecentProducts(){
   return $result;
 }
 
+public function getRecentProductsForProductPage(){
+  $query = "SELECT *
+            FROM product p
+            ORDER BY ProductTime DESC 
+            LIMIT 4";
+  $result = $this->db->select($query);
+  return $result;
+}
+
 
 public function getProductByIdAndUser($pid, $uid){
   $query = "SELECT product.*, users.*, category.*

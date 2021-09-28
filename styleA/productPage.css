@@ -12,7 +12,6 @@ body {
 
 .productPageContainer {
 	font-family: "Montserrat", sans-serif;
-	margin-bottom: 30px;
 }
 
 /*  Pictures style - start  */
@@ -37,21 +36,31 @@ body {
 	background-color: #fff;
 	border-radius: 5px;
 	padding: 20px 50px;
+	box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 .small-img-row {
 	display: flex;
-	justify-content: space-around;
+	justify-content: left;
+	margin-top: 20px;
 }
 
 .col-2 img {
-	max-width: 100%;
+	/*max-width: 100%;*/
+	max-width: 410px;
 	padding: 50px 0;
+	max-height: 400px;
 }
 
 .small-img-col {
 	flex-basis: 24%;
 	cursor: pointer;
+    box-shadow: 0 6px 6px 0 rgb(0 0 0 / 10%), 0 -1px 10px 0 rgb(0 0 0 / 10%);
+	margin: 5px;
+}
+
+.big-img {
+	height: 400px;
 }
 
 .single-product .col-2 img {
@@ -60,6 +69,7 @@ body {
 
 .single-product .col-2 {
 	padding: 20px;
+	align-self: flex-start;
 }
 
 /*  Pictures style - end  */
@@ -72,9 +82,9 @@ body {
 }
 
 .col-2 h1 {
-	font-size: 50px;
-	line-height: 60px;
-	margin: 25px 0;
+	font-size: 40px;
+	line-height: 50px;
+	margin: 20px 0;
 }
 
 .single-product h4 {
@@ -83,14 +93,22 @@ body {
 	font-weight: bold;
 }
 
+.title{
+	margin-left: 14.5%;
+}
+
 .single-product h5 {
-	margin: 3px 0;
+	line-height: 1.5rem;
 	font-size: 16px;
 }
 
 a {
 	text-decoration: none;
 	color: #555;
+}
+
+.wishlist{
+	color: white;
 }
 
 .single-product .fa {
@@ -105,8 +123,8 @@ a {
 
 .btn {
 	display: inline-block;
-	background-color: rgb(248, 185, 48);
-	color: #edf0f1;
+	background-color: #253B70;
+	color: #edf0f1 !important;
 	padding: 8px 30px;
 	margin: 30px 0;
 	border-radius: 10px;
@@ -114,7 +132,7 @@ a {
 }
 
 .btn:hover {
-	background: rgba(226, 136, 0, 0.808);
+	background: #3657a5;
 	cursor: pointer;
 }
 
@@ -154,7 +172,7 @@ a {
 .resp-container {
 	position: relative;
 	overflow: hidden;
-	padding-top: 56.25%;
+	padding-top: 58.25%;
 }
 
 iframe {

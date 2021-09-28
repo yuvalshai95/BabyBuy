@@ -45,12 +45,13 @@
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img  src="<?php  
-                        $img = $pd->getSingleImagesByProductId($pd_id)->fetch_assoc(); 
-                        $single = $img['ImagePath']; 
-                        $single = str_replace('../','',$single); 
-                        echo $single?>" width="100%" id="ProductImg">
-
+                <div class="big-img">
+                    <img  src="<?php  
+                            $img = $pd->getSingleImagesByProductId($pd_id)->fetch_assoc(); 
+                            $single = $img['ImagePath']; 
+                            $single = str_replace('../','',$single); 
+                            echo $single?>" width="100%" id="ProductImg">
+                </div>
                 <!-- get all product images from database -->
                 <div class="small-img-row">
                 <?php
@@ -93,7 +94,7 @@
             <div class="col-2">
                 <p><?= $result['CategoryName']; ?></p>
                 <h1><?= $result['ProductName']; ?></h1>
-                <h4>Price: $<?= $result['Price']; ?> | Shipping price: $3</h4>
+                <h4>$<?= $result['Price']; ?> | <?= $result['Status']; ?></h4>
                 <h5>Age: 
                     <?php
                         if ($result['Age']>0 && $result['Age']<4) {
@@ -108,16 +109,17 @@
                 </h5>
                 <h5>Pickup Option: <?= $result['PickupOptions']; ?></h5>
                 <h5>Condition: <?= $result['ProductCondition']; ?></h5>
-                <h5>Status: <?= $result['Status']; ?></h5>
+                
 
                 <!-- Wishlist button if user logged in-->
                 <?php if(Session::get("userId")) {?>
-                <span class="btn" onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" > <i class="fas fa-heart"></i> Add to Wishlist</span>
+                <span class="btn" onclick="addToWishlist(<?php  echo Session::get("userId")?>,<?php  echo $result['ProductID']; ?>,<?php echo $result['UserID']; ?>)" > <i class="fas fa-heart wishlist"></i> Add to Wishlist</span>
                 <?php } ?>
 
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
                 <p class="prodDetails"> <?= $result['Description']; ?></p>
+                
             </div>
         </div>
 
@@ -186,9 +188,14 @@
     </div>
 </div>
 
+    <!-- Product Cards - recent added -->
+    <div class="productCards-productPage">
+        <div class="title"><h4>MORE PRODUCTS</h4></div>
+        <?php include 'productCardsForProductPage.php'; ?>
+    </div>
+    
+    <!-- Product Cards - recent added -->
 
-    <!-- Products Slider-->
-    <?php include_once 'productsSlider.php'; ?>
 
 
 
