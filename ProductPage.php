@@ -97,13 +97,15 @@
                 <h4>$<?= $result['Price']; ?> | <?= $result['Status']; ?></h4>
                 <h5>Age: 
                     <?php
-                        if ($result['Age']>0 && $result['Age']<4) {
-                            echo '0-3';
+                        if ($result['Age']<4) {
+                            echo '0-3 months';
                         }
-                        else if($result['Age']>3 && $result['Age']<8){
-                            echo '4-7';
+                        else if($result['Age']<12){
+                            echo '0-12 months';
+                        }else if($result['Age']<36){
+                            echo '12-36 months';
                         }else{
-                            echo '8+';
+                            echo '36+ months';
                         }
                     ?>
                 </h5>
@@ -126,7 +128,7 @@
         <div class="row-seller">
             <div class="col-2 seller">
                 <div class="details">
-                    <h3>Seller Details</h3>
+                    <h3>Seller Contact Information</h3>
                     <p class="sellerDetails"><?= $result['FirstName']; ?> <?= $result['LastName']; ?></p>
                     <p class="sellerDetails"><?= $result['Address']; ?>, <?= $result['City']; ?></p>
                     <p class="sellerDetails"><?= $result['PhoneNumber']; ?></p>

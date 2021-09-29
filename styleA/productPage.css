@@ -142,9 +142,14 @@ a {
 }
 
 .whatsappIcon {
-	text-align: right;
+	text-align: center;
 	width: 200px;
 	margin-top: 60px;
+}
+
+.whatsappIcon:hover {
+	transform: scale(2) translateX(10px);
+	transition: all ease 1s;
 }
 
 .whatsappIcon .whatsapp {
