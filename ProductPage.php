@@ -92,7 +92,7 @@
 
 
             <div class="col-2">
-                <p><?= $result['CategoryName']; ?></p>
+                <p style="color:#adabab;font-weight: bold;"><a style="color:#adabab;font-weight: bold;" href="homePage.php">Home</a>  / <?= $result['CategoryName']; ?></p>
                 <h1><?= $result['ProductName']; ?></h1>
                 <h4>$<?= $result['Price']; ?> | <?= $result['Status']; ?></h4>
                 <h5>Age: 
@@ -192,7 +192,7 @@
 
     <!-- Product Cards - recent added -->
     <div class="productCards-productPage">
-        <div class="title"><h4>MORE PRODUCTS</h4></div>
+        <div class="title"><h4>SIMILAR PRODUCTS</h4></div>
         <?php include 'productCardsForProductPage.php'; ?>
     </div>
     
