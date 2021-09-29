@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 10, 2021 at 11:49 AM
+-- Generation Time: Sep 29, 2021 at 02:41 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `ArticleTimeStamp` timestamp NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ArticleID`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `articles`
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `articles_images` (
   `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ImageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `articles_images`
@@ -125,7 +125,9 @@ INSERT INTO `articles_images` (`ImageID`, `ImageName`, `ImagePath`, `ImageRefren
 (68, '6119631e500055.69768306.jpeg', 'Web/6119631e500055.69768306.jpeg', '865786994'),
 (69, '6119631e502156.04345126.jpeg', 'Web/6119631e502156.04345126.jpeg', '865786994'),
 (70, '6119631e5045d6.15746078.jpeg', 'Web/6119631e5045d6.15746078.jpeg', '865786994'),
-(71, '6119659575e260.04917933.jpeg', 'Web/6119659575e260.04917933.jpeg', '1904489000');
+(71, '6119659575e260.04917933.jpeg', 'Web/6119659575e260.04917933.jpeg', '1904489000'),
+(72, '6148d9d8c61592.75848218.jpeg', 'Web/6148d9d8c61592.75848218.jpeg', '1345427714'),
+(73, '6148d9d8c63ff1.69113303.jpeg', 'Web/6148d9d8c63ff1.69113303.jpeg', '1345427714');
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `CategoryID` int(11) NOT NULL AUTO_INCREMENT,
   `CategoryName` varchar(25) NOT NULL,
   PRIMARY KEY (`CategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -190,18 +192,17 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`ProductID`),
   KEY `Product` (`UserID`),
   KEY `Product2` (`ProductCategory`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`ProductID`, `UserID`, `ProductCategory`, `ProductName`, `Description`, `PickupOptions`, `Age`, `Price`, `Status`, `ProductCondition`, `ProductTime`, `ImageRefrence`) VALUES
-(20, 37, 12, 'Leather Shoes', 'orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'local', 3, 99, 'Available', 'new', '2021-09-06 12:58:34', '1109603186'),
-(21, 1, 5, 'Single to Double Stroller With Extendable', 'Great opportunity to get this coveted, sleek stroller for your precious cargo. This stroller has all of the bells and whistles you need. Not only does it provide comfort for baby, it provides a smooth push around town. The updated extendable canopy has SPF 50 sun protection and comes with an extendable sunshade to provide full protection. It has enhanced features including the ability to add a second seat (sold separately) for multiple double stroller configurations to work for your growing family, no flat wheels, a front facing/rear facing seat and full recline.\"', 'local', 12, 120, 'Available', 'barley', '2021-09-10 11:07:13', '1651021212'),
+(21, 1, 5, 'Single to Double Stroller With Extendable', 'Great opportunity to get this coveted, sleek stroller for your precious cargo. This stroller has all of the bells and whistles you need. Not only does it provide comfort for baby, it provides a smooth push around town. The updated extendable canopy has SPF 50 sun protection and comes with an extendable sunshade to provide full protection. It has enhanced features including the ability to add a second seat (sold separately) for multiple double stroller configurations to work for your growing family, no flat wheels, a front facing/rear facing seat and full recline.\"', 'local', 3, 215, 'Available', 'new', '2021-09-10 11:07:13', '1651021212'),
 (22, 1, 5, 'BabyBjorn Baby Carrier One Air', 'The Original Baby Bjorn carrier thatâ€™s been pleasing families for years just got a cool upgrade, and itâ€™s pretty great! With the Baby Bjorn One Air, you can carry your little one from birth to age 3 without the need for an infant insert. It features 4 different carry positions: newborn, facing in, facing out, and back carry, and the wide seat insures an ergonomic and hip healthy alignment for baby. You will appreciate the mesh fabric which allows for airflow, the padded shoulder straps, and supportive waist belt. Carrying Positions: Facing Inward, Facing Outward, Back Carry Baby Size: 8-33 lbs (0-3 years) \"carry', 'shipping', 36, 132, 'Available', 'gently', '2021-09-10 12:03:02', '1617754952'),
-(23, 1, 12, 'Maxi Cosi Mico Max Infant Car Seat', 'Ultra comfort and added safety features make this seat the best option for your child. It features side impact protection, infant support for even the smallest babies (starts at 4 lbs), a large canopy, and a comfortable handle. One of the best features is that cleaning it is a breeze!\" car seat', 'local', 40, 159, 'Available', 'open', '2021-09-10 12:13:09', '1503112379'),
-(24, 1, 1, 'Babyletto Hudson three in one Crib', 'This sleek and modern crib makes a charming centerpiece in any nursery. It features 4 mattress height settings and converts into a toddler bed and daybed. crib', 'local', 36, 219, 'Available', 'new', '2021-09-10 12:25:30', '1615977015');
+(24, 1, 1, 'Babyletto Hudson three in one Crib', 'This sleek and modern crib makes a charming centerpiece in any nursery. It features 4 mattress height settings and converts into a toddler bed and daybed. crib', 'local', 36, 219, 'Available', 'new', '2021-09-27 12:38:06', '1615977015'),
+(26, 37, 12, 'Leather Shoes', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'local', 3, 65, 'Available', 'barley', '2021-09-25 19:46:25', '1231698138');
 
 -- --------------------------------------------------------
 
@@ -238,42 +239,16 @@ CREATE TABLE IF NOT EXISTS `slider` (
   `SliderTitle` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `SliderImage` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`SliderID`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `slider`
 --
 
 INSERT INTO `slider` (`SliderID`, `SliderTitle`, `SliderImage`) VALUES
-(22, 'slider4', 'Web/61153afbe03eb2.21436757.jpg'),
-(21, 'slider3', 'Web/6115329be24319.40946093.jpg'),
-(19, 'slider1', 'Web/6115328e861c37.17563292.jpg'),
-(20, 'slider2', 'Web/611532958bbf03.55136033.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sub_category`
---
-
-DROP TABLE IF EXISTS `sub_category`;
-CREATE TABLE IF NOT EXISTS `sub_category` (
-  `SubCategoryID` int(11) NOT NULL AUTO_INCREMENT,
-  `CategoryID` int(11) NOT NULL,
-  `SubCategoryName` varchar(25) NOT NULL,
-  PRIMARY KEY (`SubCategoryID`),
-  KEY `SubCategory1` (`CategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sub_category`
---
-
-INSERT INTO `sub_category` (`SubCategoryID`, `CategoryID`, `SubCategoryName`) VALUES
-(7, 1, 'sub1'),
-(8, 12, 'sub2'),
-(10, 5, 'sub4'),
-(11, 5, 'sub5');
+(26, 'Stroller', 'Web/6148e9c4dd41d0.97903032.jpg'),
+(28, 'Special Prices', 'Web/6148eedd7fb7c6.95604054.jpg'),
+(29, 'Welcome', 'Web/6148f2689624f4.84033046.jpg');
 
 -- --------------------------------------------------------
 
@@ -293,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Interest` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Address` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`UserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -303,7 +278,11 @@ INSERT INTO `users` (`UserID`, `FirstName`, `LastName`, `City`, `UserEmail`, `Us
 (1, 'Yuval', 'Shai', 'Ramat Yishai', 'yuvalshai95@gmail.com', 'Yuval@9530', '0528954775', NULL, 'Hamarganyot 13'),
 (2, 'Yuval', 'Cohen', 'Natanya', 'yuval1234@gmail.com', 'yuval123456', '0528954775', NULL, 'dereh dganya 50'),
 (37, 'xxx', 'xxx', 'xxx', 'xxx@gmail.com', 'Yuval@9530', '0528954775', 'Shoes', 'xxx'),
-(38, 'linoy', 'machloof', 'Natanya kiryat hasharon', 'linoy@gmail.com', 'Linoy@1234', '0524299059', 'Shoes', '50');
+(38, 'linoy', 'machloof', 'Natanya kiryat hasharon', 'linoy@gmail.com', 'Linoy@1234', '0524299059', 'Shoes', '50'),
+(39, 'linoy', 'attias', 'natanya', 'linoy123@gmail.com', 'Yuval@9530', '0528954775', 'Shoes Toys', 'dganya'),
+(40, 'idan', 'shai', 'ramat yishai', 'idan@gmail.com', 'Yuval@9530', '0528954775', 'Bags', 'hamrganyot 13'),
+(41, 'test', 'test', 'test', 'test@gmail.com', 'Yuval@9530', '0528954775', 'Shoes,Bags,Toys', 'test'),
+(42, 'user', 'user', 'user', 'user@gmail.com', 'Yuval@9530', '0528954775', 'Bags', 'user');
 
 -- --------------------------------------------------------
 
@@ -318,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `users_products_images` (
   `ImagePath` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ImageRefrence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ImageID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users_products_images`
@@ -344,7 +323,16 @@ INSERT INTO `users_products_images` (`ImageID`, `ImageName`, `ImagePath`, `Image
 (17, '613b248a47edd1.22030171.jpg', '../admin/Web/613b248a47edd1.22030171.jpg', '1615977015'),
 (18, '613b248a481ff9.75106788.jpg', '../admin/Web/613b248a481ff9.75106788.jpg', '1615977015'),
 (19, '613b248a483e67.17259880.jpg', '../admin/Web/613b248a483e67.17259880.jpg', '1615977015'),
-(20, '613b248a485a30.30505565.jpg', '../admin/Web/613b248a485a30.30505565.jpg', '1615977015');
+(20, '613b248a485a30.30505565.jpg', '../admin/Web/613b248a485a30.30505565.jpg', '1615977015'),
+(21, '613dda1c694012.88602899.jpeg', '../admin/Web/613dda1c694012.88602899.jpeg', '973262936'),
+(22, '61474e98e45423.68014351.jpg', '../admin/Web/61474e98e45423.68014351.jpg', '875857501'),
+(23, '61474e98e49b98.54816961.jpg', '../admin/Web/61474e98e49b98.54816961.jpg', '875857501'),
+(24, '61474e98e4c6b9.26525269.jpg', '../admin/Web/61474e98e4c6b9.26525269.jpg', '875857501'),
+(25, '61474e98e4ef17.03202571.jpg', '../admin/Web/61474e98e4ef17.03202571.jpg', '875857501'),
+(26, '61474ec58350d9.79806848.jpg', '../admin/Web/61474ec58350d9.79806848.jpg', '1231698138'),
+(27, '61474ec5838de9.09023979.jpg', '../admin/Web/61474ec5838de9.09023979.jpg', '1231698138'),
+(28, '61474ec583bc55.39307904.jpg', '../admin/Web/61474ec583bc55.39307904.jpg', '1231698138'),
+(29, '61474ec583e063.34998113.jpg', '../admin/Web/61474ec583e063.34998113.jpg', '1231698138');
 
 -- --------------------------------------------------------
 
@@ -359,16 +347,21 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
   `UserID` int(11) NOT NULL,
   `UserWishlistId` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
-  KEY `Wishlist1` (`ProductID`),
-  KEY `Wishlist2` (`UserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
+  KEY `Wishlist2` (`UserID`),
+  KEY `Wishlist1` (`ProductID`)
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `wishlist`
 --
 
 INSERT INTO `wishlist` (`ID`, `ProductID`, `UserID`, `UserWishlistId`) VALUES
-(84, 20, 37, 1);
+(95, 24, 1, 40),
+(97, 22, 1, 40),
+(124, 21, 1, 37),
+(125, 22, 1, 37),
+(132, 22, 1, 42),
+(136, 26, 37, 1);
 
 --
 -- Constraints for dumped tables
@@ -389,16 +382,10 @@ ALTER TABLE `product`
   ADD CONSTRAINT `Product2` FOREIGN KEY (`ProductCategory`) REFERENCES `category` (`CategoryID`);
 
 --
--- Constraints for table `sub_category`
---
-ALTER TABLE `sub_category`
-  ADD CONSTRAINT `SubCategory1` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`);
-
---
 -- Constraints for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  ADD CONSTRAINT `Wishlist1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`),
+  ADD CONSTRAINT `Wishlist1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`) ON DELETE CASCADE,
   ADD CONSTRAINT `Wishlist2` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 COMMIT;
 

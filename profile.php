@@ -110,7 +110,7 @@
 ?>
 <div class="container-profileDetails">
 
-    <img class="background-img-profile-details" src="img/profileDetails.png" alt="baby-profile-details">
+    <img class="background-img-profile-details" src="img/profile.png" alt="baby-profile-details">
 
 <table>
 
