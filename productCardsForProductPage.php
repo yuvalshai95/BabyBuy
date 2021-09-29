@@ -29,7 +29,7 @@
     <div class="container">
 
         <?php
-            $getpd = $pd->getRecentProductsForProductPage();
+            $getpd = $pd->getSimilarProducts($category_id);
             if($getpd){
                 while($result = $getpd->fetch_assoc()){
 
