@@ -5,14 +5,22 @@
     require_once 'functions.inc.php';
 
     // Form user inputs
-    $name = $_POST['name'];
-    $userEmail = $_POST['email'];
-    $message = $_POST['message'];
+    $name           = $_POST['name'];
+    $userEmail      = $_POST['email'];
+    $message        = $_POST['message'];
+    $responseKey    = $_POST['g-recaptcha-response'];
+
+
 
     //Error handling
     if(empty($name) || empty($userEmail) || empty($message)){
 
         header('location: ../contact.php?error=empty');
+        exit();
+    }
+
+    else if(empty($responseKey)){
+        header('location: ../contact.php?error=recaptcha');
         exit();
     }
 
@@ -28,6 +36,7 @@
         header('location: ../contact.php?error=mail');
         exit();
     }
+
 
     // Define name spaces
     use PHPMailer\PHPMailer\PHPMailer;
@@ -75,7 +84,7 @@
     $mail->setFrom("babybuyservice@gmail.com");
 
     // email body
-    $mail->Body = 'User Name: '.$name.'<br/>'.'User Email: '.$userEmail.'<br/>'.'User Message: '.$message;
+    $mail->Body = 'User Name: '.$name.'<br/>'.'Email: '.$userEmail.'<br/>'.'Message: '.$message;
 
 	// Add recipient 
 	$mail->addAddress("babybuyservice@gmail.com");
@@ -87,6 +96,9 @@
 	$mail->smtpClose();
 
     header('location: ../contact.php?error=none');
+    
+
+    
     
     
 

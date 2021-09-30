@@ -75,6 +75,10 @@ form .submit:hover {
 	cursor: pointer;
 }
 
+.g-recaptcha {
+	margin-left: 28em;
+}
+
 /* Hero */
 .hero-img {
 	position: absolute;

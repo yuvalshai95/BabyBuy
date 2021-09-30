@@ -12,6 +12,11 @@
     <!-- GSAP Animations (for Hero section)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 
+    <!-- reCaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+
+
     <title>Contact Us</title>
 </head>
 <body>
@@ -32,6 +37,9 @@
         else if($_GET["error"] == "none"){
             echo "<div class='success'>We got your email, we will be in touch soon !</div>";
         }
+        else if($_GET["error"] == "recaptcha"){
+            echo "<div class='validation'>Invalid Captcha, Please Try Again</div>";
+        }
             
     }
 ?>
@@ -44,8 +52,8 @@
             <input type="text" name="name" class="form-control" placeholder="Enter First Name"><br/>
             <input type="email" name="email" class="form-control" placeholder="Enter your email"><br/>
             <textarea name="message" class="form-control" placeholder="Enter your message here" rows="4"></textarea><br/>
-            
-            <input type="submit" name="submit" class="form-control submit" value="SEND MESSAGE">
+            <div class="g-recaptcha" data-sitekey="6Lcx0p0cAAAAAMCGsz21cCb4BwMN4LKzvVT3tOUf"></div>
+            <input  type="submit" name="submit" class="form-control submit" value="SEND MESSAGE">
         </form>
 
     </div>
@@ -55,6 +63,7 @@
 </body>
 </html>
 
+<!-- Animation script -->
 <script>
       gsap.from(".contact-title", { opacity: 0, duration: 2, delay: 0, y: -100 });
       gsap.from(".contact-form", { opacity: 0, duration: 2.5, delay: 0.5, y: -100 });
