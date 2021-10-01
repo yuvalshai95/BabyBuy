@@ -351,15 +351,19 @@
       <div class="banner-bottom">
         <div class="row-2">
 
-          <div class="col-2">
+          <div class="col-2" style="width: 42%;">
             <img src="img/kids-banner.png" alt="">
           </div>
 
-          <div class="col-2">
-            <p class="top">Lorem Ipsum is simply dummy text </p>
-            <h1>Lorem Ipsum</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>                         
-            <p>passages, and more recently with desktop publishing software like Aldus.</p>                         
+          <div class="col-2" style="text-align: center; width: 42%;"> 
+            <h1>About Us</h1>
+            <p>Our main goal is to contribute to the community and help people, while saving money by buying cheap products or 
+              selling items you no longer need. <br><br>
+              This also contributes to the environment by recycling items. <br>
+              Our site offers a variety of items that focus on a designated category from pregnancy to children ages 12-14.<br><br>
+              Our goal is to create a society of people and parents with the same language and a common goal - mutual help.<br><br>
+              Have fun surfing!</p>                         
+                                   
           </div>
 
         </div>                                    
@@ -392,19 +396,19 @@
         <div class="row">
 
           <div class="col-items">
-           <a href=search.php?search=toys"><img src="img/babyToys.png" alt=""></a>
-           <p>Toys</p>
+          <p>Toys</p>
+          <a href="search.php?search=toys"><img src="img/babyToys.png" alt=""></a>
           </div>
 
           <div class="col-items">
-           <a href="search.php?search=stroller"><img src="img/BabyStroller.png" alt=""></a> 
-           <p>Strollers</p>
+          <p>Strollers</p>
+          <a href="search.php?search=stroller"><img src="img/BabyStroller.png" alt=""></a> 
           </div>
 
 
           <div class="col-items">
-           <a href="search.php?search=diaper"><img src="img/babyDiapering.png" alt=""></a>
-           <p>Diapering</p>
+          <p>Diapering</p>
+          <a href="search.php?search=diaper"><img src="img/babyDiapering.png" alt=""></a>
           </div>
 
         </div>
