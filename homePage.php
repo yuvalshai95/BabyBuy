@@ -357,12 +357,12 @@
 
           <div class="col-2" style="text-align: center; width: 42%;"> 
             <h1>About Us</h1>
-            <p>Our main goal is to contribute to the community and help people, while saving money by buying cheap products or 
-              selling items you no longer need. <br><br>
+            <p>Our main goal is to contribute to the community and help others, while saving money by buying cheap products or selling items they no longer need.
+              This also contributes to the environment by recycling items. <br><br>
               This also contributes to the environment by recycling items. <br>
-              Our site offers a variety of items that focus on a designated category from pregnancy to children ages 12-14.<br><br>
-              Our goal is to create a society of people and parents with the same language and a common goal - mutual help.<br><br>
-              Have fun surfing!</p>                         
+              Our site offers a variety of items that are focused on a specific categories varies from pregnancy to children through ages 3+.<br><br>
+              Our goal is to create a society of people and parents with common language and common goal - mutual help.<br><br>
+              Have fun browsing</p>                         
                                    
           </div>
 
