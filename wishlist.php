@@ -159,7 +159,7 @@
             <!-- Header -->
             <div class="modal-header">
                 <button style="color:white; background-color:#253b70; padding:5px; border-radius:10px;" type="button" name="close" data-dismiss="modal">X</button>
-                <h4 class="modal-title">User Details</h4>
+                <h4 class="modal-title">Seller Details</h4>
             </div>
 
             <!-- Body, get body content from ajax function call -->

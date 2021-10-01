@@ -1,90 +1,11 @@
 <head>
     <title>Profile</title>
+      <!-- CSS Profile Style -->
+  <link rel="stylesheet" href="styleA/profileStyle.css">
+
 </head>
 
 <?php require_once 'includes/navTop.php'; ?>
-
-<style>
-    .container-profileDetails{
-        width: 100%;
-        padding: 0;
-        margin: 120px auto;
-    }
-
-    table{
-        height: 315px;
-        width: 600px;
-        background-color: rgb(240, 248, 255);
-        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-        border-spacing: 15px;
-        margin-left: 272px;
-    }
-
-    table tr td{
-        text-align: justify;
-    }
-  label{
-      margin-left: 49.5em;
-
-  }
-  .info, .success, .warning, .error, .validation {
-			border: 1px solid;
-			margin: 10px 0px;
-			padding: 15px 10px 15px 50px;
-			background-repeat: no-repeat;
-			background-position: 10px center;
-		}
-
-        .success {
-			color: #4F8A10;
-			background-color: #DFF2BF;
-			background-image: url('https://i.imgur.com/Q9BGTuy.png');
-		}
-
-        .validation{
-			color: #D63301;
-			background-color: #FFCCBA;
-			background-image: url('https://i.imgur.com/GnyDvKN.png');
-		}
-
-    
-    .profileDetails-btn {
-        border: 2px solid #253b70;
-        background: transparent;
-        border-radius: 3px;
-        color: #253b70;
-        text-decoration: none;
-        padding: .5rem 1rem;
-        font-family: 'Montserrat' !important;
-        font-size: 11px;
-        cursor: pointer;
-    }
-    .profileDetails-btn:hover {
-        background-color: #253b70;
-        color: white !important;
-        cursor: pointer;
- 
-    }
-
-    .a-btn {
-        text-decoration: none;
-        color: #253b70;
-    }
-    .a-btn:hover{
-        color: white; 
-    }
-
-    .background-img-profile-details{
-        width: 400px;
-        position: absolute;
-        right: 60px;
-        top: 170px;
-    }
-
-</style>
-
-
-
 
 
 <?php

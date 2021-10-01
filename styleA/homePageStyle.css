@@ -110,12 +110,15 @@ input[type="submit"]:hover {
 
 /*  Categories section  */
 .categories {
-	margin-bottom: 100px;
+	margin-bottom: 40px;
+	padding: 30px 0;
+    background-color: lavender;
 }
 
 .row {
 	display: flex;
 	justify-content: center;
+	margin-top: 25px;
 }
 
 .col-items {
@@ -173,11 +176,10 @@ input[type="submit"]:hover {
 }
 .banner-bottom .row-2 {
 	display: flex;
-	padding: 50px 0;
+	padding: 30px 0;
 	align-items: center;
 	justify-content: space-evenly;
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 60px;
 }
 
 .col-2 .top {
@@ -187,6 +189,5 @@ input[type="submit"]:hover {
 }
 .col-2 h1 {
 	font-size: 48px;
-	margin-top: 1em;
 	margin-bottom: .5em;
 }
