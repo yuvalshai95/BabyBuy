@@ -325,8 +325,18 @@ return $result;
 
 
 public function updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status){
+
+  $name = mysqli_real_escape_string($this->db->link, $name);
+  $description = mysqli_real_escape_string($this->db->link, $description);
+  $price = mysqli_real_escape_string($this->db->link, $price);
+  $pickup = mysqli_real_escape_string($this->db->link, $pickup);
+  $age = mysqli_real_escape_string($this->db->link, $age);
+  $condition = mysqli_real_escape_string($this->db->link, $condition);
+  $status = mysqli_real_escape_string($this->db->link, $status);
+
+
   $query = "UPDATE product
-            SET ProductName = '$name', Description = '$description', Price = '$price', PickupOptions = '$pickup', Age = '$age', ProductCondition = '$condition', Status = '$status'
+            SET ProductName = '$name', Description = '$description', PickupOptions = '$pickup', Age = '$age', Price = '$price', Status = '$status', ProductCondition = '$condition'
             WHERE UserID = '$userId' AND ProductID = '$productId'";
   $this->db->update($query);
 }
