@@ -33,7 +33,7 @@
                     <div class="card-content">
                     <a href="SingleArticlePage.php?articleId=<?php echo $result['ArticleID']; ?>">  <h2 class="card-header"><?= $result['ArticleHeader']; ?></h2> </a>
                     <p class="card-text">
-                           <?php echo $foramt->textShorten($result['ArticleBody'],180) ?>
+                           <?php echo $foramt->textShorten($result['ArticleBody'],110) ?>
                     </p> 
                         
                     </div>
