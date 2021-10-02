@@ -1,7 +1,9 @@
 <?php
 require_once '../DataBase/DB_Config.php';
 require_once '../classes/Product.php';
+require_once '../classes/Category.php';
 
+$category = new Category();
 $pd = new Product();
 
 $id = $_POST['product_id'];
@@ -13,16 +15,34 @@ $row = $getProduct->fetch_assoc();
 
 ?>
 
-<form action="includes/editproduct.inc.php" method="POST" id="edit_form">  
+<form action="includes/editproduct.inc.php" method="POST" id="edit_form"> 
+
                           <label>Name</label>  
                           <input type="text" name="name" id="name" class="form-control" value="<?= $row['ProductName']; ?>" />  
                           <br />  
+
                           <label>Description</label>  
                           <textarea name="description" id="description" class="form-control" rows="4" cols="50" ><?= $row['Description']; ?></textarea>  
                           <br /> 
+
                           <label>Price</label>  
                           <input type="text" name="price" id="price" class="form-control"  value="<?= $row['Price']; ?>" />  
-                          <br />   
+                          <br />
+
+                         <!-- TODO: make dynamic category to static and add selected -->
+                          <label>Select Category</label>
+                          <select id="pdCategory" name="pdCategory" class="form-control">
+                         <?php
+                              $getAllCategories = $category->getAllCategories();
+                              while ($result = $getAllCategories->fetch_assoc()) {   
+                         ?>
+                              <option value="<?= $result['CategoryID'] ?>" <?php if($row['ProductCategory'] == 1){ echo "selected";}
+                                                                                  if($row['ProductCategory'] == 5){ echo "selected";}
+                                                                                  if($row['ProductCategory'] == 12){ echo "selected";} ?> ><?= $result['CategoryName']; ?></option>
+                         <?php } ?>
+                         </select>
+                         <br />
+
                           <label>Select PickUp</label>  
                           <select name="pickup" id="pickup" class="form-control">  
                                <option value="local"    <?php if($row["PickupOptions"]=="local"){ echo "selected";} ?>   >Local</option>  
@@ -30,8 +50,6 @@ $row = $getProduct->fetch_assoc();
                           </select>  
                           <br />  
 
- 
-                         
                           <label>Select Age Group</label> 
                           <select name="age" id="age" class="form-control">  
                                <option value="3"  <?php if($row["Age"]==3){ echo "selected";} ?>  >0-3 months</option>  
@@ -40,6 +58,7 @@ $row = $getProduct->fetch_assoc();
                                <option value="40" <?php if($row["Age"]==40){ echo "selected";} ?> >36+ months</option>  
                           </select>    
                           <br />
+
                           <label>Select Condition</label>  
                           <select name="condition" id="condition" class="form-control">  
                                <option value="new"    <?php if($row["ProductCondition"]=="new"){ echo "selected";} ?>   >Brand New</option>  
@@ -48,12 +67,14 @@ $row = $getProduct->fetch_assoc();
                                <option value="gently" <?php if($row["ProductCondition"]=="gently"){ echo "selected";} ?> >Gently Used</option>  
                           </select>    
                           <br />
+
                           <label>Select Status</label>  
                           <select name="status" id="status" class="form-control">  
                                <option value="Available" <?php if($row["Status"]=="Available"){ echo "selected";} ?> >Available</option>  
                                <option value="sold"      <?php if($row["Status"]=="sold"){ echo "selected";} ?> >Sold</option>  
                           </select>    
-                          <br />    
+                          <br />  
+
                           <input type="submit" name="edit" id="edit" value="EDIT" class="btn btn-success" />  
                           <input type="hidden" name='currentUser_id' value="<?php echo $currentUser_id; ?>">
                           <input type="hidden" name='productId' value="<?php echo $id; ?>">

@@ -19,6 +19,7 @@ if(isset($_POST['submit'])){
     $pdCondition = $_POST['pdCondition'];
     $file = $_FILES;
 
+    //TODO: DELETE
     if(isset($_POST['pd_Sub_shoes_12'])){
         $pdSubCategory = $_POST['pd_Sub_shoes_12'];
     }

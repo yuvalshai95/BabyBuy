@@ -17,6 +17,7 @@ if(isset($_POST['edit'])){
     $status         = $_POST['status'];
     $userId         = $_POST['currentUser_id'];
     $productId      = $_POST['productId'];
+    $pdCategory     = $_POST['pdCategory'];
 
     $pd->updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status);
     header("location: ../userproducts.php");

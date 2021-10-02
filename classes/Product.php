@@ -323,7 +323,7 @@ return $result;
 }
 
 
-
+// TODO : Add product category to the function
 public function updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status){
 
   $name = mysqli_real_escape_string($this->db->link, $name);
