@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
     }
 
     // 2)Check name input is valid
-    if(invalidCity($pdName) !== false){
+    if(invalidAddress($pdName) !== false){
 
     // Send user back to register page with error msg
     header("location: ../addproduct.php?error=invalidproductname");
