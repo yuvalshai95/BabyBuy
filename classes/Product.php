@@ -323,8 +323,8 @@ return $result;
 }
 
 
-// TODO : Add product category to the function
-public function updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status){
+
+public function updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status,$pdCategory){
 
   $name = mysqli_real_escape_string($this->db->link, $name);
   $description = mysqli_real_escape_string($this->db->link, $description);
@@ -333,10 +333,11 @@ public function updateProductById($userId,$productId,$name,$description,$price,$
   $age = mysqli_real_escape_string($this->db->link, $age);
   $condition = mysqli_real_escape_string($this->db->link, $condition);
   $status = mysqli_real_escape_string($this->db->link, $status);
+  $pdCategory = mysqli_real_escape_string($this->db->link, $pdCategory);
 
 
   $query = "UPDATE product
-            SET ProductName = '$name', Description = '$description', PickupOptions = '$pickup', Age = '$age', Price = '$price', Status = '$status', ProductCondition = '$condition'
+            SET ProductCategory = '$pdCategory', ProductName = '$name', Description = '$description', PickupOptions = '$pickup', Age = '$age', Price = '$price', Status = '$status', ProductCondition = '$condition'
             WHERE UserID = '$userId' AND ProductID = '$productId'";
   $this->db->update($query);
 }
