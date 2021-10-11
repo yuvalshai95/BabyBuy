@@ -32,14 +32,12 @@ $row = $getProduct->fetch_assoc();
                          <!-- TODO: make dynamic category to static and add selected -->
                           <label>Select Category</label>
                           <select id="pdCategory" name="pdCategory" class="form-control">
-                         <?php
-                              $getAllCategories = $category->getAllCategories();
-                              while ($result = $getAllCategories->fetch_assoc()) {   
-                         ?>
-                              <option value="<?= $result['CategoryID'] ?>" <?php if($row['ProductCategory'] == 1){ echo "selected";}
-                                                                                  if($row['ProductCategory'] == 5){ echo "selected";}
-                                                                                  if($row['ProductCategory'] == 12){ echo "selected";} ?> ><?= $result['CategoryName']; ?></option>
-                         <?php } ?>
+                              <option value="1"  <?php if($row["ProductCategory"]==1){ echo "selected";} ?>  >Toys</option> 
+                              <option value="5"  <?php if($row["ProductCategory"]==5){ echo "selected";} ?>  >Cribs</option>
+                              <option value="12"  <?php if($row["ProductCategory"]==12){ echo "selected";} ?>  >Car Seats</option>
+                              <option value="16"  <?php if($row["ProductCategory"]==16){ echo "selected";} ?>  >Travel Gear</option>
+                              <option value="17"  <?php if($row["ProductCategory"]==17){ echo "selected";} ?>  >TStrollers</option>
+                              <option value="18"  <?php if($row["ProductCategory"]==18){ echo "selected";} ?>  >Diapering</option> 
                          </select>
                          <br />
 

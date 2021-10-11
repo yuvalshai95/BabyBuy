@@ -19,7 +19,7 @@ if(isset($_POST['edit'])){
     $productId      = $_POST['productId'];
     $pdCategory     = $_POST['pdCategory'];
 
-    $pd->updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status);
+    $pd->updateProductById($userId,$productId,$name,$description,$price,$pickup,$age,$condition,$status,$pdCategory);
     header("location: ../userproducts.php");
 
 }else{
